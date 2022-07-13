@@ -1,0 +1,113 @@
+---
+title: "Map Projections"
+author: "Andy Grogan-Kaylor"
+date: "`r Sys.Date()`"
+output: 
+  html_document: 
+    code_download: yes
+    code_folding: hide
+    css: UM.css
+    highlight: haddock
+    number_sections: yes
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+  distill::distill_article:
+    highlight: haddock
+    toc: yes
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE)
+
+```
+
+# Set Up The Map
+
+> This part is admittedly a little complicated, mostly because I added options to get the map to look exactly the way that I wanted. 
+
+> It's not necessary to understand the code here. But I learned a lot from: [https://plotly.com/r/#maps](https://plotly.com/r/#maps).
+
+```{r}
+
+library(plotly)
+
+```
+
+```{r, echo=TRUE, eval=FALSE}
+
+# a very basic map could be created with: 
+
+library(plotly)
+
+plot_geo()
+
+```
+
+
+```{r}
+
+mymap <- plot_geo() %>%
+  layout(title = "Demonstration Map", 
+         geo = list(showland = TRUE,  
+                    landcolor = toRGB("grey"),
+                    showcountries = TRUE,
+                    showocean=FALSE, 
+                    oceancolor="LightBlue",
+                    lataxis = list(showgrid = TRUE,
+                                   gridcolor = toRGB("black")),
+                    lonaxis = list(showgrid = TRUE,
+                                   gridcolor = toRGB("black")))) 
+
+```
+
+# Map Projections
+
+## Globe
+
+```{r}
+
+mymap %>% 
+  layout(geo = list(projection = list(type = 'orthographic')))
+
+```
+
+## Mercator 
+
+> Perpendicular latitude and longitude. Can be helpful in some kinds of navigation, but areas are distorted, especially as one approaches the poles.
+
+```{r}
+
+mymap %>% 
+  layout(geo=list(projection = list(type = 'mercator')))
+
+```
+
+## Mollweide
+
+> An *equal area* projection.
+
+```{r}
+
+mymap %>% 
+  layout(geo=list(projection = list(type = 'mollweide')))
+
+```
+
+## Robinson
+
+> An attempt to compromise between equal areas and a natural looking map.
+
+```{r}
+
+mymap %>% 
+  layout(geo=list(projection = list(type = 'robinson')))
+
+```
+
+
