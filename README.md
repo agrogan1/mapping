@@ -1,2 +1,6 @@
 # mapping
-Jeg er den trettende repo.
+
+Materials on mapping and GIS, mostly in R.
+
+
+
