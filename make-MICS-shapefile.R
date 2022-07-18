@@ -19,7 +19,7 @@ global_data <- st_as_sf(wrld_simpl) %>% # make an sf dataset
 # write sf to shapefile
 
 st_write(global_data, 
-         "mapping/shapefiles/wrld_simpl/wrld_simpl.shp",
+         "./shapefiles/wrld_simpl/wrld_simpl.shp",
          append = FALSE) # replace; don't append
 
 # get MICS countries
