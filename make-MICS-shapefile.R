@@ -58,15 +58,19 @@ country_iso <- countrycode(country,
 MICS <- global_data %>% 
   filter(ISO3 %in% country_iso)
 
+MICS$continent <- countrycode(MICS$ISO3,
+                              origin = 'iso3c',
+                              destination = 'continent')
+
 st_write(MICS, 
-         "mapping/shapefiles/MICS/MICS.shp",
+         "./shapefiles/MICS/MICS.shp",
          append = FALSE) # replace; don't append
 
-zip(zipfile = "mapping/shapefiles/MICS/MICS.zip",
-    files = c("mapping/shapefiles/MICS/MICS.dbf",
-              "mapping/shapefiles/MICS/MICS.prj",
-              "mapping/shapefiles/MICS/MICS.shp",
-              "mapping/shapefiles/MICS/MICS.shx"))
+zip(zipfile = "./shapefiles/MICS/MICS.zip",
+    files = c("./shapefiles/MICS/MICS.dbf",
+              "./shapefiles/MICS/MICS.prj",
+              "./shapefiles/MICS/MICS.shp",
+              "./shapefiles/MICS/MICS.shx"))
 
 
 
