@@ -1,0 +1,51 @@
+---
+title: "Mapping (GIS and GIS Data)"
+author: "Andy Grogan-Kaylor"
+date: "`r Sys.Date()`"
+format: 
+  html:
+    theme: 
+      light: united
+      dark: vapor
+    toc: true
+    number-sections: true
+    anchor-sections: true
+    highlight-style: haddock
+    code-fold: true
+    execute:
+      warning: false
+editor: source
+---
+
+# Geographical Concepts
+
+* latitude and longitude
+* map projections
+* coordinate reference systems (CRS)
+* symbology
+
+# GIS Data
+
+* shape files
+    - joining external data to shapefiles
+* text files w/ latitude and longitude
+* addresses (*geocoding*)
+* base layers
+* KML
+
+# Libraries
+
+* `maps`
+* `ggplot` 
+* `plotly`
+* `leaflet`
+* `sf`
+* `tidycensus`
+* `mapboxapi`
+
+# More Advanced Concepts
+
+* geocoding
+* geoprocessing
+    + selection
+    + spatial joins
