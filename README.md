@@ -1,34 +1,12 @@
-# Mapping (GIS and GIS Data)
+# Mapping 
 
-## Geographical Concepts
+A repository of ideas about mapping and GIS
 
-* latitude and longitude
-* map projections
-* CRS
-* symbology
+[https://github.com/agrogan1/mapping](https://github.com/agrogan1/mapping)
 
-## GIS Data
 
-* shape files
-    - joining external data to shapefiles
-* text files w/ latitude and longitude
-* addresses (*geocoding*)
-* base layers
-* KML
 
-## Libraries
 
-* `maps`
-* `ggplot` 
-* `plotly`
-* `leaflet`
-* `sf`
-* `tidycensus`
-* `mapboxapi`
 
-## More Advanced Concepts
 
-* geocoding
-* geoprocessing
-    + selection
-    + spatial joins
+
