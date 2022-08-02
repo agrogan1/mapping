@@ -1,5 +1,6 @@
 ---
-title: "Mapping (GIS and GIS Data)"
+title: "Mapping "
+subtitle: "GIS and GIS Data"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 format: 
@@ -14,6 +15,7 @@ format:
     code-fold: true
     execute:
       warning: false
+title-block-banner: "earth.png"
 editor: source
 ---
 
