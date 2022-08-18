@@ -1,4 +1,8 @@
-# Demo of Geocoding + (Hopefully Better Labeling) In R
+#' ---
+#' title: "geocoding test"
+#' output: html_document
+#' author: Andy Grogan-Kaylor
+#' ---
 
 library(tidygeocoder) # geocoding
 
@@ -16,17 +20,15 @@ library(ggrepel) # repelling labels
 
 # Get Data
 
-Final_Geocode_PEG_QGIS <- read_excel("mydata.xlsx")
+simulated_address_data <- read_excel("simulated-address-data.xlsx")
 
 # Concatenate Addresses
 
-Final_Geocode_PEG_QGIS$addr <- paste(mydata$Address,
+simulated_address_data$address <- paste(simulated_address_data$street,
                                      ", ",
-                                     mydata$City,
+                                     simulated_address_data$city,
                                      ", ",
-                                     mydata$State,
-                                     " ",
-                                     mydata$Zipcode)
+                                     simulated_address_data$state)
 
 # Geocode
 
@@ -34,21 +36,11 @@ Final_Geocode_PEG_QGIS$addr <- paste(mydata$Address,
 # You will want to find a process with HIGH success rate
 # You could also try batchgeo -> KML -> Latitude/Longitude
 
-mydata <- Final_Geocode_PEG_QGIS %>% 
-  tidygeocoder::geocode(addr, 
-          method = 'census', 
-          lat = latitude, 
-          long = longitude)
-
-# Choose Which Points To Map
-
-mydata$usethislabel <- NA
-
-# Manually Set A Few Labels
-
-mydata$usethislabel[1] <- mydata$`Client Name`[1]
-
-mydata$usethislabel[9] <- mydata$`Client Name`[9]
+mydata <- simulated_address_data %>% 
+  tidygeocoder::geocode(address, 
+                        method = 'arcgis', 
+                        lat = latitude, 
+                        long = longitude)
 
 # Map (ggplot)
 
@@ -68,7 +60,7 @@ library(leaflet) # interactive maps
 leaflet(mydata) %>% 
   addCircles(lng = ~longitude, 
              lat = ~latitude,
-             label = ~`Client Name`) %>% 
+             label = ~agency) %>% 
   # addTiles() %>%
   addProviderTiles(providers$CartoDB.Positron) # good map tiles
 
