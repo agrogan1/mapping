@@ -47,7 +47,7 @@ mydata <- simulated_address_data %>%
 ggplot(mydata,
        aes(x = longitude,
            y = latitude,
-           label = usethislabel)) +
+           label = agency)) +
   borders("state") +
   geom_point(color = "red") +
   geom_text_repel(max.overlaps = 100) + 
@@ -61,8 +61,9 @@ leaflet(mydata) %>%
   addCircles(lng = ~longitude, 
              lat = ~latitude,
              label = ~agency) %>% 
-  # addTiles() %>%
-  addProviderTiles(providers$CartoDB.Positron) # good map tiles
+  addTiles() # map tiles
+
+
 
 
 
