@@ -3,20 +3,20 @@ title: "Map Projections"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output: 
+  distill::distill_article:
+    highlight: haddock
+    toc: yes
+    code_folding: hide
   html_document: 
     code_download: yes
     code_folding: hide
-    css: UM.css
+    css: ../UM.css
     highlight: haddock
     number_sections: yes
     toc: yes
     toc_float:
       collapsed: no
       smooth_scroll: yes
-  distill::distill_article:
-    highlight: haddock
-    toc: yes
-    code_folding: hide
 ---
 
 ```{r setup, include=FALSE}
@@ -33,11 +33,16 @@ knitr::opts_chunk$set(echo = TRUE,
 
 > It's not necessary to understand the code here. But I learned a lot from: [https://plotly.com/r/#maps](https://plotly.com/r/#maps).
 
+
+## Call `plotly` Library
+
 ```{r}
 
 library(plotly)
 
 ```
+
+## A Basic Map
 
 ```{r, echo=TRUE, eval=FALSE}
 
@@ -45,10 +50,13 @@ library(plotly)
 
 library(plotly)
 
-plot_geo()
+mymap0 <- plot_geo()
+
+mymap0 # replay
 
 ```
 
+## A More Advanced Map
 
 ```{r}
 
@@ -63,6 +71,8 @@ mymap <- plot_geo() %>%
                                    gridcolor = toRGB("black")),
                     lonaxis = list(showgrid = TRUE,
                                    gridcolor = toRGB("black")))) 
+
+mymap # replay
 
 ```
 
