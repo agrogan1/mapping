@@ -44,7 +44,7 @@ library(here) # where am I?
 
 ```{r}
 
-clients <- read_csv("location-data/clients.csv")
+clients <- read_csv("../location-data/clients.csv")
 
 ```
 
@@ -64,11 +64,11 @@ clients <- clients %>%
 
 ```{r}
 
-parks <- read_sf("shapefiles/AA_Parks/AA_Parks.shp")
+parks <- read_sf("../shapefiles/AA_Parks/AA_Parks.shp")
 
-university <- read_sf("shapefiles/AA_University/AA_University.shp")
+university <- read_sf("../shapefiles/AA_University/AA_University.shp")
 
-city_boundary <- read_sf("shapefiles/AA_City_Boundary/AA_City_Boundary.shp")
+city_boundary <- read_sf("../shapefiles/AA_City_Boundary/AA_City_Boundary.shp")
 
 ```
 

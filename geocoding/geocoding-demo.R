@@ -1,5 +1,5 @@
 #' ---
-#' title: "geocoding test"
+#' title: "geocoding demo"
 #' output: html_document
 #' author: Andy Grogan-Kaylor
 #' ---

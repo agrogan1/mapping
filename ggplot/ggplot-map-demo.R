@@ -1,6 +1,8 @@
 #' ---
-#' title: "ggplot map test"
-#' output: pdf_document
+#' title: "ggplot map demo"
+#' output: 
+#'   html_document:
+#'     highlight: haddock
 #' author: Andy Grogan-Kaylor
 #' ---
 
@@ -23,26 +25,26 @@ setwd(here()) # set the working directory
 # use read_sf to open shapefiles
 # getting the directory and filename right is important
 
-city_boundary <- read_sf("./mapping/shapefiles/AA_City_Boundary/AA_City_Boundary.shp")
+city_boundary <- read_sf("../mapping/shapefiles/AA_City_Boundary/AA_City_Boundary.shp")
 
-buildings <- read_sf("./mapping/shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp")
+buildings <- read_sf("../mapping/shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp")
 
-trees <- read_sf("./mapping/shapefiles/a2trees/AA_Trees.shp")
+trees <- read_sf("../mapping/shapefiles/a2trees/AA_Trees.shp")
 
-parks <- read_sf("./mapping/shapefiles/AA_Parks/AA_Parks.shp")
+parks <- read_sf("../mapping/shapefiles/AA_Parks/AA_Parks.shp")
 
-university <- read_sf("./mapping/shapefiles/AA_University/AA_University.shp")
+university <- read_sf("../mapping/shapefiles/AA_University/AA_University.shp")
 
-WashtenawRoads <- read_sf("./mapping/shapefiles/Roads/RoadCenterlines.shp")
+WashtenawRoads <- read_sf("../mapping/shapefiles/Roads/RoadCenterlines.shp")
 
 AnnArborRoads <- st_crop(WashtenawRoads, 
                          city_boundary) # crop to only get A2 roads
 
-# watersheds <- read_sf("./mapping/shapefiles/watersheds/Watersheds.shp")
+# watersheds <- read_sf("../mapping/shapefiles/watersheds/Watersheds.shp")
 
 # use read_csv to read text file with client data
 
-clients <- read_csv("./mapping/location-data/clients.csv")
+clients <- read_csv("../mapping/location-data/clients.csv")
 
 # only clients in Ann Arbor area
 
@@ -112,11 +114,11 @@ ggplot(city_boundary) +
   theme(plot.title = element_text(size = rel(2)), 
         axis.text = element_text(size = rel(.5))) 
 
-ggsave("./mapping/social-service-agency.png", 
+ggsave("../mapping/ggplot/social-service-agency.png", 
        height = 11, 
        width = 8.5)
 
-ggsave("./mapping/social-service-agency.pdf", 
+ggsave("../mapping/ggplot/social-service-agency.pdf", 
        height = 11, 
        width = 8.5)
 
