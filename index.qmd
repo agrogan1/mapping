@@ -40,7 +40,7 @@ editor: source
 * `maps`
 * `ggplot` 
 * `plotly`
-* `leaflet`
+* [`leaflet`](./leaflet/leaflet-map-demo.html) 
 * `sf`
 * `tidycensus`
 * `mapboxapi`
