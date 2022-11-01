@@ -22,7 +22,7 @@ editor: source
 # Geographical Concepts
 
 * latitude and longitude
-* map projections
+* [map projections](./projections/projections.html)
 * coordinate reference systems (CRS)
 * symbology
 
@@ -31,14 +31,14 @@ editor: source
 * shape files
     - joining external data to shapefiles
 * text files w/ latitude and longitude
-* addresses (*geocoding*)
+* addresses ([geocoding](./geocoding/geocoding-demo.html))
 * base layers
 * KML
 
 # Libraries
 
 * `maps`
-* `ggplot` 
+* [`ggplot`](./ggplot/ggplot-map-demo.html)  ([full size map](./ggplot/social-service-agency.pdf)) 
 * `plotly`
 * [`leaflet`](./leaflet/leaflet-map-demo.html) 
 * `sf`
@@ -47,7 +47,7 @@ editor: source
 
 # More Advanced Concepts
 
-* geocoding
+* [geocoding](./geocoding/geocoding-demo.html)
 * geoprocessing
     + selection
     + spatial joins
