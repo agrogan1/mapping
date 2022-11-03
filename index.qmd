@@ -1,7 +1,9 @@
 ---
 title: "Mapping "
 subtitle: "GIS and GIS Data"
-author: "Andy Grogan-Kaylor"
+author:
+  - name: Andy Grogan-Kaylor 
+    url: https://agrogan1.github.io/
 date: "`r Sys.Date()`"
 format: 
   html:
