@@ -1,6 +1,6 @@
 ---
 title: "Mapping "
-subtitle: "GIS and GIS Data"
+subtitle: "Notes for a GIS Course Under Development"
 author:
   - name: Andy Grogan-Kaylor 
     url: https://agrogan1.github.io/
