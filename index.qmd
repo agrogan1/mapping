@@ -16,12 +16,62 @@ format:
     highlight-style: haddock
     code-fold: true
     execute:
+      echo: false
       warning: false
 title-block-banner: "earth.png"
 editor: source
 ---
 
+```{css}
+
+h1.title {
+
+  color: red;
+
+}
+
+```
+
+```{r}
+
+library(sf) # simple (spatial) features
+
+library(leaflet) # beautiful maps
+
+```
+
+
+```{r}
+#| label: fig-world
+#| fig-cap: "Countries of the World"
+#| fig-height: 3
+
+global_data <- read_sf("../mapping/shapefiles/wrld_simpl/wrld_simpl.shp")
+
+  leaflet() %>%
+    setView(0, 0, zoom = 1.5) %>%
+    addProviderTiles(providers$Esri.WorldImagery) %>%
+    addPolygons(data = global_data, 
+                fillOpacity = .0, 
+                weight = 2,
+                color = "#009edb", 
+                label = global_data$NAME,
+                highlightOptions = highlightOptions(color = "red", 
+                                                    weight = 2,
+                                                    bringToFront = TRUE)) 
+
+```
+
 # Geographical Concepts
+
+```{r}
+#| label: fig-globe
+#| fig-cap: "Orthographic (Globe) Projection"
+#| column: margin
+
+knitr::include_graphics("./orthographic-globe.png")
+
+```
 
 * latitude and longitude
 * [map projections](./projections/projections.html)
@@ -38,6 +88,24 @@ editor: source
 * KML
 
 # Libraries
+
+```{r}
+#| label: fig-ggplot
+#| fig-cap: "ggplot Map of Simulated Clients"
+#| column: margin
+
+knitr::include_graphics("./ggplot/social-service-agency.png")
+
+```
+
+```{r}
+#| label: fig-leaflet
+#| fig-cap: "Leaflet Map of Simulated Clients"
+#| column: margin
+
+knitr::include_graphics("./leafletmap.png")
+
+```
 
 * `maps`
 * [`ggplot`](./ggplot/ggplot-map-demo.html)  ([full size map](./ggplot/social-service-agency.pdf)) 
