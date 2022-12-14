@@ -53,3 +53,11 @@ editor: source
 * geoprocessing
     + selection
     + spatial joins
+    
+# Other Software
+
+* QGIS
+* ArcGIS
+* Tableau
+
+
