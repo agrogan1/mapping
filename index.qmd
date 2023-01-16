@@ -12,7 +12,6 @@ format:
     number-sections: true
     anchor-sections: true
     highlight-style: haddock
-    code-fold: true
     execute:
       echo: false
       warning: false
