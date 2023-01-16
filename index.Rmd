@@ -1,31 +1,26 @@
 ---
-title: "Mapping "
-subtitle: "Notes for a GIS Course Under Development"
-author: "Andy Grogan-Kaylor" 
+title: "Mapping"
+author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
-format: 
-  html:
-    theme:
-      light: united
-      dark: vapor
-    toc: true
-    number-sections: true
-    anchor-sections: true
-    highlight-style: haddock
-    execute:
-      echo: false
-      warning: false
-title-block-banner: "earth.png"
-editor: source
+output:
+  distill::distill_article:
+    highlight: haddock
+    toc: yes
 ---
 
-```{css}
+```{css, echo = FALSE}
 
 h1.title {
 
   color: red;
 
 }
+
+```
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
@@ -36,7 +31,6 @@ library(sf) # simple (spatial) features
 library(leaflet) # beautiful maps
 
 ```
-
 
 ```{r}
 #| label: fig-world
@@ -61,7 +55,7 @@ global_data <- read_sf("../mapping/shapefiles/wrld_simpl/wrld_simpl.shp")
 
 # Geographical Concepts
 
-```{r}
+```{r, eval = FALSE}
 #| label: fig-globe
 #| fig-cap: "Orthographic (Globe) Projection"
 #| column: margin
@@ -86,19 +80,17 @@ knitr::include_graphics("./orthographic-globe.png")
 
 # Libraries
 
-```{r}
+```{r, eval=FALSE}
 #| label: fig-ggplot
 #| fig-cap: "ggplot Map of Simulated Clients"
-#| column: margin
 
 knitr::include_graphics("./ggplot/social-service-agency.png")
 
 ```
 
-```{r}
+```{r, eval=FALSE}
 #| label: fig-leaflet
 #| fig-cap: "Leaflet Map of Simulated Clients"
-#| column: margin
 
 knitr::include_graphics("./leafletmap.png")
 
