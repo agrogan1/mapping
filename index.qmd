@@ -1,13 +1,11 @@
 ---
 title: "Mapping "
 subtitle: "Notes for a GIS Course Under Development"
-author:
-  - name: Andy Grogan-Kaylor 
-    url: https://agrogan1.github.io/
+author: Andy Grogan-Kaylor 
 date: "`r Sys.Date()`"
 format: 
   html:
-    theme: 
+    theme:
       light: united
       dark: vapor
     toc: true
@@ -73,7 +71,7 @@ knitr::include_graphics("./orthographic-globe.png")
 
 ```
 
-* latitude and longitude
+* [latitude and longitude](./latitude-and-longitude/latitude-and-longitude.html)
 * [map projections](./projections/projections.html)
 * coordinate reference systems (CRS)
 * symbology
