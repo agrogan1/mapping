@@ -1,0 +1,121 @@
+---
+title: "Mapping"
+subtitle: "Materials for a GIS & Mapping Course In Development"
+author: "Andy Grogan-Kaylor"
+execute:
+  echo: false
+  message:
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme:
+      light: sketchy
+      dark: vapor
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+```{r}
+#| include: false
+
+library(sf) # simple (spatial) features
+
+library(leaflet) # beautiful maps
+
+```
+
+```{r}
+#| label: fig-world
+#| fig-cap: "Countries of the World"
+#| fig-height: 3
+#| warning: false
+#| message: false
+
+global_data <- read_sf("../mapping/shapefiles/wrld_simpl/wrld_simpl.shp")
+
+  leaflet() %>%
+    setView(0, 0, zoom = 1.5) %>%
+    addProviderTiles(providers$Esri.WorldImagery) %>%
+    addPolygons(data = global_data, 
+                fillOpacity = .0, 
+                weight = 2,
+                color = "#009edb", 
+                label = global_data$NAME,
+                highlightOptions = highlightOptions(color = "red", 
+                                                    weight = 2,
+                                                    bringToFront = TRUE)) 
+
+```
+
+# Geographical Concepts
+
+```{r, eval=TRUE}
+#| label: fig-globe
+#| fig-cap: "Orthographic (Globe) Projection"
+#| column: margin
+
+knitr::include_graphics("./orthographic-globe.png")
+
+```
+
+* [latitude and longitude](./latitude-and-longitude/latitude-and-longitude.html)
+* [map projections](./projections/projections.html)
+* coordinate reference systems (CRS)
+* symbology
+
+# GIS Data
+
+* shape files
+    - joining external data to shapefiles
+* text files w/ latitude and longitude
+* addresses ([geocoding](./geocoding/geocoding-demo.html))
+* base layers
+* KML
+
+# Libraries
+
+```{r, eval=TRUE}
+#| label: fig-ggplot
+#| fig-cap: "ggplot Map of Simulated Clients"
+#| fig-column: margin
+
+knitr::include_graphics("./ggplot/social-service-agency.png")
+
+```
+
+```{r, eval=TRUE}
+#| label: fig-leaflet
+#| fig-cap: "Leaflet Map of Simulated Clients"
+#| fig-column: margin
+
+knitr::include_graphics("./leafletmap.png")
+
+```
+
+* `maps`
+* [`ggplot`](./ggplot/ggplot-map-demo.html)  ([full size map](./ggplot/social-service-agency.pdf)) 
+* `plotly`
+* [`leaflet`](./leaflet/leaflet-map-demo.html) 
+* `sf`
+* `tidycensus`
+* `mapboxapi`
+
+# More Advanced Concepts
+
+* [geocoding](./geocoding/geocoding-demo.html)
+* geoprocessing
+    + selection
+    + spatial joins
+    
+# Other Software
+
+* QGIS
+* ArcGIS
+* Tableau
+
+
