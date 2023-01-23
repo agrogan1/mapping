@@ -1,0 +1,130 @@
+---
+title: "Geocoding Demo"
+author: "Andy Grogan-Kaylor"
+date: "today"
+execute:
+  echo: true
+  message: false
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme:
+      light: united
+      dark: vapor
+---
+
+```{css, echo=FALSE}
+
+blockquote {
+  color: black;
+  border-left: 2px solid #FFCB05; 
+  padding: 0.5em 10px;
+}
+  
+```
+
+# Call Libraries
+
+```{r, message=FALSE}
+
+library(tidygeocoder) # geocoding
+
+library(dplyr) # for %>% operator
+
+library(readxl) # import Excel
+
+library(ggplot2) # beautiful graphs
+
+library(maps) # map data
+
+library(ggrepel) # repelling labels
+
+# library(ggmap) # don't use
+
+```
+
+# Get Data
+
+```{r}
+
+simulated_address_data <- read_excel("simulated-address-data.xlsx")
+
+```
+
+# Concatenate Addresses
+
+```{r}
+
+simulated_address_data$address <- paste(simulated_address_data$street,
+                                     ", ",
+                                     simulated_address_data$city,
+                                     ", ",
+                                     simulated_address_data$state)
+
+```
+
+# Geocode
+
+> ArcGIS geocoding has LOW success rate with this data
+
+> You will want to find a process with HIGH success rate
+
+> You could also try batchgeo -> KML -> Latitude/Longitude
+
+```{r}
+
+mydata <- simulated_address_data %>% 
+  tidygeocoder::geocode(address, 
+                        method = 'arcgis', 
+                        lat = latitude, 
+                        long = longitude)
+
+```
+
+# Maps
+
+> By design, these maps are *zoomed out* to show the errors in geocoding. You could adjust them to *zoom in* on the particular location of interest. 
+
+## `ggplot`
+
+```{r}
+
+ggplot(mydata,
+       aes(x = longitude,
+           y = latitude,
+           label = agency)) +
+  borders("state") +
+  geom_point(color = "red") +
+  geom_text_repel(max.overlaps = 100) + 
+  theme_void()
+
+```
+
+## `leaflet`
+
+```{r}
+
+library(leaflet) # interactive maps
+
+leaflet(mydata) %>% 
+  addCircles(lng = ~longitude, 
+             lat = ~latitude,
+             label = ~agency) %>% 
+  addTiles() # map tiles
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
