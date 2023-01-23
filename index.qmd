@@ -53,7 +53,7 @@ global_data <- read_sf("../mapping/shapefiles/wrld_simpl/wrld_simpl.shp")
 
 ```
 
-# Geographical Concepts
+# Geographical and GIS Concepts
 
 ```{r, eval=TRUE}
 #| label: fig-globe
@@ -78,7 +78,7 @@ knitr::include_graphics("./orthographic-globe.png")
 * base layers
 * KML
 
-# Libraries
+# R Libraries
 
 ```{r, eval=TRUE}
 #| label: fig-ggplot
