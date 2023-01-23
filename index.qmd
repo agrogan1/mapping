@@ -5,7 +5,7 @@ author: "Andy Grogan-Kaylor"
 date: "today"
 execute:
   echo: false
-  message:
+  message: false
 format:
   html:
     toc: true
