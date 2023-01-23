@@ -2,6 +2,7 @@
 title: "Mapping"
 subtitle: "Materials for a GIS & Mapping Course In Development"
 author: "Andy Grogan-Kaylor"
+date: "today"
 execute:
   echo: false
   message:
