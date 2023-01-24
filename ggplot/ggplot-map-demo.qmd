@@ -102,6 +102,8 @@ point <- st_as_sf(clients,
 
 # Use `ggplot` to Make The Map
 
+> [full size map](social-service-agency.pdf)
+
 ```{r, eval = FALSE, echo = FALSE}
 
 # NB RE Macs: the plotting device on Macs is actually pretty slow
