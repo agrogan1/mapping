@@ -71,6 +71,7 @@ knitr::include_graphics("./orthographic-globe.png")
 #| fig-cap: "Orthographic (Globe) Projection"
 #| warning: false
 #| column: margin
+#| fig-height: 2
 
 plot_geo() %>%
   layout(title = "", 
@@ -113,6 +114,10 @@ knitr::include_graphics("./ggplot/social-service-agency.png")
 
 ```
 
+::: {.column-margin}
+[[full size `ggplot` map](./ggplot/social-service-agency.pdf)]
+:::
+
 ```{r, eval=TRUE}
 #| label: fig-leaflet
 #| fig-cap: "Leaflet Map of Simulated Clients"
@@ -121,6 +126,10 @@ knitr::include_graphics("./ggplot/social-service-agency.png")
 knitr::include_graphics("./leafletmap.png")
 
 ```
+
+::: {.column-margin}
+[[`leaflet` demo](./leaflet/leaflet-map-demo.html)]
+:::
 
 * `maps`
 * [`ggplot`](./ggplot/ggplot-map-demo.html)  ([full size map](./ggplot/social-service-agency.pdf)) 
