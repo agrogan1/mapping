@@ -28,6 +28,8 @@ library(sf) # simple (spatial) features
 
 library(leaflet) # beautiful maps
 
+library(plotly) # interactive graphics
+
 ```
 
 ```{r}
@@ -55,7 +57,7 @@ global_data <- read_sf("../mapping/shapefiles/wrld_simpl/wrld_simpl.shp")
 
 # Geographical and GIS Concepts
 
-```{r, eval=TRUE}
+```{r, eval=FALSE}
 #| label: fig-globe
 #| fig-cap: "Orthographic (Globe) Projection"
 #| column: margin
@@ -63,6 +65,28 @@ global_data <- read_sf("../mapping/shapefiles/wrld_simpl/wrld_simpl.shp")
 knitr::include_graphics("./orthographic-globe.png")
 
 ```
+
+```{r}
+#| label: fig-globe2
+#| fig-cap: "Orthographic (Globe) Projection"
+#| warning: false
+#| column: margin
+
+plot_geo() %>%
+  layout(title = "", 
+         geo = list(projection = list(type = 'orthographic'),
+                    showland = TRUE,  
+                    landcolor = toRGB("grey"),
+                    showcountries = TRUE,
+                    showocean = FALSE, 
+                    oceancolor = "LightBlue",
+                    lataxis = list(showgrid = TRUE,
+                                   gridcolor = toRGB("black")),
+                    lonaxis = list(showgrid = TRUE,
+                                   gridcolor = toRGB("black"))))
+
+```
+
 
 * [latitude and longitude](./latitude-and-longitude/latitude-and-longitude.html)
 * [map projections](./projections/projections.html)
