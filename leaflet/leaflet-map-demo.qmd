@@ -1,30 +1,38 @@
 ---
 title: "Leaflet Map Test"
-description: |
-  A demonstration map created using `leaflet`.
-author:
-- name: Andy Grogan-Kaylor
-  url: https://agrogan1.github.io/
-  affiliation: University of Michigan
-  affiliation_url: https://umich.edu/
-date: '`r Sys.Date()`'
-output: 
-  distill::distill_article:
-    highlight: haddock
-    toc: yes
-    toc_float: yes
-    code_folding: true
+subtitle: "A Demonstration Map Created Using `leaflet`"
+author: "Andy Grogan-Kaylor"
+date: "today"
+format:
+  html:
+    toc: true
+    number-sections: true
+    code-fold: true
+    code-summary: "Show the code"
+    theme:
+      light: united
+      dark: vapor
 ---
 
 ```{r setup, include=FALSE}
 
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 
+```
+
+```{css, echo=FALSE}
+
+blockquote {
+  color: black;
+  border-left: 2px solid #FFCB05; 
+  padding: 0.5em 10px;
+}
+  
 ```
 
 # Call Libraries
 
-```{r}
+```{r, message = FALSE}
 
 library(leaflet) # web based maps
 
@@ -36,15 +44,19 @@ library(dplyr) # data wrangling
 
 library(here) # where am I?
 
+library(pander) # nice tables
+
 # setwd(here()) # set the working directory
 
 ```
 
 # Get Simulated Client Data
 
-```{r}
+```{r, message=FALSE}
 
 clients <- read_csv("../location-data/clients.csv")
+
+pander(head(clients)) # top of client data
 
 ```
 
@@ -60,7 +72,7 @@ clients <- clients %>%
 
 ```
 
-# Shapefiles
+# Read in Shapefiles
 
 ```{r}
 
@@ -74,6 +86,9 @@ city_boundary <- read_sf("../shapefiles/AA_City_Boundary/AA_City_Boundary.shp")
 
 # Transform CRS
 
+> "Map projections try to portray the surface of the earth or a portion of the earth on a flat piece of paper or computer screen. A coordinate reference system (CRS) then defines, with the help of coordinates, how the two-dimensional, projected map in your GIS is related to real places on the earth. The decision as to which map projection and coordinate reference system to use, depends on the regional extent of the area you want to work in, on the analysis you want to do and often on the availability of data." From [qgis.org](https://docs.qgis.org/2.8/en/docs/gentle_gis_introduction/coordinate_reference_systems.html)
+
+
 > see https://stackoverflow.com/questions/66471147/how-to-plot-sp-object-as-sf-in-r-leaflet
 
 ```{r}
@@ -85,7 +100,6 @@ parks <- st_transform(parks, 4326) # transform CRS
 city_boundary <- st_transform(city_boundary, 4326) # transform CRS
 
 ```
-
 
 # Leaflet Map
 
