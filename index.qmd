@@ -21,6 +21,16 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
+```{css, eval=FALSE, echo=FALSE}
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
+
+h1, h2, h3, p.subtitle {
+  font-family: 'Cabin Sketch', cursive;;
+}
+
+```
+
 ```{r}
 #| include: false
 
