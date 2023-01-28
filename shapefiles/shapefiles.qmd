@@ -84,7 +84,7 @@ ggplot(city_boundary) +
           size = .1, 
           color = "darkgreen") +
   labs(title = "Demonstration of Shapefiles",
-       subtitle = "Green Trees Are Points \nGrey Roads are Lines \nRed City Boundary is Polygon")
+       subtitle = "Green Trees Are Points \nGrey Roads are Lines \nRed City Boundary is Polygon") 
 
 ```
 
