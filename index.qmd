@@ -106,7 +106,7 @@ plot_geo() %>%
 
 # GIS Data
 
-* shape files
+* [shapefiles](./shapefiles/shapefiles.html)
     - joining external data to shapefiles
 * text files w/ latitude and longitude
 * addresses ([geocoding](./geocoding/geocoding-demo.html))
