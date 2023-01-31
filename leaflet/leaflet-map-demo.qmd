@@ -89,7 +89,7 @@ city_boundary <- read_sf("../shapefiles/AA_City_Boundary/AA_City_Boundary.shp")
 > "Map projections try to portray the surface of the earth or a portion of the earth on a flat piece of paper or computer screen. A coordinate reference system (CRS) then defines, with the help of coordinates, how the two-dimensional, projected map in your GIS is related to real places on the earth. The decision as to which map projection and coordinate reference system to use, depends on the regional extent of the area you want to work in, on the analysis you want to do and often on the availability of data." From [qgis.org](https://docs.qgis.org/2.8/en/docs/gentle_gis_introduction/coordinate_reference_systems.html)
 
 
-> see https://stackoverflow.com/questions/66471147/how-to-plot-sp-object-as-sf-in-r-leaflet
+> see [https://stackoverflow.com/questions/66471147/how-to-plot-sp-object-as-sf-in-r-leaflet](https://stackoverflow.com/questions/66471147/how-to-plot-sp-object-as-sf-in-r-leaflet)
 
 ```{r}
 
