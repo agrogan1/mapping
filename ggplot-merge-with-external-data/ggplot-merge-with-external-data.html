@@ -155,6 +155,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<div class="cell">
+<style type="text/css">
+
+blockquote {
+  color: black;
+  border-left: 2px solid #FFCB05; 
+  padding: 0.5em 10px;
+}
+  
+</style>
+</div>
 <p>A common task in mapping is that I have a shapefile of map data, but want to merge in some external data from another source so that I can map that external data. Usually I want to use different colors to map that external data.</p>
 <p>Here, I use a shapefile of countries of the world, and map it with some <em>made up data</em> of <em>arbitrary and made up x values</em> for certain countries.</p>
 <p>This tutorial builds upon another tutorial on <a href="https://agrogan1.github.io/mapping/ggplot/ggplot-map-demo.html">mapping with <code>ggplot</code></a>.</p>
@@ -197,7 +208,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Demonstration Map With No Data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="ggplot-merge-with-external-data_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<p><img src="ggplot-merge-with-external-data_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -239,6 +250,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="make-a-map-with-the-data" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Make a Map With The Data</h1>
 <p>Once I have the merged data, it is easy to map it with <code>ggplot</code> and <code>geom_sf</code>. Note that I need to specify an <code>aes</code>thetic for <code>geom_sf</code>. Here <code>arbitrary_x</code> is the <em>fill</em> color for countries on the map.</p>
+<blockquote class="blockquote">
+<p>Data could also be mapped with another package like <a href="../leaflet/leaflet-map-demo"><code>leaflet</code></a>.</p>
+</blockquote>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -248,7 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Demonstration Map With Merged Data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="ggplot-merge-with-external-data_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<p><img src="ggplot-merge-with-external-data_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>

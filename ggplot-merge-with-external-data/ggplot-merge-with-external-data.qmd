@@ -15,6 +15,16 @@ format:
 
 # Introduction
 
+```{css, echo=FALSE}
+
+blockquote {
+  color: black;
+  border-left: 2px solid #FFCB05; 
+  padding: 0.5em 10px;
+}
+  
+```
+
 A common task in mapping is that I have a shapefile of map data, but want to merge in some external data from another source so that I can map that external data. Usually I want to use different colors to map that external data.
 
 Here, I use a shapefile of countries of the world, and map it with some *made up data* of *arbitrary and made up x values* for certain countries.
@@ -104,6 +114,8 @@ newdata <- left_join(world, externaldata, by = "ISO3")
 # Make a Map With The Data
 
 Once I have the merged data, it is easy to map it with `ggplot` and `geom_sf`. Note that I need to specify an `aes`thetic for `geom_sf`. Here `arbitrary_x` is the *fill* color for countries on the map.
+
+> Data could also be mapped with another package like [`leaflet`](../leaflet/leaflet-map-demo).
 
 ```{r}
 
