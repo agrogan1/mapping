@@ -23,15 +23,27 @@ blockquote {
   
 ```
 
-# Shapefiles
+# Introduction
 
 Shapefiles are a spatial data format originally developed by ESRI[?].
 
 Shapefiles come in three major types:
 
 * **points**, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.
-* **lines**, to represent line features such as roads, trails, or rivers.
-* **polygons** to represent polygon features such as outlines of cities, states, or countries.
+* **lines**️, to represent line features such as roads, trails, or rivers.
+* **polygons**, to represent polygon features such as outlines of cities, states, or countries.
+
+# Shapefiles Are Lists of Files
+
+Shape*files* are actually a set of associated files, all with the same name, and all in the same directory, but different suffixes. 
+
+R--and many other software programs--generally reference the `*.shp` file of the shapefile.
+
+```{r}
+
+list.files("../shapefiles/a2trees")
+
+```
 
 # Call Libraries
 
