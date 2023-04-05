@@ -1,0 +1,13 @@
+---
+title: "Symbology"
+format: html
+---
+
+
+
+| Shapefile Type | Symbology|
+|----------------|----------|
+| Points         | Size: ● <span style="font-size:2em">●</span> <span style="font-size:3em">●</span>|  
+|                | Color: <span style="color:red">●</span> <span style="color:blue">●</span> <span style="color:green">●</span>|
+
+: Symbology
