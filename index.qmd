@@ -11,7 +11,7 @@ format:
     toc: true
     number-sections: true
     theme:
-      light: cosmo
+      light: united
       dark: vapor
 ---
 
@@ -102,7 +102,7 @@ plot_geo() %>%
 * [latitude and longitude](./latitude-and-longitude/latitude-and-longitude.html)
 * [map projections](./projections/projections.html)
 * [coordinate reference systems (CRS)](./crs/crs.html)
-* symbology
+* [symbology](./symbology/symbology.html)
 
 # GIS Data
 
