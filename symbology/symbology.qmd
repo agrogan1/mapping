@@ -9,11 +9,15 @@ format:
     theme:
       light: cosmo
       dark: vapor
+    code-fold: true
+    code-summary: "Show the code"
 ---
 
 # Introduction
 
-Shapefiles generally come in three types: points; lines, and polygons. *Symbology* is the idea of using shapefile attributes to encode *quantitative* or *qualitative* information, such as income or program participation.
+[Shapefiles](../shapefiles/shapefiles.html) are a standard format for storing geographic data. 
+
+[Shapefiles](../shapefiles/shapefiles.html) generally come in three types: points; lines, and polygons. *Symbology* is the idea of using shapefile attributes to encode *quantitative* or *qualitative* information, such as income or program participation.
 
 # Symbology
 
@@ -28,3 +32,39 @@ Shapefiles generally come in three types: points; lines, and polygons. *Symbolog
 | | Pattern: <span style="font-size:3em">■ ▤ ▦</span>
 
 : Symbology
+
+
+# A Note About the Use of Color
+
+Color palettes can be either qualitative or quantitative in nature. 
+
+```{r}
+
+library(RColorBrewer) # A library for color palettes
+
+```
+
+```{r}
+#| fig.cap: "Blues Palette"
+#| fig.height: 3
+
+display.brewer.pal(name = "Blues", n = 9)
+
+```
+
+```{r}
+#| fig.cap: "Spectral Palette"
+#| fig.height: 3
+
+display.brewer.pal(name = "Spectral", n = 9)
+
+```
+
+```{r}
+#| fig.cap: "Set1 Palette"
+#| fig.height: 3
+
+display.brewer.pal(name = "Set1", n = 9)
+
+```
+
