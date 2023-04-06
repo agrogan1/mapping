@@ -7,15 +7,24 @@ format:
     toc: true
     number-sections: true
     theme:
-      light: united
+      light: cosmo
       dark: vapor
 ---
 
+# Introduction
 
+Shapefiles generally come in three types: points; lines, and polygons. *Symbology* is the idea of using shapefile attributes to encode *quantitative* or *qualitative* information, such as income or program participation.
+
+# Symbology
 
 | Shapefile Type | Symbology|
 |----------------|----------|
 | Points         | Size: ● <span style="font-size:2em">●</span> <span style="font-size:3em">●</span>|  
 |                | Color: <span style="color:red">●</span> <span style="color:blue">●</span> <span style="color:green">●</span>|
+| Lines | Width: ━ <span style="font-size:2em">━</span> <span style="font-size:3em">━</span>|
+| | Color: <span style="color:red;font-size:2em">━</span> <span style="color:blue;font-size:2em">━</span> <span style="color:green;font-size:2em">━</span> |
+| | Pattern: <span style="font-size:2em">━ ┅</span> | 
+| Polygons | Color: <span style="color:red;font-size:3em">■</span> <span style="color:blue;font-size:3em">■</span> <span style="color:green;font-size:3em">■</span>|
+| | Pattern: <span style="font-size:3em">■ ▤ ▦</span>
 
 : Symbology
