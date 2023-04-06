@@ -1,6 +1,14 @@
 ---
 title: "Symbology"
-format: html
+author: "Andrew Grogan-Kaylor"
+date: "today"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme:
+      light: united
+      dark: vapor
 ---
 
 
