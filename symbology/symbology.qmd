@@ -7,7 +7,7 @@ format:
     toc: true
     number-sections: true
     theme:
-      light: cosmo
+      light: united
       dark: vapor
     code-fold: true
     code-summary: "Show the code"
@@ -17,9 +17,13 @@ format:
 
 [Shapefiles](../shapefiles/shapefiles.html) are a standard format for storing geographic data. 
 
-[Shapefiles](../shapefiles/shapefiles.html) generally come in three types: points; lines, and polygons. *Symbology* is the idea of using shapefile attributes to encode *quantitative* or *qualitative* information, such as income or program participation.
+[Shapefiles](../shapefiles/shapefiles.html) generally come in three types: points <span style="color:red">●</span>; lines <span style="color:red;font-size:2em">━</span>; and polygons <span style="color:red;font-size:3em">■</span>. 
 
-# Symbology
+*Symbology* is the idea of using shapefile attributes to encode *quantitative* or *qualitative* information, such as income or program participation.
+
+::: {.panel-tabset}
+
+## Symbology
 
 | Shapefile Type | Symbology|
 |----------------|----------|
@@ -34,9 +38,38 @@ format:
 : Symbology
 
 
-# A Note About the Use of Color
+## A Note About the Use of Color
 
 Color palettes can be either qualitative or quantitative in nature. 
+### Base R
+
+```{r}
+#| fig.cap: "Heatmap Colors"
+#| fig.height: 3
+
+barplot(rep(1,10), col = heat.colors(10), axes = FALSE)
+
+```
+
+```{r}
+#| fig.cap: "Topographical Colors"
+#| fig.height: 3
+
+barplot(rep(1,10), col = topo.colors(10), axes = FALSE)
+
+```
+
+```{r}
+#| fig.cap: "Terrain Colors"
+#| fig.height: 3
+
+
+barplot(rep(1,10), col = terrain.colors(10), axes = FALSE)
+
+```
+
+
+### RColorBrewer
 
 ```{r}
 
@@ -68,3 +101,4 @@ display.brewer.pal(name = "Set1", n = 9)
 
 ```
 
+:::

@@ -113,8 +113,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a></li>
-  <li><a href="#symbology" id="toc-symbology" class="nav-link" data-scroll-target="#symbology"><span class="toc-section-number">2</span>  Symbology</a></li>
-  <li><a href="#a-note-about-the-use-of-color" id="toc-a-note-about-the-use-of-color" class="nav-link" data-scroll-target="#a-note-about-the-use-of-color"><span class="toc-section-number">3</span>  A Note About the Use of Color</a></li>
   </ul>
 </nav>
 </div>
@@ -152,10 +150,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 <p><a href="../shapefiles/shapefiles.html">Shapefiles</a> are a standard format for storing geographic data.</p>
-<p><a href="../shapefiles/shapefiles.html">Shapefiles</a> generally come in three types: points; lines, and polygons. <em>Symbology</em> is the idea of using shapefile attributes to encode <em>quantitative</em> or <em>qualitative</em> information, such as income or program participation.</p>
-</section>
-<section id="symbology" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Symbology</h1>
+<p><a href="../shapefiles/shapefiles.html">Shapefiles</a> generally come in three types: points <span style="color:red">●</span>; lines <span style="color:red;font-size:2em">━</span>; and polygons <span style="color:red;font-size:3em">■</span>.</p>
+<p><em>Symbology</em> is the idea of using shapefile attributes to encode <em>quantitative</em> or <em>qualitative</em> information, such as income or program participation.</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Symbology</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">A Note About the Use of Color</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <table class="table">
 <caption>Symbology</caption>
 <colgroup>
@@ -199,25 +199,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-</section>
-<section id="a-note-about-the-use-of-color" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> A Note About the Use of Color</h1>
-<p>Color palettes can be either qualitative or quantitative in nature.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Color palettes can be either qualitative or quantitative in nature. ### Base R</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer) <span class="co"># A library for color palettes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">10</span>), <span class="at">col =</span> <span class="fu">heat.colors</span>(<span class="dv">10</span>), <span class="at">axes =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="symbology_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Heatmap Colors</figcaption><p></p>
+</figure>
+</div>
+</div>
 </div>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.pal</span>(<span class="at">name =</span> <span class="st">"Blues"</span>, <span class="at">n =</span> <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">10</span>), <span class="at">col =</span> <span class="fu">topo.colors</span>(<span class="dv">10</span>), <span class="at">axes =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="symbology_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Topographical Colors</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">10</span>), <span class="at">col =</span> <span class="fu">terrain.colors</span>(<span class="dv">10</span>), <span class="at">axes =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="symbology_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Terrain Colors</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="rcolorbrewer" class="level3" data-number="1.0.1">
+<h3 data-number="1.0.1" class="anchored" data-anchor-id="rcolorbrewer"><span class="header-section-number">1.0.1</span> RColorBrewer</h3>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer) <span class="co"># A library for color palettes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.pal</span>(<span class="at">name =</span> <span class="st">"Blues"</span>, <span class="at">n =</span> <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="symbology_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 <p></p><figcaption class="figure-caption">Blues Palette</figcaption><p></p>
 </figure>
 </div>
@@ -226,12 +269,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.pal</span>(<span class="at">name =</span> <span class="st">"Spectral"</span>, <span class="at">n =</span> <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.pal</span>(<span class="at">name =</span> <span class="st">"Spectral"</span>, <span class="at">n =</span> <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="symbology_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="symbology_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 <p></p><figcaption class="figure-caption">Spectral Palette</figcaption><p></p>
 </figure>
 </div>
@@ -240,14 +283,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.pal</span>(<span class="at">name =</span> <span class="st">"Set1"</span>, <span class="at">n =</span> <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">display.brewer.pal</span>(<span class="at">name =</span> <span class="st">"Set1"</span>, <span class="at">n =</span> <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="symbology_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="symbology_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 <p></p><figcaption class="figure-caption">Set1 Palette</figcaption><p></p>
 </figure>
+</div>
+</div>
+</div>
+</section>
 </div>
 </div>
 </div>
