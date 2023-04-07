@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2023-04-06">
+<meta name="dcterms.date" content="2023-04-07">
 
 <title>Symbology</title>
 <style>
@@ -113,6 +113,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a></li>
+  <li><a href="#symbology" id="toc-symbology" class="nav-link" data-scroll-target="#symbology"><span class="toc-section-number">2</span>  Symbology</a></li>
+  <li><a href="#demonstration-map" id="toc-demonstration-map" class="nav-link" data-scroll-target="#demonstration-map"><span class="toc-section-number">3</span>  Demonstration Map</a></li>
   </ul>
 </nav>
 </div>
@@ -137,7 +139,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 6, 2023</p>
+      <p class="date">April 7, 2023</p>
     </div>
   </div>
   
@@ -151,6 +153,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 <p><a href="../shapefiles/shapefiles.html">Shapefiles</a> are a standard format for storing geographic data.</p>
 <p><a href="../shapefiles/shapefiles.html">Shapefiles</a> generally come in three types: points <span style="color:red">●</span>; lines <span style="color:red;font-size:2em">━</span>; and polygons <span style="color:red;font-size:3em">■</span>.</p>
+</section>
+<section id="symbology" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Symbology</h1>
 <p><em>Symbology</em> is the idea of using shapefile attributes to encode <em>quantitative</em> or <em>qualitative</em> information, such as income or program participation.</p>
 <div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Symbology</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">A Note About the Use of Color</a></li></ul>
@@ -244,8 +249,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<section id="rcolorbrewer" class="level3" data-number="1.0.1">
-<h3 data-number="1.0.1" class="anchored" data-anchor-id="rcolorbrewer"><span class="header-section-number">1.0.1</span> RColorBrewer</h3>
+<section id="rcolorbrewer" class="level3" data-number="2.0.1">
+<h3 data-number="2.0.1" class="anchored" data-anchor-id="rcolorbrewer"><span class="header-section-number">2.0.1</span> RColorBrewer</h3>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -295,7 +300,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
+<section id="viridis" class="level3" data-number="2.0.2">
+<h3 data-number="2.0.2" class="anchored" data-anchor-id="viridis"><span class="header-section-number">2.0.2</span> Viridis</h3>
+<p>More details can be found at <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html</a></p>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">show_col</span>(<span class="fu">viridis_pal</span>()(<span class="dv">9</span>), </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">ncol =</span> <span class="dv">9</span>, <span class="co"># 9 columns</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">labels =</span> <span class="cn">FALSE</span>) <span class="co"># no labels </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="symbology_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="demonstration-map" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Demonstration Map</h1>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># graphing and mapping</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co"># simple features</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>city_boundary <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"../shapefiles/AA_City_Boundary/AA_City_Boundary.shp"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>clients <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"../shapefiles/clients/clients.shp"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(city_boundary) <span class="sc">+</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"darkgrey"</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> clients,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">color =</span> program), <span class="co"># color = program</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="dv">3</span>, <span class="co"># size</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">alpha =</span> .<span class="dv">75</span>) <span class="sc">+</span> <span class="co"># transparency</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Ann Arbor"</span>,</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Locations of Simulated Clients"</span>,</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Point Color Indicates Program"</span>) <span class="sc">+</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>(<span class="at">name=</span><span class="st">"Program"</span>) <span class="sc">+</span> <span class="co"># nice viridis colors</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="dv">2</span>)), </span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(.<span class="dv">5</span>)),</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"bottom"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="symbology_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>

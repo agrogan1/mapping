@@ -19,6 +19,8 @@ format:
 
 [Shapefiles](../shapefiles/shapefiles.html) generally come in three types: points <span style="color:red">●</span>; lines <span style="color:red;font-size:2em">━</span>; and polygons <span style="color:red;font-size:3em">■</span>. 
 
+# Symbology
+
 *Symbology* is the idea of using shapefile attributes to encode *quantitative* or *qualitative* information, such as income or program participation.
 
 ::: {.panel-tabset}
@@ -100,5 +102,62 @@ display.brewer.pal(name = "Spectral", n = 9)
 display.brewer.pal(name = "Set1", n = 9)
 
 ```
+### Viridis
+
+More details can be found at [https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
+
+```{r}
+
+library(scales)
+
+```
+
+```{r}
+
+show_col(viridis_pal()(9), 
+         ncol = 9, # 9 columns
+         labels = FALSE) # no labels 
+
+```
+
 
 :::
+
+# Demonstration Map
+
+```{r}
+#| message: false
+
+library(ggplot2) # graphing and mapping
+
+library(sf) # simple features
+
+city_boundary <- read_sf("../shapefiles/AA_City_Boundary/AA_City_Boundary.shp")
+
+clients <- read_sf("../shapefiles/clients/clients.shp")
+
+ggplot(city_boundary) +
+  geom_sf(color = "darkgrey", alpha = .5) +
+  geom_sf(data = clients,
+          aes(color = program), # color = program
+          size = 3, # size
+          alpha = .75) + # transparency
+  labs(title = "Ann Arbor",
+       subtitle = "Locations of Simulated Clients",
+       caption = "Point Color Indicates Program") +
+  scale_color_viridis_d(name="Program") + # nice viridis colors
+  theme_minimal() +
+  theme(plot.title = element_text(size = rel(2)), 
+        axis.text = element_text(size = rel(.5)),
+        legend.position = "bottom") 
+
+
+```
+
+
+
+
+
+
+
+
