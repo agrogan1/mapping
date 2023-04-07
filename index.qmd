@@ -102,11 +102,11 @@ plot_geo() %>%
 * [latitude and longitude](./latitude-and-longitude/latitude-and-longitude.html)
 * [map projections](./projections/projections.html)
 * [coordinate reference systems (CRS)](./crs/crs.html)
-* [symbology](./symbology/symbology.html)
 
 # GIS Data
 
 * [shapefiles](./shapefiles/shapefiles.html)
+    - [symbology](./symbology/symbology.html)
     - see below for joining external data to shapefiles
 * text files w/ latitude and longitude
 * addresses ([geocoding](./geocoding/geocoding-demo.html))
