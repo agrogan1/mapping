@@ -162,5 +162,6 @@ knitr::include_graphics("./leafletmap.png")
 * QGIS
 * ArcGIS
 * Tableau
+* Stata
 
 
