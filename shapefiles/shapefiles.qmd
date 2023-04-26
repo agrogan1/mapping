@@ -25,7 +25,7 @@ blockquote {
 
 # Introduction
 
-Shapefiles are a spatial data format originally developed by ESRI[?].
+Shapefiles are a spatial data format originally developed by [ESRI](https://www.esri.com/en-us/home).
 
 Shapefiles come in three major types:
 
@@ -35,7 +35,7 @@ Shapefiles come in three major types:
 
 # Shapefiles Are Lists of Files
 
-Shape*files* are actually a set of associated files, all with the same name, and all in the same directory, but different suffixes. 
+Shape*files* are actually a *set* or *collection* of associated files, all with the same name, and all in the same directory, but different suffixes. 
 
 R--and many other software programs--generally reference the `*.shp` file of the shapefile.
 
@@ -86,17 +86,18 @@ AnnArborRoads <- st_crop(WashtenawRoads,
 
 ```{r}
 
-ggplot(city_boundary) +
+ggplot(city_boundary) + # initial sf data
   # geom_sf(data = buildings,
   #         fill = "lightgrey") +
-  geom_sf(data = AnnArborRoads, 
+  geom_sf(data = AnnArborRoads, # first layer: Ann Arbor roads 
           color = "lightgrey") +
-  geom_sf(color = "red", alpha = .5) + 
-  geom_sf(data = trees, 
-          size = .1, 
+  geom_sf(color = "red", alpha = .5) + # second layer: city boundary
+  geom_sf(data = trees, # third layer: trees
+          size = .01,
           color = "darkgreen") +
   labs(title = "Demonstration of Shapefiles",
-       subtitle = "Green Trees Are Points \nGrey Roads are Lines \nRed City Boundary is Polygon") 
+       subtitle = "Green Trees Are Points \nGrey Roads are Lines \nRed City Boundary is Polygon") +
+  theme(axis.text = element_text(size = rel(.5)))
 
 ```
 

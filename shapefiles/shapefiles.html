@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andy Grogan-Kaylor">
-<meta name="dcterms.date" content="2023-04-06">
+<meta name="dcterms.date" content="2023-04-26">
 
 <title>Shapefiles</title>
 <style>
@@ -141,7 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 6, 2023</p>
+      <p class="date">April 26, 2023</p>
     </div>
   </div>
   
@@ -164,7 +164,7 @@ blockquote {
 </div>
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>Shapefiles are a spatial data format originally developed by ESRI[?].</p>
+<p>Shapefiles are a spatial data format originally developed by <a href="https://www.esri.com/en-us/home">ESRI</a>.</p>
 <p>Shapefiles come in three major types:</p>
 <ul>
 <li><strong>points</strong>, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.</li>
@@ -174,7 +174,7 @@ blockquote {
 </section>
 <section id="shapefiles-are-lists-of-files" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Shapefiles Are Lists of Files</h1>
-<p>Shape<em>files</em> are actually a set of associated files, all with the same name, and all in the same directory, but different suffixes.</p>
+<p>Shape<em>files</em> are actually a <em>set</em> or <em>collection</em> of associated files, all with the same name, and all in the same directory, but different suffixes.</p>
 <p>R–and many other software programs–generally reference the <code>*.shp</code> file of the shapefile.</p>
 <div class="cell">
 <details>
@@ -231,17 +231,18 @@ blockquote {
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(city_boundary) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(city_boundary) <span class="sc">+</span> <span class="co"># initial sf data</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_sf(data = buildings,</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#         fill = "lightgrey") +</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> AnnArborRoads, </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> AnnArborRoads, <span class="co"># first layer: Ann Arbor roads </span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"lightgrey"</span>) <span class="sc">+</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span> </span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> trees, </span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> .<span class="dv">1</span>, </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span> <span class="co"># second layer: city boundary</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> trees, <span class="co"># third layer: trees</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> .<span class="dv">01</span>,</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Demonstration of Shapefiles"</span>,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Green Trees Are Points </span><span class="sc">\n</span><span class="st">Grey Roads are Lines </span><span class="sc">\n</span><span class="st">Red City Boundary is Polygon"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Green Trees Are Points </span><span class="sc">\n</span><span class="st">Grey Roads are Lines </span><span class="sc">\n</span><span class="st">Red City Boundary is Polygon"</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(.<span class="dv">5</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="shapefiles_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
