@@ -92,7 +92,8 @@ mymap <- plot_geo(mydata) %>%
   add_markers(x = ~longitude,
               y = ~latitude,
               color = ~label,
-              colors = "Spectral") %>%
+              colors = "Spectral",
+                  marker = list(size = 15)) %>%
   layout(title = "Randomly Generated Coordinates",
          geo = g)
 
