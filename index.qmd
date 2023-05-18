@@ -144,7 +144,7 @@ knitr::include_graphics("./leafletmap.png")
 * `maps`
 * [`ggplot`](./ggplot/ggplot-map-demo.html)  ([full size map](./ggplot/social-service-agency.pdf)) 
     - [joining external data to shapefiles and mapping with ggplot](./ggplot-merge-with-external-data/ggplot-merge-with-external-data.html)
-* `plotly`
+* [`plotly`](./plotly/plotly-demo.html)
 * [`leaflet`](./leaflet/leaflet-map-demo.html) 
 * `sf`
 * `tidycensus`
@@ -154,7 +154,8 @@ knitr::include_graphics("./leafletmap.png")
 
 * [geocoding](./geocoding/geocoding-demo.html)
 * geoprocessing
-    + selection
+    + selection by attribute
+    + spatial selection
     + spatial joins
     
 # Other Software
