@@ -6,7 +6,7 @@ format:
   html:
     toc: true
     number-sections: true
-    code-fold: true
+    code-fold: false
     code-summary: "Show the code"
     theme:
       light: united
@@ -36,8 +36,14 @@ blockquote {
 # Call Libraries
 
 ```{r}
+#| output: false
 
 library(sf) # simple (spatial) features
+
+```
+
+```{r}
+#| output: false
 
 library(ggplot2) # beautiful graphs
 
@@ -48,6 +54,10 @@ library(ggplot2) # beautiful graphs
 ```{r}
 
 world <- read_sf("../shapefiles/wrld_simpl/wrld_simpl.shp")
+
+```
+
+```{r}
 
 head(world) # show the top (head) of the data
 
