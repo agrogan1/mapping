@@ -1,22 +1,16 @@
 ---
 title: "Map Projections"
 author: "Andy Grogan-Kaylor"
-date: "`r Sys.Date()`"
-output: 
-  distill::distill_article:
-    highlight: haddock
-    toc: yes
-    code_folding: true
-  html_document: 
-    code_download: yes
-    code_folding: hide
-    css: ../UM.css
-    highlight: haddock
-    number_sections: yes
-    toc: yes
-    toc_float:
-      collapsed: no
-      smooth_scroll: yes
+date: "today"
+format:
+  html:
+    toc: true
+    number-sections: true
+    code-fold: true
+    code-summary: "Show the code"
+    theme:
+      light: united
+      dark: vapor
 ---
 
 ```{r setup, include=FALSE}
@@ -29,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE,
 
 ```{css, echo=FALSE}
 
-d-article blockquote {
+blockquote {
   color: black;
   border-left: 2px solid #FFCB05; 
   padding: 0.5em 10px;
@@ -39,7 +33,7 @@ d-article blockquote {
 
 # Set Up The Map
 
-> It's not necessary to understand the code here. But I learned a lot from: [https://plotly.com/r/#maps](https://plotly.com/r/#maps).
+> It is not necessary to understand the code here. But I learned a lot from: [https://plotly.com/r/#maps](https://plotly.com/r/#maps).
 
 ## Call `plotly` Library
 
@@ -71,14 +65,14 @@ mymap0 # replay
 
 mymap <- plot_geo() %>%
   layout(title = "Demonstration Map", 
-         geo = list(showland = TRUE,  
-                    landcolor = toRGB("grey"),
-                    showcountries = TRUE,
-                    showocean = FALSE, 
-                    oceancolor = "LightBlue",
-                    lataxis = list(showgrid = TRUE,
+         geo = list(showland = TRUE, # show land
+                    landcolor = toRGB("grey"), # land color
+                    showcountries = TRUE, # show countries
+                    showocean = FALSE, # show ocean
+                    oceancolor = "lightblue", # ocean color
+                    lataxis = list(showgrid = TRUE, # latitude options
                                    gridcolor = toRGB("black")),
-                    lonaxis = list(showgrid = TRUE,
+                    lonaxis = list(showgrid = TRUE, # longitude options
                                    gridcolor = toRGB("black")))) 
 
 mymap # replay
