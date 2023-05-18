@@ -43,6 +43,7 @@ g <- list(
 # Map Without Geographic Parameters
 
 ```{r}
+#| message: false
 
 plot_geo() 
 
@@ -51,6 +52,7 @@ plot_geo()
 # Map With Geographic Paramters
 
 ```{r}
+#| message: false
 
 plot_geo() %>% 
   layout(geo = g)
