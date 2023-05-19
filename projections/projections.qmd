@@ -51,7 +51,7 @@ library(plotly)
 
 library(plotly)
 
-mymap0 <- plot_geo()
+mymap0 <- plot_geo() # create basic map; read into mymap0
 
 mymap0 # replay
 
