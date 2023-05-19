@@ -106,8 +106,7 @@ plot_geo() %>%
 # GIS Data
 
 * [shapefiles](./shapefiles/shapefiles.html)
-    - [symbology](./symbology/symbology.html)
-    - see below for joining external data to shapefiles
+    + [symbology](./symbology/symbology.html)
 * text files w/ latitude and longitude
 * addresses ([geocoding](./geocoding/geocoding-demo.html))
 * base layers
@@ -143,7 +142,6 @@ knitr::include_graphics("./leafletmap.png")
 
 * `maps`
 * [`ggplot`](./ggplot/ggplot-map-demo.html)  ([full size map](./ggplot/social-service-agency.pdf)) 
-    - [joining external data to shapefiles and mapping with ggplot](./ggplot-merge-with-external-data/ggplot-merge-with-external-data.html)
 * [`plotly`](./plotly/plotly-demo.html)
 * [`leaflet`](./leaflet/leaflet-map-demo.html) 
 * `sf`
@@ -153,10 +151,12 @@ knitr::include_graphics("./leafletmap.png")
 # More Advanced Concepts
 
 * [geocoding](./geocoding/geocoding-demo.html)
+* joining data
+    + [joining external data to shapefiles](./merge-with-external-data/merge-with-external-data.html)
+    + spatial joins
 * geoprocessing
     + selection by attribute
-    + spatial selection
-    + spatial joins
+    + spatial selection 
     
 # Other Software
 
