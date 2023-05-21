@@ -1,0 +1,81 @@
+---
+title: "Demo of `rnaturalearth`"
+author: "Andy Grogan-Kaylor"
+date: "today"
+format:
+  html:
+    toc: true
+    number-sections: true
+    code-fold: false
+    theme:
+      light: united
+      dark: vapor
+---
+
+# Call Libraries
+
+```{css, echo=FALSE}
+
+blockquote {
+  color: black;
+  border-left: 2px solid #FFCB05; 
+  padding: 0.5em 10px;
+}
+  
+```
+
+```{r}
+#| message: false
+
+library(rnaturalearth) # natural earth data
+
+library(ggplot2) # beautiful maps
+
+library(dplyr) # data wrangling
+
+library(sf) # simple (spatial) features
+
+```
+
+# Get `ne_countries` As `sf`
+
+```{r}
+
+ne_countries <- ne_countries(scale = "medium", 
+                             returnclass = "sf") 
+
+```
+
+# Map
+
+```{r}
+
+ggplot(ne_countries) + 
+  geom_sf(aes(fill = income_grp)) +
+  scale_fill_viridis_d(name = "Income Group", 
+                       option = "viridis") +
+  labs(title = "Countries of the World") +
+  theme_minimal()
+
+```
+
+# Write `sf` To Shapefile
+
+```{r}
+#| message: false
+
+ne_countries <- ne_countries %>% select(!pop_est)
+
+st_write(ne_countries, 
+         "../shapefiles/ne_countries/ne_countries.shp",
+         append = FALSE) # replace; don't append
+
+```
+
+
+
+
+
+
+
+
