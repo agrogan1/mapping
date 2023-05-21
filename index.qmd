@@ -145,6 +145,7 @@ knitr::include_graphics("./leafletmap.png")
 * [`plotly`](./plotly/plotly-demo.html)
 * [`leaflet`](./leaflet/leaflet-map-demo.html) 
 * `sf`
+* [`rnaturalearth`](./rnaturalearth/rnaturalearth-demo.html)
 * `tidycensus`
 * `mapboxapi`
 
