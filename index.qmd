@@ -107,7 +107,7 @@ plot_geo() %>%
 
 * [shapefiles](./shapefiles/shapefiles.html)
     + [symbology](./symbology/symbology.html)
-* text files w/ latitude and longitude
+* [text files w/ latitude and longitude](./client-data/client-data.html)
 * addresses ([geocoding](./geocoding/geocoding-demo.html))
 * base layers
 * KML
