@@ -1,6 +1,6 @@
 ---
 title: "Mapping"
-subtitle: "Materials for a GIS & Mapping Course In Development"
+subtitle: "Materials for an *In Development* Course on GIS & Mapping"
 author: "Andy Grogan-Kaylor"
 date: "today"
 execute:
@@ -21,6 +21,16 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
+```{css}
+
+blockquote {
+  color: black;
+  border-left: 2px solid #e95420; 
+  padding: 0.5em 10px;
+}
+
+```
+
 ```{css, eval=FALSE, echo=FALSE}
 
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
@@ -30,6 +40,7 @@ h1, h2, h3, p.subtitle {
 }
 
 ```
+
 
 ```{r}
 #| include: false
