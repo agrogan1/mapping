@@ -54,7 +54,7 @@ library(pander) # nice tables
 
 ```{r, message=FALSE}
 
-clients <- read_csv("../location-data/clients.csv")
+clients <- read_csv("clients.csv")
 
 pander(head(clients)) # top of client data
 
@@ -120,8 +120,7 @@ leaflet(clients) %>%
   setView(lng = mean(clients$longitude), 
           lat = mean(clients$latitude), 
           zoom = 12) %>% 
-  # addTiles() %>%
-  addProviderTiles(providers$Stamen.TonerLite) %>%
+  addTiles() %>% # Open StreetMap
   addCircleMarkers(~longitude, 
              ~latitude, 
              popup = ~paste("Client ID:", as.character(ID)), 
@@ -134,7 +133,8 @@ leaflet(clients) %>%
             title = "Program") %>%
   # addPolygons(data = parks, color = "green") %>%
   # addPolygons(data = university, color = "blue") %>%
-  addPolygons(data = city_boundary, color = "red",
+  addPolygons(data = city_boundary, 
+              color = "red",
               fillOpacity = 0.0)
 
 ```
