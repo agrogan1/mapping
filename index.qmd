@@ -36,7 +36,9 @@ blockquote {
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
 
 h1, h2, h3, p.subtitle {
-  font-family: 'Cabin Sketch', cursive;;
+  color: black;
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: 600;
 }
 
 ```
