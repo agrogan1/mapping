@@ -127,27 +127,17 @@ plot_geo() %>%
 
 # R Libraries
 
-```{r, eval=TRUE}
-#| label: fig-ggplot
-#| fig-cap: "ggplot Map of Simulated Clients"
-#| fig-column: margin
-
-knitr::include_graphics("./ggplot/social-service-agency.png")
-
-```
+::: {.column-margin}
+![ggplot Map of Simulated Clients](./ggplot/social-service-agency.png)
+:::
 
 ::: {.column-margin}
 [[full size `ggplot` map](./ggplot/social-service-agency.pdf)]
 :::
 
-```{r, eval=TRUE}
-#| label: fig-leaflet
-#| fig-cap: "Leaflet Map of Simulated Clients"
-#| fig-column: margin
-
-knitr::include_graphics("./leafletmap.png")
-
-```
+::: {.column-margin}
+![Leaflet Map of Simulated Clients](leafletmap.png)
+:::
 
 ::: {.column-margin}
 [[`leaflet` demo](./leaflet/leaflet-map-demo.html)]
