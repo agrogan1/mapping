@@ -120,7 +120,8 @@ leaflet(clients) %>%
   setView(lng = mean(clients$longitude), 
           lat = mean(clients$latitude), 
           zoom = 12) %>% 
-  addTiles() %>% # Open StreetMap
+  # addTiles() %>% # Open StreetMap
+  addProviderTiles(providers$CartoDB.Positron) %>%
   addCircleMarkers(~longitude, 
              ~latitude, 
              popup = ~paste("Client ID:", as.character(ID)), 
