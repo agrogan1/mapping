@@ -78,6 +78,27 @@ global_data <- read_sf("../mapping/shapefiles/wrld_simpl/wrld_simpl.shp")
 
 ```
 
+::: {.callout-tip collapse="true"}
+## Possible Course Outline for a 5 Week MiniCourse
+1. Introduction
+    + Introduction to the Course
+    + Introduction to Shapefiles As GIS Data
+    + Introduction to R / RStudio / `sf` / `ggplot`
+    + Quick Mapping Exercise
+2. Better Maps
+    + Symbology
+    + Joining by Attribute
+    + `leaflet` (Basemaps)
+3. Data With Geographic Coordinates & Geographic Concepts
+    + Data With Latitude and Longitude
+    + Projections
+    + Coordinate Reference Systems
+4. Geocoding and Geoprocessing
+    + Geocoding
+    + Geoprocessing (Spatial joins)
+5. Lab Day for Final Projects
+:::
+
 # Geographical and GIS Concepts
 
 ```{r, eval=FALSE}
