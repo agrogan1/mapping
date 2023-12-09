@@ -13,33 +13,12 @@ format:
     theme:
       light: united
       dark: vapor
+    css: styles.css
 ---
 
 ```{r setup, include=FALSE}
 
 knitr::opts_chunk$set(echo = FALSE)
-
-```
-
-```{css}
-
-blockquote {
-  color: black;
-  border-left: 2px solid #e95420; 
-  padding: 0.5em 10px;
-}
-
-```
-
-```{css, eval=FALSE, echo=FALSE}
-
-@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
-
-h1, h2, h3, p.subtitle {
-  color: black;
-  font-family: 'Cabin Sketch', cursive;
-  font-weight: 600;
-}
 
 ```
 
@@ -95,7 +74,7 @@ global_data <- read_sf("../mapping/shapefiles/wrld_simpl/wrld_simpl.shp")
     + Coordinate Reference Systems
 4. Geocoding and Geoprocessing
     + Geocoding
-    + Geoprocessing (Spatial joins)
+    + Geoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)
 5. Lab Day for Final Projects
 :::
 
