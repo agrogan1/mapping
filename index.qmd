@@ -62,12 +62,12 @@ global_data <- read_sf("../mapping/shapefiles/wrld_simpl/wrld_simpl.shp")
 1. Introduction
     + Introduction to the Course
     + Introduction to Shapefiles As GIS Data
-    + Introduction to R / RStudio / `sf` / `ggplot`
+    + Introduction to Appropriate Software: R / RStudio / `sf` / `ggplot`; or ArcGIS; or QGIS
     + Quick Mapping Exercise
 2. Better Maps
     + Symbology
     + Joining by Attribute
-    + `leaflet` (Basemaps)
+    + Basemaps e.g. `leaflet`
 3. Data With Geographic Coordinates & Geographic Concepts
     + Data With Latitude and Longitude
     + Projections
