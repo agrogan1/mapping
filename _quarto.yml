@@ -16,6 +16,7 @@ book:
   sharing: [twitter, facebook, linkedin]
   chapters:
     - index.qmd
+    - shapefiles.qmd
   navbar:
     background: primary
     

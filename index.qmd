@@ -39,3 +39,13 @@ global_data <- read_sf("./shapefiles/wrld_simpl/wrld_simpl.shp")
                                                     bringToFront = TRUE)) 
 
 ```
+
+Mapping and GIS have become an increasingly important part of social work, social research, advocacy and program and policy development. This website contains materials for an *in development* course on Mapping and GIS.
+
+
+
+
+
+
+
+
