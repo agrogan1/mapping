@@ -1,4 +1,41 @@
 ---
-title: "Mapping"
+title: "Introduction"
 ---
 
+```{r}
+#| output: false
+#| code-fold: true
+#| code-summary: "Show the code"
+
+library(sf) # simple (spatial) features
+
+library(leaflet) # beautiful maps
+
+library(plotly) # interactive graphics
+
+```
+
+```{r}
+#| label: fig-world
+#| fig-cap: "Countries of the World"
+#| fig-height: 3
+#| warning: false
+#| message: false
+#| code-fold: true
+#| code-summary: "Show the code"
+
+global_data <- read_sf("./shapefiles/wrld_simpl/wrld_simpl.shp")
+
+  leaflet() %>%
+    setView(0, 0, zoom = 1.5) %>%
+    addProviderTiles(providers$Esri.WorldImagery) %>%
+    addPolygons(data = global_data, 
+                fillOpacity = .0, 
+                weight = 2,
+                color = "#009edb", 
+                label = global_data$NAME,
+                highlightOptions = highlightOptions(color = "red", 
+                                                    weight = 2,
+                                                    bringToFront = TRUE)) 
+
+```

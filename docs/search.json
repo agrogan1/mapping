@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mapping",
+    "section": "",
+    "text": "Show the code\nlibrary(sf) # simple (spatial) features\n\nlibrary(leaflet) # beautiful maps\n\nlibrary(plotly) # interactive graphics\n\n\n\n\nShow the code\nglobal_data &lt;- read_sf(\"./shapefiles/wrld_simpl/wrld_simpl.shp\")\n\n  leaflet() %&gt;%\n    setView(0, 0, zoom = 1.5) %&gt;%\n    addProviderTiles(providers$Esri.WorldImagery) %&gt;%\n    addPolygons(data = global_data, \n                fillOpacity = .0, \n                weight = 2,\n                color = \"#009edb\", \n                label = global_data$NAME,\n                highlightOptions = highlightOptions(color = \"red\", \n                                                    weight = 2,\n                                                    bringToFront = TRUE)) \n\n\n\n\n\nFigure 1: Countries of the World"
+  }
+]

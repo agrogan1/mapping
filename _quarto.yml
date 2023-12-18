@@ -16,7 +16,9 @@ book:
   sharing: [twitter, facebook, linkedin]
   chapters:
     - index.qmd
-
+  navbar:
+    background: primary
+    
 google-scholar: true
 
 format:
