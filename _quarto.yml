@@ -1,20 +1,29 @@
 project:
-  type: website
+  type: book
   output-dir: docs
 
-website:
-  title: "mapping-test"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+book:
+  title: "Mapping"
+  subtitle: "Materials for an *In Development* Course on GIS & Mapping"
+  author: "Andrew Grogan-Kaylor"
+  date: "today"
+  twitter-card: true
+  open-graph: true
+  site-url: https://agrogan1.github.io/mapping
+  search: true
+  repo-url: https://github.com/agrogan1/mapping
+  repo-actions: [issue]
+  sharing: [twitter, facebook, linkedin]
+  chapters:
+    - index.qmd
+
+google-scholar: true
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
-    toc: true
+   theme: 
+      light: united
+      dark: vapor
 
 
 
