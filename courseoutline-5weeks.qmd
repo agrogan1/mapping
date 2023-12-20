@@ -1,0 +1,21 @@
+---
+title:  Possible Course Outline for a 5 Week MiniCourse
+---
+
+1. Introduction
+    + Introduction to the Course
+    + Introduction to Shapefiles As GIS Data
+    + Introduction to Appropriate Software: R / RStudio / `sf` / `ggplot`; or ArcGIS; or QGIS
+    + Quick Mapping Exercise
+2. Better Maps
+    + Symbology
+    + Joining by Attribute
+    + Basemaps e.g. `leaflet`
+3. Data With Geographic Coordinates & Geographic Concepts
+    + Data With Latitude and Longitude
+    + Projections
+    + Coordinate Reference Systems
+4. Geocoding and Geoprocessing
+    + Geocoding
+    + Geoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)
+5. Lab Day for Final Projects

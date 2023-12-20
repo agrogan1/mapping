@@ -85,6 +85,7 @@ ggplot(city_boundary) + # initial sf data
           color = "darkgreen") +
   labs(title = "Demonstration of Shapefiles",
        subtitle = "Green Trees Are Points \nGrey Roads are Lines \nRed City Boundary is Polygon") +
+  theme_minimal() +
   theme(axis.text = element_text(size = rel(.5)))
 
 ```

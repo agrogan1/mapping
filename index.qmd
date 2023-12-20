@@ -38,6 +38,10 @@ global_data <- read_sf("./shapefiles/wrld_simpl/wrld_simpl.shp")
 
 Mapping and GIS have become an increasingly important part of social work, social research, advocacy and program and policy development. This website contains materials for an *in development* course on Mapping and GIS.
 
+Much of the content of this site is built around the use of R software, though many of the concepts are applicable across GIS and mapping applications such as R, Stata, ArcGIS and QGIS.
+
+
+
 
 
 

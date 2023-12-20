@@ -16,8 +16,11 @@ book:
   sharing: [twitter, facebook, linkedin]
   chapters:
     - index.qmd
-    - shapefiles.qmd
-    - shapefiles2.qmd
+    - courseoutline-5weeks.qmd
+    - part: "GIS Data"
+      chapters:
+        - shapefiles.qmd
+        - shapefiles2.qmd
   navbar:
     background: primary
     
