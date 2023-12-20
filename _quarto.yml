@@ -1,7 +1,7 @@
 project:
   type: book
   output-dir: docs
-
+    
 book:
   title: "Mapping"
   subtitle: "Materials for an *In Development* Course on GIS & Mapping"
@@ -17,6 +17,7 @@ book:
   chapters:
     - index.qmd
     - shapefiles.qmd
+    - shapefiles2.qmd
   navbar:
     background: primary
     

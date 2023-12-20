@@ -1,0 +1,27 @@
+---
+title: "Shapefiles on This Site"
+---
+
+For user convenience, these shapefiles are available on this site.
+
+```{r}
+#| echo: false
+ 
+prefix <- "https://github.com/agrogan1/mapping/raw/main/shapefiles/"
+
+file <- list.files("shapefiles/", pattern = "zip")
+
+URL <- paste0(prefix, file)
+
+shapefile =  paste0("<a href =",
+               URL,
+               ">",
+               file,
+               "</a>")
+
+mydata <- data.frame(shapefile)
+
+DT::datatable(mydata, escape = F)
+
+
+```
