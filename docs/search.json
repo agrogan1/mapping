@@ -40,5 +40,12 @@
     "title": "2  Shapefiles",
     "section": "2.5 Use ggplot to Map the Shapefiles",
     "text": "2.5 Use ggplot to Map the Shapefiles\n\n\nShow the code\nggplot(city_boundary) + # initial sf data\n  # geom_sf(data = buildings,\n  #         fill = \"lightgrey\") +\n  geom_sf(data = AnnArborRoads, # first layer: Ann Arbor roads \n          color = \"lightgrey\") +\n  geom_sf(color = \"red\", alpha = .5) + # second layer: city boundary\n  geom_sf(data = trees, # third layer: trees\n          size = .01,\n          color = \"darkgreen\") +\n  labs(title = \"Demonstration of Shapefiles\",\n       subtitle = \"Green Trees Are Points \\nGrey Roads are Lines \\nRed City Boundary is Polygon\") +\n  theme(axis.text = element_text(size = rel(.5)))"
+  },
+  {
+    "objectID": "shapefiles2.html",
+    "href": "shapefiles2.html",
+    "title": "3  Shapefiles on This Site",
+    "section": "",
+    "text": "For user convenience, these shapefiles are available on this site."
   }
 ]

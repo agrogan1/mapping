@@ -2,10 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://agrogan1.github.io/mapping/index.html</loc>
-    <lastmod>2023-12-20T17:33:37.084Z</lastmod>
+    <lastmod>2023-12-20T17:47:02.690Z</lastmod>
   </url>
   <url>
     <loc>https://agrogan1.github.io/mapping/shapefiles.html</loc>
     <lastmod>2023-12-20T17:33:54.651Z</lastmod>
+  </url>
+  <url>
+    <loc>https://agrogan1.github.io/mapping/shapefiles2.html</loc>
+    <lastmod>2023-12-20T17:46:30.301Z</lastmod>
   </url>
 </urlset>
