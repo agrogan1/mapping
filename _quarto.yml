@@ -21,6 +21,9 @@ book:
       chapters:
         - shapefiles.qmd
         - shapefiles2.qmd
+    - part: "R Libraries"
+      chapters: 
+        - ggplot-map.qmd
   navbar:
     background: primary
     
