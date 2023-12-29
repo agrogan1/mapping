@@ -24,6 +24,7 @@ book:
     - part: "R Libraries"
       chapters: 
         - ggplot-map.qmd
+        - location-data.qmd
   navbar:
     background: primary
     
