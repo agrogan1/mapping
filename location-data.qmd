@@ -2,6 +2,21 @@
 title: "Making Maps With `ggplot` Using Location Data"
 ---
 
+# Call Libraries
+
+```{r}
+#| code-fold: true
+
+library(readr) # read CSV
+
+library(dplyr) # data wrangling
+
+library(sf) # simple features
+
+library(ggplot2) # maps
+
+```
+
 # Use `read_csv` to Read Text File with Client Data
 
 ```{r}
@@ -29,17 +44,9 @@ clients <- clients %>%
 ```{r}
 #| code-fold: true
 
-# 4326 -> WGS1984
-
-# point <- st_as_sf(clients,
-#                   coords = c("longitude", "latitude"),
-#                   crs = 4326)
-
-# 4269 -> NAD1983 (A2 is NAD1983)
-
 point <- st_as_sf(clients, 
                   coords = c("longitude", "latitude"), 
-                  crs = 4269) 
+                  crs = 4269) # A2 is NAD1983
 
 # write to shapefile
 
@@ -48,3 +55,48 @@ st_write(point,
          append = FALSE) # replace; don't append
 
 ```
+
+# Read in Shapefile(s)
+
+```{r}
+#| code-fold: true
+
+city_boundary <- read_sf("./shapefiles/AA_City_Boundary/AA_City_Boundary.shp")
+
+WashtenawRoads <- read_sf("./shapefiles/Roads/RoadCenterlines.shp")
+
+AnnArborRoads <- st_crop(WashtenawRoads, 
+                         city_boundary) # crop to only get A2 roads
+
+```
+
+# Map
+
+```{r}
+#| code-fold: true
+
+ggplot(city_boundary) +
+  geom_sf(alpha = .5) +
+  geom_sf(data = AnnArborRoads, 
+          color = "darkgrey") +
+  geom_sf(data = point,
+          aes(color = program),
+          size = 3) +
+labs(title = "Ann Arbor",
+     subtitle = "Location of Program Clients") +
+  scale_color_viridis_d() +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+  theme(plot.title = element_text(size = rel(2)), 
+        axis.text = element_text(size = rel(.5)),
+        legend.position = "bottom") 
+
+```
+
+
+
+
+
+
+
+
