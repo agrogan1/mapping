@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./ggplot-map.html" rel="next">
 <link href="./shapefiles.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -186,6 +187,29 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">R Libraries</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ggplot-map.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./location-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Making Maps With <code>ggplot</code> Using Location Data</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -218,8 +242,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell">
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-663cdb0529d2cb79bc0f" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-663cdb0529d2cb79bc0f">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8"],["<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/a2trees.zip>a2trees.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_Building_Footprints.zip>AA_Building_Footprints.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_City_Boundary.zip>AA_City_Boundary.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_Parks.zip>AA_Parks.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_University.zip>AA_University.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/Roads.zip>Roads.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/STATES cb_2016_us_state_500k.zip>STATES cb_2016_us_state_500k.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/watersheds.zip>watersheds.zip<\/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>shapefile<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-01cd90d61c35507a57ae" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-01cd90d61c35507a57ae">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8"],["<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/a2trees.zip>a2trees.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_Building_Footprints.zip>AA_Building_Footprints.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_City_Boundary.zip>AA_City_Boundary.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_Parks.zip>AA_Parks.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_University.zip>AA_University.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/Roads.zip>Roads.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/STATES cb_2016_us_state_500k.zip>STATES cb_2016_us_state_500k.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/watersheds.zip>watersheds.zip<\/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>shapefile<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
@@ -581,6 +605,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./ggplot-map.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
