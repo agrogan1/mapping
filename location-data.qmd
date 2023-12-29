@@ -6,6 +6,7 @@ title: "Making Maps With `ggplot` Using Location Data"
 
 ```{r}
 #| code-fold: true
+#| output: false
 
 library(readr) # read CSV
 
@@ -21,6 +22,7 @@ library(ggplot2) # maps
 
 ```{r}
 #| code-fold: true
+#| output: false
 
 clients <- read_csv("./location-data/clients.csv")
 
@@ -30,6 +32,7 @@ clients <- read_csv("./location-data/clients.csv")
 
 ```{r}
 #| code-fold: true
+#| output: false
 
 clients <- clients %>% 
   filter(latitude <= 42.33 &
@@ -43,6 +46,7 @@ clients <- clients %>%
 
 ```{r}
 #| code-fold: true
+#| output: false
 
 point <- st_as_sf(clients, 
                   coords = c("longitude", "latitude"), 
@@ -60,6 +64,7 @@ st_write(point,
 
 ```{r}
 #| code-fold: true
+#| output: false
 
 city_boundary <- read_sf("./shapefiles/AA_City_Boundary/AA_City_Boundary.shp")
 
@@ -74,6 +79,7 @@ AnnArborRoads <- st_crop(WashtenawRoads,
 
 ```{r}
 #| code-fold: true
+#| output: false
 
 ggplot(city_boundary) +
   geom_sf(alpha = .5) +
