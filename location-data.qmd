@@ -2,7 +2,7 @@
 title: "Making Maps With `ggplot` Using Location Data"
 ---
 
-# Call Libraries
+## Call Libraries
 
 ```{r}
 #| code-fold: true
@@ -18,7 +18,7 @@ library(ggplot2) # maps
 
 ```
 
-# Use `read_csv` to Read Text File with Client Data
+## Use `read_csv` to Read Text File with Client Data
 
 ```{r}
 #| code-fold: true
@@ -28,7 +28,7 @@ clients <- read_csv("./location-data/clients.csv")
 
 ```
 
-# Only Clients in Ann Arbor Area
+## Only Clients in Ann Arbor Area
 
 ```{r}
 #| code-fold: true
@@ -42,7 +42,7 @@ clients <- clients %>%
 
 ```
 
-# Convert Clients to `sf` Object While Indicating *Coordinate Reference System* (CRS)
+## Convert Clients to `sf` Object While Indicating *Coordinate Reference System* (CRS)
 
 ```{r}
 #| code-fold: true
@@ -60,7 +60,7 @@ st_write(point,
 
 ```
 
-# Read in Shapefile(s)
+## Read in Shapefile(s)
 
 ```{r}
 #| code-fold: true
@@ -75,7 +75,7 @@ AnnArborRoads <- st_crop(WashtenawRoads,
 
 ```
 
-# Map
+## Map
 
 ```{r}
 #| code-fold: true

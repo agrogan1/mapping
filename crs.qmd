@@ -2,11 +2,11 @@
 title: "Coordinate Reference Systems (CRS)"
 ---
 
-# Coordinate Reference Systems
+## Coordinate Reference Systems
 
 > "Map projections try to portray the surface of the earth or a portion of the earth on a flat piece of paper or computer screen. A coordinate reference system (CRS) then defines, with the help of coordinates, how the two-dimensional, projected map in your GIS is related to real places on the earth. The decision as to which map projection and coordinate reference system to use, depends on the regional extent of the area you want to work in, on the analysis you want to do and often on the availability of data." From [qgis.org](https://docs.qgis.org/2.8/en/docs/gentle_gis_introduction/coordinate_reference_systems.html)
 
-# Call Libraries
+## Call Libraries
 
 ```{r}
 #| output: false
@@ -18,7 +18,7 @@ library(ggplot2) # beautiful graphs
 
 ```
 
-# Open `wrld_simpl` Shapefile
+## Open `wrld_simpl` Shapefile
 
 ```{r}
 #| code-fold: true
@@ -34,7 +34,7 @@ head(world) # show the top (head) of the data
 
 ```
 
-# Find Out the CRS of `wrld_simpl`
+## Find Out the CRS of `wrld_simpl`
 
 As with many global data sets (and many other data sets), `wrld_simpl` uses *World Geodetic System 1984*.
 
@@ -45,7 +45,7 @@ st_crs(world)
 
 ```
 
-# Plot The `wrld_simpl` Data
+## Plot The `wrld_simpl` Data
 
 ```{r}
 #| code-fold: true

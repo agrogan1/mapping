@@ -2,7 +2,7 @@
 title: "Making Maps with `ggplot`"
 ---
 
-# Call the libraries
+## Call the libraries
 
 ```{r, message=FALSE}
 #| message: false
@@ -18,7 +18,7 @@ library(readr) # import csv
 
 ```
 
-# Use `read_sf` To Open Shapefiles
+## Use `read_sf` To Open Shapefiles
 
 > Getting the directory and filename right is important.
 
@@ -46,7 +46,7 @@ AnnArborRoads <- st_crop(WashtenawRoads,
 ```
 
 
-# Use `ggplot` to Make The Map
+## Use `ggplot` to Make The Map
 
 ```{r}
 #| eval: false

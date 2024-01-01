@@ -274,11 +274,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#coordinate-reference-systems" id="toc-coordinate-reference-systems" class="nav-link active" data-scroll-target="#coordinate-reference-systems"><span class="header-section-number">5</span> Coordinate Reference Systems</a></li>
-  <li><a href="#call-libraries" id="toc-call-libraries" class="nav-link" data-scroll-target="#call-libraries"><span class="header-section-number">6</span> Call Libraries</a></li>
-  <li><a href="#open-wrld_simpl-shapefile" id="toc-open-wrld_simpl-shapefile" class="nav-link" data-scroll-target="#open-wrld_simpl-shapefile"><span class="header-section-number">7</span> Open <code>wrld_simpl</code> Shapefile</a></li>
-  <li><a href="#find-out-the-crs-of-wrld_simpl" id="toc-find-out-the-crs-of-wrld_simpl" class="nav-link" data-scroll-target="#find-out-the-crs-of-wrld_simpl"><span class="header-section-number">8</span> Find Out the CRS of <code>wrld_simpl</code></a></li>
-  <li><a href="#plot-the-wrld_simpl-data" id="toc-plot-the-wrld_simpl-data" class="nav-link" data-scroll-target="#plot-the-wrld_simpl-data"><span class="header-section-number">9</span> Plot The <code>wrld_simpl</code> Data</a></li>
+  <li><a href="#coordinate-reference-systems" id="toc-coordinate-reference-systems" class="nav-link active" data-scroll-target="#coordinate-reference-systems"><span class="header-section-number">4.1</span> Coordinate Reference Systems</a></li>
+  <li><a href="#call-libraries" id="toc-call-libraries" class="nav-link" data-scroll-target="#call-libraries"><span class="header-section-number">4.2</span> Call Libraries</a></li>
+  <li><a href="#open-wrld_simpl-shapefile" id="toc-open-wrld_simpl-shapefile" class="nav-link" data-scroll-target="#open-wrld_simpl-shapefile"><span class="header-section-number">4.3</span> Open <code>wrld_simpl</code> Shapefile</a></li>
+  <li><a href="#find-out-the-crs-of-wrld_simpl" id="toc-find-out-the-crs-of-wrld_simpl" class="nav-link" data-scroll-target="#find-out-the-crs-of-wrld_simpl"><span class="header-section-number">4.4</span> Find Out the CRS of <code>wrld_simpl</code></a></li>
+  <li><a href="#plot-the-wrld_simpl-data" id="toc-plot-the-wrld_simpl-data" class="nav-link" data-scroll-target="#plot-the-wrld_simpl-data"><span class="header-section-number">4.5</span> Plot The <code>wrld_simpl</code> Data</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -302,14 +302,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="coordinate-reference-systems" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Coordinate Reference Systems</h1>
+<section id="coordinate-reference-systems" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="coordinate-reference-systems"><span class="header-section-number">4.1</span> Coordinate Reference Systems</h2>
 <blockquote class="blockquote">
 <p>“Map projections try to portray the surface of the earth or a portion of the earth on a flat piece of paper or computer screen. A coordinate reference system (CRS) then defines, with the help of coordinates, how the two-dimensional, projected map in your GIS is related to real places on the earth. The decision as to which map projection and coordinate reference system to use, depends on the regional extent of the area you want to work in, on the analysis you want to do and often on the availability of data.” From <a href="https://docs.qgis.org/2.8/en/docs/gentle_gis_introduction/coordinate_reference_systems.html">qgis.org</a></p>
 </blockquote>
 </section>
-<section id="call-libraries" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Call Libraries</h1>
+<section id="call-libraries" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="call-libraries"><span class="header-section-number">4.2</span> Call Libraries</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -319,8 +319,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="open-wrld_simpl-shapefile" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Open <code>wrld_simpl</code> Shapefile</h1>
+<section id="open-wrld_simpl-shapefile" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="open-wrld_simpl-shapefile"><span class="header-section-number">4.3</span> Open <code>wrld_simpl</code> Shapefile</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -351,8 +351,8 @@ Geodetic CRS:  GCS_unknown
 </div>
 </div>
 </section>
-<section id="find-out-the-crs-of-wrld_simpl" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Find Out the CRS of <code>wrld_simpl</code></h1>
+<section id="find-out-the-crs-of-wrld_simpl" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="find-out-the-crs-of-wrld_simpl"><span class="header-section-number">4.4</span> Find Out the CRS of <code>wrld_simpl</code></h2>
 <p>As with many global data sets (and many other data sets), <code>wrld_simpl</code> uses <em>World Geodetic System 1984</em>.</p>
 <div class="cell">
 <details>
@@ -380,8 +380,8 @@ GEOGCRS["GCS_unknown",
 </div>
 </div>
 </section>
-<section id="plot-the-wrld_simpl-data" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Plot The <code>wrld_simpl</code> Data</h1>
+<section id="plot-the-wrld_simpl-data" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="plot-the-wrld_simpl-data"><span class="header-section-number">4.5</span> Plot The <code>wrld_simpl</code> Data</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>

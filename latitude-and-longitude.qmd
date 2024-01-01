@@ -2,14 +2,14 @@
 title: "Latitude and Longitude"
 ---
 
-# Introduction
+## Introduction
 
 Latitude and longitude are coordinates for locating objects on earth.
 
 * Latitude represents distance from the *equator*. 0 latitude is at the equator. +90 latitude, or 90N, is at the North Pole. -90 latitude, or 90S, is at the South Pole.
 * Longitude represents distance from the *prime meridian*. 0 longitude is at the prime meridian. +180 and -180, or 180E and 180W, meet at the other side of the world.
 
-# Call the Libraries
+## Call the Libraries
 
 ```{r}
 #| message: false
@@ -19,7 +19,7 @@ library(plotly)
 
 ```
 
-# Generate Some Random Coordinates
+## Generate Some Random Coordinates
 
 ```{r}
 #| code-fold: true
@@ -58,7 +58,7 @@ mydata # replay
 
 ```
 
-# Map The Coordinates
+## Map The Coordinates
 
 ```{r}
 #| code-fold: true
