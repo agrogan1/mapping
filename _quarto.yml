@@ -17,6 +17,9 @@ book:
   chapters:
     - index.qmd
     - courseoutline-5weeks.qmd
+    - part: "Geographical and GIS Concepts"
+      chapters: 
+        - crs.qmd
     - part: "GIS Data"
       chapters:
         - shapefiles.qmd
