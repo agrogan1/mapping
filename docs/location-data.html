@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapping - 6&nbsp; Making Maps With ggplot Using Location Data</title>
+<title>Mapping - 8&nbsp; Making Maps With ggplot Using Location Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,11 +98,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="Mapping - 6&nbsp; Making Maps With ggplot Using Location Data">
+<meta property="og:title" content="Mapping - 8&nbsp; Making Maps With ggplot Using Location Data">
 <meta property="og:site-name" content="Mapping">
-<meta name="twitter:title" content="Mapping - 6&nbsp; Making Maps With ggplot Using Location Data">
+<meta name="twitter:title" content="Mapping - 8&nbsp; Making Maps With ggplot Using Location Data">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[6]{.chapter-number}&nbsp; [Making Maps With `ggplot` Using Location Data]{.chapter-title}">
+<meta name="citation_title" content="[8]{.chapter-number}&nbsp; [Making Maps With `ggplot` Using Location Data]{.chapter-title}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/location-data.html">
 <meta name="citation_language" content="en">
 </head>
@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ggplot-map.html">R Libraries</a></li><li class="breadcrumb-item"><a href="./location-data.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Making Maps With `ggplot` Using Location Data</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ggplot-map.html">R Libraries</a></li><li class="breadcrumb-item"><a href="./location-data.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Making Maps With `ggplot` Using Location Data</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -188,7 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">GIS Data</span></a>
+ <span class="menu-text">Geographical and GIS Concepts</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -196,14 +196,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./shapefiles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Shapefiles</span></span></a>
+  <a href="./latitude-and-longitude.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Latitude and Longitude</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./shapefiles2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></span></a>
+  <a href="./crs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Coordinate Reference Systems (CRS)</span></span></a>
   </div>
 </li>
       </ul>
@@ -211,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">R Libraries</span></a>
+ <span class="menu-text">GIS Data</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -219,14 +219,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./shapefiles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Shapefiles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./shapefiles2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">R Libraries</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./ggplot-map.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./location-data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Making Maps With <code>ggplot</code> Using Location Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Making Maps With <code>ggplot</code> Using Location Data</span></span></a>
   </div>
 </li>
       </ul>
@@ -241,12 +264,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#call-libraries" id="toc-call-libraries" class="nav-link active" data-scroll-target="#call-libraries"><span class="header-section-number">7</span> Call Libraries</a></li>
-  <li><a href="#use-read_csv-to-read-text-file-with-client-data" id="toc-use-read_csv-to-read-text-file-with-client-data" class="nav-link" data-scroll-target="#use-read_csv-to-read-text-file-with-client-data"><span class="header-section-number">8</span> Use <code>read_csv</code> to Read Text File with Client Data</a></li>
-  <li><a href="#only-clients-in-ann-arbor-area" id="toc-only-clients-in-ann-arbor-area" class="nav-link" data-scroll-target="#only-clients-in-ann-arbor-area"><span class="header-section-number">9</span> Only Clients in Ann Arbor Area</a></li>
-  <li><a href="#convert-clients-to-sf-object-while-indicating-coordinate-reference-system-crs" id="toc-convert-clients-to-sf-object-while-indicating-coordinate-reference-system-crs" class="nav-link" data-scroll-target="#convert-clients-to-sf-object-while-indicating-coordinate-reference-system-crs"><span class="header-section-number">10</span> Convert Clients to <code>sf</code> Object While Indicating <em>Coordinate Reference System</em> (CRS)</a></li>
-  <li><a href="#read-in-shapefiles" id="toc-read-in-shapefiles" class="nav-link" data-scroll-target="#read-in-shapefiles"><span class="header-section-number">11</span> Read in Shapefile(s)</a></li>
-  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><span class="header-section-number">12</span> Map</a></li>
+  <li><a href="#call-libraries" id="toc-call-libraries" class="nav-link active" data-scroll-target="#call-libraries"><span class="header-section-number">9</span> Call Libraries</a></li>
+  <li><a href="#use-read_csv-to-read-text-file-with-client-data" id="toc-use-read_csv-to-read-text-file-with-client-data" class="nav-link" data-scroll-target="#use-read_csv-to-read-text-file-with-client-data"><span class="header-section-number">10</span> Use <code>read_csv</code> to Read Text File with Client Data</a></li>
+  <li><a href="#only-clients-in-ann-arbor-area" id="toc-only-clients-in-ann-arbor-area" class="nav-link" data-scroll-target="#only-clients-in-ann-arbor-area"><span class="header-section-number">11</span> Only Clients in Ann Arbor Area</a></li>
+  <li><a href="#convert-clients-to-sf-object-while-indicating-coordinate-reference-system-crs" id="toc-convert-clients-to-sf-object-while-indicating-coordinate-reference-system-crs" class="nav-link" data-scroll-target="#convert-clients-to-sf-object-while-indicating-coordinate-reference-system-crs"><span class="header-section-number">12</span> Convert Clients to <code>sf</code> Object While Indicating <em>Coordinate Reference System</em> (CRS)</a></li>
+  <li><a href="#read-in-shapefiles" id="toc-read-in-shapefiles" class="nav-link" data-scroll-target="#read-in-shapefiles"><span class="header-section-number">13</span> Read in Shapefile(s)</a></li>
+  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><span class="header-section-number">14</span> Map</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -255,7 +278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Making Maps With <code>ggplot</code> Using Location Data</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Making Maps With <code>ggplot</code> Using Location Data</span></h1>
 </div>
 
 
@@ -270,8 +293,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="call-libraries" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Call Libraries</h1>
+<section id="call-libraries" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Call Libraries</h1>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -285,8 +308,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="use-read_csv-to-read-text-file-with-client-data" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Use <code>read_csv</code> to Read Text File with Client Data</h1>
+<section id="use-read_csv-to-read-text-file-with-client-data" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Use <code>read_csv</code> to Read Text File with Client Data</h1>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -294,8 +317,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="only-clients-in-ann-arbor-area" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Only Clients in Ann Arbor Area</h1>
+<section id="only-clients-in-ann-arbor-area" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Only Clients in Ann Arbor Area</h1>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -307,8 +330,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="convert-clients-to-sf-object-while-indicating-coordinate-reference-system-crs" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Convert Clients to <code>sf</code> Object While Indicating <em>Coordinate Reference System</em> (CRS)</h1>
+<section id="convert-clients-to-sf-object-while-indicating-coordinate-reference-system-crs" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Convert Clients to <code>sf</code> Object While Indicating <em>Coordinate Reference System</em> (CRS)</h1>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -324,8 +347,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="read-in-shapefiles" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Read in Shapefile(s)</h1>
+<section id="read-in-shapefiles" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Read in Shapefile(s)</h1>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -338,8 +361,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="map" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Map</h1>
+<section id="map" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Map</h1>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -716,7 +739,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./ggplot-map.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

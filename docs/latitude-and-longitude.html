@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapping - 5&nbsp; Shapefiles</title>
+<title>Mapping - 3&nbsp; Latitude and Longitude</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./shapefiles2.html" rel="next">
-<link href="./crs.html" rel="prev">
+<link href="./crs.html" rel="next">
+<link href="./courseoutline-5weeks.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -97,22 +97,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.3/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
-<meta property="og:title" content="Mapping - 5&nbsp; Shapefiles">
+<meta property="og:title" content="Mapping - 3&nbsp; Latitude and Longitude">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://agrogan1.github.io/mapping/shapefiles_files/figure-html/unnamed-chunk-4-1.png">
 <meta property="og:site-name" content="Mapping">
-<meta property="og:image:height" content="960">
-<meta property="og:image:width" content="1344">
-<meta name="twitter:title" content="Mapping - 5&nbsp; Shapefiles">
+<meta name="twitter:title" content="Mapping - 3&nbsp; Latitude and Longitude">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://agrogan1.github.io/mapping/shapefiles_files/figure-html/unnamed-chunk-4-1.png">
-<meta name="twitter:image-height" content="960">
-<meta name="twitter:image-width" content="1344">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="citation_title" content="[5]{.chapter-number}&nbsp; [Shapefiles]{.chapter-title}">
-<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/shapefiles.html">
+<meta name="twitter:card" content="summary">
+<meta name="citation_title" content="[3]{.chapter-number}&nbsp; [Latitude and Longitude]{.chapter-title}">
+<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/latitude-and-longitude.html">
 <meta name="citation_language" content="en">
 </head>
 
@@ -162,7 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./shapefiles.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./shapefiles.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Shapefiles</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./latitude-and-longitude.html">Geographical and GIS Concepts</a></li><li class="breadcrumb-item"><a href="./latitude-and-longitude.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Latitude and Longitude</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -205,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./latitude-and-longitude.html" class="sidebar-item-text sidebar-link">
+  <a href="./latitude-and-longitude.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Latitude and Longitude</span></span></a>
   </div>
 </li>
@@ -228,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./shapefiles.html" class="sidebar-item-text sidebar-link active">
+  <a href="./shapefiles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Shapefiles</span></span></a>
   </div>
 </li>
@@ -273,11 +275,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
-  <li><a href="#shapefiles-are-lists-of-files" id="toc-shapefiles-are-lists-of-files" class="nav-link" data-scroll-target="#shapefiles-are-lists-of-files"><span class="header-section-number">5.2</span> Shapefiles Are Lists of Files</a></li>
-  <li><a href="#call-libraries" id="toc-call-libraries" class="nav-link" data-scroll-target="#call-libraries"><span class="header-section-number">5.3</span> Call Libraries</a></li>
-  <li><a href="#open-shapefiles" id="toc-open-shapefiles" class="nav-link" data-scroll-target="#open-shapefiles"><span class="header-section-number">5.4</span> Open Shapefiles</a></li>
-  <li><a href="#use-ggplot-to-map-the-shapefiles" id="toc-use-ggplot-to-map-the-shapefiles" class="nav-link" data-scroll-target="#use-ggplot-to-map-the-shapefiles"><span class="header-section-number">5.5</span> Use <code>ggplot</code> to Map the Shapefiles</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">4</span> Introduction</a></li>
+  <li><a href="#call-the-libraries" id="toc-call-the-libraries" class="nav-link" data-scroll-target="#call-the-libraries"><span class="header-section-number">5</span> Call the Libraries</a></li>
+  <li><a href="#generate-some-random-coordinates" id="toc-generate-some-random-coordinates" class="nav-link" data-scroll-target="#generate-some-random-coordinates"><span class="header-section-number">6</span> Generate Some Random Coordinates</a></li>
+  <li><a href="#map-the-coordinates" id="toc-map-the-coordinates" class="nav-link" data-scroll-target="#map-the-coordinates"><span class="header-section-number">7</span> Map The Coordinates</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -286,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Shapefiles</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Latitude and Longitude</span></h1>
 </div>
 
 
@@ -301,91 +302,101 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="introduction" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">5.1</span> Introduction</h2>
-<p>Shapefiles are a spatial data format originally developed by <a href="https://www.esri.com/en-us/home">ESRI</a>.</p>
-<p>Shapefiles come in three major types:</p>
+<section id="introduction" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Introduction</h1>
+<p>Latitude and longitude are coordinates for locating objects on earth.</p>
 <ul>
-<li><strong>points</strong>, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.</li>
-<li><strong>lines</strong>️, to represent line features such as roads, trails, or rivers.</li>
-<li><strong>polygons</strong>, to represent polygon features such as outlines of cities, states, or countries.</li>
+<li>Latitude represents distance from the <em>equator</em>. 0 latitude is at the equator. +90 latitude, or 90N, is at the North Pole. -90 latitude, or 90S, is at the South Pole.</li>
+<li>Longitude represents distance from the <em>prime meridian</em>. 0 longitude is at the prime meridian. +180 and -180, or 180E and 180W, meet at the other side of the world.</li>
 </ul>
 </section>
-<section id="shapefiles-are-lists-of-files" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="shapefiles-are-lists-of-files"><span class="header-section-number">5.2</span> Shapefiles Are Lists of Files</h2>
-<p>Shape<em>files</em> are actually a <em>set</em> or <em>collection</em> of associated files, all with the same name, and all in the same directory, but different suffixes.</p>
-<p>R–and many other software programs–generally reference the <code>*.shp</code> file of the shapefile.</p>
+<section id="call-the-libraries" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Call the Libraries</h1>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="st">"./shapefiles/a2trees"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="generate-some-random-coordinates" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Generate Some Random Coordinates</h1>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3846</span>) <span class="co"># random seed</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="co"># number of points</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># latitude from -90 to +90</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>latitude <span class="ot">&lt;-</span> <span class="fu">runif</span>(N, <span class="at">min =</span> <span class="sc">-</span><span class="dv">90</span>, <span class="at">max =</span> <span class="dv">90</span>) </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># longitude from + -180 to + 180</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>longitude <span class="ot">&lt;-</span> <span class="fu">runif</span>(N, <span class="at">min =</span> <span class="sc">-</span><span class="dv">180</span>, <span class="at">max =</span> <span class="dv">180</span>) </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 1st point reset to 0, 0</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>latitude[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co"># equator</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>longitude[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co"># prime meridian</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>latitude[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="dv">42</span> <span class="co"># Ann Arbor-ish</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>longitude[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">83.5</span> <span class="co"># Ann Arbor-ish</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># label</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>label <span class="ot">&lt;-</span> LETTERS[<span class="dv">1</span><span class="sc">:</span>N] <span class="co"># label with letters of alphabet</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># dataframe</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(latitude, longitude, label)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>mydata <span class="co"># replay</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "AA_Trees.cpg"     "AA_Trees.dbf"     "AA_Trees.prj"     "AA_Trees.sbn"    
-[5] "AA_Trees.sbx"     "AA_Trees.shp"     "AA_Trees.shp.xml" "AA_Trees.shx"    </code></pre>
+<pre><code>     latitude  longitude label
+1    0.000000    0.00000     A
+2   42.000000  -83.50000     B
+3    7.023357   73.49444     C
+4  -38.775631  159.53317     D
+5  -80.547165 -129.12572     E
+6  -17.472905   25.95547     F
+7  -69.826706  -54.36372     G
+8   10.498416   14.20623     H
+9  -72.440487  -27.65036     I
+10 -46.753424  130.83572     J</code></pre>
 </div>
 </div>
 </section>
-<section id="call-libraries" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="call-libraries"><span class="header-section-number">5.3</span> Call Libraries</h2>
+<section id="map-the-coordinates" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Map The Coordinates</h1>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># beautiful graphs</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># library(dplyr) # data wrangling</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co"># simple (spatial) features</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># library(readr) # import csv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="open-shapefiles" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="open-shapefiles"><span class="header-section-number">5.4</span> Open Shapefiles</h2>
-<div class="cell">
-<details>
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>city_boundary <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>buildings <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"./shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp"</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>trees <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"./shapefiles/a2trees/AA_Trees.shp"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>parks <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"./shapefiles/AA_Parks/AA_Parks.shp"</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>university <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"./shapefiles/AA_University/AA_University.shp"</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>WashtenawRoads <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"./shapefiles/Roads/RoadCenterlines.shp"</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>AnnArborRoads <span class="ot">&lt;-</span> <span class="fu">st_crop</span>(WashtenawRoads, </span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                         city_boundary) <span class="co"># crop to only get A2 roads</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># watersheds &lt;- read_sf("./shapefiles/watersheds/Watersheds.shp")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="use-ggplot-to-map-the-shapefiles" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="use-ggplot-to-map-the-shapefiles"><span class="header-section-number">5.5</span> Use <code>ggplot</code> to Map the Shapefiles</h2>
-<div class="cell">
-<details>
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(city_boundary) <span class="sc">+</span> <span class="co"># initial sf data</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_sf(data = buildings,</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#         fill = "lightgrey") +</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> AnnArborRoads, <span class="co"># first layer: Ann Arbor roads </span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"lightgrey"</span>) <span class="sc">+</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span> <span class="co"># second layer: city boundary</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> trees, <span class="co"># third layer: trees</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> .<span class="dv">01</span>,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Demonstration of Shapefiles"</span>,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Green Trees Are Points </span><span class="sc">\n</span><span class="st">Grey Roads are Lines </span><span class="sc">\n</span><span class="st">Red City Boundary is Polygon"</span>) <span class="sc">+</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(.<span class="dv">5</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">lonaxis =</span> <span class="fu">list</span>(<span class="at">showgrid =</span> T, <span class="co"># geographic parameters</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">gridcolor =</span> <span class="st">"lightblue"</span>), </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">lataxis =</span> <span class="fu">list</span>(<span class="at">showgrid =</span> T, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">gridcolor =</span> <span class="st">"lightblue"</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">showland =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">landcolor =</span> <span class="fu">toRGB</span>(<span class="st">"lightgrey"</span>))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>mymap <span class="ot">&lt;-</span> <span class="fu">plot_geo</span>(mydata) <span class="sc">%&gt;%</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_markers</span>(<span class="at">x =</span> <span class="sc">~</span>longitude,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">y =</span> <span class="sc">~</span>latitude,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="sc">~</span>label,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">colors =</span> <span class="st">"Spectral"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">marker =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">15</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">title =</span> <span class="st">"Randomly Generated Coordinates"</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">geo =</span> g)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>mymap <span class="co"># replay</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="shapefiles_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e9d07d1c039e47956406" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-e9d07d1c039e47956406">{"x":{"visdat":{"13ab2cd073bd":["function () ","plotlyVisDat"]},"cur_data":"13ab2cd073bd","attrs":{"13ab2cd073bd":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"markers","color":{},"colors":"Spectral","marker":{"size":15},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","title":"Randomly Generated Coordinates","geo":{"domain":{"x":[0,1],"y":[0,1]},"lonaxis":{"showgrid":true,"gridcolor":"lightblue"},"lataxis":{"showgrid":true,"gridcolor":"lightblue"},"showland":true,"landcolor":"rgba(211,211,211,1)"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(158,1,66,1)","size":15,"line":{"color":"rgba(158,1,66,1)"}},"name":"A","textfont":{"color":"rgba(158,1,66,1)"},"line":{"color":"rgba(158,1,66,1)"},"geo":"geo","lat":[0],"lon":[0],"frame":null},{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(213,62,79,1)","size":15,"line":{"color":"rgba(213,62,79,1)"}},"name":"B","textfont":{"color":"rgba(213,62,79,1)"},"line":{"color":"rgba(213,62,79,1)"},"geo":"geo","lat":[42],"lon":[-83.5],"frame":null},{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(244,109,67,1)","size":15,"line":{"color":"rgba(244,109,67,1)"}},"name":"C","textfont":{"color":"rgba(244,109,67,1)"},"line":{"color":"rgba(244,109,67,1)"},"geo":"geo","lat":[7.023356594145298],"lon":[73.494440848007798],"frame":null},{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(253,174,97,1)","size":15,"line":{"color":"rgba(253,174,97,1)"}},"name":"D","textfont":{"color":"rgba(253,174,97,1)"},"line":{"color":"rgba(253,174,97,1)"},"geo":"geo","lat":[-38.775630514137447],"lon":[159.53316623345017],"frame":null},{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(254,224,139,1)","size":15,"line":{"color":"rgba(254,224,139,1)"}},"name":"E","textfont":{"color":"rgba(254,224,139,1)"},"line":{"color":"rgba(254,224,139,1)"},"geo":"geo","lat":[-80.547165158204734],"lon":[-129.12572354078293],"frame":null},{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(230,245,152,1)","size":15,"line":{"color":"rgba(230,245,152,1)"}},"name":"F","textfont":{"color":"rgba(230,245,152,1)"},"line":{"color":"rgba(230,245,152,1)"},"geo":"geo","lat":[-17.472905041649938],"lon":[25.955474283546209],"frame":null},{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(171,221,164,1)","size":15,"line":{"color":"rgba(171,221,164,1)"}},"name":"G","textfont":{"color":"rgba(171,221,164,1)"},"line":{"color":"rgba(171,221,164,1)"},"geo":"geo","lat":[-69.826705721206963],"lon":[-54.363720333203673],"frame":null},{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(102,194,165,1)","size":15,"line":{"color":"rgba(102,194,165,1)"}},"name":"H","textfont":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"geo":"geo","lat":[10.498416326008737],"lon":[14.206226840615273],"frame":null},{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(50,136,189,1)","size":15,"line":{"color":"rgba(50,136,189,1)"}},"name":"I","textfont":{"color":"rgba(50,136,189,1)"},"line":{"color":"rgba(50,136,189,1)"},"geo":"geo","lat":[-72.440487141720951],"lon":[-27.650358472019434],"frame":null},{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(94,79,162,1)","size":15,"line":{"color":"rgba(94,79,162,1)"}},"name":"J","textfont":{"color":"rgba(94,79,162,1)"},"line":{"color":"rgba(94,79,162,1)"},"geo":"geo","lat":[-46.753423819318414],"lon":[130.8357186242938],"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
@@ -743,13 +754,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./crs.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Coordinate Reference Systems (CRS)</span></span>
+      <a href="./courseoutline-5weeks.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Possible Course Outline for a 5 Week MiniCourse</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./shapefiles2.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./crs.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Coordinate Reference Systems (CRS)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
