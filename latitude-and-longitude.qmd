@@ -1,0 +1,85 @@
+---
+title: "Latitude and Longitude"
+---
+
+# Introduction
+
+Latitude and longitude are coordinates for locating objects on earth.
+
+* Latitude represents distance from the *equator*. 0 latitude is at the equator. +90 latitude, or 90N, is at the North Pole. -90 latitude, or 90S, is at the South Pole.
+* Longitude represents distance from the *prime meridian*. 0 longitude is at the prime meridian. +180 and -180, or 180E and 180W, meet at the other side of the world.
+
+# Call the Libraries
+
+```{r}
+#| message: false
+#| code-fold: true
+
+library(plotly)
+
+```
+
+# Generate Some Random Coordinates
+
+```{r}
+#| code-fold: true
+
+set.seed(3846) # random seed
+
+N <- 10 # number of points
+
+# latitude from -90 to +90
+
+latitude <- runif(N, min = -90, max = 90) 
+
+# longitude from + -180 to + 180
+
+longitude <- runif(N, min = -180, max = 180) 
+
+# 1st point reset to 0, 0
+
+latitude[1] <- 0 # equator
+
+longitude[1] <- 0 # prime meridian
+
+latitude[2] <- 42 # Ann Arbor-ish
+
+longitude[2] <- -83.5 # Ann Arbor-ish
+
+# label
+
+label <- LETTERS[1:N] # label with letters of alphabet
+
+# dataframe
+
+mydata <- data.frame(latitude, longitude, label)
+
+mydata # replay
+
+```
+
+# Map The Coordinates
+
+```{r}
+#| code-fold: true
+
+g <- list(lonaxis = list(showgrid = T, # geographic parameters
+                         gridcolor = "lightblue"), 
+          lataxis = list(showgrid = T, 
+                         gridcolor = "lightblue"),
+          showland = TRUE,
+          landcolor = toRGB("lightgrey"))
+
+mymap <- plot_geo(mydata) %>%
+  add_markers(x = ~longitude,
+              y = ~latitude,
+              color = ~label,
+              colors = "Spectral",
+              marker = list(size = 15)) %>%
+  layout(title = "Randomly Generated Coordinates",
+         geo = g)
+
+mymap # replay
+
+```
+
