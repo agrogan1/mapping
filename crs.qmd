@@ -10,13 +10,9 @@ title: "Coordinate Reference Systems (CRS)"
 
 ```{r}
 #| output: false
+#| code-fold: true
 
 library(sf) # simple (spatial) features
-
-```
-
-```{r}
-#| output: false
 
 library(ggplot2) # beautiful graphs
 
@@ -25,12 +21,14 @@ library(ggplot2) # beautiful graphs
 # Open `wrld_simpl` Shapefile
 
 ```{r}
+#| code-fold: true
 
 world <- read_sf("./shapefiles/wrld_simpl/wrld_simpl.shp")
 
 ```
 
 ```{r}
+#| code-fold: true
 
 head(world) # show the top (head) of the data
 
@@ -41,6 +39,7 @@ head(world) # show the top (head) of the data
 As with many global data sets (and many other data sets), `wrld_simpl` uses *World Geodetic System 1984*.
 
 ```{r}
+#| code-fold: true
 
 st_crs(world)
 
@@ -49,6 +48,7 @@ st_crs(world)
 # Plot The `wrld_simpl` Data
 
 ```{r}
+#| code-fold: true
 
 ggplot(world) + 
   geom_sf() +
