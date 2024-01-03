@@ -97,18 +97,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="site_libs/datatables-binding-0.30/datatables.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="site_libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="site_libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="site_libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/dt-ext-buttons-1.13.4/css/buttons.dataTables.min.css" rel="stylesheet">
+<script src="site_libs/dt-ext-buttons-1.13.4/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.13.4/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.13.4/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.13.4/js/buttons.print.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
 
 <link rel="stylesheet" href="mapping.css">
 <meta property="og:title" content="Mapping - 9&nbsp; Geocoding">
-<meta property="og:image" content="https://agrogan1.github.io/mapping/geocoding_files/figure-html/unnamed-chunk-6-1.png">
 <meta property="og:site-name" content="Mapping">
-<meta property="og:image:height" content="960">
-<meta property="og:image:width" content="1344">
 <meta name="twitter:title" content="Mapping - 9&nbsp; Geocoding">
-<meta name="twitter:image" content="https://agrogan1.github.io/mapping/geocoding_files/figure-html/unnamed-chunk-6-1.png">
-<meta name="twitter:image-height" content="960">
-<meta name="twitter:image-width" content="1344">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="citation_title" content="[9]{.chapter-number}&nbsp; [Geocoding]{.chapter-title}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/geocoding.html">
 <meta name="citation_language" content="en">
@@ -292,11 +301,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#get-data-to-be-geocoded" id="toc-get-data-to-be-geocoded" class="nav-link" data-scroll-target="#get-data-to-be-geocoded"><span class="header-section-number">9.2</span> Get Data To Be Geocoded</a></li>
   <li><a href="#concatenate-addresses" id="toc-concatenate-addresses" class="nav-link" data-scroll-target="#concatenate-addresses"><span class="header-section-number">9.3</span> Concatenate Addresses</a></li>
   <li><a href="#geocode" id="toc-geocode" class="nav-link" data-scroll-target="#geocode"><span class="header-section-number">9.4</span> Geocode</a></li>
-  <li><a href="#convert-geocoded-agencies-to-sf-object-while-indicating-coordinate-reference-system-crs" id="toc-convert-geocoded-agencies-to-sf-object-while-indicating-coordinate-reference-system-crs" class="nav-link" data-scroll-target="#convert-geocoded-agencies-to-sf-object-while-indicating-coordinate-reference-system-crs"><span class="header-section-number">9.5</span> Convert Geocoded Agencies to <code>sf</code> Object While Indicating <em>Coordinate Reference System</em> (CRS)</a></li>
-  <li><a href="#maps" id="toc-maps" class="nav-link" data-scroll-target="#maps"><span class="header-section-number">9.6</span> Maps</a></li>
-  <li><a href="#read-in-shapefiles" id="toc-read-in-shapefiles" class="nav-link" data-scroll-target="#read-in-shapefiles"><span class="header-section-number">9.7</span> Read in Shapefile(s)</a></li>
-  <li><a href="#filter-out-geocoding-errors" id="toc-filter-out-geocoding-errors" class="nav-link" data-scroll-target="#filter-out-geocoding-errors"><span class="header-section-number">9.8</span> Filter Out Geocoding Error(s)</a></li>
-  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><span class="header-section-number">9.9</span> Map</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -331,11 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr) <span class="co"># import CSV</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># beautiful graphs</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co"># simple features</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth) <span class="co"># map data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -346,7 +346,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>simulated_address_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"simulated-address-data/simulated-address-data.csv"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>simulated_address_data <span class="co"># replay</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(simulated_address_data,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">dom =</span> <span class="st">'Bfrtip'</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'copy'</span>, </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                            <span class="st">'csv'</span>, </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                            <span class="st">'print'</span>))) <span class="co"># nice table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -361,15 +367,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">", "</span>,</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                                        simulated_address_data<span class="sc">$</span>state)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>simulated_address_data <span class="co"># replay</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(simulated_address_data,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">dom =</span> <span class="st">'Bfrtip'</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'copy'</span>, </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                            <span class="st">'csv'</span>, </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                            <span class="st">'print'</span>))) <span class="co"># nice table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 7
-  agency   `lat&nbsp;`   lon street          city      state address                 
-  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;                   
-1 Agency X   42.1 -84.1 123 Main STreet Ann Arbor MI    123 Main STreet ,  Ann …
-2 Agency Y   NA    NA   456 Main Street Ann Arbor MI    456 Main Street ,  Ann …
-3 Agency Z   NA    NA   &lt;NA&gt;            &lt;NA&gt;      &lt;NA&gt;  NA ,  NA ,  NA          </code></pre>
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0623937ff0e988b31c62" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-0623937ff0e988b31c62">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["1","2","3"],["Agency X","Agency Y","Agency Z"],[42.1234,null,null],[-84.12341000000001,null,null],["123 Main STreet","456 Main Street",null],["Ann Arbor","Ann Arbor",null],["MI","MI",null],["123 Main STreet ,  Ann Arbor ,  MI","456 Main Street ,  Ann Arbor ,  MI","NA ,  NA ,  NA"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>agency<\/th>\n      <th>lat <\/th>\n      <th>lon<\/th>\n      <th>street<\/th>\n      <th>city<\/th>\n      <th>state<\/th>\n      <th>address<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","buttons":["copy","csv","print"],"columnDefs":[{"className":"dt-right","targets":[2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -387,109 +396,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> simulated_address_data <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  tidygeocoder<span class="sc">::</span><span class="fu">geocode</span>(address, </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">method =</span> <span class="st">'arcgis'</span>, </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                        <span class="at">lat =</span> latitude, </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">long =</span> longitude)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>geocoded_data <span class="ot">&lt;-</span> simulated_address_data <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  tidygeocoder<span class="sc">::</span><span class="fu">geocode</span>(address, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">method =</span> <span class="st">'arcgis'</span>, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                        <span class="at">lat =</span> latitude, </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">long =</span> longitude)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Passing 3 addresses to the ArcGIS single address geocoder</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Query completed in: 1.3 seconds</code></pre>
+<pre><code>Query completed in: 0.5 seconds</code></pre>
 </div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mydata <span class="co"># replay</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(geocoded_data,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">extensions =</span> <span class="st">'Buttons'</span>, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">dom =</span> <span class="st">'Bfrtip'</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">'copy'</span>, </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                            <span class="st">'csv'</span>, </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                            <span class="st">'print'</span>))) <span class="co"># nice table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 9
-  agency   `lat&nbsp;`   lon street          city    state address latitude longitude
-  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;     &lt;dbl&gt;
-1 Agency X   42.1 -84.1 123 Main STreet Ann Ar… MI    123 Ma…     42.3     -83.7
-2 Agency Y   NA    NA   456 Main Street Ann Ar… MI    456 Ma…     42.3     -83.7
-3 Agency Z   NA    NA   &lt;NA&gt;            &lt;NA&gt;    &lt;NA&gt;  NA ,  …    -22.1      17.2</code></pre>
-</div>
-</div>
-</section>
-<section id="convert-geocoded-agencies-to-sf-object-while-indicating-coordinate-reference-system-crs" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="convert-geocoded-agencies-to-sf-object-while-indicating-coordinate-reference-system-crs"><span class="header-section-number">9.5</span> Convert Geocoded Agencies to <code>sf</code> Object While Indicating <em>Coordinate Reference System</em> (CRS)</h2>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>agencies <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(mydata, </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"longitude"</span>, <span class="st">"latitude"</span>), </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">crs =</span> <span class="dv">4269</span>) <span class="co"># A2 is NAD1983</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="maps" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="maps"><span class="header-section-number">9.6</span> Maps</h2>
-<blockquote class="blockquote">
-<p>By design, this first map is <em>zoomed out</em> to show the <strong>errors</strong> in geocoding.</p>
-</blockquote>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mydata) <span class="sc">+</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data=</span><span class="fu">ne_countries</span>()) <span class="sc">+</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data=</span>agencies, <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf_text</span>(<span class="at">data=</span>agencies, </span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">label =</span> agency),</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span> </span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
-give correct results for longitude/latitude data</code></pre>
-</div>
 <div class="cell-output-display">
-<p><img src="geocoding_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bded7a48c9b97ccb97db" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-bded7a48c9b97ccb97db">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["1","2","3"],["Agency X","Agency Y","Agency Z"],[42.1234,null,null],[-84.12341000000001,null,null],["123 Main STreet","456 Main Street",null],["Ann Arbor","Ann Arbor",null],["MI","MI",null],["123 Main STreet ,  Ann Arbor ,  MI","456 Main Street ,  Ann Arbor ,  MI","NA ,  NA ,  NA"],[42.281979294323,42.284687777082,-22.138976122],[-83.748553347631,-83.74823260386501,17.221498984]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>agency<\/th>\n      <th>lat <\/th>\n      <th>lon<\/th>\n      <th>street<\/th>\n      <th>city<\/th>\n      <th>state<\/th>\n      <th>address<\/th>\n      <th>latitude<\/th>\n      <th>longitude<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","buttons":["copy","csv","print"],"columnDefs":[{"className":"dt-right","targets":[2,3,8,9]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Geocoding Can Make Errors!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Geocoding Can Make Errors!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>NB that for whatever reason, the geocoder has made a mistake: Agency Z has been placed in the Southern Hemisphere. Geocoding can be an error prone process and requires careful inspection of your tabular and mapped data.</p>
+<p>A geocoder may also be unable to geocode some of your data. Low success rates are not uncommon, and you may have to work hard to ensure that the majority, or all, of your data are geocoded.</p>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>You could modify the data or the map or both them to <em>zoom in</em> on the particular location of interest.</p>
+<p>Geocoded data can then be mapped using procedures outlined in <a href="location-data.html#sec-location-data"><span>Section&nbsp;8.1</span></a>.</p>
 </blockquote>
-</section>
-<section id="read-in-shapefiles" class="level2" data-number="9.7">
-<h2 data-number="9.7" class="anchored" data-anchor-id="read-in-shapefiles"><span class="header-section-number">9.7</span> Read in Shapefile(s)</h2>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>city_boundary <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>WashtenawRoads <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"./shapefiles/Roads/RoadCenterlines.shp"</span>)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>AnnArborRoads <span class="ot">&lt;-</span> <span class="fu">st_crop</span>(WashtenawRoads, </span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                         city_boundary) <span class="co"># crop to only get A2 roads</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="filter-out-geocoding-errors" class="level2" data-number="9.8">
-<h2 data-number="9.8" class="anchored" data-anchor-id="filter-out-geocoding-errors"><span class="header-section-number">9.8</span> Filter Out Geocoding Error(s)</h2>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>agencies2 <span class="ot">&lt;-</span> agencies <span class="sc">%&gt;%</span> <span class="fu">filter</span>(agency <span class="sc">!=</span> <span class="st">"Agency Z"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="map" class="level2" data-number="9.9">
-<h2 data-number="9.9" class="anchored" data-anchor-id="map"><span class="header-section-number">9.9</span> Map</h2>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data=</span>AnnArborRoads, <span class="at">color =</span> <span class="st">"lightgrey"</span>) <span class="sc">+</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> agencies2, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf_text</span>(<span class="at">data =</span> agencies2, <span class="fu">aes</span>(<span class="at">label =</span> agency)) <span class="sc">+</span> </span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="geocoding_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
 
 
 </section>
