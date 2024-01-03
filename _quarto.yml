@@ -29,6 +29,9 @@ book:
       chapters: 
         - ggplot-map.qmd
         - location-data.qmd
+    - part: "More Advanced GIS Concepts"
+      chapters: 
+        - geocoding.qmd
   navbar:
     background: primary
     
