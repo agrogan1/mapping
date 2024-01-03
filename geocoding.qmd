@@ -14,7 +14,7 @@ library(dplyr) # for %>% operator
 
 library(readr) # import CSV
 
-library(DT)
+library(DT) # nice tables
 
 ```
 

@@ -335,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr) <span class="co"># import CSV</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT) <span class="co"># nice tables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -377,8 +377,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f5a646dc2fabfd39b513" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f5a646dc2fabfd39b513">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["1","2","3"],["Agency X","Agency Y","Agency Z"],[42.1234,null,null],[-84.12341000000001,null,null],["123 Main STreet","456 Main Street",null],["Ann Arbor","Ann Arbor",null],["MI","MI",null],["123 Main STreet ,  Ann Arbor ,  MI","456 Main Street ,  Ann Arbor ,  MI","NA ,  NA ,  NA"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>agency<\/th>\n      <th>lat <\/th>\n      <th>lon<\/th>\n      <th>street<\/th>\n      <th>city<\/th>\n      <th>state<\/th>\n      <th>address<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","buttons":["copy","csv","print"],"columnDefs":[{"className":"dt-right","targets":[2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-cbf2205fa876b76a92eb" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-cbf2205fa876b76a92eb">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["1","2","3"],["Agency X","Agency Y","Agency Z"],[42.1234,null,null],[-84.12341000000001,null,null],["123 Main STreet","456 Main Street",null],["Ann Arbor","Ann Arbor",null],["MI","MI",null],["123 Main STreet ,  Ann Arbor ,  MI","456 Main Street ,  Ann Arbor ,  MI","NA ,  NA ,  NA"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>agency<\/th>\n      <th>lat <\/th>\n      <th>lon<\/th>\n      <th>street<\/th>\n      <th>city<\/th>\n      <th>state<\/th>\n      <th>address<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","buttons":["copy","csv","print"],"columnDefs":[{"className":"dt-right","targets":[2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -406,7 +406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Passing 3 addresses to the ArcGIS single address geocoder</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Query completed in: 1.6 seconds</code></pre>
+<pre><code>Query completed in: 1.4 seconds</code></pre>
 </div>
 <details>
 <summary>Code</summary>
@@ -420,8 +420,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 <div class="cell-output-display">
 
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b58c10aa36183a6fa5df" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b58c10aa36183a6fa5df">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["1","2","3"],["Agency X","Agency Y","Agency Z"],[42.1234,null,null],[-84.12341000000001,null,null],["123 Main STreet","456 Main Street",null],["Ann Arbor","Ann Arbor",null],["MI","MI",null],["123 Main STreet ,  Ann Arbor ,  MI","456 Main Street ,  Ann Arbor ,  MI","NA ,  NA ,  NA"],[42.281979294323,42.284687777082,-22.138976122],[-83.748553347631,-83.74823260386501,17.221498984]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>agency<\/th>\n      <th>lat <\/th>\n      <th>lon<\/th>\n      <th>street<\/th>\n      <th>city<\/th>\n      <th>state<\/th>\n      <th>address<\/th>\n      <th>latitude<\/th>\n      <th>longitude<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","buttons":["copy","csv","print"],"columnDefs":[{"className":"dt-right","targets":[2,3,8,9]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fa6ae024dcd5faadf5f2" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-fa6ae024dcd5faadf5f2">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["1","2","3"],["Agency X","Agency Y","Agency Z"],[42.1234,null,null],[-84.12341000000001,null,null],["123 Main STreet","456 Main Street",null],["Ann Arbor","Ann Arbor",null],["MI","MI",null],["123 Main STreet ,  Ann Arbor ,  MI","456 Main Street ,  Ann Arbor ,  MI","NA ,  NA ,  NA"],[42.281979294323,42.284687777082,-22.138976122],[-83.748553347631,-83.74823260386501,17.221498984]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>agency<\/th>\n      <th>lat <\/th>\n      <th>lon<\/th>\n      <th>street<\/th>\n      <th>city<\/th>\n      <th>state<\/th>\n      <th>address<\/th>\n      <th>latitude<\/th>\n      <th>longitude<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","buttons":["copy","csv","print"],"columnDefs":[{"className":"dt-right","targets":[2,3,8,9]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled" title="Geocoding Can Make Errors!">
