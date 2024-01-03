@@ -1,0 +1,18 @@
+{
+  "hash": "c2a07b9c55772ca174f05c1431a9c570",
+  "result": {
+    "markdown": "---\ntitle: \"Shapefiles on This Site\"\n---\n\n\nFor user convenience, these shapefiles are available on this site.\n\n\n::: {.cell}\n::: {.cell-output-display}\n```{=html}\n<div class=\"datatables html-widget html-fill-item-overflow-hidden html-fill-item\" id=\"htmlwidget-0cebfa98813693523abf\" style=\"width:100%;height:auto;\"></div>\n<script type=\"application/json\" data-for=\"htmlwidget-0cebfa98813693523abf\">{\"x\":{\"filter\":\"none\",\"vertical\":false,\"data\":[[\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\"],[\"<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/a2trees.zip>a2trees.zip<\\/a>\",\"<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_Building_Footprints.zip>AA_Building_Footprints.zip<\\/a>\",\"<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_City_Boundary.zip>AA_City_Boundary.zip<\\/a>\",\"<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_Parks.zip>AA_Parks.zip<\\/a>\",\"<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_University.zip>AA_University.zip<\\/a>\",\"<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/Roads.zip>Roads.zip<\\/a>\",\"<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/STATES cb_2016_us_state_500k.zip>STATES cb_2016_us_state_500k.zip<\\/a>\",\"<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/watersheds.zip>watersheds.zip<\\/a>\"]],\"container\":\"<table class=\\\"display\\\">\\n  <thead>\\n    <tr>\\n      <th> <\\/th>\\n      <th>shapefile<\\/th>\\n    <\\/tr>\\n  <\\/thead>\\n<\\/table>\",\"options\":{\"columnDefs\":[{\"orderable\":false,\"targets\":0}],\"order\":[],\"autoWidth\":false,\"orderClasses\":false}},\"evals\":[],\"jsHooks\":[]}</script>\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<script src=\"site_libs/htmlwidgets-1.6.2/htmlwidgets.js\"></script>\n<link href=\"site_libs/datatables-css-0.0.0/datatables-crosstalk.css\" rel=\"stylesheet\" />\n<script src=\"site_libs/datatables-binding-0.30/datatables.js\"></script>\n<script src=\"site_libs/jquery-3.6.0/jquery-3.6.0.min.js\"></script>\n<link href=\"site_libs/dt-core-1.13.4/css/jquery.dataTables.min.css\" rel=\"stylesheet\" />\n<link href=\"site_libs/dt-core-1.13.4/css/jquery.dataTables.extra.css\" rel=\"stylesheet\" />\n<script src=\"site_libs/dt-core-1.13.4/js/jquery.dataTables.min.js\"></script>\n<link href=\"site_libs/crosstalk-1.2.0/css/crosstalk.min.css\" rel=\"stylesheet\" />\n<script src=\"site_libs/crosstalk-1.2.0/js/crosstalk.min.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
