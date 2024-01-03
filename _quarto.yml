@@ -43,5 +43,6 @@ format:
       light: united
       dark: vapor
    css: mapping.css
-
+   execute:
+      freeze: auto
 
