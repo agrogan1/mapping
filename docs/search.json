@@ -186,28 +186,28 @@
     "href": "geocoding.html#call-libraries",
     "title": "9  Geocoding",
     "section": "9.1 Call Libraries",
-    "text": "9.1 Call Libraries\n\n\nCode\nlibrary(tidygeocoder) # geocoding\n\nlibrary(dplyr) # for %&gt;% operator\n\nlibrary(readr) # import CSV\n\nlibrary(ggplot2) # beautiful graphs\n\nlibrary(sf) # simple features\n\nlibrary(rnaturalearth) # map data"
+    "text": "9.1 Call Libraries\n\n\nCode\nlibrary(tidygeocoder) # geocoding\n\nlibrary(dplyr) # for %&gt;% operator\n\nlibrary(readr) # import CSV\n\nlibrary(DT)"
   },
   {
     "objectID": "geocoding.html#get-data-to-be-geocoded",
     "href": "geocoding.html#get-data-to-be-geocoded",
     "title": "9  Geocoding",
     "section": "9.2 Get Data To Be Geocoded",
-    "text": "9.2 Get Data To Be Geocoded\n\n\nCode\nsimulated_address_data &lt;- read_csv(\"simulated-address-data/simulated-address-data.csv\")\n\nsimulated_address_data # replay"
+    "text": "9.2 Get Data To Be Geocoded\n\n\nCode\nsimulated_address_data &lt;- read_csv(\"simulated-address-data/simulated-address-data.csv\")\n\nDT::datatable(simulated_address_data,\n              extensions = 'Buttons', \n              options = list(\n                dom = 'Bfrtip',\n                buttons = c('copy', \n                            'csv', \n                            'print'))) # nice table"
   },
   {
     "objectID": "geocoding.html#concatenate-addresses",
     "href": "geocoding.html#concatenate-addresses",
     "title": "9  Geocoding",
     "section": "9.3 Concatenate Addresses",
-    "text": "9.3 Concatenate Addresses\n\n\nCode\nsimulated_address_data$address &lt;- paste(simulated_address_data$street,\n                                        \", \",\n                                        simulated_address_data$city,\n                                        \", \",\n                                        simulated_address_data$state)\n\nsimulated_address_data # replay\n\n\n# A tibble: 3 × 7\n  agency   `lat `   lon street          city      state address                 \n  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;                   \n1 Agency X   42.1 -84.1 123 Main STreet Ann Arbor MI    123 Main STreet ,  Ann …\n2 Agency Y   NA    NA   456 Main Street Ann Arbor MI    456 Main Street ,  Ann …\n3 Agency Z   NA    NA   &lt;NA&gt;            &lt;NA&gt;      &lt;NA&gt;  NA ,  NA ,  NA"
+    "text": "9.3 Concatenate Addresses\n\n\nCode\nsimulated_address_data$address &lt;- paste(simulated_address_data$street,\n                                        \", \",\n                                        simulated_address_data$city,\n                                        \", \",\n                                        simulated_address_data$state)\n\nDT::datatable(simulated_address_data,\n              extensions = 'Buttons', \n              options = list(\n                dom = 'Bfrtip',\n                buttons = c('copy', \n                            'csv', \n                            'print'))) # nice table"
   },
   {
     "objectID": "geocoding.html#geocode",
     "href": "geocoding.html#geocode",
     "title": "9  Geocoding",
     "section": "9.4 Geocode",
-    "text": "9.4 Geocode\n\nArcGIS geocoding has LOW success rate with this data\n\n\nYou will want to find a process with HIGH success rate\n\n\nYou could also try batchgeo -&gt; KML -&gt; Latitude/Longitude\n\n\n\nCode\nmydata &lt;- simulated_address_data %&gt;% \n  tidygeocoder::geocode(address, \n                        method = 'arcgis', \n                        lat = latitude, \n                        long = longitude)\n\n\nPassing 3 addresses to the ArcGIS single address geocoder\n\n\nQuery completed in: 1.3 seconds\n\n\nCode\nmydata # replay\n\n\n# A tibble: 3 × 9\n  agency   `lat `   lon street          city    state address latitude longitude\n  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;     &lt;dbl&gt;\n1 Agency X   42.1 -84.1 123 Main STreet Ann Ar… MI    123 Ma…     42.3     -83.7\n2 Agency Y   NA    NA   456 Main Street Ann Ar… MI    456 Ma…     42.3     -83.7\n3 Agency Z   NA    NA   &lt;NA&gt;            &lt;NA&gt;    &lt;NA&gt;  NA ,  …    -22.1      17.2"
+    "text": "9.4 Geocode\n\nArcGIS geocoding has LOW success rate with this data\n\n\nYou will want to find a process with HIGH success rate\n\n\nYou could also try batchgeo -&gt; KML -&gt; Latitude/Longitude\n\n\n\nCode\ngeocoded_data &lt;- simulated_address_data %&gt;% \n  tidygeocoder::geocode(address, \n                        method = 'arcgis', \n                        lat = latitude, \n                        long = longitude)\n\n\nPassing 3 addresses to the ArcGIS single address geocoder\n\n\nQuery completed in: 0.5 seconds\n\n\nCode\nDT::datatable(geocoded_data,\n              extensions = 'Buttons', \n              options = list(\n                dom = 'Bfrtip',\n                buttons = c('copy', \n                            'csv', \n                            'print'))) # nice table\n\n\n\n\n\n\n\n\n\n\n\n\n\nGeocoding Can Make Errors!\n\n\n\nNB that for whatever reason, the geocoder has made a mistake: Agency Z has been placed in the Southern Hemisphere. Geocoding can be an error prone process and requires careful inspection of your tabular and mapped data.\nA geocoder may also be unable to geocode some of your data. Low success rates are not uncommon, and you may have to work hard to ensure that the majority, or all, of your data are geocoded.\n\n\n\nGeocoded data can then be mapped using procedures outlined in Section 8.1."
   },
   {
     "objectID": "geocoding.html#convert-geocoded-agencies-to-sf-object-while-indicating-coordinate-reference-system-crs",
@@ -243,5 +243,19 @@
     "title": "9  Geocoding",
     "section": "9.9 Map",
     "text": "9.9 Map\n\n\nCode\nggplot() +\n  geom_sf(data=AnnArborRoads, color = \"lightgrey\") +\n  geom_sf(data = agencies2, color = \"red\") +\n  geom_sf_text(data = agencies2, aes(label = agency)) + \n  theme_minimal()"
+  },
+  {
+    "objectID": "location-data.html#sec-location-data",
+    "href": "location-data.html#sec-location-data",
+    "title": "8  Making Maps With ggplot Using Location Data",
+    "section": "8.1 Call Libraries",
+    "text": "8.1 Call Libraries\n\n\nCode\nlibrary(readr) # read CSV\n\nlibrary(dplyr) # data wrangling\n\nlibrary(sf) # simple features\n\nlibrary(ggplot2) # maps"
+  },
+  {
+    "objectID": "location-data.html#call-libraries-sec-location-data",
+    "href": "location-data.html#call-libraries-sec-location-data",
+    "title": "8  Making Maps With ggplot Using Location Data",
+    "section": "8.1 Call Libraries {sec-location-data}",
+    "text": "8.1 Call Libraries {sec-location-data}\n\n\nCode\nlibrary(readr) # read CSV\n\nlibrary(dplyr) # data wrangling\n\nlibrary(sf) # simple features\n\nlibrary(ggplot2) # maps"
   }
 ]
