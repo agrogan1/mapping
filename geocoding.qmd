@@ -1,0 +1,151 @@
+---
+title: "Geocoding"
+---
+
+## Call Libraries
+
+```{r}
+#| message: false
+#| code-fold: true
+
+library(tidygeocoder) # geocoding
+
+library(dplyr) # for %>% operator
+
+library(readr) # import CSV
+
+library(ggplot2) # beautiful graphs
+
+library(sf) # simple features
+
+library(rnaturalearth) # map data
+
+```
+
+## Get Data To Be Geocoded
+
+```{r}
+#| code-fold: true
+#| output: false
+
+simulated_address_data <- read_csv("simulated-address-data/simulated-address-data.csv")
+
+simulated_address_data # replay
+
+```
+
+## Concatenate Addresses
+
+```{r}
+#| code-fold: true
+
+simulated_address_data$address <- paste(simulated_address_data$street,
+                                        ", ",
+                                        simulated_address_data$city,
+                                        ", ",
+                                        simulated_address_data$state)
+
+simulated_address_data # replay
+
+```
+
+## Geocode
+
+> ArcGIS geocoding has LOW success rate with this data
+
+> You will want to find a process with HIGH success rate
+
+> You could also try batchgeo -> KML -> Latitude/Longitude
+
+```{r}
+#| code-fold: true
+
+mydata <- simulated_address_data %>% 
+  tidygeocoder::geocode(address, 
+                        method = 'arcgis', 
+                        lat = latitude, 
+                        long = longitude)
+
+mydata # replay
+
+```
+## Convert Geocoded Agencies to `sf` Object While Indicating *Coordinate Reference System* (CRS)
+
+```{r}
+#| code-fold: true
+
+agencies <- st_as_sf(mydata, 
+                     coords = c("longitude", "latitude"), 
+                     crs = 4269) # A2 is NAD1983
+
+
+```
+
+
+## Maps
+
+> By design, this first map is *zoomed out* to show the **errors** in geocoding. 
+
+```{r}
+#| code-fold: true
+
+ggplot(mydata) +
+  geom_sf(data=ne_countries()) +
+  geom_sf(data=agencies, color="red") +
+  geom_sf_text(data=agencies, 
+               aes(label = agency),
+               color="red") + 
+  theme_void()
+
+```
+
+> You could modify the data or the map or both them to *zoom in* on the particular location of interest. 
+
+## Read in Shapefile(s)
+
+```{r}
+#| code-fold: true
+#| output: false
+
+city_boundary <- read_sf("./shapefiles/AA_City_Boundary/AA_City_Boundary.shp")
+
+WashtenawRoads <- read_sf("./shapefiles/Roads/RoadCenterlines.shp")
+
+AnnArborRoads <- st_crop(WashtenawRoads, 
+                         city_boundary) # crop to only get A2 roads
+
+```
+## Filter Out Geocoding Error(s)
+
+```{r}
+#| code-fold: true
+
+agencies2 <- agencies %>% filter(agency != "Agency Z") 
+
+```
+
+## Map
+
+```{r}
+#| code-fold: true
+
+ggplot() +
+  geom_sf(data=AnnArborRoads, color = "lightgrey") +
+  geom_sf(data = agencies2, color = "red") +
+  geom_sf_text(data = agencies2, aes(label = agency)) + 
+  theme_minimal()
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
