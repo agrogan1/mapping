@@ -2,7 +2,7 @@
 title: "Making Maps With `ggplot` Using Location Data"
 ---
 
-## Call Libraries
+## Call Libraries {#sec-location-data}
 
 ```{r}
 #| code-fold: true
