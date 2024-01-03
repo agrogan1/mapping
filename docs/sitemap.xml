@@ -2,34 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://agrogan1.github.io/mapping/index.html</loc>
-    <lastmod>2024-01-01T18:17:29.200Z</lastmod>
+    <lastmod>2024-01-03T18:13:28.685Z</lastmod>
   </url>
   <url>
     <loc>https://agrogan1.github.io/mapping/courseoutline-5weeks.html</loc>
-    <lastmod>2024-01-01T18:17:29.210Z</lastmod>
+    <lastmod>2024-01-03T18:13:28.704Z</lastmod>
   </url>
   <url>
     <loc>https://agrogan1.github.io/mapping/latitude-and-longitude.html</loc>
-    <lastmod>2024-01-01T18:17:29.235Z</lastmod>
+    <lastmod>2024-01-03T18:13:28.738Z</lastmod>
   </url>
   <url>
     <loc>https://agrogan1.github.io/mapping/crs.html</loc>
-    <lastmod>2024-01-01T18:17:29.252Z</lastmod>
+    <lastmod>2024-01-03T18:13:28.753Z</lastmod>
   </url>
   <url>
     <loc>https://agrogan1.github.io/mapping/shapefiles.html</loc>
-    <lastmod>2024-01-01T18:17:29.272Z</lastmod>
+    <lastmod>2024-01-03T18:13:28.771Z</lastmod>
   </url>
   <url>
     <loc>https://agrogan1.github.io/mapping/shapefiles2.html</loc>
-    <lastmod>2024-01-01T18:17:29.283Z</lastmod>
+    <lastmod>2024-01-03T18:13:28.779Z</lastmod>
   </url>
   <url>
     <loc>https://agrogan1.github.io/mapping/ggplot-map.html</loc>
-    <lastmod>2024-01-01T18:17:29.302Z</lastmod>
+    <lastmod>2024-01-03T18:13:28.801Z</lastmod>
   </url>
   <url>
     <loc>https://agrogan1.github.io/mapping/location-data.html</loc>
-    <lastmod>2024-01-01T18:17:29.342Z</lastmod>
+    <lastmod>2024-01-03T18:13:28.814Z</lastmod>
+  </url>
+  <url>
+    <loc>https://agrogan1.github.io/mapping/geocoding.html</loc>
+    <lastmod>2024-01-03T18:13:28.843Z</lastmod>
   </url>
 </urlset>

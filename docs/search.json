@@ -180,5 +180,68 @@
     "title": "8  Making Maps With ggplot Using Location Data",
     "section": "8.6 Map",
     "text": "8.6 Map\n\n\nCode\nggplot(city_boundary) +\n  geom_sf(alpha = .5) +\n  geom_sf(data = AnnArborRoads, \n          color = \"darkgrey\") +\n  geom_sf(data = point,\n          aes(color = program),\n          size = 3) +\nlabs(title = \"Ann Arbor\",\n     subtitle = \"Location of Program Clients\") +\n  scale_color_viridis_d() +\n  scale_fill_viridis_d() +\n  theme_minimal() +\n  theme(plot.title = element_text(size = rel(2)), \n        axis.text = element_text(size = rel(.5)),\n        legend.position = \"bottom\")"
+  },
+  {
+    "objectID": "geocoding.html#call-libraries",
+    "href": "geocoding.html#call-libraries",
+    "title": "9  Geocoding",
+    "section": "9.1 Call Libraries",
+    "text": "9.1 Call Libraries\n\n\nCode\nlibrary(tidygeocoder) # geocoding\n\nlibrary(dplyr) # for %&gt;% operator\n\nlibrary(readr) # import CSV\n\nlibrary(ggplot2) # beautiful graphs\n\nlibrary(sf) # simple features\n\nlibrary(rnaturalearth) # map data"
+  },
+  {
+    "objectID": "geocoding.html#get-data-to-be-geocoded",
+    "href": "geocoding.html#get-data-to-be-geocoded",
+    "title": "9  Geocoding",
+    "section": "9.2 Get Data To Be Geocoded",
+    "text": "9.2 Get Data To Be Geocoded\n\n\nCode\nsimulated_address_data &lt;- read_csv(\"simulated-address-data/simulated-address-data.csv\")\n\nsimulated_address_data # replay"
+  },
+  {
+    "objectID": "geocoding.html#concatenate-addresses",
+    "href": "geocoding.html#concatenate-addresses",
+    "title": "9  Geocoding",
+    "section": "9.3 Concatenate Addresses",
+    "text": "9.3 Concatenate Addresses\n\n\nCode\nsimulated_address_data$address &lt;- paste(simulated_address_data$street,\n                                        \", \",\n                                        simulated_address_data$city,\n                                        \", \",\n                                        simulated_address_data$state)\n\nsimulated_address_data # replay\n\n\n# A tibble: 3 × 7\n  agency   `lat `   lon street          city      state address                 \n  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;                   \n1 Agency X   42.1 -84.1 123 Main STreet Ann Arbor MI    123 Main STreet ,  Ann …\n2 Agency Y   NA    NA   456 Main Street Ann Arbor MI    456 Main Street ,  Ann …\n3 Agency Z   NA    NA   &lt;NA&gt;            &lt;NA&gt;      &lt;NA&gt;  NA ,  NA ,  NA"
+  },
+  {
+    "objectID": "geocoding.html#geocode",
+    "href": "geocoding.html#geocode",
+    "title": "9  Geocoding",
+    "section": "9.4 Geocode",
+    "text": "9.4 Geocode\n\nArcGIS geocoding has LOW success rate with this data\n\n\nYou will want to find a process with HIGH success rate\n\n\nYou could also try batchgeo -&gt; KML -&gt; Latitude/Longitude\n\n\n\nCode\nmydata &lt;- simulated_address_data %&gt;% \n  tidygeocoder::geocode(address, \n                        method = 'arcgis', \n                        lat = latitude, \n                        long = longitude)\n\n\nPassing 3 addresses to the ArcGIS single address geocoder\n\n\nQuery completed in: 1.3 seconds\n\n\nCode\nmydata # replay\n\n\n# A tibble: 3 × 9\n  agency   `lat `   lon street          city    state address latitude longitude\n  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;     &lt;dbl&gt;\n1 Agency X   42.1 -84.1 123 Main STreet Ann Ar… MI    123 Ma…     42.3     -83.7\n2 Agency Y   NA    NA   456 Main Street Ann Ar… MI    456 Ma…     42.3     -83.7\n3 Agency Z   NA    NA   &lt;NA&gt;            &lt;NA&gt;    &lt;NA&gt;  NA ,  …    -22.1      17.2"
+  },
+  {
+    "objectID": "geocoding.html#convert-geocoded-agencies-to-sf-object-while-indicating-coordinate-reference-system-crs",
+    "href": "geocoding.html#convert-geocoded-agencies-to-sf-object-while-indicating-coordinate-reference-system-crs",
+    "title": "9  Geocoding",
+    "section": "9.5 Convert Geocoded Agencies to sf Object While Indicating Coordinate Reference System (CRS)",
+    "text": "9.5 Convert Geocoded Agencies to sf Object While Indicating Coordinate Reference System (CRS)\n\n\nCode\nagencies &lt;- st_as_sf(mydata, \n                     coords = c(\"longitude\", \"latitude\"), \n                     crs = 4269) # A2 is NAD1983"
+  },
+  {
+    "objectID": "geocoding.html#maps",
+    "href": "geocoding.html#maps",
+    "title": "9  Geocoding",
+    "section": "9.6 Maps",
+    "text": "9.6 Maps\n\nBy design, this first map is zoomed out to show the errors in geocoding.\n\n\n\nCode\nggplot(mydata) +\n  geom_sf(data=ne_countries()) +\n  geom_sf(data=agencies, color=\"red\") +\n  geom_sf_text(data=agencies, \n               aes(label = agency),\n               color=\"red\") + \n  theme_void()\n\n\nWarning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not\ngive correct results for longitude/latitude data\n\n\n\n\n\n\nYou could modify the data or the map or both them to zoom in on the particular location of interest."
+  },
+  {
+    "objectID": "geocoding.html#read-in-shapefiles",
+    "href": "geocoding.html#read-in-shapefiles",
+    "title": "9  Geocoding",
+    "section": "9.7 Read in Shapefile(s)",
+    "text": "9.7 Read in Shapefile(s)\n\n\nCode\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads"
+  },
+  {
+    "objectID": "geocoding.html#filter-out-geocoding-errors",
+    "href": "geocoding.html#filter-out-geocoding-errors",
+    "title": "9  Geocoding",
+    "section": "9.8 Filter Out Geocoding Error(s)",
+    "text": "9.8 Filter Out Geocoding Error(s)\n\n\nCode\nagencies2 &lt;- agencies %&gt;% filter(agency != \"Agency Z\")"
+  },
+  {
+    "objectID": "geocoding.html#map",
+    "href": "geocoding.html#map",
+    "title": "9  Geocoding",
+    "section": "9.9 Map",
+    "text": "9.9 Map\n\n\nCode\nggplot() +\n  geom_sf(data=AnnArborRoads, color = \"lightgrey\") +\n  geom_sf(data = agencies2, color = \"red\") +\n  geom_sf_text(data = agencies2, aes(label = agency)) + \n  theme_minimal()"
   }
 ]
