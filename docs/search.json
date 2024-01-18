@@ -4,209 +4,371 @@
     "href": "index.html",
     "title": "Mapping",
     "section": "",
-    "text": "Figure 1: Countries of the World\n\n\n\nMapping and GIS have become an increasingly important part of social research, advocacy, and program and policy development. This website contains materials for an in development course on Mapping and GIS.\nMuch of the content of this site is built around the use of R software, though many of the concepts are applicable across GIS and mapping applications such as R, Stata, ArcGIS and QGIS."
+    "text": "Figure 1: Countries of the World\n\n\n\n\nMapping and GIS have become an increasingly important part of social research, advocacy, and program and policy development. This website contains materials for an in development course on Mapping and GIS.\nMuch of the content of this site is built around the use of R software, though many of the concepts are applicable across GIS and mapping applications such as R, Stata, ArcGIS and QGIS.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
   },
   {
     "objectID": "courseoutline-5weeks.html",
     "href": "courseoutline-5weeks.html",
     "title": "2  Possible Course Outline for a 5 Week MiniCourse",
     "section": "",
-    "text": "Introduction\n\nIntroduction to the Course\nIntroduction to Shapefiles As GIS Data\nIntroduction to Appropriate Software: R / RStudio / sf / ggplot; or ArcGIS; or QGIS\nQuick Mapping Exercise\n\nBetter Maps\n\nSymbology\nJoining by Attribute\nBasemaps e.g. leaflet\n\nData With Geographic Coordinates & Geographic Concepts\n\nData With Latitude and Longitude\nProjections\nCoordinate Reference Systems\n\nGeocoding and Geoprocessing\n\nGeocoding\nGeoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)\n\nLab Day for Final Projects"
+    "text": "Introduction\n\nIntroduction to the Course\nIntroduction to Shapefiles As GIS Data\nIntroduction to Appropriate Software: R / RStudio / sf / ggplot; or ArcGIS; or QGIS\nQuick Mapping Exercise\n\nBetter Maps\n\nSymbology\nJoining by Attribute\nBasemaps e.g. leaflet\n\nData With Geographic Coordinates & Geographic Concepts\n\nData With Latitude and Longitude\nProjections\nCoordinate Reference Systems\n\nGeocoding and Geoprocessing\n\nGeocoding\nGeoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)\n\nLab Day for Final Projects",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Possible Course Outline for a 5 Week MiniCourse</span>"
+    ]
+  },
+  {
+    "objectID": "latitude-and-longitude.html",
+    "href": "latitude-and-longitude.html",
+    "title": "3  Latitude and Longitude",
+    "section": "",
+    "text": "3.1 Introduction\nLatitude and longitude are coordinates for locating objects on earth.",
+    "crumbs": [
+      "Geographical and GIS Concepts",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Latitude and Longitude</span>"
+    ]
   },
   {
     "objectID": "latitude-and-longitude.html#introduction",
     "href": "latitude-and-longitude.html#introduction",
     "title": "3  Latitude and Longitude",
-    "section": "3.1 Introduction",
-    "text": "3.1 Introduction\nLatitude and longitude are coordinates for locating objects on earth.\n\nLatitude represents distance from the equator. 0 latitude is at the equator. +90 latitude, or 90N, is at the North Pole. -90 latitude, or 90S, is at the South Pole.\nLongitude represents distance from the prime meridian. 0 longitude is at the prime meridian. +180 and -180, or 180E and 180W, meet at the other side of the world."
+    "section": "",
+    "text": "Latitude represents distance from the equator. 0 latitude is at the equator. +90 latitude, or 90N, is at the North Pole. -90 latitude, or 90S, is at the South Pole.\nLongitude represents distance from the prime meridian. 0 longitude is at the prime meridian. +180 and -180, or 180E and 180W, meet at the other side of the world.",
+    "crumbs": [
+      "Geographical and GIS Concepts",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Latitude and Longitude</span>"
+    ]
   },
   {
     "objectID": "latitude-and-longitude.html#call-the-libraries",
     "href": "latitude-and-longitude.html#call-the-libraries",
     "title": "3  Latitude and Longitude",
     "section": "3.2 Call the Libraries",
-    "text": "3.2 Call the Libraries\n\n\nCode\nlibrary(plotly)"
+    "text": "3.2 Call the Libraries\n\n\nCode\nlibrary(plotly)",
+    "crumbs": [
+      "Geographical and GIS Concepts",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Latitude and Longitude</span>"
+    ]
   },
   {
     "objectID": "latitude-and-longitude.html#generate-some-random-coordinates",
     "href": "latitude-and-longitude.html#generate-some-random-coordinates",
     "title": "3  Latitude and Longitude",
     "section": "3.3 Generate Some Random Coordinates",
-    "text": "3.3 Generate Some Random Coordinates\n\n\nCode\nset.seed(3846) # random seed\n\nN &lt;- 10 # number of points\n\n# latitude from -90 to +90\n\nlatitude &lt;- runif(N, min = -90, max = 90) \n\n# longitude from + -180 to + 180\n\nlongitude &lt;- runif(N, min = -180, max = 180) \n\n# 1st point reset to 0, 0\n\nlatitude[1] &lt;- 0 # equator\n\nlongitude[1] &lt;- 0 # prime meridian\n\nlatitude[2] &lt;- 42 # Ann Arbor-ish\n\nlongitude[2] &lt;- -83.5 # Ann Arbor-ish\n\n# label\n\nlabel &lt;- LETTERS[1:N] # label with letters of alphabet\n\n# dataframe\n\nmydata &lt;- data.frame(latitude, longitude, label)\n\nmydata # replay\n\n\n     latitude  longitude label\n1    0.000000    0.00000     A\n2   42.000000  -83.50000     B\n3    7.023357   73.49444     C\n4  -38.775631  159.53317     D\n5  -80.547165 -129.12572     E\n6  -17.472905   25.95547     F\n7  -69.826706  -54.36372     G\n8   10.498416   14.20623     H\n9  -72.440487  -27.65036     I\n10 -46.753424  130.83572     J"
+    "text": "3.3 Generate Some Random Coordinates\n\n\nCode\nset.seed(3846) # random seed\n\nN &lt;- 10 # number of points\n\n# latitude from -90 to +90\n\nlatitude &lt;- runif(N, min = -90, max = 90) \n\n# longitude from + -180 to + 180\n\nlongitude &lt;- runif(N, min = -180, max = 180) \n\n# 1st point reset to 0, 0\n\nlatitude[1] &lt;- 0 # equator\n\nlongitude[1] &lt;- 0 # prime meridian\n\nlatitude[2] &lt;- 42 # Ann Arbor-ish\n\nlongitude[2] &lt;- -83.5 # Ann Arbor-ish\n\n# label\n\nlabel &lt;- LETTERS[1:N] # label with letters of alphabet\n\n# dataframe\n\nmydata &lt;- data.frame(latitude, longitude, label)\n\nmydata # replay\n\n\n     latitude  longitude label\n1    0.000000    0.00000     A\n2   42.000000  -83.50000     B\n3    7.023357   73.49444     C\n4  -38.775631  159.53317     D\n5  -80.547165 -129.12572     E\n6  -17.472905   25.95547     F\n7  -69.826706  -54.36372     G\n8   10.498416   14.20623     H\n9  -72.440487  -27.65036     I\n10 -46.753424  130.83572     J",
+    "crumbs": [
+      "Geographical and GIS Concepts",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Latitude and Longitude</span>"
+    ]
   },
   {
     "objectID": "latitude-and-longitude.html#map-the-coordinates",
     "href": "latitude-and-longitude.html#map-the-coordinates",
     "title": "3  Latitude and Longitude",
     "section": "3.4 Map The Coordinates",
-    "text": "3.4 Map The Coordinates\n\n\nCode\ng &lt;- list(lonaxis = list(showgrid = T, # geographic parameters\n                         gridcolor = \"lightblue\"), \n          lataxis = list(showgrid = T, \n                         gridcolor = \"lightblue\"),\n          showland = TRUE,\n          landcolor = toRGB(\"lightgrey\"))\n\nmymap &lt;- plot_geo(mydata) %&gt;%\n  add_markers(x = ~longitude,\n              y = ~latitude,\n              color = ~label,\n              colors = \"Spectral\",\n              marker = list(size = 15)) %&gt;%\n  layout(title = \"Randomly Generated Coordinates\",\n         geo = g)\n\nmymap # replay"
+    "text": "3.4 Map The Coordinates\n\n\nCode\ng &lt;- list(lonaxis = list(showgrid = T, # geographic parameters\n                         gridcolor = \"lightblue\"), \n          lataxis = list(showgrid = T, \n                         gridcolor = \"lightblue\"),\n          showland = TRUE,\n          landcolor = toRGB(\"lightgrey\"))\n\nmymap &lt;- plot_geo(mydata) %&gt;%\n  add_markers(x = ~longitude,\n              y = ~latitude,\n              color = ~label,\n              colors = \"Spectral\",\n              marker = list(size = 15)) %&gt;%\n  layout(title = \"Randomly Generated Coordinates\",\n         geo = g)\n\nmymap # replay",
+    "crumbs": [
+      "Geographical and GIS Concepts",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Latitude and Longitude</span>"
+    ]
+  },
+  {
+    "objectID": "crs.html",
+    "href": "crs.html",
+    "title": "4  Coordinate Reference Systems (CRS)",
+    "section": "",
+    "text": "4.1 Coordinate Reference Systems",
+    "crumbs": [
+      "Geographical and GIS Concepts",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Coordinate Reference Systems (CRS)</span>"
+    ]
   },
   {
     "objectID": "crs.html#coordinate-reference-systems",
     "href": "crs.html#coordinate-reference-systems",
     "title": "4  Coordinate Reference Systems (CRS)",
-    "section": "4.1 Coordinate Reference Systems",
-    "text": "4.1 Coordinate Reference Systems\n\n“Map projections try to portray the surface of the earth or a portion of the earth on a flat piece of paper or computer screen. A coordinate reference system (CRS) then defines, with the help of coordinates, how the two-dimensional, projected map in your GIS is related to real places on the earth. The decision as to which map projection and coordinate reference system to use, depends on the regional extent of the area you want to work in, on the analysis you want to do and often on the availability of data.” From qgis.org"
+    "section": "",
+    "text": "“Map projections try to portray the surface of the earth or a portion of the earth on a flat piece of paper or computer screen. A coordinate reference system (CRS) then defines, with the help of coordinates, how the two-dimensional, projected map in your GIS is related to real places on the earth. The decision as to which map projection and coordinate reference system to use, depends on the regional extent of the area you want to work in, on the analysis you want to do and often on the availability of data.” From qgis.org",
+    "crumbs": [
+      "Geographical and GIS Concepts",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Coordinate Reference Systems (CRS)</span>"
+    ]
   },
   {
     "objectID": "crs.html#call-libraries",
     "href": "crs.html#call-libraries",
     "title": "4  Coordinate Reference Systems (CRS)",
     "section": "4.2 Call Libraries",
-    "text": "4.2 Call Libraries\n\n\nCode\nlibrary(sf) # simple (spatial) features\n\nlibrary(ggplot2) # beautiful graphs"
+    "text": "4.2 Call Libraries\n\n\nCode\nlibrary(sf) # simple (spatial) features\n\nlibrary(ggplot2) # beautiful graphs",
+    "crumbs": [
+      "Geographical and GIS Concepts",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Coordinate Reference Systems (CRS)</span>"
+    ]
   },
   {
     "objectID": "crs.html#open-wrld_simpl-shapefile",
     "href": "crs.html#open-wrld_simpl-shapefile",
     "title": "4  Coordinate Reference Systems (CRS)",
     "section": "4.3 Open wrld_simpl Shapefile",
-    "text": "4.3 Open wrld_simpl Shapefile\n\n\nCode\nworld &lt;- read_sf(\"./shapefiles/wrld_simpl/wrld_simpl.shp\")\n\n\n\n\nCode\nhead(world) # show the top (head) of the data\n\n\nSimple feature collection with 6 features and 10 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -61.88722 ymin: -18.01639 xmax: 50.37499 ymax: 42.61805\nGeodetic CRS:  GCS_unknown\n# A tibble: 6 × 11\n  FIPS  ISO2  ISO3     UN NAME                AREA REGION SUBREGION    LON   LAT\n  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;chr&gt;              &lt;int&gt;  &lt;int&gt;     &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1 AC    AG    ATG      28 Antigua and Barb…     44     19        29 -61.8   17.1\n2 AG    DZ    DZA      12 Algeria           238174      2        15   2.63  28.2\n3 AJ    AZ    AZE      31 Azerbaijan          8260    142       145  47.4   40.4\n4 AL    AL    ALB       8 Albania             2740    150        39  20.1   41.1\n5 AM    AM    ARM      51 Armenia             2820    142       145  44.6   40.5\n6 AO    AO    AGO      24 Angola            124670      2        17  17.5  -12.3\n# ℹ 1 more variable: geometry &lt;MULTIPOLYGON [°]&gt;"
+    "text": "4.3 Open wrld_simpl Shapefile\n\n\nCode\nworld &lt;- read_sf(\"./shapefiles/wrld_simpl/wrld_simpl.shp\")\n\n\n\n\nCode\nhead(world) # show the top (head) of the data\n\n\nSimple feature collection with 6 features and 10 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -61.88722 ymin: -18.01639 xmax: 50.37499 ymax: 42.61805\nGeodetic CRS:  GCS_unknown\n# A tibble: 6 × 11\n  FIPS  ISO2  ISO3     UN NAME                AREA REGION SUBREGION    LON   LAT\n  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;chr&gt;              &lt;int&gt;  &lt;int&gt;     &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1 AC    AG    ATG      28 Antigua and Barb…     44     19        29 -61.8   17.1\n2 AG    DZ    DZA      12 Algeria           238174      2        15   2.63  28.2\n3 AJ    AZ    AZE      31 Azerbaijan          8260    142       145  47.4   40.4\n4 AL    AL    ALB       8 Albania             2740    150        39  20.1   41.1\n5 AM    AM    ARM      51 Armenia             2820    142       145  44.6   40.5\n6 AO    AO    AGO      24 Angola            124670      2        17  17.5  -12.3\n# ℹ 1 more variable: geometry &lt;MULTIPOLYGON [°]&gt;",
+    "crumbs": [
+      "Geographical and GIS Concepts",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Coordinate Reference Systems (CRS)</span>"
+    ]
   },
   {
     "objectID": "crs.html#find-out-the-crs-of-wrld_simpl",
     "href": "crs.html#find-out-the-crs-of-wrld_simpl",
     "title": "4  Coordinate Reference Systems (CRS)",
     "section": "4.4 Find Out the CRS of wrld_simpl",
-    "text": "4.4 Find Out the CRS of wrld_simpl\nAs with many global data sets (and many other data sets), wrld_simpl uses World Geodetic System 1984.\n\n\nCode\nst_crs(world)\n\n\nCoordinate Reference System:\n  User input: GCS_unknown \n  wkt:\nGEOGCRS[\"GCS_unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]],\n        ID[\"EPSG\",6326]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"Degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"longitude\",east,\n            ORDER[1],\n            ANGLEUNIT[\"Degree\",0.0174532925199433]],\n        AXIS[\"latitude\",north,\n            ORDER[2],\n            ANGLEUNIT[\"Degree\",0.0174532925199433]]]"
+    "text": "4.4 Find Out the CRS of wrld_simpl\nAs with many global data sets (and many other data sets), wrld_simpl uses World Geodetic System 1984.\n\n\nCode\nst_crs(world)\n\n\nCoordinate Reference System:\n  User input: GCS_unknown \n  wkt:\nGEOGCRS[\"GCS_unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]],\n        ID[\"EPSG\",6326]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"Degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"longitude\",east,\n            ORDER[1],\n            ANGLEUNIT[\"Degree\",0.0174532925199433]],\n        AXIS[\"latitude\",north,\n            ORDER[2],\n            ANGLEUNIT[\"Degree\",0.0174532925199433]]]",
+    "crumbs": [
+      "Geographical and GIS Concepts",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Coordinate Reference Systems (CRS)</span>"
+    ]
   },
   {
     "objectID": "crs.html#plot-the-wrld_simpl-data",
     "href": "crs.html#plot-the-wrld_simpl-data",
     "title": "4  Coordinate Reference Systems (CRS)",
     "section": "4.5 Plot The wrld_simpl Data",
-    "text": "4.5 Plot The wrld_simpl Data\n\n\nCode\nggplot(world) + \n  geom_sf() +\n  theme_minimal()"
+    "text": "4.5 Plot The wrld_simpl Data\n\n\nCode\nggplot(world) + \n  geom_sf() +\n  theme_minimal()",
+    "crumbs": [
+      "Geographical and GIS Concepts",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Coordinate Reference Systems (CRS)</span>"
+    ]
   },
   {
-    "objectID": "shapefiles.html#introduction",
-    "href": "shapefiles.html#introduction",
+    "objectID": "shapefiles.html",
+    "href": "shapefiles.html",
     "title": "5  Shapefiles",
-    "section": "5.1 Introduction",
-    "text": "5.1 Introduction\nShapefiles are a spatial data format originally developed by ESRI.\nShapefiles come in three major types:\n\npoints, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.\nlines️, to represent line features such as roads, trails, or rivers.\npolygons, to represent polygon features such as outlines of cities, states, or countries."
+    "section": "",
+    "text": "5.1 Introduction\nShapefiles are a spatial data format originally developed by ESRI.\nShapefiles come in three major types:",
+    "crumbs": [
+      "GIS Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Shapefiles</span>"
+    ]
+  },
+  {
+    "objectID": "shapefiles.html#sec-shapefiles",
+    "href": "shapefiles.html#sec-shapefiles",
+    "title": "5  Shapefiles",
+    "section": "",
+    "text": "points, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.\nlines️, to represent line features such as roads, trails, or rivers.\npolygons, to represent polygon features such as outlines of cities, states, or countries.",
+    "crumbs": [
+      "GIS Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Shapefiles</span>"
+    ]
   },
   {
     "objectID": "shapefiles.html#shapefiles-are-lists-of-files",
     "href": "shapefiles.html#shapefiles-are-lists-of-files",
     "title": "5  Shapefiles",
     "section": "5.2 Shapefiles Are Lists of Files",
-    "text": "5.2 Shapefiles Are Lists of Files\nShapefiles are actually a set or collection of associated files, all with the same name, and all in the same directory, but different suffixes.\nR–and many other software programs–generally reference the *.shp file of the shapefile.\n\n\nShow the code\nlist.files(\"./shapefiles/a2trees\")\n\n\n[1] \"AA_Trees.cpg\"     \"AA_Trees.dbf\"     \"AA_Trees.prj\"     \"AA_Trees.sbn\"    \n[5] \"AA_Trees.sbx\"     \"AA_Trees.shp\"     \"AA_Trees.shp.xml\" \"AA_Trees.shx\""
+    "text": "5.2 Shapefiles Are Lists of Files\nShapefiles are actually a set or collection of associated files, all with the same name, and all in the same directory, but different suffixes.\nR–and many other software programs–generally reference the *.shp file of the shapefile.\n\n\nShow the code\nlist.files(\"./shapefiles/a2trees\")\n\n\n[1] \"AA_Trees.cpg\"     \"AA_Trees.dbf\"     \"AA_Trees.prj\"     \"AA_Trees.sbn\"    \n[5] \"AA_Trees.sbx\"     \"AA_Trees.shp\"     \"AA_Trees.shp.xml\" \"AA_Trees.shx\"",
+    "crumbs": [
+      "GIS Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Shapefiles</span>"
+    ]
   },
   {
     "objectID": "shapefiles.html#call-libraries",
     "href": "shapefiles.html#call-libraries",
     "title": "5  Shapefiles",
     "section": "5.3 Call Libraries",
-    "text": "5.3 Call Libraries\n\n\nShow the code\nlibrary(ggplot2) # beautiful graphs\n\n# library(dplyr) # data wrangling\n\nlibrary(sf) # simple (spatial) features\n\n# library(readr) # import csv"
+    "text": "5.3 Call Libraries\n\n\nShow the code\nlibrary(ggplot2) # beautiful graphs\n\n# library(dplyr) # data wrangling\n\nlibrary(sf) # simple (spatial) features\n\n# library(readr) # import csv",
+    "crumbs": [
+      "GIS Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Shapefiles</span>"
+    ]
   },
   {
     "objectID": "shapefiles.html#open-shapefiles",
     "href": "shapefiles.html#open-shapefiles",
     "title": "5  Shapefiles",
     "section": "5.4 Open Shapefiles",
-    "text": "5.4 Open Shapefiles\n\n\nShow the code\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nbuildings &lt;- read_sf(\"./shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp\")\n\ntrees &lt;- read_sf(\"./shapefiles/a2trees/AA_Trees.shp\")\n\nparks &lt;- read_sf(\"./shapefiles/AA_Parks/AA_Parks.shp\")\n\nuniversity &lt;- read_sf(\"./shapefiles/AA_University/AA_University.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads\n\n# watersheds &lt;- read_sf(\"./shapefiles/watersheds/Watersheds.shp\")"
+    "text": "5.4 Open Shapefiles\n\n\nShow the code\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nbuildings &lt;- read_sf(\"./shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp\")\n\ntrees &lt;- read_sf(\"./shapefiles/a2trees/AA_Trees.shp\")\n\nparks &lt;- read_sf(\"./shapefiles/AA_Parks/AA_Parks.shp\")\n\nuniversity &lt;- read_sf(\"./shapefiles/AA_University/AA_University.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads\n\n# watersheds &lt;- read_sf(\"./shapefiles/watersheds/Watersheds.shp\")",
+    "crumbs": [
+      "GIS Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Shapefiles</span>"
+    ]
   },
   {
     "objectID": "shapefiles.html#use-ggplot-to-map-the-shapefiles",
     "href": "shapefiles.html#use-ggplot-to-map-the-shapefiles",
     "title": "5  Shapefiles",
     "section": "5.5 Use ggplot to Map the Shapefiles",
-    "text": "5.5 Use ggplot to Map the Shapefiles\n\n\nShow the code\nggplot(city_boundary) + # initial sf data\n  # geom_sf(data = buildings,\n  #         fill = \"lightgrey\") +\n  geom_sf(data = AnnArborRoads, # first layer: Ann Arbor roads \n          color = \"lightgrey\") +\n  geom_sf(color = \"red\", alpha = .5) + # second layer: city boundary\n  geom_sf(data = trees, # third layer: trees\n          size = .01,\n          color = \"darkgreen\") +\n  labs(title = \"Demonstration of Shapefiles\",\n       subtitle = \"Green Trees Are Points \\nGrey Roads are Lines \\nRed City Boundary is Polygon\") +\n  theme_minimal() +\n  theme(axis.text = element_text(size = rel(.5)))"
+    "text": "5.5 Use ggplot to Map the Shapefiles\n\n\nShow the code\nggplot(city_boundary) + # initial sf data\n  # geom_sf(data = buildings,\n  #         fill = \"lightgrey\") +\n  geom_sf(data = AnnArborRoads, # first layer: Ann Arbor roads \n          color = \"lightgrey\") +\n  geom_sf(color = \"red\", alpha = .5) + # second layer: city boundary\n  geom_sf(data = trees, # third layer: trees\n          size = .01,\n          color = \"darkgreen\") +\n  labs(title = \"Demonstration of Shapefiles\",\n       subtitle = \"Green Trees Are Points \\nGrey Roads are Lines \\nRed City Boundary is Polygon\") +\n  theme_minimal() +\n  theme(axis.text = element_text(size = rel(.5)))",
+    "crumbs": [
+      "GIS Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Shapefiles</span>"
+    ]
   },
   {
     "objectID": "shapefiles2.html",
     "href": "shapefiles2.html",
     "title": "6  Shapefiles on This Site",
     "section": "",
-    "text": "For user convenience, these shapefiles are available on this site."
+    "text": "For user convenience, these shapefiles are available on this site.",
+    "crumbs": [
+      "GIS Data",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Shapefiles on This Site</span>"
+    ]
   },
   {
-    "objectID": "ggplot-map.html#call-the-libraries",
-    "href": "ggplot-map.html#call-the-libraries",
-    "title": "7  Making Maps with ggplot",
-    "section": "7.1 Call the libraries",
-    "text": "7.1 Call the libraries\n\n\nCode\nlibrary(ggplot2) # beautiful graphs\n\nlibrary(dplyr) # data wrangling\n\nlibrary(sf) # simple (spatial) features\n\nlibrary(readr) # import csv"
+    "objectID": "symbology.html",
+    "href": "symbology.html",
+    "title": "7  Symbology",
+    "section": "",
+    "text": "7.1 Introduction\nShapefiles are a standard format for storing geographic data.\nShapefiles generally come in three types: points ●; lines ━; and polygons ■.",
+    "crumbs": [
+      "GIS Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Symbology</span>"
+    ]
+  },
+  {
+    "objectID": "ggplot-map.html",
+    "href": "ggplot-map.html",
+    "title": "8  Making Maps with ggplot",
+    "section": "",
+    "text": "8.1 Call the libraries\nCode\nlibrary(ggplot2) # beautiful graphs\n\nlibrary(dplyr) # data wrangling\n\nlibrary(sf) # simple (spatial) features\n\nlibrary(readr) # import csv",
+    "crumbs": [
+      "R Libraries",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Making Maps with `ggplot`</span>"
+    ]
   },
   {
     "objectID": "ggplot-map.html#use-read_sf-to-open-shapefiles",
     "href": "ggplot-map.html#use-read_sf-to-open-shapefiles",
-    "title": "7  Making Maps with ggplot",
-    "section": "7.2 Use read_sf To Open Shapefiles",
-    "text": "7.2 Use read_sf To Open Shapefiles\n\nGetting the directory and filename right is important.\n\n\n\nCode\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nbuildings &lt;- read_sf(\"./shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp\")\n\ntrees &lt;- read_sf(\"./shapefiles/a2trees/AA_Trees.shp\")\n\nparks &lt;- read_sf(\"./shapefiles/AA_Parks/AA_Parks.shp\")\n\nuniversity &lt;- read_sf(\"./shapefiles/AA_University/AA_University.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads\n\n\nWarning: attribute variables are assumed to be spatially constant throughout\nall geometries\n\n\nCode\n# watersheds &lt;- read_sf(\"../shapefiles/watersheds/Watersheds.shp\")"
+    "title": "8  Making Maps with ggplot",
+    "section": "8.2 Use read_sf To Open Shapefiles",
+    "text": "8.2 Use read_sf To Open Shapefiles\n\nGetting the directory and filename right is important.\n\n\n\nCode\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nbuildings &lt;- read_sf(\"./shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp\")\n\ntrees &lt;- read_sf(\"./shapefiles/a2trees/AA_Trees.shp\")\n\nparks &lt;- read_sf(\"./shapefiles/AA_Parks/AA_Parks.shp\")\n\nuniversity &lt;- read_sf(\"./shapefiles/AA_University/AA_University.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads\n\n\nWarning: attribute variables are assumed to be spatially constant throughout\nall geometries\n\n\nCode\n# watersheds &lt;- read_sf(\"../shapefiles/watersheds/Watersheds.shp\")",
+    "crumbs": [
+      "R Libraries",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Making Maps with `ggplot`</span>"
+    ]
   },
   {
     "objectID": "ggplot-map.html#use-ggplot-to-make-the-map",
     "href": "ggplot-map.html#use-ggplot-to-make-the-map",
-    "title": "7  Making Maps with ggplot",
-    "section": "7.3 Use ggplot to Make The Map",
-    "text": "7.3 Use ggplot to Make The Map\n\n\nCode\n# NB RE Macs: the plotting device on Macs can be very slow\n# we notice this with all the detail that is involved in maps\n# maps can be REALLY slow on Macs\n# so--inconveniently--we write directly to PDF on a Mac\n# and don't see the graph in our RStudio window\n# we have to manually open the PDF to see the created map\n\n# Apparently, the first layer is important for setting the CRS of the map\n\n# pdf(\"./mapping/ggplot-map-test.pdf\") # open PDF device (uncomment on Mac)\n\n# dev.off() # turn off PDF device (uncomment on Mac)\n\n\n\n\nCode\nggplot(city_boundary) +\n  # geom_sf(data = buildings,\n  #         fill = \"lightgrey\") +\n  geom_sf(data = AnnArborRoads, \n          color = \"lightgrey\") +\n  geom_sf(color = \"darkgrey\", alpha = .5) +\n  geom_sf(data = university, \n          fill = \"blue\", \n          alpha = .25) + \n  geom_sf(data = parks, \n          fill = \"darkgreen\", \n          alpha = .25) +\n  # geom_sf(data = trees, \n  #         size = .1,\n  #         color = \"darkgreen\") +\n  labs(title = \"Ann Arbor\") +\n  scale_color_viridis_d() +\n  scale_fill_viridis_d() +\n  theme_minimal() +\n  theme(plot.title = element_text(size = rel(2)), \n        axis.text = element_text(size = rel(.5)),\n        legend.position = \"bottom\")"
+    "title": "8  Making Maps with ggplot",
+    "section": "8.3 Use ggplot to Make The Map",
+    "text": "8.3 Use ggplot to Make The Map\n\n\nCode\n# NB RE Macs: the plotting device on Macs can be very slow\n# we notice this with all the detail that is involved in maps\n# maps can be REALLY slow on Macs\n# so--inconveniently--we write directly to PDF on a Mac\n# and don't see the graph in our RStudio window\n# we have to manually open the PDF to see the created map\n\n# Apparently, the first layer is important for setting the CRS of the map\n\n# pdf(\"./mapping/ggplot-map-test.pdf\") # open PDF device (uncomment on Mac)\n\n# dev.off() # turn off PDF device (uncomment on Mac)\n\n\n\n\nCode\nggplot(city_boundary) +\n  # geom_sf(data = buildings,\n  #         fill = \"lightgrey\") +\n  geom_sf(data = AnnArborRoads, \n          color = \"lightgrey\") +\n  geom_sf(color = \"darkgrey\", alpha = .5) +\n  geom_sf(data = university, \n          fill = \"blue\", \n          alpha = .25) + \n  geom_sf(data = parks, \n          fill = \"darkgreen\", \n          alpha = .25) +\n  # geom_sf(data = trees, \n  #         size = .1,\n  #         color = \"darkgreen\") +\n  labs(title = \"Ann Arbor\") +\n  scale_color_viridis_d() +\n  scale_fill_viridis_d() +\n  theme_minimal() +\n  theme(plot.title = element_text(size = rel(2)), \n        axis.text = element_text(size = rel(.5)),\n        legend.position = \"bottom\")",
+    "crumbs": [
+      "R Libraries",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Making Maps with `ggplot`</span>"
+    ]
   },
   {
-    "objectID": "location-data.html#sec-location-data",
-    "href": "location-data.html#sec-location-data",
-    "title": "8  Making Maps With ggplot Using Location Data",
-    "section": "8.1 Call Libraries",
-    "text": "8.1 Call Libraries\n\n\nCode\nlibrary(readr) # read CSV\n\nlibrary(dplyr) # data wrangling\n\nlibrary(sf) # simple features\n\nlibrary(ggplot2) # maps"
+    "objectID": "location-data.html",
+    "href": "location-data.html",
+    "title": "9  Making Maps With ggplot Using Location Data",
+    "section": "",
+    "text": "9.1 Call Libraries\nCode\nlibrary(readr) # read CSV\n\nlibrary(dplyr) # data wrangling\n\nlibrary(sf) # simple features\n\nlibrary(ggplot2) # maps",
+    "crumbs": [
+      "R Libraries",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Making Maps With `ggplot` Using Location Data</span>"
+    ]
   },
   {
     "objectID": "location-data.html#use-read_csv-to-read-text-file-with-client-data",
     "href": "location-data.html#use-read_csv-to-read-text-file-with-client-data",
-    "title": "8  Making Maps With ggplot Using Location Data",
-    "section": "8.2 Use read_csv to Read Text File with Client Data",
-    "text": "8.2 Use read_csv to Read Text File with Client Data\n\n\nCode\nclients &lt;- read_csv(\"./location-data/clients.csv\")"
+    "title": "9  Making Maps With ggplot Using Location Data",
+    "section": "9.2 Use read_csv to Read Text File with Client Data",
+    "text": "9.2 Use read_csv to Read Text File with Client Data\n\n\nCode\nclients &lt;- read_csv(\"./location-data/clients.csv\")",
+    "crumbs": [
+      "R Libraries",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Making Maps With `ggplot` Using Location Data</span>"
+    ]
   },
   {
     "objectID": "location-data.html#only-clients-in-ann-arbor-area",
     "href": "location-data.html#only-clients-in-ann-arbor-area",
-    "title": "8  Making Maps With ggplot Using Location Data",
-    "section": "8.3 Only Clients in Ann Arbor Area",
-    "text": "8.3 Only Clients in Ann Arbor Area\n\n\nCode\nclients &lt;- clients %&gt;% \n  filter(latitude &lt;= 42.33 &\n           latitude &gt;= 42.22 &\n           longitude &gt;= -83.8 &\n           longitude &lt;= -83.65)"
+    "title": "9  Making Maps With ggplot Using Location Data",
+    "section": "9.3 Only Clients in Ann Arbor Area",
+    "text": "9.3 Only Clients in Ann Arbor Area\n\n\nCode\nclients &lt;- clients %&gt;% \n  filter(latitude &lt;= 42.33 &\n           latitude &gt;= 42.22 &\n           longitude &gt;= -83.8 &\n           longitude &lt;= -83.65)",
+    "crumbs": [
+      "R Libraries",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Making Maps With `ggplot` Using Location Data</span>"
+    ]
   },
   {
     "objectID": "location-data.html#convert-clients-to-sf-object-while-indicating-coordinate-reference-system-crs",
     "href": "location-data.html#convert-clients-to-sf-object-while-indicating-coordinate-reference-system-crs",
-    "title": "8  Making Maps With ggplot Using Location Data",
-    "section": "8.4 Convert Clients to sf Object While Indicating Coordinate Reference System (CRS)",
-    "text": "8.4 Convert Clients to sf Object While Indicating Coordinate Reference System (CRS)\n\n\nCode\npoint &lt;- st_as_sf(clients, \n                  coords = c(\"longitude\", \"latitude\"), \n                  crs = 4269) # A2 is NAD1983\n\n# write to shapefile\n\nst_write(point, \n         \"./shapefiles/clients/clients.shp\",\n         append = FALSE) # replace; don't append"
+    "title": "9  Making Maps With ggplot Using Location Data",
+    "section": "9.4 Convert Clients to sf Object While Indicating Coordinate Reference System (CRS)",
+    "text": "9.4 Convert Clients to sf Object While Indicating Coordinate Reference System (CRS)\n\n\nCode\npoint &lt;- st_as_sf(clients, \n                  coords = c(\"longitude\", \"latitude\"), \n                  crs = 4269) # A2 is NAD1983\n\n# write to shapefile\n\nst_write(point, \n         \"./shapefiles/clients/clients.shp\",\n         append = FALSE) # replace; don't append",
+    "crumbs": [
+      "R Libraries",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Making Maps With `ggplot` Using Location Data</span>"
+    ]
   },
   {
     "objectID": "location-data.html#read-in-shapefiles",
     "href": "location-data.html#read-in-shapefiles",
-    "title": "8  Making Maps With ggplot Using Location Data",
-    "section": "8.5 Read in Shapefile(s)",
-    "text": "8.5 Read in Shapefile(s)\n\n\nCode\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads"
+    "title": "9  Making Maps With ggplot Using Location Data",
+    "section": "9.5 Read in Shapefile(s)",
+    "text": "9.5 Read in Shapefile(s)\n\n\nCode\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads",
+    "crumbs": [
+      "R Libraries",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Making Maps With `ggplot` Using Location Data</span>"
+    ]
   },
   {
     "objectID": "location-data.html#map",
     "href": "location-data.html#map",
-    "title": "8  Making Maps With ggplot Using Location Data",
-    "section": "8.6 Map",
-    "text": "8.6 Map\n\n\nCode\nggplot(city_boundary) +\n  geom_sf(alpha = .5) +\n  geom_sf(data = AnnArborRoads, \n          color = \"darkgrey\") +\n  geom_sf(data = point,\n          aes(color = program),\n          size = 3) +\nlabs(title = \"Ann Arbor\",\n     subtitle = \"Location of Program Clients\") +\n  scale_color_viridis_d() +\n  scale_fill_viridis_d() +\n  theme_minimal() +\n  theme(plot.title = element_text(size = rel(2)), \n        axis.text = element_text(size = rel(.5)),\n        legend.position = \"bottom\")"
+    "title": "9  Making Maps With ggplot Using Location Data",
+    "section": "9.6 Map",
+    "text": "9.6 Map\n\n\nCode\nggplot(city_boundary) +\n  geom_sf(alpha = .5) +\n  geom_sf(data = AnnArborRoads, \n          color = \"darkgrey\") +\n  geom_sf(data = point,\n          aes(color = program),\n          size = 3) +\nlabs(title = \"Ann Arbor\",\n     subtitle = \"Location of Program Clients\") +\n  scale_color_viridis_d() +\n  scale_fill_viridis_d() +\n  theme_minimal() +\n  theme(plot.title = element_text(size = rel(2)), \n        axis.text = element_text(size = rel(.5)),\n        legend.position = \"bottom\")",
+    "crumbs": [
+      "R Libraries",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Making Maps With `ggplot` Using Location Data</span>"
+    ]
   },
   {
-    "objectID": "geocoding.html#call-libraries",
-    "href": "geocoding.html#call-libraries",
-    "title": "9  Geocoding",
-    "section": "9.1 Call Libraries",
-    "text": "9.1 Call Libraries\n\n\nCode\nlibrary(tidygeocoder) # geocoding\n\nlibrary(dplyr) # for %&gt;% operator\n\nlibrary(readr) # import CSV\n\nlibrary(DT) # nice tables"
+    "objectID": "geocoding.html",
+    "href": "geocoding.html",
+    "title": "10  Geocoding",
+    "section": "",
+    "text": "10.1 Call Libraries\nCode\nlibrary(tidygeocoder) # geocoding\n\nlibrary(dplyr) # for %&gt;% operator\n\nlibrary(readr) # import CSV\n\nlibrary(DT) # nice tables",
+    "crumbs": [
+      "More Advanced GIS Concepts",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Geocoding</span>"
+    ]
   },
   {
     "objectID": "geocoding.html#get-data-to-be-geocoded",
     "href": "geocoding.html#get-data-to-be-geocoded",
-    "title": "9  Geocoding",
-    "section": "9.2 Get Data To Be Geocoded",
-    "text": "9.2 Get Data To Be Geocoded\n\n\nCode\nsimulated_address_data &lt;- read_csv(\"simulated-address-data/simulated-address-data.csv\")\n\nDT::datatable(simulated_address_data,\n              extensions = 'Buttons', \n              options = list(\n                dom = 'Bfrtip',\n                buttons = c('copy', \n                            'csv', \n                            'print'))) # nice table"
+    "title": "10  Geocoding",
+    "section": "10.2 Get Data To Be Geocoded",
+    "text": "10.2 Get Data To Be Geocoded\n\n\nCode\nsimulated_address_data &lt;- read_csv(\"simulated-address-data/simulated-address-data.csv\")\n\nDT::datatable(simulated_address_data,\n              extensions = 'Buttons', \n              options = list(\n                dom = 'Bfrtip',\n                buttons = c('copy', \n                            'csv', \n                            'print'))) # nice table",
+    "crumbs": [
+      "More Advanced GIS Concepts",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Geocoding</span>"
+    ]
   },
   {
     "objectID": "geocoding.html#concatenate-addresses",
     "href": "geocoding.html#concatenate-addresses",
-    "title": "9  Geocoding",
-    "section": "9.3 Concatenate Addresses",
-    "text": "9.3 Concatenate Addresses\n\n\nCode\nsimulated_address_data$address &lt;- paste(simulated_address_data$street,\n                                        \", \",\n                                        simulated_address_data$city,\n                                        \", \",\n                                        simulated_address_data$state)\n\nDT::datatable(simulated_address_data,\n              extensions = 'Buttons', \n              options = list(\n                dom = 'Bfrtip',\n                buttons = c('copy', \n                            'csv', \n                            'print'))) # nice table"
+    "title": "10  Geocoding",
+    "section": "10.3 Concatenate Addresses",
+    "text": "10.3 Concatenate Addresses\n\n\nCode\nsimulated_address_data$address &lt;- paste(simulated_address_data$street,\n                                        \", \",\n                                        simulated_address_data$city,\n                                        \", \",\n                                        simulated_address_data$state)\n\nDT::datatable(simulated_address_data,\n              extensions = 'Buttons', \n              options = list(\n                dom = 'Bfrtip',\n                buttons = c('copy', \n                            'csv', \n                            'print'))) # nice table",
+    "crumbs": [
+      "More Advanced GIS Concepts",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Geocoding</span>"
+    ]
   },
   {
     "objectID": "geocoding.html#geocode",
     "href": "geocoding.html#geocode",
-    "title": "9  Geocoding",
-    "section": "9.4 Geocode",
-    "text": "9.4 Geocode\n\nArcGIS geocoding has LOW success rate with this data\n\n\nYou will want to find a process with HIGH success rate\n\n\nYou could also try batchgeo -&gt; KML -&gt; Latitude/Longitude\n\n\n\nCode\ngeocoded_data &lt;- simulated_address_data %&gt;% \n  tidygeocoder::geocode(address, \n                        method = 'arcgis', \n                        lat = latitude, \n                        long = longitude)\n\n\nPassing 3 addresses to the ArcGIS single address geocoder\n\n\nQuery completed in: 1.4 seconds\n\n\nCode\nDT::datatable(geocoded_data,\n              extensions = 'Buttons', \n              options = list(\n                dom = 'Bfrtip',\n                buttons = c('copy', \n                            'csv', \n                            'print'))) # nice table\n\n\n\n\n\n\n\n\n\n\n\n\n\nGeocoding Can Make Errors!\n\n\n\nNB that for whatever reason, the geocoder has made a mistake: Agency Z has been placed in the Southern Hemisphere. Geocoding can be an error prone process and requires careful inspection of your tabular and mapped data.\nA geocoder may also be unable to geocode some of your data. Low success rates are not uncommon, and you may have to work hard to ensure that the majority, or all, of your data are geocoded.\n\n\n\nGeocoded data can then be mapped using procedures outlined in Section 8.1."
+    "title": "10  Geocoding",
+    "section": "10.4 Geocode",
+    "text": "10.4 Geocode\n\nArcGIS geocoding has LOW success rate with this data\n\n\nYou will want to find a process with HIGH success rate\n\n\nYou could also try batchgeo -&gt; KML -&gt; Latitude/Longitude\n\n\n\nCode\ngeocoded_data &lt;- simulated_address_data %&gt;% \n  tidygeocoder::geocode(address, \n                        method = 'arcgis', \n                        lat = latitude, \n                        long = longitude)\n\n\nPassing 3 addresses to the ArcGIS single address geocoder\n\n\nQuery completed in: 1.4 seconds\n\n\nCode\nDT::datatable(geocoded_data,\n              extensions = 'Buttons', \n              options = list(\n                dom = 'Bfrtip',\n                buttons = c('copy', \n                            'csv', \n                            'print'))) # nice table\n\n\n\n\n\n\n\n\n\n\n\n\nGeocoding Can Make Errors!\n\n\n\nNB that for whatever reason, the geocoder has made a mistake: Agency Z has been placed in the Southern Hemisphere. Geocoding can be an error prone process and requires careful inspection of your tabular and mapped data.\nA geocoder may also be unable to geocode some of your data. Low success rates are not uncommon, and you may have to work hard to ensure that the majority, or all, of your data are geocoded.\n\n\n\nGeocoded data can then be mapped using procedures outlined in Section 9.1.",
+    "crumbs": [
+      "More Advanced GIS Concepts",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Geocoding</span>"
+    ]
   }
 ]

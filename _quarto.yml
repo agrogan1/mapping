@@ -25,6 +25,7 @@ book:
       chapters:
         - shapefiles.qmd
         - shapefiles2.qmd
+        - symbology.qmd
     - part: "R Libraries"
       chapters: 
         - ggplot-map.qmd
