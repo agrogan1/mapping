@@ -229,113 +229,113 @@
     ]
   },
   {
-    "objectID": "merge-with-external-data.html",
-    "href": "merge-with-external-data.html",
-    "title": "8  Merge Shapefiles With External Data",
-    "section": "",
-    "text": "8.1 Introduction\nA common task in mapping is that we have a shapefile of map data, but we want to merge in some external data from another source so that we can map that external data. Usually we want to use different colors to map that external data.\nHere, I use a shapefile of countries of the world, and map it with some made up data of arbitrary and made up x values for certain countries.\nThis tutorial builds upon another tutorial on Mapping with ggplot(Section 9.1)",
-    "crumbs": [
-      "GIS Data",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
-    ]
-  },
-  {
-    "objectID": "merge-with-external-data.html#call-libraries",
-    "href": "merge-with-external-data.html#call-libraries",
-    "title": "8  Merge Shapefiles With External Data",
-    "section": "8.2 Call Libraries",
-    "text": "8.2 Call Libraries\n\n\nShow the code\nlibrary(sf) # simple (spatial) features\n\nlibrary(ggplot2) # beautiful plots\n\nlibrary(dplyr) # data wrangling and joins\n\nlibrary(tibble) # library for updated dataframes\n\nlibrary(readr) # read CSV files\n\nlibrary(countrycode) # work with country data",
-    "crumbs": [
-      "GIS Data",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
-    ]
-  },
-  {
-    "objectID": "merge-with-external-data.html#get-shapefile",
-    "href": "merge-with-external-data.html#get-shapefile",
-    "title": "8  Merge Shapefiles With External Data",
-    "section": "8.3 Get Shapefile",
-    "text": "8.3 Get Shapefile\nHere I am using the wrld_simpl dataset of country outlines that is available in several R packages. I read this data into an object called world.\n\n\nShow the code\nworld &lt;- read_sf(\"./shapefiles/wrld_simpl/wrld_simpl.shp\")",
-    "crumbs": [
-      "GIS Data",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
-    ]
-  },
-  {
-    "objectID": "merge-with-external-data.html#make-a-map-without-data",
-    "href": "merge-with-external-data.html#make-a-map-without-data",
-    "title": "8  Merge Shapefiles With External Data",
-    "section": "8.4 Make a Map Without Data",
-    "text": "8.4 Make a Map Without Data\nI map the data with ggplot, and the special geom, geom_sf.\n\n\nShow the code\nggplot(world) + \n  geom_sf() +\n  labs(title = \"Demonstration Map With No Data\")",
-    "crumbs": [
-      "GIS Data",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
-    ]
-  },
-  {
-    "objectID": "merge-with-external-data.html#get-external-data",
-    "href": "merge-with-external-data.html#get-external-data",
-    "title": "8  Merge Shapefiles With External Data",
-    "section": "8.5 Get External Data",
-    "text": "8.5 Get External Data\nHere I read in a completely made up data set of arbitrary values. The file that I am reading in is a csv file, but could be a file in any number of formats.\n\n\nShow the code\nexternaldata &lt;- read_csv(\"./external-data/externaldata.csv\")\n\nexternaldata # replay data set\n\n\n# A tibble: 6 × 3\n  ISO3  arbitrary_x name     \n  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;    \n1 COL            10 Colombia \n2 CHL             9 Chile    \n3 ARG             8 Argentina\n4 GHA             7 Ghana    \n5 MLI             6 Mali     \n6 AUS             5 Australia",
-    "crumbs": [
-      "GIS Data",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
-    ]
-  },
-  {
-    "objectID": "merge-with-external-data.html#join-data-to-shapefile",
-    "href": "merge-with-external-data.html#join-data-to-shapefile",
-    "title": "8  Merge Shapefiles With External Data",
-    "section": "8.6 Join Data to Shapefile",
-    "text": "8.6 Join Data to Shapefile\nI use left_join from the dplyr package to merge the spatial data in world with externaldata.\nleft_join is a function that keeps all observations in the data on the left (the shapefile), and only those matching observations in the data on the right (the external data), which is usually what I want in mapping.\nI need a unique identifier for my rows of data, so here I use ISO3, a unique 3 letter identifier for countries of the world.\n\n\nShow the code\nnewdata &lt;- left_join(world, externaldata, by = \"ISO3\")",
-    "crumbs": [
-      "GIS Data",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
-    ]
-  },
-  {
-    "objectID": "merge-with-external-data.html#make-a-map-with-the-data",
-    "href": "merge-with-external-data.html#make-a-map-with-the-data",
-    "title": "8  Merge Shapefiles With External Data",
-    "section": "8.7 Make a Map With The Data",
-    "text": "8.7 Make a Map With The Data\nOnce I have the merged data, it is easy to map it with ggplot and geom_sf. Note that I need to specify an aesthetic for geom_sf. Here arbitrary_x is the fill color for countries on the map.\n\nData could also be mapped with another package like leaflet.\n\n\n\nShow the code\nggplot(newdata) +\n  geom_sf(aes(fill = arbitrary_x)) + # adding a fill aesthetic\n  scale_fill_viridis_c(na.value = \"grey97\", # value for NA\n                       option = \"turbo\") + # viridis colors\n  labs(title = \"Demonstration Map With Merged Data\") +\n  theme_minimal() # better theme",
-    "crumbs": [
-      "GIS Data",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
-    ]
-  },
-  {
     "objectID": "ggplot-map.html",
     "href": "ggplot-map.html",
-    "title": "9  Making Maps with ggplot",
+    "title": "8  Making Maps with ggplot",
     "section": "",
-    "text": "9.1 Call the libraries\nCode\nlibrary(ggplot2) # beautiful graphs\n\nlibrary(dplyr) # data wrangling\n\nlibrary(sf) # simple (spatial) features\n\nlibrary(readr) # import csv",
+    "text": "8.1 Call the libraries\nCode\nlibrary(ggplot2) # beautiful graphs\n\nlibrary(dplyr) # data wrangling\n\nlibrary(sf) # simple (spatial) features\n\nlibrary(readr) # import csv",
     "crumbs": [
-      "R Libraries",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Making Maps with `ggplot`</span>"
+      "Mapping With `ggplot`",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Making Maps with `ggplot`</span>"
     ]
   },
   {
     "objectID": "ggplot-map.html#use-read_sf-to-open-shapefiles",
     "href": "ggplot-map.html#use-read_sf-to-open-shapefiles",
-    "title": "9  Making Maps with ggplot",
-    "section": "9.2 Use read_sf To Open Shapefiles",
-    "text": "9.2 Use read_sf To Open Shapefiles\n\nGetting the directory and filename right is important.\n\n\n\nCode\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nbuildings &lt;- read_sf(\"./shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp\")\n\ntrees &lt;- read_sf(\"./shapefiles/a2trees/AA_Trees.shp\")\n\nparks &lt;- read_sf(\"./shapefiles/AA_Parks/AA_Parks.shp\")\n\nuniversity &lt;- read_sf(\"./shapefiles/AA_University/AA_University.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads\n\n\nWarning: attribute variables are assumed to be spatially constant throughout\nall geometries\n\n\nCode\n# watersheds &lt;- read_sf(\"../shapefiles/watersheds/Watersheds.shp\")",
+    "title": "8  Making Maps with ggplot",
+    "section": "8.2 Use read_sf To Open Shapefiles",
+    "text": "8.2 Use read_sf To Open Shapefiles\n\nGetting the directory and filename right is important.\n\n\n\nCode\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nbuildings &lt;- read_sf(\"./shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp\")\n\ntrees &lt;- read_sf(\"./shapefiles/a2trees/AA_Trees.shp\")\n\nparks &lt;- read_sf(\"./shapefiles/AA_Parks/AA_Parks.shp\")\n\nuniversity &lt;- read_sf(\"./shapefiles/AA_University/AA_University.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads\n\n\nWarning: attribute variables are assumed to be spatially constant throughout\nall geometries\n\n\nCode\n# watersheds &lt;- read_sf(\"../shapefiles/watersheds/Watersheds.shp\")",
     "crumbs": [
-      "R Libraries",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Making Maps with `ggplot`</span>"
+      "Mapping With `ggplot`",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Making Maps with `ggplot`</span>"
     ]
   },
   {
     "objectID": "ggplot-map.html#use-ggplot-to-make-the-map",
     "href": "ggplot-map.html#use-ggplot-to-make-the-map",
-    "title": "9  Making Maps with ggplot",
-    "section": "9.3 Use ggplot to Make The Map",
-    "text": "9.3 Use ggplot to Make The Map\n\n\nCode\n# NB RE Macs: the plotting device on Macs can be very slow\n# we notice this with all the detail that is involved in maps\n# maps can be REALLY slow on Macs\n# so--inconveniently--we write directly to PDF on a Mac\n# and don't see the graph in our RStudio window\n# we have to manually open the PDF to see the created map\n\n# Apparently, the first layer is important for setting the CRS of the map\n\n# pdf(\"./mapping/ggplot-map-test.pdf\") # open PDF device (uncomment on Mac)\n\n# dev.off() # turn off PDF device (uncomment on Mac)\n\n\n\n\nCode\nggplot(city_boundary) +\n  # geom_sf(data = buildings,\n  #         fill = \"lightgrey\") +\n  geom_sf(data = AnnArborRoads, \n          color = \"lightgrey\") +\n  geom_sf(color = \"darkgrey\", alpha = .5) +\n  geom_sf(data = university, \n          fill = \"blue\", \n          alpha = .25) + \n  geom_sf(data = parks, \n          fill = \"darkgreen\", \n          alpha = .25) +\n  # geom_sf(data = trees, \n  #         size = .1,\n  #         color = \"darkgreen\") +\n  labs(title = \"Ann Arbor\") +\n  scale_color_viridis_d() +\n  scale_fill_viridis_d() +\n  theme_minimal() +\n  theme(plot.title = element_text(size = rel(2)), \n        axis.text = element_text(size = rel(.5)),\n        legend.position = \"bottom\")",
+    "title": "8  Making Maps with ggplot",
+    "section": "8.3 Use ggplot to Make The Map",
+    "text": "8.3 Use ggplot to Make The Map\n\n\nCode\n# NB RE Macs: the plotting device on Macs can be very slow\n# we notice this with all the detail that is involved in maps\n# maps can be REALLY slow on Macs\n# so--inconveniently--we write directly to PDF on a Mac\n# and don't see the graph in our RStudio window\n# we have to manually open the PDF to see the created map\n\n# Apparently, the first layer is important for setting the CRS of the map\n\n# pdf(\"./mapping/ggplot-map-test.pdf\") # open PDF device (uncomment on Mac)\n\n# dev.off() # turn off PDF device (uncomment on Mac)\n\n\n\n\nCode\nggplot(city_boundary) +\n  # geom_sf(data = buildings,\n  #         fill = \"lightgrey\") +\n  geom_sf(data = AnnArborRoads, \n          color = \"lightgrey\") +\n  geom_sf(color = \"darkgrey\", alpha = .5) +\n  geom_sf(data = university, \n          fill = \"blue\", \n          alpha = .25) + \n  geom_sf(data = parks, \n          fill = \"darkgreen\", \n          alpha = .25) +\n  # geom_sf(data = trees, \n  #         size = .1,\n  #         color = \"darkgreen\") +\n  labs(title = \"Ann Arbor\") +\n  scale_color_viridis_d() +\n  scale_fill_viridis_d() +\n  theme_minimal() +\n  theme(plot.title = element_text(size = rel(2)), \n        axis.text = element_text(size = rel(.5)),\n        legend.position = \"bottom\")",
     "crumbs": [
-      "R Libraries",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Making Maps with `ggplot`</span>"
+      "Mapping With `ggplot`",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Making Maps with `ggplot`</span>"
+    ]
+  },
+  {
+    "objectID": "merge-with-external-data.html",
+    "href": "merge-with-external-data.html",
+    "title": "9  Merge Shapefiles With External Data",
+    "section": "",
+    "text": "9.1 Introduction\nA common task in mapping is that we have a shapefile of map data, but we want to merge in some external data from another source so that we can map that external data. Usually we want to use different colors to map that external data.\nHere, I use a shapefile of countries of the world, and map it with some made up data of arbitrary and made up x values for certain countries.\nThis tutorial builds upon another tutorial on Mapping with ggplot(Section 8.1)",
+    "crumbs": [
+      "Mapping With `ggplot`",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
+    ]
+  },
+  {
+    "objectID": "merge-with-external-data.html#call-libraries",
+    "href": "merge-with-external-data.html#call-libraries",
+    "title": "9  Merge Shapefiles With External Data",
+    "section": "9.2 Call Libraries",
+    "text": "9.2 Call Libraries\n\n\nShow the code\nlibrary(sf) # simple (spatial) features\n\nlibrary(ggplot2) # beautiful plots\n\nlibrary(dplyr) # data wrangling and joins\n\nlibrary(tibble) # library for updated dataframes\n\nlibrary(readr) # read CSV files\n\nlibrary(countrycode) # work with country data",
+    "crumbs": [
+      "Mapping With `ggplot`",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
+    ]
+  },
+  {
+    "objectID": "merge-with-external-data.html#get-shapefile",
+    "href": "merge-with-external-data.html#get-shapefile",
+    "title": "9  Merge Shapefiles With External Data",
+    "section": "9.3 Get Shapefile",
+    "text": "9.3 Get Shapefile\nHere I am using the wrld_simpl dataset of country outlines that is available in several R packages. I read this data into an object called world.\n\n\nShow the code\nworld &lt;- read_sf(\"./shapefiles/wrld_simpl/wrld_simpl.shp\")",
+    "crumbs": [
+      "Mapping With `ggplot`",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
+    ]
+  },
+  {
+    "objectID": "merge-with-external-data.html#make-a-map-without-data",
+    "href": "merge-with-external-data.html#make-a-map-without-data",
+    "title": "9  Merge Shapefiles With External Data",
+    "section": "9.4 Make a Map Without Data",
+    "text": "9.4 Make a Map Without Data\nI map the data with ggplot, and the special geom, geom_sf.\n\n\nShow the code\nggplot(world) + \n  geom_sf() +\n  labs(title = \"Demonstration Map With No Data\")",
+    "crumbs": [
+      "Mapping With `ggplot`",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
+    ]
+  },
+  {
+    "objectID": "merge-with-external-data.html#get-external-data",
+    "href": "merge-with-external-data.html#get-external-data",
+    "title": "9  Merge Shapefiles With External Data",
+    "section": "9.5 Get External Data",
+    "text": "9.5 Get External Data\nHere I read in a completely made up data set of arbitrary values. The file that I am reading in is a csv file, but could be a file in any number of formats.\n\n\nShow the code\nexternaldata &lt;- read_csv(\"./external-data/externaldata.csv\")\n\nexternaldata # replay data set\n\n\n# A tibble: 6 × 3\n  ISO3  arbitrary_x name     \n  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;    \n1 COL            10 Colombia \n2 CHL             9 Chile    \n3 ARG             8 Argentina\n4 GHA             7 Ghana    \n5 MLI             6 Mali     \n6 AUS             5 Australia",
+    "crumbs": [
+      "Mapping With `ggplot`",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
+    ]
+  },
+  {
+    "objectID": "merge-with-external-data.html#join-data-to-shapefile",
+    "href": "merge-with-external-data.html#join-data-to-shapefile",
+    "title": "9  Merge Shapefiles With External Data",
+    "section": "9.6 Join Data to Shapefile",
+    "text": "9.6 Join Data to Shapefile\nI use left_join from the dplyr package to merge the spatial data in world with externaldata.\nleft_join is a function that keeps all observations in the data on the left (the shapefile), and only those matching observations in the data on the right (the external data), which is usually what I want in mapping.\nI need a unique identifier for my rows of data, so here I use ISO3, a unique 3 letter identifier for countries of the world.\n\n\nShow the code\nnewdata &lt;- left_join(world, externaldata, by = \"ISO3\")",
+    "crumbs": [
+      "Mapping With `ggplot`",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
+    ]
+  },
+  {
+    "objectID": "merge-with-external-data.html#make-a-map-with-the-data",
+    "href": "merge-with-external-data.html#make-a-map-with-the-data",
+    "title": "9  Merge Shapefiles With External Data",
+    "section": "9.7 Make a Map With The Data",
+    "text": "9.7 Make a Map With The Data\nOnce I have the merged data, it is easy to map it with ggplot and geom_sf. Note that I need to specify an aesthetic for geom_sf. Here arbitrary_x is the fill color for countries on the map.\n\nData could also be mapped with another package like leaflet (Section 12.1).\n\n\n\nShow the code\nggplot(newdata) +\n  geom_sf(aes(fill = arbitrary_x)) + # adding a fill aesthetic\n  scale_fill_viridis_c(na.value = \"grey97\", # value for NA\n                       option = \"turbo\") + # viridis colors\n  labs(title = \"Demonstration Map With Merged Data\") +\n  theme_minimal() # better theme",
+    "crumbs": [
+      "Mapping With `ggplot`",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
     ]
   },
   {
@@ -345,7 +345,7 @@
     "section": "",
     "text": "10.1 Call Libraries\nCode\nlibrary(readr) # read CSV\n\nlibrary(dplyr) # data wrangling\n\nlibrary(sf) # simple features\n\nlibrary(ggplot2) # maps",
     "crumbs": [
-      "R Libraries",
+      "Mapping With `ggplot`",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Making Maps With `ggplot` Using Location Data</span>"
     ]
   },
@@ -356,7 +356,7 @@
     "section": "10.2 Use read_csv to Read Text File with Client Data",
     "text": "10.2 Use read_csv to Read Text File with Client Data\n\n\nCode\nclients &lt;- read_csv(\"./location-data/clients.csv\")",
     "crumbs": [
-      "R Libraries",
+      "Mapping With `ggplot`",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Making Maps With `ggplot` Using Location Data</span>"
     ]
   },
@@ -367,7 +367,7 @@
     "section": "10.3 Only Clients in Ann Arbor Area",
     "text": "10.3 Only Clients in Ann Arbor Area\n\n\nCode\nclients &lt;- clients %&gt;% \n  filter(latitude &lt;= 42.33 &\n           latitude &gt;= 42.22 &\n           longitude &gt;= -83.8 &\n           longitude &lt;= -83.65)",
     "crumbs": [
-      "R Libraries",
+      "Mapping With `ggplot`",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Making Maps With `ggplot` Using Location Data</span>"
     ]
   },
@@ -378,7 +378,7 @@
     "section": "10.4 Convert Clients to sf Object While Indicating Coordinate Reference System (CRS)",
     "text": "10.4 Convert Clients to sf Object While Indicating Coordinate Reference System (CRS)\n\n\nCode\npoint &lt;- st_as_sf(clients, \n                  coords = c(\"longitude\", \"latitude\"), \n                  crs = 4269) # A2 is NAD1983\n\n# write to shapefile\n\nst_write(point, \n         \"./shapefiles/clients/clients.shp\",\n         append = FALSE) # replace; don't append",
     "crumbs": [
-      "R Libraries",
+      "Mapping With `ggplot`",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Making Maps With `ggplot` Using Location Data</span>"
     ]
   },
@@ -389,7 +389,7 @@
     "section": "10.5 Read in Shapefile(s)",
     "text": "10.5 Read in Shapefile(s)\n\n\nCode\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads",
     "crumbs": [
-      "R Libraries",
+      "Mapping With `ggplot`",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Making Maps With `ggplot` Using Location Data</span>"
     ]
   },
@@ -400,7 +400,7 @@
     "section": "10.6 Map",
     "text": "10.6 Map\n\n\nCode\nggplot(city_boundary) +\n  geom_sf(alpha = .5) +\n  geom_sf(data = AnnArborRoads, \n          color = \"darkgrey\") +\n  geom_sf(data = point,\n          aes(color = program),\n          size = 3) +\nlabs(title = \"Ann Arbor\",\n     subtitle = \"Location of Program Clients\") +\n  scale_color_viridis_d() +\n  scale_fill_viridis_d() +\n  theme_minimal() +\n  theme(plot.title = element_text(size = rel(2)), \n        axis.text = element_text(size = rel(.5)),\n        legend.position = \"bottom\")",
     "crumbs": [
-      "R Libraries",
+      "Mapping With `ggplot`",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Making Maps With `ggplot` Using Location Data</span>"
     ]
   },
@@ -446,6 +446,61 @@
     "crumbs": [
       "More Advanced GIS Concepts",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Geocoding</span>"
+    ]
+  },
+  {
+    "objectID": "leaflet.html",
+    "href": "leaflet.html",
+    "title": "12  Mapping With Leaflet",
+    "section": "",
+    "text": "12.1 Call Libraries\nShow the code\nlibrary(leaflet) # web based maps\n\nlibrary(sf) # simple (spatial) features\n\nlibrary(readr) # import csv\n\nlibrary(dplyr) # data wrangling\n\nlibrary(here) # where am I?\n\nlibrary(pander) # nice tables\n\n# setwd(here()) # set the working directory",
+    "crumbs": [
+      "Other R Libraries for Mapping",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Mapping With Leaflet</span>"
+    ]
+  },
+  {
+    "objectID": "leaflet.html#get-simulated-client-data",
+    "href": "leaflet.html#get-simulated-client-data",
+    "title": "12  Mapping With Leaflet",
+    "section": "12.2 Get Simulated Client Data",
+    "text": "12.2 Get Simulated Client Data\n\n\nShow the code\nclients &lt;- read_csv(\"./location-data/clients.csv\")\n\npander(head(clients)) # top of client data\n\n\n\nTable continues below\n\n\n\n\n\n\n\n\n\n\nID\nage\ngender\nrace_ethnicity\nfamily_income\nprogram\n\n\n\n\n2892\n23\nMale\nAfrican American\n42359\nProgram B\n\n\n1971\n39\nFemale\nAsian American\n66500\nProgram C\n\n\n4728\n26\nFemale\nAsian American\n52726\nProgram C\n\n\n1020\n24\nMale\nLatinx\n52911\nProgram D\n\n\n4429\n36\nFemale\nAsian American\n50287\nProgram C\n\n\n3136\n33\nMale\nAfrican American\n45570\nProgram C\n\n\n\n\n\n\n\n\n\n\n\n\nmental_health_T1\nmental_health_T2\nlatitude\nlongitude\n\n\n\n\n95.25\n106.8\n42.16\n-83.6\n\n\n82.64\n96.3\n42.29\n-83.88\n\n\n80.49\n98.72\n42.14\n-83.78\n\n\n93.82\n91.67\n42.24\n-83.68\n\n\n83.37\n99.69\n42.18\n-83.64\n\n\n75.28\n92.9\n42.21\n-83.7",
+    "crumbs": [
+      "Other R Libraries for Mapping",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Mapping With Leaflet</span>"
+    ]
+  },
+  {
+    "objectID": "leaflet.html#only-clients-in-ann-arbor-area",
+    "href": "leaflet.html#only-clients-in-ann-arbor-area",
+    "title": "12  Mapping With Leaflet",
+    "section": "12.3 Only Clients In Ann Arbor Area",
+    "text": "12.3 Only Clients In Ann Arbor Area\n\n\nShow the code\nclients &lt;- clients %&gt;% \n  filter(latitude &lt;= 42.35 &\n           latitude &gt;= 42.2 &\n           longitude &gt;= -83.8 &\n           longitude &lt;= -83.65)",
+    "crumbs": [
+      "Other R Libraries for Mapping",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Mapping With Leaflet</span>"
+    ]
+  },
+  {
+    "objectID": "leaflet.html#read-in-shapefiles",
+    "href": "leaflet.html#read-in-shapefiles",
+    "title": "12  Mapping With Leaflet",
+    "section": "12.4 Read in Shapefiles",
+    "text": "12.4 Read in Shapefiles\n\n\nShow the code\nparks &lt;- read_sf(\"./shapefiles/AA_Parks/AA_Parks.shp\")\n\nuniversity &lt;- read_sf(\"./shapefiles/AA_University/AA_University.shp\")\n\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")",
+    "crumbs": [
+      "Other R Libraries for Mapping",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Mapping With Leaflet</span>"
+    ]
+  },
+  {
+    "objectID": "leaflet.html#leaflet-map",
+    "href": "leaflet.html#leaflet-map",
+    "title": "12  Mapping With Leaflet",
+    "section": "13.1 Leaflet Map",
+    "text": "13.1 Leaflet Map\n\n13.1.1 Color Palette\n\n\nShow the code\npal &lt;- colorFactor(c(\"red\", \"blue\", \"orange\", \"green\"), \n                   domain = levels(as.factor(clients$program)))\n\n\n\n\n13.1.2 Map\n\n\nShow the code\nleaflet(clients) %&gt;%\n  setView(lng = mean(clients$longitude), \n          lat = mean(clients$latitude), \n          zoom = 12) %&gt;% \n  # addTiles() %&gt;% # Open StreetMap\n  addProviderTiles(providers$CartoDB.Positron) %&gt;%\n  addCircleMarkers(~longitude, \n             ~latitude, \n             popup = ~paste(\"Client ID:\", as.character(ID)), \n             label = ~paste(\"Client ID:\", as.character(ID)),\n             color = ~pal(program),\n             clusterOptions = markerClusterOptions()) %&gt;%\n  addLegend(\"bottomright\", \n            pal = pal, \n            values = ~program,\n            title = \"Program\") %&gt;%\n  # addPolygons(data = parks, color = \"green\") %&gt;%\n  # addPolygons(data = university, color = \"blue\") %&gt;%\n  addPolygons(data = city_boundary, \n              color = \"red\",\n              fillOpacity = 0.0)",
+    "crumbs": [
+      "Other R Libraries for Mapping",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Mapping With Leaflet</span>"
     ]
   }
 ]

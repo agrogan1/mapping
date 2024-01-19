@@ -29,12 +29,12 @@
     <lastmod>2024-01-19T13:37:54.574Z</lastmod>
   </url>
   <url>
-    <loc>https://agrogan1.github.io/mapping/merge-with-external-data.html</loc>
-    <lastmod>2024-01-19T15:13:35.644Z</lastmod>
-  </url>
-  <url>
     <loc>https://agrogan1.github.io/mapping/ggplot-map.html</loc>
     <lastmod>2024-01-19T15:07:22.717Z</lastmod>
+  </url>
+  <url>
+    <loc>https://agrogan1.github.io/mapping/merge-with-external-data.html</loc>
+    <lastmod>2024-01-19T15:28:51.808Z</lastmod>
   </url>
   <url>
     <loc>https://agrogan1.github.io/mapping/location-data.html</loc>
@@ -43,5 +43,9 @@
   <url>
     <loc>https://agrogan1.github.io/mapping/geocoding.html</loc>
     <lastmod>2024-01-18T19:06:18.603Z</lastmod>
+  </url>
+  <url>
+    <loc>https://agrogan1.github.io/mapping/leaflet.html</loc>
+    <lastmod>2024-01-19T15:28:20.895Z</lastmod>
   </url>
 </urlset>

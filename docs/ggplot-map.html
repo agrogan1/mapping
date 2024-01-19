@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapping - 9&nbsp; Making Maps with ggplot</title>
+<title>Mapping - 8&nbsp; Making Maps with ggplot</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./location-data.html" rel="next">
-<link href="./merge-with-external-data.html" rel="prev">
+<link href="./merge-with-external-data.html" rel="next">
+<link href="./symbology.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -107,11 +107,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="mapping.css">
-<meta property="og:title" content="Mapping - 9&nbsp; Making Maps with ggplot">
+<meta property="og:title" content="Mapping - 8&nbsp; Making Maps with ggplot">
 <meta property="og:site_name" content="Mapping">
-<meta name="twitter:title" content="Mapping - 9&nbsp; Making Maps with ggplot">
+<meta name="twitter:title" content="Mapping - 8&nbsp; Making Maps with ggplot">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[9]{.chapter-number}&nbsp; [Making Maps with `ggplot`]{.chapter-title}">
+<meta name="citation_title" content="[8]{.chapter-number}&nbsp; [Making Maps with `ggplot`]{.chapter-title}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/ggplot-map.html">
 <meta name="citation_language" content="en">
 </head>
@@ -162,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ggplot-map.html">R Libraries</a></li><li class="breadcrumb-item"><a href="./ggplot-map.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ggplot-map.html">Mapping With <code>ggplot</code></a></li><li class="breadcrumb-item"><a href="./ggplot-map.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -236,18 +236,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Symbology</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./merge-with-external-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Merge Shapefiles With External Data</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">R Libraries</span></a>
+ <span class="menu-text">Mapping With <code>ggplot</code></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -256,7 +250,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ggplot-map.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./merge-with-external-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Merge Shapefiles With External Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -284,6 +284,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">Other R Libraries for Mapping</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./leaflet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Mapping With Leaflet</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -294,18 +311,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-ggplot-map" id="toc-sec-ggplot-map" class="nav-link active" data-scroll-target="#sec-ggplot-map"><span class="header-section-number">9.1</span> Call the libraries</a></li>
-  <li><a href="#use-read_sf-to-open-shapefiles" id="toc-use-read_sf-to-open-shapefiles" class="nav-link" data-scroll-target="#use-read_sf-to-open-shapefiles"><span class="header-section-number">9.2</span> Use <code>read_sf</code> To Open Shapefiles</a></li>
-  <li><a href="#use-ggplot-to-make-the-map" id="toc-use-ggplot-to-make-the-map" class="nav-link" data-scroll-target="#use-ggplot-to-make-the-map"><span class="header-section-number">9.3</span> Use <code>ggplot</code> to Make The Map</a></li>
+  <li><a href="#sec-ggplot-map" id="toc-sec-ggplot-map" class="nav-link active" data-scroll-target="#sec-ggplot-map"><span class="header-section-number">8.1</span> Call the libraries</a></li>
+  <li><a href="#use-read_sf-to-open-shapefiles" id="toc-use-read_sf-to-open-shapefiles" class="nav-link" data-scroll-target="#use-read_sf-to-open-shapefiles"><span class="header-section-number">8.2</span> Use <code>read_sf</code> To Open Shapefiles</a></li>
+  <li><a href="#use-ggplot-to-make-the-map" id="toc-use-ggplot-to-make-the-map" class="nav-link" data-scroll-target="#use-ggplot-to-make-the-map"><span class="header-section-number">8.3</span> Use <code>ggplot</code> to Make The Map</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ggplot-map.html">R Libraries</a></li><li class="breadcrumb-item"><a href="./ggplot-map.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ggplot-map.html">Mapping With <code>ggplot</code></a></li><li class="breadcrumb-item"><a href="./ggplot-map.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></h1>
 </div>
 
 
@@ -322,8 +339,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="sec-ggplot-map" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="sec-ggplot-map"><span class="header-section-number">9.1</span> Call the libraries</h2>
+<section id="sec-ggplot-map" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="sec-ggplot-map"><span class="header-section-number">8.1</span> Call the libraries</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -337,8 +354,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="use-read_sf-to-open-shapefiles" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="use-read_sf-to-open-shapefiles"><span class="header-section-number">9.2</span> Use <code>read_sf</code> To Open Shapefiles</h2>
+<section id="use-read_sf-to-open-shapefiles" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="use-read_sf-to-open-shapefiles"><span class="header-section-number">8.2</span> Use <code>read_sf</code> To Open Shapefiles</h2>
 <blockquote class="blockquote">
 <p>Getting the directory and filename right is important.</p>
 </blockquote>
@@ -370,8 +387,8 @@ all geometries</code></pre>
 </details>
 </div>
 </section>
-<section id="use-ggplot-to-make-the-map" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="use-ggplot-to-make-the-map"><span class="header-section-number">9.3</span> Use <code>ggplot</code> to Make The Map</h2>
+<section id="use-ggplot-to-make-the-map" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="use-ggplot-to-make-the-map"><span class="header-section-number">8.3</span> Use <code>ggplot</code> to Make The Map</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -961,13 +978,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./merge-with-external-data.html" class="pagination-link  aria-label=" &lt;span="" shapefiles="" with="" external="" data&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Merge Shapefiles With External Data</span></span>
+      <a href="./symbology.html" class="pagination-link  aria-label=" &lt;span="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Symbology</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./location-data.html" class="pagination-link" aria-label="<span class='chapter-number'>10</span>&nbsp; <span class='chapter-title'>Making Maps With `ggplot` Using Location Data</span>">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Making Maps With <code>ggplot</code> Using Location Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./merge-with-external-data.html" class="pagination-link" aria-label="<span class='chapter-number'>9</span>&nbsp; <span class='chapter-title'>Merge Shapefiles With External Data</span>">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Merge Shapefiles With External Data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
