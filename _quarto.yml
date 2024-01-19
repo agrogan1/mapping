@@ -26,6 +26,7 @@ book:
         - shapefiles.qmd
         - shapefiles2.qmd
         - symbology.qmd
+        - merge-with-external-data.qmd
     - part: "R Libraries"
       chapters: 
         - ggplot-map.qmd

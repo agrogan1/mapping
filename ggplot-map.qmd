@@ -2,7 +2,7 @@
 title: "Making Maps with `ggplot`"
 ---
 
-## Call the libraries
+## Call the libraries {#sec-ggplot-map}
 
 ```{r, message=FALSE}
 #| message: false
