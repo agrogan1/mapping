@@ -117,7 +117,7 @@ newdata <- left_join(world, externaldata, by = "ISO3")
 
 Once I have the merged data, it is easy to map it with `ggplot` and `geom_sf`. Note that I need to specify an `aes`thetic for `geom_sf`. Here `arbitrary_x` is the *fill* color for countries on the map.
 
-> Data could also be mapped with another package like [`leaflet`](../leaflet/leaflet-map-demo).
+> Data could also be mapped with another package like `leaflet` (@sec-leaflet).
 
 ```{r}
 #| code-fold: true
