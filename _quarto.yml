@@ -26,14 +26,17 @@ book:
         - shapefiles.qmd
         - shapefiles2.qmd
         - symbology.qmd
-        - merge-with-external-data.qmd
-    - part: "R Libraries"
+    - part: "Mapping With `ggplot`"
       chapters: 
         - ggplot-map.qmd
+        - merge-with-external-data.qmd
         - location-data.qmd
     - part: "More Advanced GIS Concepts"
       chapters: 
         - geocoding.qmd
+    - part: "Other R Libraries for Mapping"
+      chapters:
+        - leaflet.qmd
   navbar:
     background: primary
     
