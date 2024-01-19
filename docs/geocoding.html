@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapping - 10&nbsp; Geocoding</title>
+<title>Mapping - 11&nbsp; Geocoding</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -120,11 +120,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="mapping.css">
-<meta property="og:title" content="Mapping - 10&nbsp; Geocoding">
+<meta property="og:title" content="Mapping - 11&nbsp; Geocoding">
 <meta property="og:site_name" content="Mapping">
-<meta name="twitter:title" content="Mapping - 10&nbsp; Geocoding">
+<meta name="twitter:title" content="Mapping - 11&nbsp; Geocoding">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[10]{.chapter-number}&nbsp; [Geocoding]{.chapter-title}">
+<meta name="citation_title" content="[11]{.chapter-number}&nbsp; [Geocoding]{.chapter-title}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/geocoding.html">
 <meta name="citation_language" content="en">
 </head>
@@ -175,7 +175,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./geocoding.html">More Advanced GIS Concepts</a></li><li class="breadcrumb-item"><a href="./geocoding.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Geocoding</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./geocoding.html">More Advanced GIS Concepts</a></li><li class="breadcrumb-item"><a href="./geocoding.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Geocoding</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -249,6 +249,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Symbology</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./merge-with-external-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Merge Shapefiles With External Data</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -263,13 +269,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ggplot-map.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./location-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Making Maps With <code>ggplot</code> Using Location Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Making Maps With <code>ggplot</code> Using Location Data</span></span></a>
   </div>
 </li>
       </ul>
@@ -286,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./geocoding.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Geocoding</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Geocoding</span></span></a>
   </div>
 </li>
       </ul>
@@ -301,19 +307,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#call-libraries" id="toc-call-libraries" class="nav-link active" data-scroll-target="#call-libraries"><span class="header-section-number">10.1</span> Call Libraries</a></li>
-  <li><a href="#get-data-to-be-geocoded" id="toc-get-data-to-be-geocoded" class="nav-link" data-scroll-target="#get-data-to-be-geocoded"><span class="header-section-number">10.2</span> Get Data To Be Geocoded</a></li>
-  <li><a href="#concatenate-addresses" id="toc-concatenate-addresses" class="nav-link" data-scroll-target="#concatenate-addresses"><span class="header-section-number">10.3</span> Concatenate Addresses</a></li>
-  <li><a href="#geocode" id="toc-geocode" class="nav-link" data-scroll-target="#geocode"><span class="header-section-number">10.4</span> Geocode</a></li>
+  <li><a href="#call-libraries" id="toc-call-libraries" class="nav-link active" data-scroll-target="#call-libraries"><span class="header-section-number">11.1</span> Call Libraries</a></li>
+  <li><a href="#get-data-to-be-geocoded" id="toc-get-data-to-be-geocoded" class="nav-link" data-scroll-target="#get-data-to-be-geocoded"><span class="header-section-number">11.2</span> Get Data To Be Geocoded</a></li>
+  <li><a href="#concatenate-addresses" id="toc-concatenate-addresses" class="nav-link" data-scroll-target="#concatenate-addresses"><span class="header-section-number">11.3</span> Concatenate Addresses</a></li>
+  <li><a href="#geocode" id="toc-geocode" class="nav-link" data-scroll-target="#geocode"><span class="header-section-number">11.4</span> Geocode</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./geocoding.html">More Advanced GIS Concepts</a></li><li class="breadcrumb-item"><a href="./geocoding.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Geocoding</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./geocoding.html">More Advanced GIS Concepts</a></li><li class="breadcrumb-item"><a href="./geocoding.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Geocoding</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Geocoding</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Geocoding</span></h1>
 </div>
 
 
@@ -330,8 +336,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="call-libraries" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="call-libraries"><span class="header-section-number">10.1</span> Call Libraries</h2>
+<section id="call-libraries" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="call-libraries"><span class="header-section-number">11.1</span> Call Libraries</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -345,8 +351,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="get-data-to-be-geocoded" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="get-data-to-be-geocoded"><span class="header-section-number">10.2</span> Get Data To Be Geocoded</h2>
+<section id="get-data-to-be-geocoded" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="get-data-to-be-geocoded"><span class="header-section-number">11.2</span> Get Data To Be Geocoded</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -362,8 +368,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="concatenate-addresses" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="concatenate-addresses"><span class="header-section-number">10.3</span> Concatenate Addresses</h2>
+<section id="concatenate-addresses" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="concatenate-addresses"><span class="header-section-number">11.3</span> Concatenate Addresses</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -387,8 +393,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="geocode" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="geocode"><span class="header-section-number">10.4</span> Geocode</h2>
+<section id="geocode" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="geocode"><span class="header-section-number">11.4</span> Geocode</h2>
 <blockquote class="blockquote">
 <p>ArcGIS geocoding has LOW success rate with this data</p>
 </blockquote>
@@ -443,7 +449,7 @@ Geocoding Can Make Errors!
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Geocoded data can then be mapped using procedures outlined in <a href="location-data.html#sec-location-data" class="quarto-xref"><span>Section 9.1</span></a>.</p>
+<p>Geocoded data can then be mapped using procedures outlined in <a href="location-data.html#sec-location-data" class="quarto-xref"><span>Section 10.1</span></a>.</p>
 </blockquote>
 
 
@@ -984,7 +990,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./location-data.html" class="pagination-link  aria-label=" &lt;span="" maps="" with="" `ggplot`="" using="" location="" data&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Making Maps With <code>ggplot</code> Using Location Data</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Making Maps With <code>ggplot</code> Using Location Data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

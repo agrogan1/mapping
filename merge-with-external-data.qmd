@@ -2,7 +2,7 @@
 title: "Merge Shapefiles With External Data"
 ---
 
-# Introduction
+## Introduction
 
 A common task in mapping is that we have a shapefile of map data, but we want to merge in some external data from another source so that we can map that external data. Usually we want to use different colors to map that external data.
 
@@ -10,8 +10,7 @@ Here, I use a shapefile of countries of the world, and map it with some *made up
 
 This tutorial builds upon another tutorial on Mapping with `ggplot`(@sec-ggplot-map)
 
-
-# Call Libraries
+## Call Libraries
 
 ```{r}
 #| code-fold: true
@@ -32,7 +31,7 @@ library(countrycode) # work with country data
 
 ```
 
-# Get Shapefile
+## Get Shapefile
 
 Here I am using the `wrld_simpl` dataset of country outlines that is available in several R packages. I read this data into an object called `world`.
 
@@ -44,7 +43,7 @@ world <- read_sf("./shapefiles/wrld_simpl/wrld_simpl.shp")
 
 ```
 
-# Make a Map Without Data
+## Make a Map Without Data
 
 I map the data with `ggplot`, and the special `geom`, `geom_sf`.
 
@@ -58,7 +57,7 @@ ggplot(world) +
 
 ```
 
-# Get External Data
+## Get External Data
 
 Here I read in a completely made up data set of arbitrary values. The file that I am reading in is a `csv` file, but could be [a file in any number of formats](https://agrogan1.github.io/myposts/you-have-to-get-your-data-from-somewhere.html).
 
@@ -82,7 +81,7 @@ externaldata$name <- countrycode(externaldata$ISO3,
                                  destination = "country.name")
 
 write.csv(externaldata, 
-          file = "externaldata.csv",
+          file = "./external-data/externaldata.csv",
           row.names = FALSE)
 
 ```
@@ -92,13 +91,13 @@ write.csv(externaldata,
 #| code-summary: "Show the code"
 #| message: false
 
-externaldata <- read_csv("externaldata.csv")
+externaldata <- read_csv("./external-data/externaldata.csv")
 
 externaldata # replay data set
 
 ```
 
-# Join Data to Shapefile
+## Join Data to Shapefile
 
 I use `left_join` from the `dplyr` package to merge the spatial data in `world` with `externaldata`. 
 
@@ -114,7 +113,7 @@ newdata <- left_join(world, externaldata, by = "ISO3")
 
 ```
 
-# Make a Map With The Data
+## Make a Map With The Data
 
 Once I have the merged data, it is easy to map it with `ggplot` and `geom_sf`. Note that I need to specify an `aes`thetic for `geom_sf`. Here `arbitrary_x` is the *fill* color for countries on the map.
 
@@ -132,3 +131,6 @@ ggplot(newdata) +
   theme_minimal() # better theme
 
 ```
+
+
+
