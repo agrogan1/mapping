@@ -35,6 +35,11 @@ code-summary: "Show the code"
 
 Color palettes can be either qualitative or quantitative in nature. 
 
+::: {.callout-note}
+The code used to generate these color palettes is shown for reference, but may not be the exact code needed when these colors are used in maps.
+:::
+
+
 ### Base R
 
 ```{r}
