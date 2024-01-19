@@ -1,5 +1,5 @@
 ---
-title: "Mapping With Leaflet"
+title: "Mapping With `leaflet`"
 ---
 
 ## Call Libraries {#sec-leaflet}
