@@ -2,7 +2,7 @@
 title: "Using Data From `rnaturalearth`"
 ---
 
-# Call Libraries
+## Call Libraries
 
 ```{r}
 #| code-fold: true
@@ -20,7 +20,7 @@ library(sf) # simple (spatial) features
 
 ```
 
-# Get `ne_countries` As `sf`
+## Get `ne_countries` As `sf`
 
 ```{r}
 #| code-fold: true
@@ -32,7 +32,7 @@ ne_countries <- ne_countries(scale = "medium",
 
 ```
 
-# Map
+## Map
 
 ```{r}
 #| code-fold: true

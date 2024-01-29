@@ -2,7 +2,7 @@
 title: "Map Projections"
 ---
 
-# Set Up The Map
+## Set Up The Map
 
 > It is not necessary to understand the code here. But I learned a lot from: [https://plotly.com/r/#maps](https://plotly.com/r/#maps).
 
@@ -59,9 +59,9 @@ mymap # replay
 
 ```
 
-# Map Projections
+## Map Projections
 
-## Globe (Orthographic)
+### Globe (Orthographic)
 
 ```{r}
 #| code-fold: true
@@ -73,7 +73,7 @@ mymap %>%
 
 ```
 
-## Mercator 
+### Mercator 
 
 > Perpendicular latitude and longitude. Can be helpful in some kinds of navigation, but areas are distorted, especially as one approaches the poles.
 
@@ -87,7 +87,7 @@ mymap %>%
 
 ```
 
-## Mollweide
+### Mollweide
 
 > An *equal area* projection.
 
@@ -101,7 +101,7 @@ mymap %>%
 
 ```
 
-## Robinson
+### Robinson
 
 > An attempt to compromise between equal areas and a natural looking map.
 
