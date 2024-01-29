@@ -79,7 +79,18 @@
     "href": "projections.html",
     "title": "4  Map Projections",
     "section": "",
-    "text": "5 Set Up The Map",
+    "text": "4.1 Set Up The Map",
+    "crumbs": [
+      "Geographical and GIS Concepts",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Map Projections</span>"
+    ]
+  },
+  {
+    "objectID": "projections.html#set-up-the-map",
+    "href": "projections.html#set-up-the-map",
+    "title": "4  Map Projections",
+    "section": "",
+    "text": "It is not necessary to understand the code here. But I learned a lot from: https://plotly.com/r/#maps.",
     "crumbs": [
       "Geographical and GIS Concepts",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Map Projections</span>"
@@ -89,8 +100,8 @@
     "objectID": "projections.html#call-plotly-library",
     "href": "projections.html#call-plotly-library",
     "title": "4  Map Projections",
-    "section": "5.1 Call plotly Library",
-    "text": "5.1 Call plotly Library\n\n\nShow the code\nlibrary(plotly)",
+    "section": "4.2 Call plotly Library",
+    "text": "4.2 Call plotly Library\n\n\nShow the code\nlibrary(plotly)",
     "crumbs": [
       "Geographical and GIS Concepts",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Map Projections</span>"
@@ -100,8 +111,8 @@
     "objectID": "projections.html#a-basic-map",
     "href": "projections.html#a-basic-map",
     "title": "4  Map Projections",
-    "section": "5.2 A Basic Map",
-    "text": "5.2 A Basic Map\n\n\nShow the code\n# a very basic map could be created with: \n\nlibrary(plotly)\n\nmymap0 &lt;- plot_geo() # create basic map; read into mymap0\n\nmymap0 # replay",
+    "section": "4.3 A Basic Map",
+    "text": "4.3 A Basic Map\n\n\nShow the code\n# a very basic map could be created with: \n\nlibrary(plotly)\n\nmymap0 &lt;- plot_geo() # create basic map; read into mymap0\n\nmymap0 # replay",
     "crumbs": [
       "Geographical and GIS Concepts",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Map Projections</span>"
@@ -111,52 +122,19 @@
     "objectID": "projections.html#a-more-advanced-map",
     "href": "projections.html#a-more-advanced-map",
     "title": "4  Map Projections",
-    "section": "5.3 A More Advanced Map",
-    "text": "5.3 A More Advanced Map\n\nThis part is admittedly a little complicated, mostly because I added options to get the map to look exactly the way that I wanted.\n\n\n\nShow the code\nmymap &lt;- plot_geo() %&gt;%\n  layout(title = \"Demonstration Map\", \n         geo = list(showland = TRUE, # show land\n                    landcolor = toRGB(\"darkgrey\"), # land color\n                    showcountries = TRUE, # show countries\n                    showocean = FALSE, # show ocean\n                    oceancolor = \"lightblue\", # ocean color\n                    lataxis = list(showgrid = TRUE, # latitude options\n                                   gridcolor = toRGB(\"grey\")),\n                    lonaxis = list(showgrid = TRUE, # longitude options\n                                   gridcolor = toRGB(\"grey\")))) \n\nmymap # replay",
+    "section": "4.4 A More Advanced Map",
+    "text": "4.4 A More Advanced Map\n\nThis part is admittedly a little complicated, mostly because I added options to get the map to look exactly the way that I wanted.\n\n\n\nShow the code\nmymap &lt;- plot_geo() %&gt;%\n  layout(title = \"Demonstration Map\", \n         geo = list(showland = TRUE, # show land\n                    landcolor = toRGB(\"darkgrey\"), # land color\n                    showcountries = TRUE, # show countries\n                    showocean = FALSE, # show ocean\n                    oceancolor = \"lightblue\", # ocean color\n                    lataxis = list(showgrid = TRUE, # latitude options\n                                   gridcolor = toRGB(\"grey\")),\n                    lonaxis = list(showgrid = TRUE, # longitude options\n                                   gridcolor = toRGB(\"grey\")))) \n\nmymap # replay",
     "crumbs": [
       "Geographical and GIS Concepts",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Map Projections</span>"
     ]
   },
   {
-    "objectID": "projections.html#globe-orthographic",
-    "href": "projections.html#globe-orthographic",
+    "objectID": "projections.html#map-projections",
+    "href": "projections.html#map-projections",
     "title": "4  Map Projections",
-    "section": "6.1 Globe (Orthographic)",
-    "text": "6.1 Globe (Orthographic)\n\n\nShow the code\nmymap %&gt;% \n  layout(geo = list(projection = list(type = 'orthographic')))",
-    "crumbs": [
-      "Geographical and GIS Concepts",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Map Projections</span>"
-    ]
-  },
-  {
-    "objectID": "projections.html#mercator",
-    "href": "projections.html#mercator",
-    "title": "4  Map Projections",
-    "section": "6.2 Mercator",
-    "text": "6.2 Mercator\n\nPerpendicular latitude and longitude. Can be helpful in some kinds of navigation, but areas are distorted, especially as one approaches the poles.\n\n\n\nShow the code\nmymap %&gt;% \n  layout(geo=list(projection = list(type = 'mercator')))",
-    "crumbs": [
-      "Geographical and GIS Concepts",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Map Projections</span>"
-    ]
-  },
-  {
-    "objectID": "projections.html#mollweide",
-    "href": "projections.html#mollweide",
-    "title": "4  Map Projections",
-    "section": "6.3 Mollweide",
-    "text": "6.3 Mollweide\n\nAn equal area projection.\n\n\n\nShow the code\nmymap %&gt;% \n  layout(geo=list(projection = list(type = 'mollweide')))",
-    "crumbs": [
-      "Geographical and GIS Concepts",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Map Projections</span>"
-    ]
-  },
-  {
-    "objectID": "projections.html#robinson",
-    "href": "projections.html#robinson",
-    "title": "4  Map Projections",
-    "section": "6.4 Robinson",
-    "text": "6.4 Robinson\n\nAn attempt to compromise between equal areas and a natural looking map.\n\n\n\nShow the code\nmymap %&gt;% \n  layout(geo=list(projection = list(type = 'robinson')))",
+    "section": "4.5 Map Projections",
+    "text": "4.5 Map Projections\n\n4.5.1 Globe (Orthographic)\n\n\nShow the code\nmymap %&gt;% \n  layout(geo = list(projection = list(type = 'orthographic')))\n\n\n\n\n\n\n\n\n4.5.2 Mercator\n\nPerpendicular latitude and longitude. Can be helpful in some kinds of navigation, but areas are distorted, especially as one approaches the poles.\n\n\n\nShow the code\nmymap %&gt;% \n  layout(geo=list(projection = list(type = 'mercator')))\n\n\n\n\n\n\n\n\n4.5.3 Mollweide\n\nAn equal area projection.\n\n\n\nShow the code\nmymap %&gt;% \n  layout(geo=list(projection = list(type = 'mollweide')))\n\n\n\n\n\n\n\n\n4.5.4 Robinson\n\nAn attempt to compromise between equal areas and a natural looking map.\n\n\n\nShow the code\nmymap %&gt;% \n  layout(geo=list(projection = list(type = 'robinson')))",
     "crumbs": [
       "Geographical and GIS Concepts",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Map Projections</span>"
@@ -321,7 +299,29 @@
     "href": "rnaturalearth.html",
     "title": "9  Using Data From rnaturalearth",
     "section": "",
-    "text": "10 Call Libraries\n\n\nShow the code\nlibrary(rnaturalearth) # natural earth data\n\nlibrary(ggplot2) # beautiful maps\n\nlibrary(dplyr) # data wrangling\n\nlibrary(sf) # simple (spatial) features\n\n\n\n\n11 Get ne_countries As sf\n\n\nShow the code\nne_countries &lt;- ne_countries(scale = \"medium\", \n                             returnclass = \"sf\") \n\n\n\n\n12 Map\n\n\nShow the code\nggplot(ne_countries) + \n  geom_sf(aes(fill = income_grp)) +\n  scale_fill_viridis_d(name = \"Income Group\", \n                       option = \"viridis\") +\n  labs(title = \"Countries of the World\") +\n  theme_minimal()",
+    "text": "9.1 Call Libraries\nShow the code\nlibrary(rnaturalearth) # natural earth data\n\nlibrary(ggplot2) # beautiful maps\n\nlibrary(dplyr) # data wrangling\n\nlibrary(sf) # simple (spatial) features",
+    "crumbs": [
+      "GIS Data",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Using Data From `rnaturalearth`</span>"
+    ]
+  },
+  {
+    "objectID": "rnaturalearth.html#get-ne_countries-as-sf",
+    "href": "rnaturalearth.html#get-ne_countries-as-sf",
+    "title": "9  Using Data From rnaturalearth",
+    "section": "9.2 Get ne_countries As sf",
+    "text": "9.2 Get ne_countries As sf\n\n\nShow the code\nne_countries &lt;- ne_countries(scale = \"medium\", \n                             returnclass = \"sf\")",
+    "crumbs": [
+      "GIS Data",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Using Data From `rnaturalearth`</span>"
+    ]
+  },
+  {
+    "objectID": "rnaturalearth.html#map",
+    "href": "rnaturalearth.html#map",
+    "title": "9  Using Data From rnaturalearth",
+    "section": "9.3 Map",
+    "text": "9.3 Map\n\n\nShow the code\nggplot(ne_countries) + \n  geom_sf(aes(fill = income_grp)) +\n  scale_fill_viridis_d(name = \"Income Group\", \n                       option = \"viridis\") +\n  labs(title = \"Countries of the World\") +\n  theme_minimal()",
     "crumbs": [
       "GIS Data",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Using Data From `rnaturalearth`</span>"
