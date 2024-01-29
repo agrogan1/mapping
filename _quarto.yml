@@ -20,12 +20,14 @@ book:
     - part: "Geographical and GIS Concepts"
       chapters: 
         - latitude-and-longitude.qmd
+        - projections.qmd
         - crs.qmd
     - part: "GIS Data"
       chapters:
         - shapefiles.qmd
         - shapefiles2.qmd
         - symbology.qmd
+        - rnaturalearth.qmd
     - part: "Mapping With `ggplot`"
       chapters: 
         - ggplot-map.qmd
