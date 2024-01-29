@@ -1,0 +1,59 @@
+---
+title: "Using Data From `rnaturalearth`"
+---
+
+# Call Libraries
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+#| warning: false
+
+library(rnaturalearth) # natural earth data
+
+library(ggplot2) # beautiful maps
+
+library(dplyr) # data wrangling
+
+library(sf) # simple (spatial) features
+
+```
+
+# Get `ne_countries` As `sf`
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+
+ne_countries <- ne_countries(scale = "medium", 
+                             returnclass = "sf") 
+
+```
+
+# Map
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+
+ggplot(ne_countries) + 
+  geom_sf(aes(fill = income_grp)) +
+  scale_fill_viridis_d(name = "Income Group", 
+                       option = "viridis") +
+  labs(title = "Countries of the World") +
+  theme_minimal()
+
+```
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,118 @@
+---
+title: "Map Projections"
+---
+
+# Set Up The Map
+
+> It is not necessary to understand the code here. But I learned a lot from: [https://plotly.com/r/#maps](https://plotly.com/r/#maps).
+
+## Call `plotly` Library
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| output: false
+
+library(plotly)
+
+```
+
+## A Basic Map
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+
+# a very basic map could be created with: 
+
+library(plotly)
+
+mymap0 <- plot_geo() # create basic map; read into mymap0
+
+mymap0 # replay
+
+```
+
+## A More Advanced Map
+
+> This part is admittedly a little complicated, mostly because I added options to get the map to look exactly the way that I wanted. 
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+
+mymap <- plot_geo() %>%
+  layout(title = "Demonstration Map", 
+         geo = list(showland = TRUE, # show land
+                    landcolor = toRGB("darkgrey"), # land color
+                    showcountries = TRUE, # show countries
+                    showocean = FALSE, # show ocean
+                    oceancolor = "lightblue", # ocean color
+                    lataxis = list(showgrid = TRUE, # latitude options
+                                   gridcolor = toRGB("grey")),
+                    lonaxis = list(showgrid = TRUE, # longitude options
+                                   gridcolor = toRGB("grey")))) 
+
+mymap # replay
+
+```
+
+# Map Projections
+
+## Globe (Orthographic)
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+
+mymap %>% 
+  layout(geo = list(projection = list(type = 'orthographic')))
+
+```
+
+## Mercator 
+
+> Perpendicular latitude and longitude. Can be helpful in some kinds of navigation, but areas are distorted, especially as one approaches the poles.
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+
+mymap %>% 
+  layout(geo=list(projection = list(type = 'mercator')))
+
+```
+
+## Mollweide
+
+> An *equal area* projection.
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+
+mymap %>% 
+  layout(geo=list(projection = list(type = 'mollweide')))
+
+```
+
+## Robinson
+
+> An attempt to compromise between equal areas and a natural looking map.
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+
+mymap %>% 
+  layout(geo=list(projection = list(type = 'robinson')))
+
+```
+
+
