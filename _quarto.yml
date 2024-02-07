@@ -39,6 +39,7 @@ book:
     - part: "Other R Libraries for Mapping"
       chapters:
         - leaflet.qmd
+        - plotly.qmd
   navbar:
     background: primary
     
