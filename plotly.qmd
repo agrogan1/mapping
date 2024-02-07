@@ -41,7 +41,7 @@ g <- list(showland = TRUE,
 
 plot_geo() %>% 
   layout(title = "Demonstration Map", 
-         geo=g)
+         geo = g)
 
 ```
 
