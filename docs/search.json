@@ -601,5 +601,49 @@
       "Other R Libraries for Mapping",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Mapping With `leaflet`</span>"
     ]
+  },
+  {
+    "objectID": "plotly.html",
+    "href": "plotly.html",
+    "title": "15  Mapping With plotly",
+    "section": "",
+    "text": "15.1 Call Libraries\nShow the code\nlibrary(plotly)",
+    "crumbs": [
+      "Other R Libraries for Mapping",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
+    ]
+  },
+  {
+    "objectID": "plotly.html#set-geographic-parameters",
+    "href": "plotly.html#set-geographic-parameters",
+    "title": "15  Mapping With plotly",
+    "section": "15.2 Set Geographic Parameters",
+    "text": "15.2 Set Geographic Parameters\n\n\nShow the code\ng &lt;- list(showland = TRUE, \n          showcountries = TRUE,\n          landcolor = toRGB(\"forestgreen\"), # land color\n          showocean = TRUE, # show ocean\n          oceancolor = \"lightblue\", # ocean color\n          # projection = list(type = 'robinson'),\n          projection = list(type = 'orthographic',\n                    rotation = list(lon = 0,\n                                    lat = 0,\n                                    roll = 0)))",
+    "crumbs": [
+      "Other R Libraries for Mapping",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
+    ]
+  },
+  {
+    "objectID": "plotly.html#make-a-map",
+    "href": "plotly.html#make-a-map",
+    "title": "15  Mapping With plotly",
+    "section": "15.3 Make a Map",
+    "text": "15.3 Make a Map\n\n\nShow the code\nplot_geo() %&gt;% \n  layout(title = \"Demonstration Map\", \n         geo=g)",
+    "crumbs": [
+      "Other R Libraries for Mapping",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
+    ]
+  },
+  {
+    "objectID": "plotly.html#scattermapbox",
+    "href": "plotly.html#scattermapbox",
+    "title": "15  Mapping With plotly",
+    "section": "15.4 scattermapbox",
+    "text": "15.4 scattermapbox\n\n\nShow the code\nplot_ly(type = \"scattermapbox\") %&gt;%\n  layout(\n    mapbox = list(\n      style = 'open-street-map',\n      zoom = 6.0, # zoom\n      center = list(lon = -83, lat = 42))) # centered on SE Michigan",
+    "crumbs": [
+      "Other R Libraries for Mapping",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
+    ]
   }
 ]
