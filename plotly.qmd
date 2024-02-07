@@ -1,0 +1,64 @@
+---
+title: "Mapping With `plotly`"
+---
+
+## Call Libraries
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+
+library(plotly)
+
+```
+
+## Set Geographic Parameters
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+
+g <- list(showland = TRUE, 
+          showcountries = TRUE,
+          landcolor = toRGB("forestgreen"), # land color
+          showocean = TRUE, # show ocean
+          oceancolor = "lightblue", # ocean color
+          # projection = list(type = 'robinson'),
+          projection = list(type = 'orthographic',
+                    rotation = list(lon = 0,
+                                    lat = 0,
+                                    roll = 0)))
+```
+
+## Make a Map
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+
+plot_geo() %>% 
+  layout(title = "Demonstration Map", 
+         geo=g)
+
+```
+
+## `scattermapbox`
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+
+plot_ly(type = "scattermapbox") %>%
+  layout(
+    mapbox = list(
+      style = 'open-street-map',
+      zoom = 6.0, # zoom
+      center = list(lon = -83, lat = 42))) # centered on SE Michigan
+
+
+```
+
