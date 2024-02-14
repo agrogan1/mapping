@@ -1,6 +1,4 @@
----
-title: "Latitude and Longitude"
----
+# Latitude and Longitude
 
 ## Introduction
 

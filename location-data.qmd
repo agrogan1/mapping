@@ -1,6 +1,4 @@
----
-title: "Making Maps With `ggplot` Using Location Data"
----
+# Making Maps With `ggplot` Using Location Data
 
 ## Call Libraries {#sec-location-data}
 

@@ -1,6 +1,4 @@
----
-title: "Using Data From `rnaturalearth`"
----
+# Using Data From `rnaturalearth`
 
 ## Call Libraries
 

@@ -1,6 +1,4 @@
----
-title: "Simple Features (`sf`)"
----
+# Simple Features (`sf`)
 
 R's new default way of handling spatial data seems to be *simple features* (`sf`).
 
@@ -8,4 +6,4 @@ Use `library(sf)` to read, write and manipulate *simple features*.
 
 Other forms of data such as *shapefiles* (@sec-shapefiles) often need to be read as simple features.
 
-Mapping routines such as `ggplot` will also often want data to be in the form of *simple features*. 
+Mapping routines such as `ggplot` (@sec-ggplot-map) will also often want data to be in the form of *simple features*. 

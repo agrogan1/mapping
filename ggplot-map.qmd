@@ -1,8 +1,6 @@
----
-title: "Making Maps with `ggplot`"
----
+# Making Maps with `ggplot` {#sec-ggplot-map}
 
-## Call the libraries {#sec-ggplot-map}
+## Call the libraries 
 
 ```{r, message=FALSE}
 #| message: false

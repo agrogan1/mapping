@@ -1,6 +1,4 @@
----
-title: "Mapping With `plotly`"
----
+# Mapping With `plotly`
 
 ## Call Libraries
 

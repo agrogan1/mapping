@@ -1,6 +1,4 @@
----
-title: "Map Projections"
----
+# Map Projections
 
 ## Set Up The Map
 

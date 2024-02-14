@@ -1,6 +1,4 @@
----
-title:  "Possible Course Outline for a 5 Week MiniCourse"
----
+# Possible Course Outline for a 5 Week MiniCourse
 
 1. Introduction
     + Introduction to the Course
