@@ -24,6 +24,7 @@ book:
         - crs.qmd
     - part: "GIS Data"
       chapters:
+        - sf.qmd
         - shapefiles.qmd
         - shapefiles2.qmd
         - symbology.qmd
@@ -51,6 +52,7 @@ format:
       light: united
       dark: vapor
    css: mapping.css
+   lightbox: true
    execute:
       freeze: auto
 
