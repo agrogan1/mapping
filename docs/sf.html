@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapping - 8&nbsp; Shapefiles on This Site</title>
+<title>Mapping - 6&nbsp; Simple Features (sf)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./symbology.html" rel="next">
-<link href="./shapefiles.html" rel="prev">
+<link href="./shapefiles.html" rel="next">
+<link href="./crs.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,26 +70,17 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
-<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="site_libs/datatables-binding-0.30/datatables.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="site_libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="site_libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="site_libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
-<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
-<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 
 
 <link rel="stylesheet" href="mapping.css">
-<meta property="og:title" content="Mapping - 8&nbsp; Shapefiles on This Site">
+<meta property="og:title" content="Mapping - 6&nbsp; Simple Features (sf)">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Mapping">
-<meta name="twitter:title" content="Mapping - 8&nbsp; Shapefiles on This Site">
+<meta name="twitter:title" content="Mapping - 6&nbsp; Simple Features (sf)">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[8]{.chapter-number}&nbsp; [Shapefiles on This Site]{.chapter-title}">
-<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/shapefiles2.html">
+<meta name="citation_title" content="[6]{.chapter-number}&nbsp; [Simple Features (`sf`)]{.chapter-title}">
+<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/sf.html">
 <meta name="citation_language" content="en">
 </head>
 
@@ -139,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sf.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./shapefiles2.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sf.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./sf.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Simple Features (<code>sf</code>)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -203,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sf.html" class="sidebar-item-text sidebar-link">
+  <a href="./sf.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Simple Features (<code>sf</code>)</span></span></a>
   </div>
 </li>
@@ -215,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./shapefiles2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./shapefiles2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></span></a>
   </div>
 </li>
@@ -313,9 +304,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sf.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./shapefiles2.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sf.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./sf.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Simple Features (<code>sf</code>)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Simple Features (<code>sf</code>)</span></h1>
 </div>
 
 
@@ -332,13 +323,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>For user convenience, these shapefiles are available on this site.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0cebfa98813693523abf" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-0cebfa98813693523abf">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8"],["<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/a2trees.zip>a2trees.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_Building_Footprints.zip>AA_Building_Footprints.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_City_Boundary.zip>AA_City_Boundary.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_Parks.zip>AA_Parks.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/AA_University.zip>AA_University.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/Roads.zip>Roads.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/STATES cb_2016_us_state_500k.zip>STATES cb_2016_us_state_500k.zip<\/a>","<a href =https://github.com/agrogan1/mapping/raw/main/shapefiles/watersheds.zip>watersheds.zip<\/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>shapefile<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
+<p>R’s new default way of handling spatial data seems to be <em>simple features</em> (<code>sf</code>).</p>
+<p>Use <code>library(sf)</code> to read, write and manipulate <em>simple features</em>.</p>
+<p>Other forms of data such as <em>shapefiles</em> (<a href="shapefiles.html#sec-shapefiles" class="quarto-xref"><span>Section 7.1</span></a>) often need to be read as simple features.</p>
+<p>Mapping routines such as <code>ggplot</code> will also often want data to be in the form of <em>simple features</em>.</p>
 
 
 
@@ -876,13 +864,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./shapefiles.html" class="pagination-link  aria-label=" &lt;span="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Shapefiles</span></span>
+      <a href="./crs.html" class="pagination-link  aria-label=" &lt;span="" reference="" systems="" (crs)&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Coordinate Reference Systems (CRS)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./symbology.html" class="pagination-link" aria-label="<span class='chapter-number'>9</span>&nbsp; <span class='chapter-title'>Symbology</span>">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Symbology</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./shapefiles.html" class="pagination-link" aria-label="<span class='chapter-number'>7</span>&nbsp; <span class='chapter-title'>Shapefiles</span>">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Shapefiles</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

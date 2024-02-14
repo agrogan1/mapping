@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapping - 6&nbsp; Shapefiles</title>
+<title>Mapping - 7&nbsp; “Shapefiles”</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./shapefiles2.html" rel="next">
-<link href="./crs.html" rel="prev">
+<link href="./sf.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -77,6 +77,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,13 +110,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="mapping.css">
-<meta property="og:title" content="Mapping - 6&nbsp; Shapefiles">
+<meta property="og:title" content="Mapping - 7&nbsp; “Shapefiles”">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Mapping">
-<meta name="twitter:title" content="Mapping - 6&nbsp; Shapefiles">
+<meta name="twitter:title" content="Mapping - 7&nbsp; “Shapefiles”">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[6]{.chapter-number}&nbsp; [Shapefiles]{.chapter-title}">
+<meta name="citation_title" content="[[7]{.chapter-number}&nbsp; [&amp;amp;quot;Shapefiles&quot;]{.chapter-title}]{#sec-shapefiles .quarto-section-identifier}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/shapefiles.html">
 <meta name="citation_language" content="en">
 </head>
@@ -164,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./shapefiles.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./shapefiles.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Shapefiles</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sf.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./shapefiles.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">“Shapefiles”</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -228,26 +231,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./sf.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Simple Features (<code>sf</code>)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./shapefiles.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Shapefiles</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">“Shapefiles”</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./shapefiles2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./symbology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Symbology</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Symbology</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rnaturalearth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Using Data From <code>rnaturalearth</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Using Data From <code>rnaturalearth</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -264,19 +273,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ggplot-map.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./merge-with-external-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Merge Shapefiles With External Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Merge Shapefiles With External Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./location-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Making Maps With <code>ggplot</code> Using Location Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Making Maps With <code>ggplot</code> Using Location Data</span></span></a>
   </div>
 </li>
       </ul>
@@ -293,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./geocoding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Geocoding</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Geocoding</span></span></a>
   </div>
 </li>
       </ul>
@@ -310,13 +319,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./leaflet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plotly.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -331,20 +340,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-shapefiles" id="toc-sec-shapefiles" class="nav-link active" data-scroll-target="#sec-shapefiles"><span class="header-section-number">6.1</span> Introduction</a></li>
-  <li><a href="#shapefiles-are-lists-of-files" id="toc-shapefiles-are-lists-of-files" class="nav-link" data-scroll-target="#shapefiles-are-lists-of-files"><span class="header-section-number">6.2</span> Shapefiles Are Lists of Files</a></li>
-  <li><a href="#call-libraries" id="toc-call-libraries" class="nav-link" data-scroll-target="#call-libraries"><span class="header-section-number">6.3</span> Call Libraries</a></li>
-  <li><a href="#open-shapefiles" id="toc-open-shapefiles" class="nav-link" data-scroll-target="#open-shapefiles"><span class="header-section-number">6.4</span> Open Shapefiles</a></li>
-  <li><a href="#use-ggplot-to-map-the-shapefiles" id="toc-use-ggplot-to-map-the-shapefiles" class="nav-link" data-scroll-target="#use-ggplot-to-map-the-shapefiles"><span class="header-section-number">6.5</span> Use <code>ggplot</code> to Map the Shapefiles</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">7.1</span> Introduction</a></li>
+  <li><a href="#shapefiles-are-lists-of-files" id="toc-shapefiles-are-lists-of-files" class="nav-link" data-scroll-target="#shapefiles-are-lists-of-files"><span class="header-section-number">7.2</span> Shapefiles Are Lists of Files</a></li>
+  <li><a href="#call-libraries" id="toc-call-libraries" class="nav-link" data-scroll-target="#call-libraries"><span class="header-section-number">7.3</span> Call Libraries</a></li>
+  <li><a href="#open-shapefiles" id="toc-open-shapefiles" class="nav-link" data-scroll-target="#open-shapefiles"><span class="header-section-number">7.4</span> Open Shapefiles</a></li>
+  <li><a href="#use-ggplot-to-map-the-shapefiles" id="toc-use-ggplot-to-map-the-shapefiles" class="nav-link" data-scroll-target="#use-ggplot-to-map-the-shapefiles"><span class="header-section-number">7.5</span> Use <code>ggplot</code> to Map the Shapefiles</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./shapefiles.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./shapefiles.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Shapefiles</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sf.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./shapefiles.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">“Shapefiles”</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Shapefiles</span></h1>
+<h1 class="title"><span id="sec-shapefiles" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">“Shapefiles”</span></span></h1>
 </div>
 
 
@@ -361,8 +370,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="sec-shapefiles" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="sec-shapefiles"><span class="header-section-number">6.1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">7.1</span> Introduction</h2>
 <p>Shapefiles are a spatial data format originally developed by <a href="https://www.esri.com/en-us/home">ESRI</a>.</p>
 <p>Shapefiles come in three major types:</p>
 <ul>
@@ -371,8 +380,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>polygons</strong>, to represent polygon features such as outlines of cities, states, or countries.</li>
 </ul>
 </section>
-<section id="shapefiles-are-lists-of-files" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="shapefiles-are-lists-of-files"><span class="header-section-number">6.2</span> Shapefiles Are Lists of Files</h2>
+<section id="shapefiles-are-lists-of-files" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="shapefiles-are-lists-of-files"><span class="header-section-number">7.2</span> Shapefiles Are Lists of Files</h2>
 <p>Shape<em>files</em> are actually a <em>set</em> or <em>collection</em> of associated files, all with the same name, and all in the same directory, but different suffixes.</p>
 <p>R–and many other software programs–generally reference the <code>*.shp</code> file of the shapefile.</p>
 <div class="cell">
@@ -386,8 +395,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="call-libraries" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="call-libraries"><span class="header-section-number">6.3</span> Call Libraries</h2>
+<section id="call-libraries" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="call-libraries"><span class="header-section-number">7.3</span> Call Libraries</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -401,8 +410,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="open-shapefiles" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="open-shapefiles"><span class="header-section-number">6.4</span> Open Shapefiles</h2>
+<section id="open-shapefiles" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="open-shapefiles"><span class="header-section-number">7.4</span> Open Shapefiles</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -425,8 +434,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="use-ggplot-to-map-the-shapefiles" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="use-ggplot-to-map-the-shapefiles"><span class="header-section-number">6.5</span> Use <code>ggplot</code> to Map the Shapefiles</h2>
+<section id="use-ggplot-to-map-the-shapefiles" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="use-ggplot-to-map-the-shapefiles"><span class="header-section-number">7.5</span> Use <code>ggplot</code> to Map the Shapefiles</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -447,7 +456,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="shapefiles_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><a href="shapefiles_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="shapefiles_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -990,19 +999,44 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./crs.html" class="pagination-link  aria-label=" &lt;span="" reference="" systems="" (crs)&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Coordinate Reference Systems (CRS)</span></span>
+      <a href="./sf.html" class="pagination-link  aria-label=" &lt;span="" features="" (`sf`)&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Simple Features (<code>sf</code>)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./shapefiles2.html" class="pagination-link" aria-label="<span class='chapter-number'>7</span>&nbsp; <span class='chapter-title'>Shapefiles on This Site</span>">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./shapefiles2.html" class="pagination-link" aria-label="<span class='chapter-number'>8</span>&nbsp; <span class='chapter-title'>Shapefiles on This Site</span>">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+</body></html>
