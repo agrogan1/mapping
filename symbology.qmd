@@ -1,8 +1,4 @@
----
-title: "Symbology"
-code-fold: true
-code-summary: "Show the code"
----
+# Symbology
 
 ## Introduction
 
@@ -45,6 +41,8 @@ The code used to generate these color palettes is shown for reference, but may n
 ```{r}
 #| fig.cap: "Heatmap Colors"
 #| fig.height: 3
+#| code-fold: true 
+#| code-summary: "Show the code"
 
 barplot(rep(1,10), col = heat.colors(10), axes = FALSE)
 
@@ -53,6 +51,8 @@ barplot(rep(1,10), col = heat.colors(10), axes = FALSE)
 ```{r}
 #| fig.cap: "Topographical Colors"
 #| fig.height: 3
+#| code-fold: true 
+#| code-summary: "Show the code"
 
 barplot(rep(1,10), col = topo.colors(10), axes = FALSE)
 
@@ -61,7 +61,8 @@ barplot(rep(1,10), col = topo.colors(10), axes = FALSE)
 ```{r}
 #| fig.cap: "Terrain Colors"
 #| fig.height: 3
-
+#| code-fold: true 
+#| code-summary: "Show the code"
 
 barplot(rep(1,10), col = terrain.colors(10), axes = FALSE)
 
@@ -71,6 +72,8 @@ barplot(rep(1,10), col = terrain.colors(10), axes = FALSE)
 ### RColorBrewer
 
 ```{r}
+#| code-fold: true 
+#| code-summary: "Show the code"
 
 library(RColorBrewer) # A library for color palettes
 
@@ -79,6 +82,8 @@ library(RColorBrewer) # A library for color palettes
 ```{r}
 #| fig.cap: "Blues Palette"
 #| fig.height: 3
+#| code-fold: true 
+#| code-summary: "Show the code"
 
 display.brewer.pal(name = "Blues", n = 9)
 
@@ -87,6 +92,8 @@ display.brewer.pal(name = "Blues", n = 9)
 ```{r}
 #| fig.cap: "Spectral Palette"
 #| fig.height: 3
+#| code-fold: true 
+#| code-summary: "Show the code"
 
 display.brewer.pal(name = "Spectral", n = 9)
 
@@ -95,21 +102,28 @@ display.brewer.pal(name = "Spectral", n = 9)
 ```{r}
 #| fig.cap: "Set1 Palette"
 #| fig.height: 3
+#| code-fold: true 
+#| code-summary: "Show the code"
 
 display.brewer.pal(name = "Set1", n = 9)
 
 ```
+
 ### Viridis
 
 More details can be found at [https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
 
 ```{r}
+#| code-fold: true 
+#| code-summary: "Show the code"
 
 library(scales)
 
 ```
 
 ```{r}
+#| code-fold: true 
+#| code-summary: "Show the code"
 
 show_col(viridis_pal()(9), 
          ncol = 9, # 9 columns
@@ -124,6 +138,8 @@ show_col(viridis_pal()(9),
 
 ```{r}
 #| message: false
+#| code-fold: true 
+#| code-summary: "Show the code"
 
 library(ggplot2) # graphing and mapping
 
