@@ -299,7 +299,7 @@
     "href": "symbology.html",
     "title": "9  Symbology",
     "section": "",
-    "text": "9.1 Introduction\nShapefiles are a standard format for storing geographic data.\nShapefiles generally come in three types: points ●; lines ━; and polygons ■.",
+    "text": "9.1 Introduction\nShapefiles (Chapter 7) are a standard format for storing geographic data.\nShapefiles generally come in three types: points ●; lines ━; and polygons ■.",
     "crumbs": [
       "GIS Data",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Symbology</span>"

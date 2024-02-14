@@ -2,9 +2,9 @@
 
 ## Introduction
 
-[Shapefiles](@sec-shapefiles) are a standard format for storing geographic data. 
+Shapefiles (@sec-shapefiles) are a standard format for storing geographic data. 
 
-[Shapefiles](@sec-shapefiles) generally come in three types: points <span style="color:red">●</span>; lines <span style="color:red;font-size:2em">━</span>; and polygons <span style="color:red;font-size:3em">■</span>. 
+Shapefiles generally come in three types: points <span style="color:red">●</span>; lines <span style="color:red;font-size:2em">━</span>; and polygons <span style="color:red;font-size:3em">■</span>. 
 
 # Symbology
 
