@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Mapping",
     "section": "",
-    "text": "Figure 1: Countries of the World\n\n\n\n\nMapping and GIS have become an increasingly important part of social research, advocacy, and program and policy development. This website contains materials for an in development course on Mapping and GIS.\nMuch of the content of this site is built around the use of R software, though many of the concepts are applicable across GIS and mapping applications such as R, Stata, ArcGIS and QGIS.",
+    "text": "1 Introduction\n\n\n\n\n\n\n\n\nFigure 1.1: Countries of the World\n\n\n\n\nMapping and GIS have become an increasingly important part of social research, advocacy, and program and policy development. This website contains materials for an in development course on Mapping and GIS.\nMuch of the content of this site is built around the use of R software, though many of the concepts are applicable across GIS and mapping applications such as R, Stata, ArcGIS and QGIS.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -211,7 +211,7 @@
     "href": "sf.html",
     "title": "6  Simple Features (sf)",
     "section": "",
-    "text": "R’s new default way of handling spatial data seems to be simple features (sf).\nUse library(sf) to read, write and manipulate simple features.\nOther forms of data such as shapefiles (Section 7.1) often need to be read as simple features.\nMapping routines such as ggplot will also often want data to be in the form of simple features.",
+    "text": "R’s new default way of handling spatial data seems to be simple features (sf).\nUse library(sf) to read, write and manipulate simple features.\nOther forms of data such as shapefiles (Chapter 7) often need to be read as simple features.\nMapping routines such as ggplot (Chapter 11) will also often want data to be in the form of simple features.",
     "crumbs": [
       "GIS Data",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Simple Features (`sf`)</span>"
@@ -220,17 +220,17 @@
   {
     "objectID": "shapefiles.html",
     "href": "shapefiles.html",
-    "title": "7  “Shapefiles”",
+    "title": "7  Shapefiles",
     "section": "",
     "text": "7.1 Introduction\nShapefiles are a spatial data format originally developed by ESRI.\nShapefiles come in three major types:",
     "crumbs": [
       "GIS Data",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>\"Shapefiles\"</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Shapefiles</span>"
     ]
   },
   {
-    "objectID": "shapefiles.html#sec-shapefiles",
-    "href": "shapefiles.html#sec-shapefiles",
+    "objectID": "shapefiles.html#introduction",
+    "href": "shapefiles.html#introduction",
     "title": "7  Shapefiles",
     "section": "",
     "text": "points, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.\nlines️, to represent line features such as roads, trails, or rivers.\npolygons, to represent polygon features such as outlines of cities, states, or countries.",
@@ -242,45 +242,45 @@
   {
     "objectID": "shapefiles.html#shapefiles-are-lists-of-files",
     "href": "shapefiles.html#shapefiles-are-lists-of-files",
-    "title": "7  “Shapefiles”",
+    "title": "7  Shapefiles",
     "section": "7.2 Shapefiles Are Lists of Files",
     "text": "7.2 Shapefiles Are Lists of Files\nShapefiles are actually a set or collection of associated files, all with the same name, and all in the same directory, but different suffixes.\nR–and many other software programs–generally reference the *.shp file of the shapefile.\n\n\nShow the code\nlist.files(\"./shapefiles/a2trees\")\n\n\n[1] \"AA_Trees.cpg\"     \"AA_Trees.dbf\"     \"AA_Trees.prj\"     \"AA_Trees.sbn\"    \n[5] \"AA_Trees.sbx\"     \"AA_Trees.shp\"     \"AA_Trees.shp.xml\" \"AA_Trees.shx\"",
     "crumbs": [
       "GIS Data",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>\"Shapefiles\"</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Shapefiles</span>"
     ]
   },
   {
     "objectID": "shapefiles.html#call-libraries",
     "href": "shapefiles.html#call-libraries",
-    "title": "7  “Shapefiles”",
+    "title": "7  Shapefiles",
     "section": "7.3 Call Libraries",
     "text": "7.3 Call Libraries\n\n\nShow the code\nlibrary(ggplot2) # beautiful graphs\n\n# library(dplyr) # data wrangling\n\nlibrary(sf) # simple (spatial) features\n\n# library(readr) # import csv",
     "crumbs": [
       "GIS Data",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>\"Shapefiles\"</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Shapefiles</span>"
     ]
   },
   {
     "objectID": "shapefiles.html#open-shapefiles",
     "href": "shapefiles.html#open-shapefiles",
-    "title": "7  “Shapefiles”",
+    "title": "7  Shapefiles",
     "section": "7.4 Open Shapefiles",
     "text": "7.4 Open Shapefiles\n\n\nShow the code\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nbuildings &lt;- read_sf(\"./shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp\")\n\ntrees &lt;- read_sf(\"./shapefiles/a2trees/AA_Trees.shp\")\n\nparks &lt;- read_sf(\"./shapefiles/AA_Parks/AA_Parks.shp\")\n\nuniversity &lt;- read_sf(\"./shapefiles/AA_University/AA_University.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads\n\n# watersheds &lt;- read_sf(\"./shapefiles/watersheds/Watersheds.shp\")",
     "crumbs": [
       "GIS Data",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>\"Shapefiles\"</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Shapefiles</span>"
     ]
   },
   {
     "objectID": "shapefiles.html#use-ggplot-to-map-the-shapefiles",
     "href": "shapefiles.html#use-ggplot-to-map-the-shapefiles",
-    "title": "7  “Shapefiles”",
+    "title": "7  Shapefiles",
     "section": "7.5 Use ggplot to Map the Shapefiles",
     "text": "7.5 Use ggplot to Map the Shapefiles\n\n\nShow the code\nggplot(city_boundary) + # initial sf data\n  # geom_sf(data = buildings,\n  #         fill = \"lightgrey\") +\n  geom_sf(data = AnnArborRoads, # first layer: Ann Arbor roads \n          color = \"lightgrey\") +\n  geom_sf(color = \"red\", alpha = .5) + # second layer: city boundary\n  geom_sf(data = trees, # third layer: trees\n          size = .01,\n          color = \"darkgreen\") +\n  labs(title = \"Demonstration of Shapefiles\",\n       subtitle = \"Green Trees Are Points \\nGrey Roads are Lines \\nRed City Boundary is Polygon\") +\n  theme_minimal() +\n  theme(axis.text = element_text(size = rel(.5)))",
     "crumbs": [
       "GIS Data",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>\"Shapefiles\"</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Shapefiles</span>"
     ]
   },
   {
@@ -376,7 +376,7 @@
     "href": "merge-with-external-data.html",
     "title": "12  Merge Shapefiles With External Data",
     "section": "",
-    "text": "12.1 Introduction\nA common task in mapping is that we have a shapefile of map data, but we want to merge in some external data from another source so that we can map that external data. Usually we want to use different colors to map that external data.\nHere, I use a shapefile of countries of the world, and map it with some made up data of arbitrary and made up x values for certain countries.\nThis tutorial builds upon another tutorial on Mapping with ggplot(Section 11.1)",
+    "text": "12.1 Introduction\nA common task in mapping is that we have a shapefile of map data, but we want to merge in some external data from another source so that we can map that external data. Usually we want to use different colors to map that external data.\nHere, I use a shapefile of countries of the world, and map it with some made up data of arbitrary and made up x values for certain countries.\nThis tutorial builds upon another tutorial on Mapping with ggplot(Chapter 11)",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
@@ -552,7 +552,7 @@
     "href": "geocoding.html#geocode",
     "title": "14  Geocoding",
     "section": "14.4 Geocode",
-    "text": "14.4 Geocode\n\nArcGIS geocoding has LOW success rate with this data\n\n\nYou will want to find a process with HIGH success rate\n\n\nYou could also try batchgeo -&gt; KML -&gt; Latitude/Longitude\n\n\n\nCode\ngeocoded_data &lt;- simulated_address_data %&gt;% \n  tidygeocoder::geocode(address, \n                        method = 'arcgis', \n                        lat = latitude, \n                        long = longitude)\n\n\nPassing 3 addresses to the ArcGIS single address geocoder\n\n\nQuery completed in: 1.4 seconds\n\n\nCode\nDT::datatable(geocoded_data,\n              extensions = 'Buttons', \n              options = list(\n                dom = 'Bfrtip',\n                buttons = c('copy', \n                            'csv', \n                            'print'))) # nice table\n\n\n\n\n\n\n\n\n\n\n\n\nGeocoding Can Make Errors!\n\n\n\nNB that for whatever reason, the geocoder has made a mistake: Agency Z has been placed in the Southern Hemisphere. Geocoding can be an error prone process and requires careful inspection of your tabular and mapped data.\nA geocoder may also be unable to geocode some of your data. Low success rates are not uncommon, and you may have to work hard to ensure that the majority, or all, of your data are geocoded.\n\n\n\nGeocoded data can then be mapped using procedures outlined in Section 13.1.",
+    "text": "14.4 Geocode\n\nArcGIS geocoding has LOW success rate with this data\n\n\nYou will want to find a process with HIGH success rate\n\n\nYou could also try batchgeo -&gt; KML -&gt; Latitude/Longitude\n\n\n\nCode\ngeocoded_data &lt;- simulated_address_data %&gt;% \n  tidygeocoder::geocode(address, \n                        method = 'arcgis', \n                        lat = latitude, \n                        long = longitude)\n\n\nPassing 3 addresses to the ArcGIS single address geocoder\n\n\nQuery completed in: 0.6 seconds\n\n\nCode\nDT::datatable(geocoded_data,\n              extensions = 'Buttons', \n              options = list(\n                dom = 'Bfrtip',\n                buttons = c('copy', \n                            'csv', \n                            'print'))) # nice table\n\n\n\n\n\n\n\n\n\n\n\n\nGeocoding Can Make Errors!\n\n\n\nNB that for whatever reason, the geocoder has made a mistake: Agency Z has been placed in the Southern Hemisphere. Geocoding can be an error prone process and requires careful inspection of your tabular and mapped data.\nA geocoder may also be unable to geocode some of your data. Low success rates are not uncommon, and you may have to work hard to ensure that the majority, or all, of your data are geocoded.\n\n\n\nGeocoded data can then be mapped using procedures outlined in Section 13.1.",
     "crumbs": [
       "More Advanced GIS Concepts",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Geocoding</span>"
@@ -655,17 +655,6 @@
     "crumbs": [
       "Other R Libraries for Mapping",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
-    ]
-  },
-  {
-    "objectID": "shapefiles.html#introduction",
-    "href": "shapefiles.html#introduction",
-    "title": "7  “Shapefiles”",
-    "section": "",
-    "text": "points, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.\nlines️, to represent line features such as roads, trails, or rivers.\npolygons, to represent polygon features such as outlines of cities, states, or countries.",
-    "crumbs": [
-      "GIS Data",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>\"Shapefiles\"</span>"
     ]
   }
 ]
