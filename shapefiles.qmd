@@ -10,7 +10,7 @@ Shapefiles come in three major types:
 * **lines**️, to represent line features such as roads, trails, or rivers.
 * **polygons**, to represent polygon features such as outlines of cities, states, or countries.
 
-## Shapefiles Are Lists of Files
+## Shape*files* Are Actually *Collections* of Files
 
 Shape*files* are actually a *set* or *collection* of associated files, all with the same name, and all in the same directory, but different suffixes. 
 
@@ -33,11 +33,7 @@ list.files("./shapefiles/a2trees")
 
 library(ggplot2) # beautiful graphs
 
-# library(dplyr) # data wrangling
-
 library(sf) # simple (spatial) features
-
-# library(readr) # import csv
 
 ```
 

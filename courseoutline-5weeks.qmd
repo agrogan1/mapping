@@ -2,7 +2,7 @@
 
 1. Introduction
     + Introduction to the Course
-    + Introduction to Shapefiles As GIS Data
+    + Introduction to Shapefiles (and Possibly `sf` Objects) As GIS Data
     + Introduction to Appropriate Software: R / RStudio / `sf` / `ggplot`; or ArcGIS; or QGIS
     + Quick Mapping Exercise
 2. Better Maps

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.545">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -341,7 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">7.1</span> Introduction</a></li>
-  <li><a href="#shapefiles-are-lists-of-files" id="toc-shapefiles-are-lists-of-files" class="nav-link" data-scroll-target="#shapefiles-are-lists-of-files"><span class="header-section-number">7.2</span> Shapefiles Are Lists of Files</a></li>
+  <li><a href="#shapefiles-are-actually-lists-of-files" id="toc-shapefiles-are-actually-lists-of-files" class="nav-link" data-scroll-target="#shapefiles-are-actually-lists-of-files"><span class="header-section-number">7.2</span> Shape<em>files</em> Are Actually <em>Lists</em> of Files</a></li>
   <li><a href="#call-libraries" id="toc-call-libraries" class="nav-link" data-scroll-target="#call-libraries"><span class="header-section-number">7.3</span> Call Libraries</a></li>
   <li><a href="#open-shapefiles" id="toc-open-shapefiles" class="nav-link" data-scroll-target="#open-shapefiles"><span class="header-section-number">7.4</span> Open Shapefiles</a></li>
   <li><a href="#use-ggplot-to-map-the-shapefiles" id="toc-use-ggplot-to-map-the-shapefiles" class="nav-link" data-scroll-target="#use-ggplot-to-map-the-shapefiles"><span class="header-section-number">7.5</span> Use <code>ggplot</code> to Map the Shapefiles</a></li>
@@ -380,8 +380,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>polygons</strong>, to represent polygon features such as outlines of cities, states, or countries.</li>
 </ul>
 </section>
-<section id="shapefiles-are-lists-of-files" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="shapefiles-are-lists-of-files"><span class="header-section-number">7.2</span> Shapefiles Are Lists of Files</h2>
+<section id="shapefiles-are-actually-lists-of-files" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="shapefiles-are-actually-lists-of-files"><span class="header-section-number">7.2</span> Shape<em>files</em> Are Actually <em>Lists</em> of Files</h2>
 <p>Shape<em>files</em> are actually a <em>set</em> or <em>collection</em> of associated files, all with the same name, and all in the same directory, but different suffixes.</p>
 <p>R–and many other software programs–generally reference the <code>*.shp</code> file of the shapefile.</p>
 <div class="cell">
@@ -402,11 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># beautiful graphs</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># library(dplyr) # data wrangling</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co"># simple (spatial) features</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># library(readr) # import csv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co"># simple (spatial) features</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1010,7 +1006,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","loop":false,"closeEffect":"zoom","selector":".lightbox"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
