@@ -240,11 +240,11 @@
     ]
   },
   {
-    "objectID": "shapefiles.html#shapefiles-are-lists-of-files",
-    "href": "shapefiles.html#shapefiles-are-lists-of-files",
+    "objectID": "shapefiles.html#shapefiles-are-actually-collections-of-files",
+    "href": "shapefiles.html#shapefiles-are-actually-collections-of-files",
     "title": "7  Shapefiles",
-    "section": "7.2 Shapefiles Are Lists of Files",
-    "text": "7.2 Shapefiles Are Lists of Files\nShapefiles are actually a set or collection of associated files, all with the same name, and all in the same directory, but different suffixes.\nR–and many other software programs–generally reference the *.shp file of the shapefile.\n\n\nShow the code\nlist.files(\"./shapefiles/a2trees\")\n\n\n[1] \"AA_Trees.cpg\"     \"AA_Trees.dbf\"     \"AA_Trees.prj\"     \"AA_Trees.sbn\"    \n[5] \"AA_Trees.sbx\"     \"AA_Trees.shp\"     \"AA_Trees.shp.xml\" \"AA_Trees.shx\"",
+    "section": "7.2 Shapefiles Are Actually Collections of Files",
+    "text": "7.2 Shapefiles Are Actually Collections of Files\nShapefiles are actually a set or collection of associated files, all with the same name, and all in the same directory, but different suffixes.\nR–and many other software programs–generally reference the *.shp file of the shapefile.\n\n\nShow the code\nlist.files(\"./shapefiles/a2trees\")\n\n\n[1] \"AA_Trees.cpg\"     \"AA_Trees.dbf\"     \"AA_Trees.prj\"     \"AA_Trees.sbn\"    \n[5] \"AA_Trees.sbx\"     \"AA_Trees.shp\"     \"AA_Trees.shp.xml\" \"AA_Trees.shx\"",
     "crumbs": [
       "GIS Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Shapefiles</span>"
@@ -655,17 +655,6 @@
     "crumbs": [
       "Other R Libraries for Mapping",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
-    ]
-  },
-  {
-    "objectID": "shapefiles.html#shapefiles-are-actually-lists-of-files",
-    "href": "shapefiles.html#shapefiles-are-actually-lists-of-files",
-    "title": "7  Shapefiles",
-    "section": "7.2 Shapefiles Are Actually Lists of Files",
-    "text": "7.2 Shapefiles Are Actually Lists of Files\nShapefiles are actually a set or collection of associated files, all with the same name, and all in the same directory, but different suffixes.\nR–and many other software programs–generally reference the *.shp file of the shapefile.\n\n\nShow the code\nlist.files(\"./shapefiles/a2trees\")\n\n\n[1] \"AA_Trees.cpg\"     \"AA_Trees.dbf\"     \"AA_Trees.prj\"     \"AA_Trees.sbn\"    \n[5] \"AA_Trees.sbx\"     \"AA_Trees.shp\"     \"AA_Trees.shp.xml\" \"AA_Trees.shx\"",
-    "crumbs": [
-      "GIS Data",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Shapefiles</span>"
     ]
   }
 ]
