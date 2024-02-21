@@ -15,8 +15,11 @@ book:
   repo-actions: [issue]
   sharing: [twitter, facebook, linkedin]
   chapters:
-    - index.qmd
-    - courseoutline-5weeks.qmd
+    - part: "Introduction"
+      chapters:
+        - index.qmd
+        - courseoutline-5weeks.qmd
+        - R.qmd
     - part: "Geographical and GIS Concepts"
       chapters: 
         - latitude-and-longitude.qmd
