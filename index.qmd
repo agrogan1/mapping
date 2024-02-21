@@ -1,4 +1,4 @@
-# Introduction
+# Introduction to Mapping and GIS
 
 ```{r}
 #| output: false
