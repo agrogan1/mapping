@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapping - 8&nbsp; Shapefiles</title>
+<title>Mapping - 3&nbsp; Introduction to R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./shapefiles2.html" rel="next">
-<link href="./sf.html" rel="prev">
+<link href="./latitude-and-longitude.html" rel="next">
+<link href="./courseoutline-5weeks.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -77,9 +43,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,14 +73,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="mapping.css">
-<meta property="og:title" content="Mapping - 8&nbsp; Shapefiles">
-<meta property="og:description" content="">
+<meta property="og:title" content="Mapping - 3&nbsp; Introduction to R">
 <meta property="og:site_name" content="Mapping">
-<meta name="twitter:title" content="Mapping - 8&nbsp; Shapefiles">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Mapping - 3&nbsp; Introduction to R">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[[8]{.chapter-number}&nbsp; [Shapefiles]{.chapter-title}]{#sec-shapefiles .quarto-section-identifier}">
-<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/shapefiles.html">
+<meta name="citation_title" content="[3]{.chapter-number}&nbsp; [Introduction to R]{.chapter-title}">
+<meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/R.html">
 <meta name="citation_language" content="en">
 </head>
 
@@ -167,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sf.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./shapefiles.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Shapefiles</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li><li class="breadcrumb-item"><a href="./R.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -202,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./R.html" class="sidebar-item-text sidebar-link">
+  <a href="./R.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to R</span></span></a>
   </div>
 </li>
@@ -254,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./shapefiles.html" class="sidebar-item-text sidebar-link active">
+  <a href="./shapefiles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Shapefiles</span></span></a>
   </div>
 </li>
@@ -353,24 +314,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">8.1</span> Introduction</a></li>
-  <li><a href="#shapefiles-are-actually-collections-of-files" id="toc-shapefiles-are-actually-collections-of-files" class="nav-link" data-scroll-target="#shapefiles-are-actually-collections-of-files"><span class="header-section-number">8.2</span> Shape<em>files</em> Are Actually <em>Collections</em> of Files</a></li>
-  <li><a href="#call-libraries" id="toc-call-libraries" class="nav-link" data-scroll-target="#call-libraries"><span class="header-section-number">8.3</span> Call Libraries</a></li>
-  <li><a href="#open-shapefiles" id="toc-open-shapefiles" class="nav-link" data-scroll-target="#open-shapefiles"><span class="header-section-number">8.4</span> Open Shapefiles</a></li>
-  <li><a href="#use-ggplot-to-map-the-shapefiles" id="toc-use-ggplot-to-map-the-shapefiles" class="nav-link" data-scroll-target="#use-ggplot-to-map-the-shapefiles"><span class="header-section-number">8.5</span> Use <code>ggplot</code> to Map the Shapefiles</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sf.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./shapefiles.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Shapefiles</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li><li class="breadcrumb-item"><a href="./R.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to R</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-shapefiles" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Shapefiles</span></span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to R</span></h1>
 </div>
 
 
@@ -387,96 +338,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">8.1</span> Introduction</h2>
-<p>Shapefiles are a spatial data format originally developed by <a href="https://www.esri.com/en-us/home">ESRI</a>.</p>
-<p>Shapefiles come in three major types:</p>
 <ul>
-<li><strong>points</strong>, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.</li>
-<li><strong>lines</strong>️, to represent line features such as roads, trails, or rivers.</li>
-<li><strong>polygons</strong>, to represent polygon features such as outlines of cities, states, or countries.</li>
+<li>Introductory content on R can be found here: <a href="https://globalfamilies.quarto.pub/global-families-project/quick-intro-R.html">https://globalfamilies.quarto.pub/global-families-project/quick-intro-R.html</a>.</li>
+<li>Introductory content on ggplot for graphing and data visualization can be found here: <a href="https://globalfamilies.quarto.pub/global-families-project/quick-intro-ggplot2.html">https://globalfamilies.quarto.pub/global-families-project/quick-intro-ggplot2.html</a>.</li>
 </ul>
-</section>
-<section id="shapefiles-are-actually-collections-of-files" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="shapefiles-are-actually-collections-of-files"><span class="header-section-number">8.2</span> Shape<em>files</em> Are Actually <em>Collections</em> of Files</h2>
-<p>Shape<em>files</em> are actually a <em>set</em> or <em>collection</em> of associated files, all with the same name, and all in the same directory, but different suffixes.</p>
-<p>R–and many other software programs–generally reference the <code>*.shp</code> file of the shapefile.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="st">"./shapefiles/a2trees"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "AA_Trees.cpg"     "AA_Trees.dbf"     "AA_Trees.prj"     "AA_Trees.sbn"    
-[5] "AA_Trees.sbx"     "AA_Trees.shp"     "AA_Trees.shp.xml" "AA_Trees.shx"    </code></pre>
-</div>
-</div>
-</section>
-<section id="call-libraries" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="call-libraries"><span class="header-section-number">8.3</span> Call Libraries</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># beautiful graphs</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co"># simple (spatial) features</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="open-shapefiles" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="open-shapefiles"><span class="header-section-number">8.4</span> Open Shapefiles</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>city_boundary <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>buildings <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"./shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp"</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>trees <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"./shapefiles/a2trees/AA_Trees.shp"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>parks <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"./shapefiles/AA_Parks/AA_Parks.shp"</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>university <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"./shapefiles/AA_University/AA_University.shp"</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>WashtenawRoads <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"./shapefiles/Roads/RoadCenterlines.shp"</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>AnnArborRoads <span class="ot">&lt;-</span> <span class="fu">st_crop</span>(WashtenawRoads, </span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                         city_boundary) <span class="co"># crop to only get A2 roads</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># watersheds &lt;- read_sf("./shapefiles/watersheds/Watersheds.shp")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="use-ggplot-to-map-the-shapefiles" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="use-ggplot-to-map-the-shapefiles"><span class="header-section-number">8.5</span> Use <code>ggplot</code> to Map the Shapefiles</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(city_boundary) <span class="sc">+</span> <span class="co"># initial sf data</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_sf(data = buildings,</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#         fill = "lightgrey") +</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> AnnArborRoads, <span class="co"># first layer: Ann Arbor roads </span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"lightgrey"</span>) <span class="sc">+</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span> <span class="co"># second layer: city boundary</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> trees, <span class="co"># third layer: trees</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> .<span class="dv">01</span>,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Demonstration of Shapefiles"</span>,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Green Trees Are Points </span><span class="sc">\n</span><span class="st">Grey Roads are Lines </span><span class="sc">\n</span><span class="st">Red City Boundary is Polygon"</span>) <span class="sc">+</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(.<span class="dv">5</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="shapefiles_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="shapefiles_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
-</figure>
-</div>
-</div>
-</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1012,44 +879,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./sf.html" class="pagination-link  aria-label=" &lt;span="" features="" (`sf`)&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Simple Features (<code>sf</code>)</span></span>
+      <a 5="" href="./courseoutline-5weeks.html" class="pagination-link  aria-label=" &lt;span="" course="" outline="" for="" a="" week="" minicourse&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Possible Course Outline for a 5 Week MiniCourse</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./shapefiles2.html" class="pagination-link" aria-label="<span class='chapter-number'>9</span>&nbsp; <span class='chapter-title'>Shapefiles on This Site</span>">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./latitude-and-longitude.html" class="pagination-link" aria-label="<span class='chapter-number'>4</span>&nbsp; <span class='chapter-title'>Latitude and Longitude</span>">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Latitude and Longitude</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":false});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

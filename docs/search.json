@@ -4,9 +4,10 @@
     "href": "index.html",
     "title": "Mapping",
     "section": "",
-    "text": "1 Introduction\n\n\n\n\n\n\n\n\nFigure 1.1: Countries of the World\n\n\n\n\nMapping and GIS have become an increasingly important part of social research, advocacy, and program and policy development. This website contains materials for an in development course on Mapping and GIS.\nMuch of the content of this site is built around the use of R software, though many of the concepts are applicable across GIS and mapping applications such as R, Stata, ArcGIS and QGIS.",
+    "text": "1 Introduction to Mapping and GIS\n\n\n\n\n\n\n\n\nFigure 1.1: Countries of the World\n\n\n\n\nMapping and GIS have become an increasingly important part of social research, advocacy, and program and policy development. This website contains materials for an in development course on Mapping and GIS.\nThe content of this site is built around the use of R software, though many of the concepts are applicable across GIS and mapping applications such as R, Stata, ArcGIS and QGIS.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "Introduction",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Mapping and GIS</span>"
     ]
   },
   {
@@ -220,67 +221,67 @@
   {
     "objectID": "shapefiles.html",
     "href": "shapefiles.html",
-    "title": "7  Shapefiles",
+    "title": "8  Shapefiles",
     "section": "",
-    "text": "7.1 Introduction\nShapefiles are a spatial data format originally developed by ESRI.\nShapefiles come in three major types:",
+    "text": "8.1 Introduction\nShapefiles are a spatial data format originally developed by ESRI.\nShapefiles come in three major types:",
     "crumbs": [
       "GIS Data",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Shapefiles</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Shapefiles</span>"
     ]
   },
   {
     "objectID": "shapefiles.html#introduction",
     "href": "shapefiles.html#introduction",
-    "title": "7  Shapefiles",
+    "title": "8  Shapefiles",
     "section": "",
     "text": "points, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.\nlines️, to represent line features such as roads, trails, or rivers.\npolygons, to represent polygon features such as outlines of cities, states, or countries.",
     "crumbs": [
       "GIS Data",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Shapefiles</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Shapefiles</span>"
     ]
   },
   {
     "objectID": "shapefiles.html#shapefiles-are-actually-collections-of-files",
     "href": "shapefiles.html#shapefiles-are-actually-collections-of-files",
-    "title": "7  Shapefiles",
-    "section": "7.2 Shapefiles Are Actually Collections of Files",
-    "text": "7.2 Shapefiles Are Actually Collections of Files\nShapefiles are actually a set or collection of associated files, all with the same name, and all in the same directory, but different suffixes.\nR–and many other software programs–generally reference the *.shp file of the shapefile.\n\n\nShow the code\nlist.files(\"./shapefiles/a2trees\")\n\n\n[1] \"AA_Trees.cpg\"     \"AA_Trees.dbf\"     \"AA_Trees.prj\"     \"AA_Trees.sbn\"    \n[5] \"AA_Trees.sbx\"     \"AA_Trees.shp\"     \"AA_Trees.shp.xml\" \"AA_Trees.shx\"",
+    "title": "8  Shapefiles",
+    "section": "8.2 Shapefiles Are Actually Collections of Files",
+    "text": "8.2 Shapefiles Are Actually Collections of Files\nShapefiles are actually a set or collection of associated files, all with the same name, and all in the same directory, but different suffixes.\nR–and many other software programs–generally reference the *.shp file of the shapefile.\n\n\nShow the code\nlist.files(\"./shapefiles/a2trees\")\n\n\n[1] \"AA_Trees.cpg\"     \"AA_Trees.dbf\"     \"AA_Trees.prj\"     \"AA_Trees.sbn\"    \n[5] \"AA_Trees.sbx\"     \"AA_Trees.shp\"     \"AA_Trees.shp.xml\" \"AA_Trees.shx\"",
     "crumbs": [
       "GIS Data",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Shapefiles</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Shapefiles</span>"
     ]
   },
   {
     "objectID": "shapefiles.html#call-libraries",
     "href": "shapefiles.html#call-libraries",
-    "title": "7  Shapefiles",
-    "section": "7.3 Call Libraries",
-    "text": "7.3 Call Libraries\n\n\nShow the code\nlibrary(ggplot2) # beautiful graphs\n\nlibrary(sf) # simple (spatial) features",
+    "title": "8  Shapefiles",
+    "section": "8.3 Call Libraries",
+    "text": "8.3 Call Libraries\n\n\nShow the code\nlibrary(ggplot2) # beautiful graphs\n\nlibrary(sf) # simple (spatial) features",
     "crumbs": [
       "GIS Data",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Shapefiles</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Shapefiles</span>"
     ]
   },
   {
     "objectID": "shapefiles.html#open-shapefiles",
     "href": "shapefiles.html#open-shapefiles",
-    "title": "7  Shapefiles",
-    "section": "7.4 Open Shapefiles",
-    "text": "7.4 Open Shapefiles\n\n\nShow the code\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nbuildings &lt;- read_sf(\"./shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp\")\n\ntrees &lt;- read_sf(\"./shapefiles/a2trees/AA_Trees.shp\")\n\nparks &lt;- read_sf(\"./shapefiles/AA_Parks/AA_Parks.shp\")\n\nuniversity &lt;- read_sf(\"./shapefiles/AA_University/AA_University.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads\n\n# watersheds &lt;- read_sf(\"./shapefiles/watersheds/Watersheds.shp\")",
+    "title": "8  Shapefiles",
+    "section": "8.4 Open Shapefiles",
+    "text": "8.4 Open Shapefiles\n\n\nShow the code\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nbuildings &lt;- read_sf(\"./shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp\")\n\ntrees &lt;- read_sf(\"./shapefiles/a2trees/AA_Trees.shp\")\n\nparks &lt;- read_sf(\"./shapefiles/AA_Parks/AA_Parks.shp\")\n\nuniversity &lt;- read_sf(\"./shapefiles/AA_University/AA_University.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads\n\n# watersheds &lt;- read_sf(\"./shapefiles/watersheds/Watersheds.shp\")",
     "crumbs": [
       "GIS Data",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Shapefiles</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Shapefiles</span>"
     ]
   },
   {
     "objectID": "shapefiles.html#use-ggplot-to-map-the-shapefiles",
     "href": "shapefiles.html#use-ggplot-to-map-the-shapefiles",
-    "title": "7  Shapefiles",
-    "section": "7.5 Use ggplot to Map the Shapefiles",
-    "text": "7.5 Use ggplot to Map the Shapefiles\n\n\nShow the code\nggplot(city_boundary) + # initial sf data\n  # geom_sf(data = buildings,\n  #         fill = \"lightgrey\") +\n  geom_sf(data = AnnArborRoads, # first layer: Ann Arbor roads \n          color = \"lightgrey\") +\n  geom_sf(color = \"red\", alpha = .5) + # second layer: city boundary\n  geom_sf(data = trees, # third layer: trees\n          size = .01,\n          color = \"darkgreen\") +\n  labs(title = \"Demonstration of Shapefiles\",\n       subtitle = \"Green Trees Are Points \\nGrey Roads are Lines \\nRed City Boundary is Polygon\") +\n  theme_minimal() +\n  theme(axis.text = element_text(size = rel(.5)))",
+    "title": "8  Shapefiles",
+    "section": "8.5 Use ggplot to Map the Shapefiles",
+    "text": "8.5 Use ggplot to Map the Shapefiles\n\n\nShow the code\nggplot(city_boundary) + # initial sf data\n  # geom_sf(data = buildings,\n  #         fill = \"lightgrey\") +\n  geom_sf(data = AnnArborRoads, # first layer: Ann Arbor roads \n          color = \"lightgrey\") +\n  geom_sf(color = \"red\", alpha = .5) + # second layer: city boundary\n  geom_sf(data = trees, # third layer: trees\n          size = .01,\n          color = \"darkgreen\") +\n  labs(title = \"Demonstration of Shapefiles\",\n       subtitle = \"Green Trees Are Points \\nGrey Roads are Lines \\nRed City Boundary is Polygon\") +\n  theme_minimal() +\n  theme(axis.text = element_text(size = rel(.5)))",
     "crumbs": [
       "GIS Data",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Shapefiles</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Shapefiles</span>"
     ]
   },
   {
@@ -655,6 +656,17 @@
     "crumbs": [
       "Other R Libraries for Mapping",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
+    ]
+  },
+  {
+    "objectID": "R.html",
+    "href": "R.html",
+    "title": "3  Introduction to R",
+    "section": "",
+    "text": "Introductory content on R can be found here: https://globalfamilies.quarto.pub/global-families-project/quick-intro-R.html.\nIntroductory content on ggplot for graphing and data visualization can be found here: https://globalfamilies.quarto.pub/global-families-project/quick-intro-ggplot2.html.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Introduction to R</span>"
     ]
   }
 ]
