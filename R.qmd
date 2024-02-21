@@ -1,0 +1,6 @@
+# Introduction to R
+
+* Introductory content on R can be found here: [https://globalfamilies.quarto.pub/global-families-project/quick-intro-R.html](https://globalfamilies.quarto.pub/global-families-project/quick-intro-R.html).
+* Introductory content on ggplot for graphing and data visualization can be found here: [https://globalfamilies.quarto.pub/global-families-project/quick-intro-ggplot2.html](https://globalfamilies.quarto.pub/global-families-project/quick-intro-ggplot2.html).
+
+
