@@ -224,7 +224,7 @@
     "href": "sf.html",
     "title": "7  Simple Features (sf)",
     "section": "",
-    "text": "R’s new default way of handling spatial data seems to be simple features (sf).\nUse library(sf) to read, write and manipulate simple features.\nOther forms of data such as shapefiles (Chapter 8) often need to be read as simple features.\nMapping routines such as ggplot (Chapter 12) will also often want data to be in the form of simple features.",
+    "text": "R’s new preferred way of handling spatial data seems to be simple features (sf).\nUse library(sf) to read, write and manipulate simple features.\nOther forms of data such as shapefiles (Chapter 8) often need to be read as simple features.\nMapping routines such as ggplot (Chapter 12) will also often want data to be in the form of simple features.",
     "crumbs": [
       "GIS Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Simple Features (`sf`)</span>"
