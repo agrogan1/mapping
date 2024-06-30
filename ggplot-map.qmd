@@ -77,17 +77,18 @@ ggplot(city_boundary) +
           color = "lightgrey") +
   geom_sf(color = "darkgrey", alpha = .5) +
   geom_sf(data = university, 
-          fill = "blue", 
-          alpha = .25) + 
+          aes(fill = "university or college"), 
+          alpha = .75) + 
   geom_sf(data = parks, 
-          fill = "darkgreen", 
-          alpha = .25) +
+          alpha = .75,
+          aes(fill = "parks")) +
   # geom_sf(data = trees, 
   #         size = .1,
   #         color = "darkgreen") +
   labs(title = "Ann Arbor") +
   scale_color_viridis_d() +
-  scale_fill_viridis_d() +
+  scale_fill_manual(name="",
+                    values = c("darkgreen", "navy")) +
   theme_minimal() +
   theme(plot.title = element_text(size = rel(2)), 
         axis.text = element_text(size = rel(.5)),
