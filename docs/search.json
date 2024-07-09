@@ -279,7 +279,7 @@
     "href": "shapefiles.html#open-shapefiles",
     "title": "8  Shapefiles",
     "section": "8.4 Open Shapefiles",
-    "text": "8.4 Open Shapefiles\n\n\nShow the code\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nbuildings &lt;- read_sf(\"./shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp\")\n\ntrees &lt;- read_sf(\"./shapefiles/a2trees/AA_Trees.shp\")\n\nparks &lt;- read_sf(\"./shapefiles/AA_Parks/AA_Parks.shp\")\n\nuniversity &lt;- read_sf(\"./shapefiles/AA_University/AA_University.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads\n\n# watersheds &lt;- read_sf(\"./shapefiles/watersheds/Watersheds.shp\")",
+    "text": "8.4 Open Shapefiles\n\n\nShow the code\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")\n\nbuildings &lt;- read_sf(\"./shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp\")\n\n# trees &lt;- read_sf(\"./shapefiles/a2trees/AA_Trees.shp\")\n\n# parks &lt;- read_sf(\"./shapefiles/AA_Parks/AA_Parks.shp\")\n\n# university &lt;- read_sf(\"./shapefiles/AA_University/AA_University.shp\")\n\nclients &lt;- read_sf(\"./shapefiles/clients/clients.shp\")\n\nWashtenawRoads &lt;- read_sf(\"./shapefiles/Roads/RoadCenterlines.shp\")\n\nAnnArborRoads &lt;- st_crop(WashtenawRoads, \n                         city_boundary) # crop to only get A2 roads\n\n# watersheds &lt;- read_sf(\"./shapefiles/watersheds/Watersheds.shp\")",
     "crumbs": [
       "GIS Data",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Shapefiles</span>"
@@ -290,7 +290,7 @@
     "href": "shapefiles.html#use-ggplot-to-map-the-shapefiles",
     "title": "8  Shapefiles",
     "section": "8.5 Use ggplot to Map the Shapefiles",
-    "text": "8.5 Use ggplot to Map the Shapefiles\n\n\nShow the code\nggplot(city_boundary) + # initial sf data\n  # geom_sf(data = buildings,\n  #         fill = \"lightgrey\") +\n  geom_sf(data = AnnArborRoads, # first layer: Ann Arbor roads \n          color = \"lightgrey\") +\n  geom_sf(color = \"red\", alpha = .5) + # second layer: city boundary\n  geom_sf(data = trees, # third layer: trees\n          size = .01,\n          color = \"darkgreen\") +\n  labs(title = \"Demonstration of Shapefiles\",\n       subtitle = \"Green Trees Are Points \\nGrey Roads are Lines \\nRed City Boundary is Polygon\") +\n  theme_minimal() +\n  theme(axis.text = element_text(size = rel(.5)))",
+    "text": "8.5 Use ggplot to Map the Shapefiles\n\n\nShow the code\nggplot(city_boundary) + # initial sf data\n  # geom_sf(data = buildings,\n  #         fill = \"lightgrey\") +\n  geom_sf(data = AnnArborRoads, # first layer: Ann Arbor roads \n          color = \"lightgrey\") +\n  geom_sf(color = \"red\", # second layer: city boundary\n          alpha = .5) + \n  geom_sf(data = clients, # third layer: clients\n          size = 1,\n          color = \"purple\") +\n  labs(title = \"Demonstration of Shapefiles\",\n       subtitle = \"Purple Clients Are Points \\nGrey Roads are Lines \\nRed City Boundary is Polygon\") +\n  theme_minimal() +\n  theme(axis.text = element_text(size = rel(.5)))",
     "crumbs": [
       "GIS Data",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Shapefiles</span>"
