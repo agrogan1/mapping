@@ -6,9 +6,9 @@ Shapefiles are a spatial data format originally developed by [ESRI](https://www.
 
 Shapefiles come in three major types:
 
-* **points**, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.
-* **lines**️, to represent line features such as roads, trails, or rivers.
-* **polygons**, to represent polygon features such as outlines of cities, states, or countries.
+* **points** <span style="color:red">●</span>, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.
+* **lines**️ <span style="color:red;font-size:2em">━━━</span>, to represent line features such as roads, trails, or rivers.
+* **polygons** <span style="color:red;font-size:3em">▭▯</span>, to represent polygon features such as outlines of cities, states, or countries.
 
 ## Shape*files* Are Actually *Collections* of Files
 

@@ -392,9 +392,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Shapefiles are a spatial data format originally developed by <a href="https://www.esri.com/en-us/home">ESRI</a>.</p>
 <p>Shapefiles come in three major types:</p>
 <ul>
-<li><strong>points</strong>, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.</li>
-<li><strong>lines</strong>️, to represent line features such as roads, trails, or rivers.</li>
-<li><strong>polygons</strong>, to represent polygon features such as outlines of cities, states, or countries.</li>
+<li><strong>points</strong> <span style="color:red">●</span>, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.</li>
+<li><strong>lines</strong>️ <span style="color:red;font-size:2em">━━━</span>, to represent line features such as roads, trails, or rivers.</li>
+<li><strong>polygons</strong> <span style="color:red;font-size:3em">▭▯</span>, to represent polygon features such as outlines of cities, states, or countries.</li>
 </ul>
 </section>
 <section id="shapefiles-are-actually-collections-of-files" class="level2" data-number="8.2">
@@ -1023,7 +1023,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

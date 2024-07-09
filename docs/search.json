@@ -246,7 +246,7 @@
     "href": "shapefiles.html#introduction",
     "title": "8  Shapefiles",
     "section": "",
-    "text": "points, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.\nlines️, to represent line features such as roads, trails, or rivers.\npolygons, to represent polygon features such as outlines of cities, states, or countries.",
+    "text": "points ●, to represent point features such as individual or agency locations. At larger scales, cities or towns might also be points.\nlines️ ━━━, to represent line features such as roads, trails, or rivers.\npolygons ▭▯, to represent polygon features such as outlines of cities, states, or countries.",
     "crumbs": [
       "GIS Data",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Shapefiles</span>"
@@ -312,7 +312,7 @@
     "href": "symbology.html",
     "title": "10  Symbology",
     "section": "",
-    "text": "10.1 Introduction\nShapefiles (Chapter 8) are a standard format for storing geographic data.\nShapefiles generally come in three types: points ●; lines ━; and polygons ■.",
+    "text": "10.1 Introduction\nShapefiles (Chapter 8) are a standard format for storing geographic data.\nShapefiles generally come in three types: points ●; lines ━; and polygons ▭▯.",
     "crumbs": [
       "GIS Data",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Symbology</span>"
