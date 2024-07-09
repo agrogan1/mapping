@@ -47,11 +47,13 @@ city_boundary <- read_sf("./shapefiles/AA_City_Boundary/AA_City_Boundary.shp")
 
 buildings <- read_sf("./shapefiles/AA_Building_Footprints/AA_Building_Footprints.shp")
 
-trees <- read_sf("./shapefiles/a2trees/AA_Trees.shp")
+# trees <- read_sf("./shapefiles/a2trees/AA_Trees.shp")
 
-parks <- read_sf("./shapefiles/AA_Parks/AA_Parks.shp")
+# parks <- read_sf("./shapefiles/AA_Parks/AA_Parks.shp")
 
-university <- read_sf("./shapefiles/AA_University/AA_University.shp")
+# university <- read_sf("./shapefiles/AA_University/AA_University.shp")
+
+clients <- read_sf("./shapefiles/clients/clients.shp")
 
 WashtenawRoads <- read_sf("./shapefiles/Roads/RoadCenterlines.shp")
 
@@ -73,12 +75,13 @@ ggplot(city_boundary) + # initial sf data
   #         fill = "lightgrey") +
   geom_sf(data = AnnArborRoads, # first layer: Ann Arbor roads 
           color = "lightgrey") +
-  geom_sf(color = "red", alpha = .5) + # second layer: city boundary
-  geom_sf(data = trees, # third layer: trees
-          size = .01,
-          color = "darkgreen") +
+  geom_sf(color = "red", # second layer: city boundary
+          alpha = .5) + 
+  geom_sf(data = clients, # third layer: clients
+          size = 1,
+          color = "purple") +
   labs(title = "Demonstration of Shapefiles",
-       subtitle = "Green Trees Are Points \nGrey Roads are Lines \nRed City Boundary is Polygon") +
+       subtitle = "Purple Clients Are Points \nGrey Roads are Lines \nRed City Boundary is Polygon") +
   theme_minimal() +
   theme(axis.text = element_text(size = rel(.5)))
 
