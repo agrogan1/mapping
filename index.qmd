@@ -17,6 +17,7 @@ library(plotly) # interactive graphics
 #| fig-cap: "Countries of the World"
 #| fig-height: 3
 #| echo: false
+#| column: body
 
 global_data <- read_sf("./shapefiles/wrld_simpl/wrld_simpl.shp")
 
