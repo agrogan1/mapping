@@ -20,6 +20,8 @@ library(sf) # simple (spatial) features
 
 ## Get `ne_countries` As `sf`
 
+We use `ne_countries()` to get the `ne_countries` dataset as an `sf` object (@sec-sf).
+
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
@@ -32,17 +34,19 @@ ne_countries <- ne_countries(scale = "medium",
 
 ## Map
 
+We make a simple map of this `sf` object with `ggplot` (@sec-ggplot-map).
+
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
 #| message: false
 
-ggplot(ne_countries) + 
-  geom_sf(aes(fill = income_grp)) +
-  scale_fill_viridis_d(name = "Income Group", 
+ggplot(ne_countries) + # the sf data that I am mapping
+  geom_sf(aes(fill = income_grp)) + # what goes on the map: FILL
+  scale_fill_viridis_d(name = "Income Group", # beautiful colors
                        option = "viridis") +
-  labs(title = "Countries of the World") +
-  theme_minimal()
+  labs(title = "Countries of the World") + # labels
+  theme_minimal() # minimal theme
 
 ```
 

@@ -3,6 +3,11 @@ blockquote {
   border-left: 3px solid #e95420; 
   padding: 0.5em 10px;
 }
+
 code {
   color: #007bff;
+}
+
+summary::marker, details>summary {
+color: #e95420;
 }

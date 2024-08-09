@@ -1,4 +1,4 @@
-# Simple Features (`sf`)
+# Simple Features (`sf`) {#sec-sf}
 
 R's new preferred way of handling spatial data seems to be *simple features* (`sf`).
 
