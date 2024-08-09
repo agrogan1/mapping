@@ -20,7 +20,7 @@ library(sf) # simple (spatial) features
 
 ## Get `ne_countries` As `sf`
 
-We use `ne_countries()` to get the `ne_countries` dataset as an `sf` object (@sec-sf).
+I use `ne_countries()` to get the `ne_countries` dataset as an `sf` object (@sec-sf).
 
 ```{r}
 #| code-fold: true
@@ -34,7 +34,7 @@ ne_countries <- ne_countries(scale = "medium",
 
 ## Map
 
-We make a simple map of this `sf` object with `ggplot` (@sec-ggplot-map).
+I make a simple map of this `sf` object with `ggplot` (@sec-ggplot-map).
 
 ```{r}
 #| code-fold: true

@@ -31,7 +31,7 @@ library(countrycode) # work with country data
 
 ## Get Shapefile
 
-Here I am using the `wrld_simpl` dataset of country outlines that is available in several R packages. I read this data into an object called `world`.
+Here I am using the `wrld_simpl` dataset of country outlines that is available in several R packages (@sec-shapefiles2). I read this data into an object called `world`.
 
 ```{r}
 #| code-fold: true
