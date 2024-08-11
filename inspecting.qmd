@@ -1,0 +1,45 @@
+# Inspecting Geographic Data Files {#sec-inspecting}
+
+Often, when we open a new geographic data file, we don't know what fields of data it contains. 
+
+It is useful to get an idea of what data our geographic data file already contains in order to know whether or not we may need to merge in other data (@sec-merging).
+
+`names` and `head` are two useful commands for learning about new geographic data files.
+
+As an example, I am going to use the country data from the `rnaturalearth` library (@sec-rnaturalearth).
+
+## Data
+
+I use `ne_countries()` to create the `mapdata` dataset as an `sf` object (@sec-sf).
+
+```{r}
+#| message: false
+
+library(rnaturalearth) 
+
+mapdata <- ne_countries(scale = "medium", 
+                        returnclass = "sf") 
+
+```
+
+## names
+
+`names` gives us the names of all of the fields of the data.
+
+```{r}
+
+names(mapdata)
+
+```
+
+## head
+
+`head` shows us the first several rows of data.
+
+```{r}
+
+head(mapdata)
+
+```
+
+

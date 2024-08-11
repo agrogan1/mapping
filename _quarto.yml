@@ -29,9 +29,10 @@ book:
       chapters:
         - sf.qmd
         - shapefiles.qmd
+        - rnaturalearth.qmd
+        - inspecting.qmd
         - shapefiles2.qmd
         - symbology.qmd
-        - rnaturalearth.qmd
     - part: "Mapping With `ggplot`"
       chapters: 
         - ggplot-map.qmd

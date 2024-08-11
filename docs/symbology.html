@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.29">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapping – 10&nbsp; Symbology</title>
+<title>Mapping - 12&nbsp; Symbology</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./rnaturalearth.html" rel="next">
+<link href="./ggplot-map.html" rel="next">
 <link href="./shapefiles2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -110,13 +110,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="mapping.css">
-<meta property="og:title" content="Mapping - 10&nbsp; Symbology">
+<meta property="og:title" content="Mapping - 12&nbsp; Symbology">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Mapping">
-<meta name="twitter:title" content="Mapping - 10&nbsp; Symbology">
+<meta name="twitter:title" content="Mapping - 12&nbsp; Symbology">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[10]{.chapter-number}&nbsp; [Symbology]{.chapter-title}">
+<meta name="citation_title" content="[12]{.chapter-number}&nbsp; [Symbology]{.chapter-title}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/symbology.html">
 <meta name="citation_language" content="en">
 </head>
@@ -132,26 +132,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <span class="navbar-title">Mapping</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools tools-wide tools-end">
+        <div class="quarto-navbar-tools tools-wide">
     <a href="https://github.com/agrogan1/mapping" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item quarto-navbar-tools-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-twitter pe-1"></i>
+              <i class="bi bi-bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
             <a class="dropdown-item quarto-navbar-tools-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-facebook pe-1"></i>
+              <i class="bi bi-bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
             <a class="dropdown-item quarto-navbar-tools-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-linkedin pe-1"></i>
+              <i class="bi bi-bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -167,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sf.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./symbology.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Symbology</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sf.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./symbology.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Symbology</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -260,20 +260,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./rnaturalearth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Using Data From <code>rnaturalearth</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./inspecting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Inspecting Geographic Data Files</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./shapefiles2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./symbology.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Symbology</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./rnaturalearth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Using Data From <code>rnaturalearth</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Symbology</span></span></a>
   </div>
 </li>
       </ul>
@@ -290,19 +296,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ggplot-map.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./merge-with-external-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Merge Shapefiles With External Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Merge Shapefiles With External Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./location-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Making Maps With <code>ggplot</code> Using Location Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Making Maps With <code>ggplot</code> Using Location Data</span></span></a>
   </div>
 </li>
       </ul>
@@ -319,7 +325,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./geocoding.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Geocoding</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Geocoding</span></span></a>
   </div>
 </li>
       </ul>
@@ -336,13 +342,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./leaflet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plotly.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -357,18 +363,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">10.1</span> Introduction</a></li>
-  <li><a href="#symbology" id="toc-symbology" class="nav-link" data-scroll-target="#symbology"><span class="header-section-number">11</span> Symbology</a></li>
-  <li><a href="#demonstration-map" id="toc-demonstration-map" class="nav-link" data-scroll-target="#demonstration-map"><span class="header-section-number">12</span> Demonstration Map</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">12.1</span> Introduction</a></li>
+  <li><a href="#symbology" id="toc-symbology" class="nav-link" data-scroll-target="#symbology"><span class="header-section-number">13</span> Symbology</a></li>
+  <li><a href="#demonstration-map" id="toc-demonstration-map" class="nav-link" data-scroll-target="#demonstration-map"><span class="header-section-number">14</span> Demonstration Map</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sf.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./symbology.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Symbology</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sf.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./symbology.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Symbology</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Symbology</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Symbology</span></h1>
 </div>
 
 
@@ -385,13 +391,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">10.1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">12.1</span> Introduction</h2>
 <p>Shapefiles (<a href="shapefiles.html" class="quarto-xref"><span>Chapter 8</span></a>) are a standard format for storing geographic data.</p>
 <p>Shapefiles generally come in three types: points <span style="color:red">●</span>; lines <span style="color:red;font-size:2em">━</span>; and polygons <span style="color:red;font-size:3em">▭▯</span>.</p>
 </section>
-<section id="symbology" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Symbology</h1>
+<section id="symbology" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Symbology</h1>
 <p><em>Symbology</em> is the idea of using shapefile attributes to encode <em>quantitative</em> or <em>qualitative</em> information, such as income or program participation.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Symbology</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">A Note About the Use of Color</a></li></ul>
@@ -456,8 +462,8 @@ Note
 <p>The code used to generate these color palettes is shown for reference, but may not be the exact code needed when these colors are used in maps.</p>
 </div>
 </div>
-<section id="base-r" class="level3" data-number="11.0.1">
-<h3 data-number="11.0.1" class="anchored" data-anchor-id="base-r"><span class="header-section-number">11.0.1</span> Base R</h3>
+<section id="base-r" class="level3" data-number="13.0.1">
+<h3 data-number="13.0.1" class="anchored" data-anchor-id="base-r"><span class="header-section-number">13.0.1</span> Base R</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -466,7 +472,7 @@ Note
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="symbology_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Heatmap Colors"><img src="symbology_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672" alt="Heatmap Colors"></a></p>
+<p><a href="symbology_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Heatmap Colors"><img src="symbology_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672" alt="Heatmap Colors"></a></p>
 <figcaption>Heatmap Colors</figcaption>
 </figure>
 </div>
@@ -480,7 +486,7 @@ Note
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="symbology_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Topographical Colors"><img src="symbology_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672" alt="Topographical Colors"></a></p>
+<p><a href="symbology_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="Topographical Colors"><img src="symbology_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672" alt="Topographical Colors"></a></p>
 <figcaption>Topographical Colors</figcaption>
 </figure>
 </div>
@@ -494,15 +500,15 @@ Note
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="symbology_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Terrain Colors"><img src="symbology_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672" alt="Terrain Colors"></a></p>
+<p><a href="symbology_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3" title="Terrain Colors"><img src="symbology_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672" alt="Terrain Colors"></a></p>
 <figcaption>Terrain Colors</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="rcolorbrewer" class="level3" data-number="11.0.2">
-<h3 data-number="11.0.2" class="anchored" data-anchor-id="rcolorbrewer"><span class="header-section-number">11.0.2</span> RColorBrewer</h3>
+<section id="rcolorbrewer" class="level3" data-number="13.0.2">
+<h3 data-number="13.0.2" class="anchored" data-anchor-id="rcolorbrewer"><span class="header-section-number">13.0.2</span> RColorBrewer</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -517,7 +523,7 @@ Note
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="symbology_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Blues Palette"><img src="symbology_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672" alt="Blues Palette"></a></p>
+<p><a href="symbology_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4" title="Blues Palette"><img src="symbology_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672" alt="Blues Palette"></a></p>
 <figcaption>Blues Palette</figcaption>
 </figure>
 </div>
@@ -531,7 +537,7 @@ Note
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="symbology_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Spectral Palette"><img src="symbology_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672" alt="Spectral Palette"></a></p>
+<p><a href="symbology_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5" title="Spectral Palette"><img src="symbology_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672" alt="Spectral Palette"></a></p>
 <figcaption>Spectral Palette</figcaption>
 </figure>
 </div>
@@ -545,15 +551,15 @@ Note
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="symbology_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Set1 Palette"><img src="symbology_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672" alt="Set1 Palette"></a></p>
+<p><a href="symbology_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-6" data-gallery="quarto-lightbox-gallery-6" title="Set1 Palette"><img src="symbology_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672" alt="Set1 Palette"></a></p>
 <figcaption>Set1 Palette</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="viridis" class="level3" data-number="11.0.3">
-<h3 data-number="11.0.3" class="anchored" data-anchor-id="viridis"><span class="header-section-number">11.0.3</span> Viridis</h3>
+<section id="viridis" class="level3" data-number="13.0.3">
+<h3 data-number="13.0.3" class="anchored" data-anchor-id="viridis"><span class="header-section-number">13.0.3</span> Viridis</h3>
 <p>More details can be found at <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html</a></p>
 <div class="cell">
 <details class="code-fold">
@@ -581,8 +587,8 @@ Note
 </div>
 </div>
 </section>
-<section id="demonstration-map" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Demonstration Map</h1>
+<section id="demonstration-map" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Demonstration Map</h1>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -619,6 +625,14 @@ Note
 </div>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Heatmap Colors</span>
+<span class="glightbox-desc lightbox-desc-2">Topographical Colors</span>
+<span class="glightbox-desc lightbox-desc-3">Terrain Colors</span>
+<span class="glightbox-desc lightbox-desc-4">Blues Palette</span>
+<span class="glightbox-desc lightbox-desc-5">Spectral Palette</span>
+<span class="glightbox-desc lightbox-desc-6">Set1 Palette</span>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -801,7 +815,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -833,47 +858,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/agrogan1\.github\.io\/mapping");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -908,11 +893,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1188,18 +1169,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./shapefiles2.html" class="pagination-link" aria-label="Shapefiles on This Site">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></span>
+      <a href="./shapefiles2.html" class="pagination-link  aria-label=" &lt;span="" on="" this="" site&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Shapefiles on This Site</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./rnaturalearth.html" class="pagination-link" aria-label="Using Data From `rnaturalearth`">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Using Data From <code>rnaturalearth</code></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ggplot-map.html" class="pagination-link" aria-label="<span class='chapter-number'>13</span>&nbsp; <span class='chapter-title'>Making Maps with `ggplot`</span>">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Making Maps with <code>ggplot</code></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"selector":".lightbox","openEffect":"zoom","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

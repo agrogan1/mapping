@@ -1,4 +1,4 @@
-# Merge Shapefiles With External Data
+# Merge Shapefiles With External Data {#sec-merging}
 
 ## Introduction
 
