@@ -1,0 +1,17 @@
+{
+  "hash": "41da2f44754d06c7fd72b9ff6e3544b7",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Cartogram\n\nFollowing [https://r-graph-gallery.com/331-basic-cartogram.html](https://r-graph-gallery.com/331-basic-cartogram.html) and [https://cran.r-project.org/web/packages/cartogram/readme/README.html](https://cran.r-project.org/web/packages/cartogram/readme/README.html)\n\n## Call Libraries\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\nlibrary(rnaturalearth) # natural earth data\n\nlibrary(ggplot2) # beautiful maps\n\nlibrary(dplyr) # data wrangling\n\nlibrary(sf) # simple (spatial) features\n\nlibrary(cartogram) # cartograms!\n```\n:::\n\n\n# Get Map Data From `rnaturalearth`\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\nmapdata <- ne_countries(scale = \"medium\", # medium scale\n                        returnclass = \"sf\")  # as sf object\n```\n:::\n\n\n# Make A Basic Map\n\nWe make a basic map, reading it into an object called `mymap.` We then *replay* `mymap.`\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\nmymap <- ggplot(mapdata) + # the data I am mapping\n  geom_sf() # the geometry I am using\n\nmymap # replay my map\n```\n\n::: {.cell-output-display}\n![](cartogram_files/figure-html/unnamed-chunk-3-1.png){width=672}\n:::\n:::\n\n\n# Make And Plot The Cartogram\n\n## Make The Cartogram Data\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\nmapdata_merc <- st_transform(mapdata, \n                             3857) # transform to Mercator\n\n# make a cartogram\n# each iteration takes a LONG time; fewer iterations help\n\nmapdata_cartogram <- cartogram_cont(mapdata_merc, \n                                  \"pop_est\", \n                                  itermax = 2)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nWarning in cartogram_cont.sf(mapdata_merc, \"pop_est\", itermax = 2): NA not\nallowed in weight vector. Features will be removed from Shape.\n```\n\n\n:::\n:::\n\n\n## Basic Cartogram\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\nggplot(mapdata_cartogram) + \n  geom_sf()\n```\n\n::: {.cell-output-display}\n![](cartogram_files/figure-html/unnamed-chunk-5-1.png){width=672}\n:::\n:::\n\n\n::: {.callout-tip}\n## Why Does Antarctica Look So Strange? How To Fix This?\n\nThe key is to run this code to remove Antarctica, right after getting data from `rnaturalearth.`\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\nmapdata <- mapdata %>% dplyr::filter(! continent == \"Antarctica\")\n```\n:::\n\n:::\n\n## More Advanced Cartogram\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\nggplot(mapdata_cartogram) + \n  geom_sf(aes(fill = pop_est)) + # fill is population estimate\n  scale_fill_viridis_c(name = \"population\") # beautiful colors\n```\n\n::: {.cell-output-display}\n![](cartogram_files/figure-html/unnamed-chunk-7-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "cartogram_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,104 @@
+# Cartogram
+
+Following:
+
+* [https://r-graph-gallery.com/331-basic-cartogram.html](https://r-graph-gallery.com/331-basic-cartogram.html) 
+* [https://cran.r-project.org/web/packages/cartogram/readme/README.html](https://cran.r-project.org/web/packages/cartogram/readme/README.html)
+
+## Call Libraries
+
+```{r}
+#| output: false
+#| code-fold: true
+
+library(rnaturalearth) # natural earth data
+
+library(ggplot2) # beautiful maps
+
+library(dplyr) # data wrangling
+
+library(sf) # simple (spatial) features
+
+library(cartogram) # cartograms!
+
+```
+
+# Get Map Data From `rnaturalearth`
+
+```{r}
+#| code-fold: true
+
+mapdata <- ne_countries(scale = "medium", # medium scale
+                        returnclass = "sf")  # as sf object
+  
+```
+
+# Make A Basic Map
+
+We make a basic map, reading it into an object called `mymap.` We then *replay* `mymap.`
+
+```{r}
+#| code-fold: true
+
+mymap <- ggplot(mapdata) + # the data I am mapping
+  geom_sf() # the geometry I am using
+
+mymap # replay my map
+
+```
+
+# Make And Plot The Cartogram
+
+## Make The Cartogram Data
+
+```{r}
+#| code-fold: true
+
+mapdata_merc <- st_transform(mapdata, 
+                             3857) # transform to Mercator
+
+# make a cartogram
+# each iteration takes a LONG time; fewer iterations help
+
+mapdata_cartogram <- cartogram_cont(mapdata_merc, 
+                                  "pop_est", 
+                                  itermax = 2)
+```
+
+## Basic Cartogram
+
+```{r}
+#| code-fold: true
+
+ggplot(mapdata_cartogram) + 
+  geom_sf()
+
+```
+
+::: {.callout-tip}
+## Why Does Antarctica Look So Strange? How To Fix This?
+
+The key is to run this code to remove Antarctica.
+
+```{r}
+#| eval: true
+#| code-fold: true
+
+mapdata_cartogram <- mapdata_cartogram %>% 
+  dplyr::filter(! continent == "Antarctica")
+
+```
+:::
+
+## More Advanced Cartogram
+
+```{r}
+#| code-fold: true
+
+ggplot(mapdata_cartogram) + 
+  geom_sf(aes(fill = pop_est)) + # fill is population estimate
+  scale_fill_viridis_c(name = "population") # beautiful colors
+
+```
+
+
