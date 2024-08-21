@@ -746,5 +746,38 @@
       "Other R Libraries for Mapping",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
     ]
+  },
+  {
+    "objectID": "cartogram.html#get-map-data-from-rnaturalearth",
+    "href": "cartogram.html#get-map-data-from-rnaturalearth",
+    "title": "17  Cartogram",
+    "section": "17.2 Get Map Data From rnaturalearth",
+    "text": "17.2 Get Map Data From rnaturalearth\n\n\nShow the code\nmapdata &lt;- ne_countries(scale = \"medium\", # medium scale\n                        returnclass = \"sf\")  # as sf object",
+    "crumbs": [
+      "More Advanced GIS Concepts",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Cartogram</span>"
+    ]
+  },
+  {
+    "objectID": "cartogram.html#make-a-basic-map",
+    "href": "cartogram.html#make-a-basic-map",
+    "title": "17  Cartogram",
+    "section": "17.3 Make A Basic Map",
+    "text": "17.3 Make A Basic Map\nWe make a basic map, reading it into an object called mymap. We then replay mymap.\n\n\nShow the code\nmymap &lt;- ggplot(mapdata) + # the data I am mapping\n  geom_sf() # the geometry I am using\n\nmymap # replay my map",
+    "crumbs": [
+      "More Advanced GIS Concepts",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Cartogram</span>"
+    ]
+  },
+  {
+    "objectID": "cartogram.html#make-and-plot-the-cartogram",
+    "href": "cartogram.html#make-and-plot-the-cartogram",
+    "title": "17  Cartogram",
+    "section": "17.4 Make And Plot The Cartogram",
+    "text": "17.4 Make And Plot The Cartogram\n\n17.4.1 Make The Cartogram Data\n\n\nShow the code\nmapdata_merc &lt;- st_transform(mapdata, \n                             3857) # transform to Mercator\n\n# make a cartogram\n# each iteration takes a LONG time; fewer iterations help\n\nmapdata_cartogram &lt;- cartogram_cont(mapdata_merc, \n                                  \"pop_est\", \n                                  itermax = 2)\n\n\nWarning in cartogram_cont.sf(mapdata_merc, \"pop_est\", itermax = 2): NA not\nallowed in weight vector. Features will be removed from Shape.\n\n\n\n\n17.4.2 Basic Cartogram\n\n\nShow the code\nggplot(mapdata_cartogram) + \n  geom_sf()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Does Antarctica Look So Strange? How To Fix This?\n\n\n\nThe key is to run this code to remove Antarctica.\n\n\nShow the code\nmapdata_cartogram &lt;- mapdata_cartogram %&gt;% \n  dplyr::filter(! continent == \"Antarctica\")\n\n\n\n\n\n\n17.4.3 More Advanced Cartogram\n\n\nShow the code\nggplot(mapdata_cartogram) + \n  geom_sf(aes(fill = pop_est)) + # fill is population estimate\n  scale_fill_viridis_c(name = \"population\") # beautiful colors",
+    "crumbs": [
+      "More Advanced GIS Concepts",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Cartogram</span>"
+    ]
   }
 ]

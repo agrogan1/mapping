@@ -23,7 +23,7 @@ library(cartogram) # cartograms!
 
 ```
 
-# Get Map Data From `rnaturalearth`
+## Get Map Data From `rnaturalearth`
 
 ```{r}
 #| code-fold: true
@@ -33,7 +33,7 @@ mapdata <- ne_countries(scale = "medium", # medium scale
   
 ```
 
-# Make A Basic Map
+## Make A Basic Map
 
 We make a basic map, reading it into an object called `mymap.` We then *replay* `mymap.`
 
@@ -47,9 +47,9 @@ mymap # replay my map
 
 ```
 
-# Make And Plot The Cartogram
+## Make And Plot The Cartogram
 
-## Make The Cartogram Data
+### Make The Cartogram Data
 
 ```{r}
 #| code-fold: true
@@ -65,7 +65,7 @@ mapdata_cartogram <- cartogram_cont(mapdata_merc,
                                   itermax = 2)
 ```
 
-## Basic Cartogram
+### Basic Cartogram
 
 ```{r}
 #| code-fold: true
@@ -76,7 +76,7 @@ ggplot(mapdata_cartogram) +
 ```
 
 ::: {.callout-tip}
-## Why Does Antarctica Look So Strange? How To Fix This?
+### Why Does Antarctica Look So Strange? How To Fix This?
 
 The key is to run this code to remove Antarctica.
 
@@ -90,7 +90,7 @@ mapdata_cartogram <- mapdata_cartogram %>%
 ```
 :::
 
-## More Advanced Cartogram
+### More Advanced Cartogram
 
 ```{r}
 #| code-fold: true
