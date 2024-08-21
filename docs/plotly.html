@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapping - 18&nbsp; Mapping With plotly</title>
+<title>Mapping - 19&nbsp; Mapping With plotly</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,11 +114,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="mapping.css">
-<meta property="og:title" content="Mapping - 18&nbsp; Mapping With plotly">
+<meta property="og:title" content="Mapping - 19&nbsp; Mapping With plotly">
 <meta property="og:site_name" content="Mapping">
-<meta name="twitter:title" content="Mapping - 18&nbsp; Mapping With plotly">
+<meta name="twitter:title" content="Mapping - 19&nbsp; Mapping With plotly">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[18]{.chapter-number}&nbsp; [Mapping With `plotly`]{.chapter-title}">
+<meta name="citation_title" content="[19]{.chapter-number}&nbsp; [Mapping With `plotly`]{.chapter-title}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/plotly.html">
 <meta name="citation_language" content="en">
 </head>
@@ -169,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./leaflet.html">Other R Libraries for Mapping</a></li><li class="breadcrumb-item"><a href="./plotly.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./leaflet.html">Other R Libraries for Mapping</a></li><li class="breadcrumb-item"><a href="./plotly.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -330,6 +330,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Geocoding</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cartogram.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Cartogram</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -344,13 +350,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./leaflet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plotly.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -365,19 +371,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#call-libraries" id="toc-call-libraries" class="nav-link active" data-scroll-target="#call-libraries"><span class="header-section-number">18.1</span> Call Libraries</a></li>
-  <li><a href="#set-geographic-parameters" id="toc-set-geographic-parameters" class="nav-link" data-scroll-target="#set-geographic-parameters"><span class="header-section-number">18.2</span> Set Geographic Parameters</a></li>
-  <li><a href="#make-a-map" id="toc-make-a-map" class="nav-link" data-scroll-target="#make-a-map"><span class="header-section-number">18.3</span> Make a Map</a></li>
-  <li><a href="#scattermapbox" id="toc-scattermapbox" class="nav-link" data-scroll-target="#scattermapbox"><span class="header-section-number">18.4</span> <code>scattermapbox</code></a></li>
+  <li><a href="#call-libraries" id="toc-call-libraries" class="nav-link active" data-scroll-target="#call-libraries"><span class="header-section-number">19.1</span> Call Libraries</a></li>
+  <li><a href="#set-geographic-parameters" id="toc-set-geographic-parameters" class="nav-link" data-scroll-target="#set-geographic-parameters"><span class="header-section-number">19.2</span> Set Geographic Parameters</a></li>
+  <li><a href="#make-a-map" id="toc-make-a-map" class="nav-link" data-scroll-target="#make-a-map"><span class="header-section-number">19.3</span> Make a Map</a></li>
+  <li><a href="#scattermapbox" id="toc-scattermapbox" class="nav-link" data-scroll-target="#scattermapbox"><span class="header-section-number">19.4</span> <code>scattermapbox</code></a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./leaflet.html">Other R Libraries for Mapping</a></li><li class="breadcrumb-item"><a href="./plotly.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./leaflet.html">Other R Libraries for Mapping</a></li><li class="breadcrumb-item"><a href="./plotly.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></h1>
+<h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></h1>
 </div>
 
 
@@ -394,8 +400,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="call-libraries" class="level2" data-number="18.1">
-<h2 data-number="18.1" class="anchored" data-anchor-id="call-libraries"><span class="header-section-number">18.1</span> Call Libraries</h2>
+<section id="call-libraries" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="call-libraries"><span class="header-section-number">19.1</span> Call Libraries</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -403,8 +409,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="set-geographic-parameters" class="level2" data-number="18.2">
-<h2 data-number="18.2" class="anchored" data-anchor-id="set-geographic-parameters"><span class="header-section-number">18.2</span> Set Geographic Parameters</h2>
+<section id="set-geographic-parameters" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="set-geographic-parameters"><span class="header-section-number">19.2</span> Set Geographic Parameters</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -421,8 +427,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="make-a-map" class="level2" data-number="18.3">
-<h2 data-number="18.3" class="anchored" data-anchor-id="make-a-map"><span class="header-section-number">18.3</span> Make a Map</h2>
+<section id="make-a-map" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="make-a-map"><span class="header-section-number">19.3</span> Make a Map</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -436,8 +442,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="scattermapbox" class="level2" data-number="18.4">
-<h2 data-number="18.4" class="anchored" data-anchor-id="scattermapbox"><span class="header-section-number">18.4</span> <code>scattermapbox</code></h2>
+<section id="scattermapbox" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="scattermapbox"><span class="header-section-number">19.4</span> <code>scattermapbox</code></h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -992,7 +998,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./leaflet.html" class="pagination-link  aria-label=" &lt;span="" with="" `leaflet`&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

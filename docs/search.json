@@ -312,7 +312,7 @@
     "href": "rnaturalearth.html#get-mapdata-as-sf",
     "title": "9  Using Data From rnaturalearth",
     "section": "9.2 Get mapdata As sf",
-    "text": "9.2 Get mapdata As sf\nne_countries stands for Natural Earth Countries.\nI use ne_countries() to create the mapdata dataset as an sf object (Chapter 7).\n\n\nShow the code\nmapdata &lt;- ne_countries(scale = \"medium\", \n                        returnclass = \"sf\")",
+    "text": "9.2 Get mapdata As sf\nne_countries stands for Natural Earth Countries.\nI use ne_countries() to create the mapdata dataset as an sf object (Chapter 7).\n\n\nShow the code\nmapdata &lt;- ne_countries(scale = \"medium\", # medium scale\n                        returnclass = \"sf\") # as sf object",
     "crumbs": [
       "GIS Data",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Using Data From `rnaturalearth`</span>"
@@ -488,7 +488,7 @@
     "href": "merge-with-external-data.html#make-a-map-with-the-data",
     "title": "14  Merge Shapefiles With External Data",
     "section": "14.7 Make a Map With The Data",
-    "text": "14.7 Make a Map With The Data\nOnce I have the merged data, it is easy to map it with ggplot and geom_sf. Note that I need to specify an aesthetic for geom_sf. Here arbitrary_x is the fill color for countries on the map.\n\nData could also be mapped with another package like leaflet (Section 17.1).\n\n\n\nShow the code\nggplot(newdata) +\n  geom_sf(aes(fill = arbitrary_x)) + # adding a fill aesthetic\n  scale_fill_viridis_c(na.value = \"grey97\", # value for NA\n                       option = \"turbo\") + # viridis colors\n  labs(title = \"Demonstration Map With Merged Data\") +\n  theme_minimal() # better theme",
+    "text": "14.7 Make a Map With The Data\nOnce I have the merged data, it is easy to map it with ggplot and geom_sf. Note that I need to specify an aesthetic for geom_sf. Here arbitrary_x is the fill color for countries on the map.\n\nData could also be mapped with another package like leaflet (Section 18.1).\n\n\n\nShow the code\nggplot(newdata) +\n  geom_sf(aes(fill = arbitrary_x)) + # adding a fill aesthetic\n  scale_fill_viridis_c(na.value = \"grey97\", # value for NA\n                       option = \"turbo\") + # viridis colors\n  labs(title = \"Demonstration Map With Merged Data\") +\n  theme_minimal() # better theme",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
@@ -605,102 +605,146 @@
     ]
   },
   {
+    "objectID": "cartogram.html",
+    "href": "cartogram.html",
+    "title": "17  Cartogram",
+    "section": "",
+    "text": "17.1 Call Libraries\nShow the code\nlibrary(rnaturalearth) # natural earth data\n\nlibrary(ggplot2) # beautiful maps\n\nlibrary(dplyr) # data wrangling\n\nlibrary(sf) # simple (spatial) features\n\nlibrary(cartogram) # cartograms!",
+    "crumbs": [
+      "More Advanced GIS Concepts",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Cartogram</span>"
+    ]
+  },
+  {
+    "objectID": "cartogram.html#make-the-cartogram-data",
+    "href": "cartogram.html#make-the-cartogram-data",
+    "title": "17  Cartogram",
+    "section": "20.1 Make The Cartogram Data",
+    "text": "20.1 Make The Cartogram Data\n\n\nShow the code\nmapdata_merc &lt;- st_transform(mapdata, \n                             3857) # transform to Mercator\n\n# make a cartogram\n# each iteration takes a LONG time; fewer iterations help\n\nmapdata_cartogram &lt;- cartogram_cont(mapdata_merc, \n                                  \"pop_est\", \n                                  itermax = 2)\n\n\nWarning in cartogram_cont.sf(mapdata_merc, \"pop_est\", itermax = 2): NA not\nallowed in weight vector. Features will be removed from Shape.",
+    "crumbs": [
+      "More Advanced GIS Concepts",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Cartogram</span>"
+    ]
+  },
+  {
+    "objectID": "cartogram.html#basic-cartogram",
+    "href": "cartogram.html#basic-cartogram",
+    "title": "17  Cartogram",
+    "section": "20.2 Basic Cartogram",
+    "text": "20.2 Basic Cartogram\n\n\nShow the code\nggplot(mapdata_cartogram) + \n  geom_sf()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Does Antarctica Look So Strange? How To Fix This?\n\n\n\nThe key is to run this code to remove Antarctica.\n\n\nShow the code\nmapdata_cartogram &lt;- mapdata_cartogram %&gt;% \n  dplyr::filter(! continent == \"Antarctica\")",
+    "crumbs": [
+      "More Advanced GIS Concepts",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Cartogram</span>"
+    ]
+  },
+  {
+    "objectID": "cartogram.html#more-advanced-cartogram",
+    "href": "cartogram.html#more-advanced-cartogram",
+    "title": "17  Cartogram",
+    "section": "20.3 More Advanced Cartogram",
+    "text": "20.3 More Advanced Cartogram\n\n\nShow the code\nggplot(mapdata_cartogram) + \n  geom_sf(aes(fill = pop_est)) + # fill is population estimate\n  scale_fill_viridis_c(name = \"population\") # beautiful colors",
+    "crumbs": [
+      "More Advanced GIS Concepts",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Cartogram</span>"
+    ]
+  },
+  {
     "objectID": "leaflet.html",
     "href": "leaflet.html",
-    "title": "17  Mapping With leaflet",
+    "title": "18  Mapping With leaflet",
     "section": "",
-    "text": "17.1 Call Libraries\nShow the code\nlibrary(leaflet) # web based maps\n\nlibrary(sf) # simple (spatial) features\n\nlibrary(readr) # import csv\n\nlibrary(dplyr) # data wrangling\n\nlibrary(here) # where am I?\n\nlibrary(pander) # nice tables\n\n# setwd(here()) # set the working directory",
+    "text": "18.1 Call Libraries\nShow the code\nlibrary(leaflet) # web based maps\n\nlibrary(sf) # simple (spatial) features\n\nlibrary(readr) # import csv\n\nlibrary(dplyr) # data wrangling\n\nlibrary(here) # where am I?\n\nlibrary(pander) # nice tables\n\n# setwd(here()) # set the working directory",
     "crumbs": [
       "Other R Libraries for Mapping",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Mapping With `leaflet`</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Mapping With `leaflet`</span>"
     ]
   },
   {
     "objectID": "leaflet.html#get-simulated-client-data",
     "href": "leaflet.html#get-simulated-client-data",
-    "title": "17  Mapping With leaflet",
-    "section": "17.2 Get Simulated Client Data",
-    "text": "17.2 Get Simulated Client Data\n\n\nShow the code\nclients &lt;- read_csv(\"./location-data/clients.csv\")\n\npander(head(clients)) # top of client data\n\n\n\nTable continues below\n\n\n\n\n\n\n\n\n\n\nID\nage\ngender\nrace_ethnicity\nfamily_income\nprogram\n\n\n\n\n2892\n23\nMale\nAfrican American\n42359\nProgram B\n\n\n1971\n39\nFemale\nAsian American\n66500\nProgram C\n\n\n4728\n26\nFemale\nAsian American\n52726\nProgram C\n\n\n1020\n24\nMale\nLatinx\n52911\nProgram D\n\n\n4429\n36\nFemale\nAsian American\n50287\nProgram C\n\n\n3136\n33\nMale\nAfrican American\n45570\nProgram C\n\n\n\n\n\n\n\n\n\n\n\n\nmental_health_T1\nmental_health_T2\nlatitude\nlongitude\n\n\n\n\n95.25\n106.8\n42.16\n-83.6\n\n\n82.64\n96.3\n42.29\n-83.88\n\n\n80.49\n98.72\n42.14\n-83.78\n\n\n93.82\n91.67\n42.24\n-83.68\n\n\n83.37\n99.69\n42.18\n-83.64\n\n\n75.28\n92.9\n42.21\n-83.7",
+    "title": "18  Mapping With leaflet",
+    "section": "18.2 Get Simulated Client Data",
+    "text": "18.2 Get Simulated Client Data\n\n\nShow the code\nclients &lt;- read_csv(\"./location-data/clients.csv\")\n\npander(head(clients)) # top of client data\n\n\n\nTable continues below\n\n\n\n\n\n\n\n\n\n\nID\nage\ngender\nrace_ethnicity\nfamily_income\nprogram\n\n\n\n\n2892\n23\nMale\nAfrican American\n42359\nProgram B\n\n\n1971\n39\nFemale\nAsian American\n66500\nProgram C\n\n\n4728\n26\nFemale\nAsian American\n52726\nProgram C\n\n\n1020\n24\nMale\nLatinx\n52911\nProgram D\n\n\n4429\n36\nFemale\nAsian American\n50287\nProgram C\n\n\n3136\n33\nMale\nAfrican American\n45570\nProgram C\n\n\n\n\n\n\n\n\n\n\n\n\nmental_health_T1\nmental_health_T2\nlatitude\nlongitude\n\n\n\n\n95.25\n106.8\n42.16\n-83.6\n\n\n82.64\n96.3\n42.29\n-83.88\n\n\n80.49\n98.72\n42.14\n-83.78\n\n\n93.82\n91.67\n42.24\n-83.68\n\n\n83.37\n99.69\n42.18\n-83.64\n\n\n75.28\n92.9\n42.21\n-83.7",
     "crumbs": [
       "Other R Libraries for Mapping",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Mapping With `leaflet`</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Mapping With `leaflet`</span>"
     ]
   },
   {
     "objectID": "leaflet.html#only-clients-in-ann-arbor-area",
     "href": "leaflet.html#only-clients-in-ann-arbor-area",
-    "title": "17  Mapping With leaflet",
-    "section": "17.3 Only Clients In Ann Arbor Area",
-    "text": "17.3 Only Clients In Ann Arbor Area\n\n\nShow the code\nclients &lt;- clients %&gt;% \n  filter(latitude &lt;= 42.35 &\n           latitude &gt;= 42.2 &\n           longitude &gt;= -83.8 &\n           longitude &lt;= -83.65)",
+    "title": "18  Mapping With leaflet",
+    "section": "18.3 Only Clients In Ann Arbor Area",
+    "text": "18.3 Only Clients In Ann Arbor Area\n\n\nShow the code\nclients &lt;- clients %&gt;% \n  filter(latitude &lt;= 42.35 &\n           latitude &gt;= 42.2 &\n           longitude &gt;= -83.8 &\n           longitude &lt;= -83.65)",
     "crumbs": [
       "Other R Libraries for Mapping",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Mapping With `leaflet`</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Mapping With `leaflet`</span>"
     ]
   },
   {
     "objectID": "leaflet.html#read-in-shapefiles",
     "href": "leaflet.html#read-in-shapefiles",
-    "title": "17  Mapping With leaflet",
-    "section": "17.4 Read in Shapefiles",
-    "text": "17.4 Read in Shapefiles\n\n\nShow the code\nparks &lt;- read_sf(\"./shapefiles/AA_Parks/AA_Parks.shp\")\n\nuniversity &lt;- read_sf(\"./shapefiles/AA_University/AA_University.shp\")\n\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")",
+    "title": "18  Mapping With leaflet",
+    "section": "18.4 Read in Shapefiles",
+    "text": "18.4 Read in Shapefiles\n\n\nShow the code\nparks &lt;- read_sf(\"./shapefiles/AA_Parks/AA_Parks.shp\")\n\nuniversity &lt;- read_sf(\"./shapefiles/AA_University/AA_University.shp\")\n\ncity_boundary &lt;- read_sf(\"./shapefiles/AA_City_Boundary/AA_City_Boundary.shp\")",
     "crumbs": [
       "Other R Libraries for Mapping",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Mapping With `leaflet`</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Mapping With `leaflet`</span>"
     ]
   },
   {
     "objectID": "leaflet.html#leaflet-map",
     "href": "leaflet.html#leaflet-map",
-    "title": "17  Mapping With leaflet",
-    "section": "18.1 Leaflet Map",
-    "text": "18.1 Leaflet Map\n\n18.1.1 Color Palette\n\n\nShow the code\npal &lt;- colorFactor(c(\"red\", \"blue\", \"orange\", \"green\"), \n                   domain = levels(as.factor(clients$program)))\n\n\n\n\n18.1.2 Map\n\n\nShow the code\nleaflet(clients) %&gt;%\n  setView(lng = mean(clients$longitude), \n          lat = mean(clients$latitude), \n          zoom = 12) %&gt;% \n  # addTiles() %&gt;% # Open StreetMap\n  addProviderTiles(providers$CartoDB.Positron) %&gt;%\n  addCircleMarkers(~longitude, \n             ~latitude, \n             popup = ~paste(\"Client ID:\", as.character(ID)), \n             label = ~paste(\"Client ID:\", as.character(ID)),\n             color = ~pal(program),\n             clusterOptions = markerClusterOptions()) %&gt;%\n  addLegend(\"bottomright\", \n            pal = pal, \n            values = ~program,\n            title = \"Program\") %&gt;%\n  # addPolygons(data = parks, color = \"green\") %&gt;%\n  # addPolygons(data = university, color = \"blue\") %&gt;%\n  addPolygons(data = city_boundary, \n              color = \"red\",\n              fillOpacity = 0.0)",
+    "title": "18  Mapping With leaflet",
+    "section": "19.1 Leaflet Map",
+    "text": "19.1 Leaflet Map\n\n19.1.1 Color Palette\n\n\nShow the code\npal &lt;- colorFactor(c(\"red\", \"blue\", \"orange\", \"green\"), \n                   domain = levels(as.factor(clients$program)))\n\n\n\n\n19.1.2 Map\n\n\nShow the code\nleaflet(clients) %&gt;%\n  setView(lng = mean(clients$longitude), \n          lat = mean(clients$latitude), \n          zoom = 12) %&gt;% \n  # addTiles() %&gt;% # Open StreetMap\n  addProviderTiles(providers$CartoDB.Positron) %&gt;%\n  addCircleMarkers(~longitude, \n             ~latitude, \n             popup = ~paste(\"Client ID:\", as.character(ID)), \n             label = ~paste(\"Client ID:\", as.character(ID)),\n             color = ~pal(program),\n             clusterOptions = markerClusterOptions()) %&gt;%\n  addLegend(\"bottomright\", \n            pal = pal, \n            values = ~program,\n            title = \"Program\") %&gt;%\n  # addPolygons(data = parks, color = \"green\") %&gt;%\n  # addPolygons(data = university, color = \"blue\") %&gt;%\n  addPolygons(data = city_boundary, \n              color = \"red\",\n              fillOpacity = 0.0)",
     "crumbs": [
       "Other R Libraries for Mapping",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Mapping With `leaflet`</span>"
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Mapping With `leaflet`</span>"
     ]
   },
   {
     "objectID": "plotly.html",
     "href": "plotly.html",
-    "title": "18  Mapping With plotly",
+    "title": "19  Mapping With plotly",
     "section": "",
-    "text": "18.1 Call Libraries\nShow the code\nlibrary(plotly)",
+    "text": "19.1 Call Libraries\nShow the code\nlibrary(plotly)",
     "crumbs": [
       "Other R Libraries for Mapping",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
     ]
   },
   {
     "objectID": "plotly.html#set-geographic-parameters",
     "href": "plotly.html#set-geographic-parameters",
-    "title": "18  Mapping With plotly",
-    "section": "18.2 Set Geographic Parameters",
-    "text": "18.2 Set Geographic Parameters\n\n\nShow the code\ng &lt;- list(showland = TRUE, \n          showcountries = TRUE,\n          landcolor = toRGB(\"forestgreen\"), # land color\n          showocean = TRUE, # show ocean\n          oceancolor = \"lightblue\", # ocean color\n          # projection = list(type = 'robinson'),\n          projection = list(type = 'orthographic',\n                    rotation = list(lon = 0,\n                                    lat = 0,\n                                    roll = 0)))",
+    "title": "19  Mapping With plotly",
+    "section": "19.2 Set Geographic Parameters",
+    "text": "19.2 Set Geographic Parameters\n\n\nShow the code\ng &lt;- list(showland = TRUE, \n          showcountries = TRUE,\n          landcolor = toRGB(\"forestgreen\"), # land color\n          showocean = TRUE, # show ocean\n          oceancolor = \"lightblue\", # ocean color\n          # projection = list(type = 'robinson'),\n          projection = list(type = 'orthographic',\n                    rotation = list(lon = 0,\n                                    lat = 0,\n                                    roll = 0)))",
     "crumbs": [
       "Other R Libraries for Mapping",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
     ]
   },
   {
     "objectID": "plotly.html#make-a-map",
     "href": "plotly.html#make-a-map",
-    "title": "18  Mapping With plotly",
-    "section": "18.3 Make a Map",
-    "text": "18.3 Make a Map\n\n\nShow the code\nplot_geo() %&gt;% \n  layout(title = \"Demonstration Map\", \n         geo = g)",
+    "title": "19  Mapping With plotly",
+    "section": "19.3 Make a Map",
+    "text": "19.3 Make a Map\n\n\nShow the code\nplot_geo() %&gt;% \n  layout(title = \"Demonstration Map\", \n         geo = g)",
     "crumbs": [
       "Other R Libraries for Mapping",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
     ]
   },
   {
     "objectID": "plotly.html#scattermapbox",
     "href": "plotly.html#scattermapbox",
-    "title": "18  Mapping With plotly",
-    "section": "18.4 scattermapbox",
-    "text": "18.4 scattermapbox\n\n\nShow the code\nplot_ly(type = \"scattermapbox\") %&gt;%\n  layout(\n    mapbox = list(\n      style = 'open-street-map',\n      zoom = 6.0, # zoom\n      center = list(lon = -83, lat = 42))) # centered on SE Michigan",
+    "title": "19  Mapping With plotly",
+    "section": "19.4 scattermapbox",
+    "text": "19.4 scattermapbox\n\n\nShow the code\nplot_ly(type = \"scattermapbox\") %&gt;%\n  layout(\n    mapbox = list(\n      style = 'open-street-map',\n      zoom = 6.0, # zoom\n      center = list(lon = -83, lat = 42))) # centered on SE Michigan",
     "crumbs": [
       "Other R Libraries for Mapping",
-      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
     ]
   }
 ]

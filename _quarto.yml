@@ -41,6 +41,7 @@ book:
     - part: "More Advanced GIS Concepts"
       chapters: 
         - geocoding.qmd
+        - cartogram.qmd
     - part: "Other R Libraries for Mapping"
       chapters:
         - leaflet.qmd

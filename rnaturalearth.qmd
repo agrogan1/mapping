@@ -31,8 +31,8 @@ I use `ne_countries()` to create the `mapdata` dataset as an `sf` object (@sec-s
 #| code-summary: "Show the code"
 #| message: false
 
-mapdata <- ne_countries(scale = "medium", 
-                        returnclass = "sf") 
+mapdata <- ne_countries(scale = "medium", # medium scale
+                        returnclass = "sf") # as sf object
 
 ```
 

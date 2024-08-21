@@ -403,7 +403,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Following <a href="https://r-graph-gallery.com/331-basic-cartogram.html">https://r-graph-gallery.com/331-basic-cartogram.html</a> and <a href="https://cran.r-project.org/web/packages/cartogram/readme/README.html">https://cran.r-project.org/web/packages/cartogram/readme/README.html</a></p>
+<p>Following:</p>
+<ul>
+<li><a href="https://r-graph-gallery.com/331-basic-cartogram.html">https://r-graph-gallery.com/331-basic-cartogram.html</a></li>
+<li><a href="https://cran.r-project.org/web/packages/cartogram/readme/README.html">https://cran.r-project.org/web/packages/cartogram/readme/README.html</a></li>
+</ul>
 <section id="call-libraries" class="level2" data-number="17.1">
 <h2 data-number="17.1" class="anchored" data-anchor-id="call-libraries"><span class="header-section-number">17.1</span> Call Libraries</h2>
 <div class="cell">
@@ -500,11 +504,12 @@ Why Does Antarctica Look So Strange? How To Fix This?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The key is to run this code to remove Antarctica, right after getting data from <code>rnaturalearth.</code></p>
+<p>The key is to run this code to remove Antarctica.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mapdata <span class="ot">&lt;-</span> mapdata <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span> continent <span class="sc">==</span> <span class="st">"Antarctica"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mapdata_cartogram <span class="ot">&lt;-</span> mapdata_cartogram <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span> continent <span class="sc">==</span> <span class="st">"Antarctica"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -1077,7 +1082,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

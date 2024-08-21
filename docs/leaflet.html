@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapping - 17&nbsp; Mapping With leaflet</title>
+<title>Mapping - 18&nbsp; Mapping With leaflet</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./plotly.html" rel="next">
-<link href="./geocoding.html" rel="prev">
+<link href="./cartogram.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -123,11 +123,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="mapping.css">
-<meta property="og:title" content="Mapping - 17&nbsp; Mapping With leaflet">
+<meta property="og:title" content="Mapping - 18&nbsp; Mapping With leaflet">
 <meta property="og:site_name" content="Mapping">
-<meta name="twitter:title" content="Mapping - 17&nbsp; Mapping With leaflet">
+<meta name="twitter:title" content="Mapping - 18&nbsp; Mapping With leaflet">
 <meta name="twitter:card" content="summary">
-<meta name="citation_title" content="[17]{.chapter-number}&nbsp; [Mapping With `leaflet`]{.chapter-title}">
+<meta name="citation_title" content="[18]{.chapter-number}&nbsp; [Mapping With `leaflet`]{.chapter-title}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/leaflet.html">
 <meta name="citation_language" content="en">
 </head>
@@ -178,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./leaflet.html">Other R Libraries for Mapping</a></li><li class="breadcrumb-item"><a href="./leaflet.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./leaflet.html">Other R Libraries for Mapping</a></li><li class="breadcrumb-item"><a href="./leaflet.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -339,6 +339,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Geocoding</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cartogram.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Cartogram</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -353,13 +359,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./leaflet.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plotly.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -374,16 +380,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-leaflet" id="toc-sec-leaflet" class="nav-link active" data-scroll-target="#sec-leaflet"><span class="header-section-number">17.1</span> Call Libraries</a></li>
-  <li><a href="#get-simulated-client-data" id="toc-get-simulated-client-data" class="nav-link" data-scroll-target="#get-simulated-client-data"><span class="header-section-number">17.2</span> Get Simulated Client Data</a></li>
-  <li><a href="#only-clients-in-ann-arbor-area" id="toc-only-clients-in-ann-arbor-area" class="nav-link" data-scroll-target="#only-clients-in-ann-arbor-area"><span class="header-section-number">17.3</span> Only Clients In Ann Arbor Area</a></li>
-  <li><a href="#read-in-shapefiles" id="toc-read-in-shapefiles" class="nav-link" data-scroll-target="#read-in-shapefiles"><span class="header-section-number">17.4</span> Read in Shapefiles</a></li>
-  <li><a href="#transform-crs" id="toc-transform-crs" class="nav-link" data-scroll-target="#transform-crs"><span class="header-section-number">18</span> Transform CRS</a>
+  <li><a href="#sec-leaflet" id="toc-sec-leaflet" class="nav-link active" data-scroll-target="#sec-leaflet"><span class="header-section-number">18.1</span> Call Libraries</a></li>
+  <li><a href="#get-simulated-client-data" id="toc-get-simulated-client-data" class="nav-link" data-scroll-target="#get-simulated-client-data"><span class="header-section-number">18.2</span> Get Simulated Client Data</a></li>
+  <li><a href="#only-clients-in-ann-arbor-area" id="toc-only-clients-in-ann-arbor-area" class="nav-link" data-scroll-target="#only-clients-in-ann-arbor-area"><span class="header-section-number">18.3</span> Only Clients In Ann Arbor Area</a></li>
+  <li><a href="#read-in-shapefiles" id="toc-read-in-shapefiles" class="nav-link" data-scroll-target="#read-in-shapefiles"><span class="header-section-number">18.4</span> Read in Shapefiles</a></li>
+  <li><a href="#transform-crs" id="toc-transform-crs" class="nav-link" data-scroll-target="#transform-crs"><span class="header-section-number">19</span> Transform CRS</a>
   <ul class="collapse">
-  <li><a href="#leaflet-map" id="toc-leaflet-map" class="nav-link" data-scroll-target="#leaflet-map"><span class="header-section-number">18.1</span> Leaflet Map</a>
+  <li><a href="#leaflet-map" id="toc-leaflet-map" class="nav-link" data-scroll-target="#leaflet-map"><span class="header-section-number">19.1</span> Leaflet Map</a>
   <ul class="collapse">
-  <li><a href="#color-palette" id="toc-color-palette" class="nav-link" data-scroll-target="#color-palette"><span class="header-section-number">18.1.1</span> Color Palette</a></li>
-  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><span class="header-section-number">18.1.2</span> Map</a></li>
+  <li><a href="#color-palette" id="toc-color-palette" class="nav-link" data-scroll-target="#color-palette"><span class="header-section-number">19.1.1</span> Color Palette</a></li>
+  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><span class="header-section-number">19.1.2</span> Map</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -392,9 +398,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./leaflet.html">Other R Libraries for Mapping</a></li><li class="breadcrumb-item"><a href="./leaflet.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./leaflet.html">Other R Libraries for Mapping</a></li><li class="breadcrumb-item"><a href="./leaflet.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></h1>
+<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mapping With <code>leaflet</code></span></h1>
 </div>
 
 
@@ -411,8 +417,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="sec-leaflet" class="level2" data-number="17.1">
-<h2 data-number="17.1" class="anchored" data-anchor-id="sec-leaflet"><span class="header-section-number">17.1</span> Call Libraries</h2>
+<section id="sec-leaflet" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="sec-leaflet"><span class="header-section-number">18.1</span> Call Libraries</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -432,8 +438,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="get-simulated-client-data" class="level2" data-number="17.2">
-<h2 data-number="17.2" class="anchored" data-anchor-id="get-simulated-client-data"><span class="header-section-number">17.2</span> Get Simulated Client Data</h2>
+<section id="get-simulated-client-data" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="get-simulated-client-data"><span class="header-section-number">18.2</span> Get Simulated Client Data</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -570,8 +576,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="only-clients-in-ann-arbor-area" class="level2" data-number="17.3">
-<h2 data-number="17.3" class="anchored" data-anchor-id="only-clients-in-ann-arbor-area"><span class="header-section-number">17.3</span> Only Clients In Ann Arbor Area</h2>
+<section id="only-clients-in-ann-arbor-area" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="only-clients-in-ann-arbor-area"><span class="header-section-number">18.3</span> Only Clients In Ann Arbor Area</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -583,8 +589,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="read-in-shapefiles" class="level2" data-number="17.4">
-<h2 data-number="17.4" class="anchored" data-anchor-id="read-in-shapefiles"><span class="header-section-number">17.4</span> Read in Shapefiles</h2>
+<section id="read-in-shapefiles" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="read-in-shapefiles"><span class="header-section-number">18.4</span> Read in Shapefiles</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -596,8 +602,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="transform-crs" class="level1" data-number="18">
-<h1 data-number="18"><span class="header-section-number">18</span> Transform CRS</h1>
+<section id="transform-crs" class="level1" data-number="19">
+<h1 data-number="19"><span class="header-section-number">19</span> Transform CRS</h1>
 <blockquote class="blockquote">
 <p>“Map projections try to portray the surface of the earth or a portion of the earth on a flat piece of paper or computer screen. A coordinate reference system (CRS) then defines, with the help of coordinates, how the two-dimensional, projected map in your GIS is related to real places on the earth. The decision as to which map projection and coordinate reference system to use, depends on the regional extent of the area you want to work in, on the analysis you want to do and often on the availability of data.” From <a href="https://docs.qgis.org/2.8/en/docs/gentle_gis_introduction/coordinate_reference_systems.html">qgis.org</a></p>
 </blockquote>
@@ -614,10 +620,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>city_boundary <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(city_boundary, <span class="dv">4326</span>) <span class="co"># transform CRS</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="leaflet-map" class="level2" data-number="18.1">
-<h2 data-number="18.1" class="anchored" data-anchor-id="leaflet-map"><span class="header-section-number">18.1</span> Leaflet Map</h2>
-<section id="color-palette" class="level3" data-number="18.1.1">
-<h3 data-number="18.1.1" class="anchored" data-anchor-id="color-palette"><span class="header-section-number">18.1.1</span> Color Palette</h3>
+<section id="leaflet-map" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="leaflet-map"><span class="header-section-number">19.1</span> Leaflet Map</h2>
+<section id="color-palette" class="level3" data-number="19.1.1">
+<h3 data-number="19.1.1" class="anchored" data-anchor-id="color-palette"><span class="header-section-number">19.1.1</span> Color Palette</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -626,8 +632,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="map" class="level3" data-number="18.1.2">
-<h3 data-number="18.1.2" class="anchored" data-anchor-id="map"><span class="header-section-number">18.1.2</span> Map</h3>
+<section id="map" class="level3" data-number="19.1.2">
+<h3 data-number="19.1.2" class="anchored" data-anchor-id="map"><span class="header-section-number">19.1.2</span> Map</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -1198,13 +1204,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./geocoding.html" class="pagination-link  aria-label=" &lt;span="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Geocoding</span></span>
+      <a href="./cartogram.html" class="pagination-link  aria-label=" &lt;span="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Cartogram</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./plotly.html" class="pagination-link" aria-label="<span class='chapter-number'>18</span>&nbsp; <span class='chapter-title'>Mapping With `plotly`</span>">
-        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./plotly.html" class="pagination-link" aria-label="<span class='chapter-number'>19</span>&nbsp; <span class='chapter-title'>Mapping With `plotly`</span>">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Mapping With <code>plotly</code></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
