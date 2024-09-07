@@ -25,6 +25,7 @@ library(cartogram) # cartograms!
 ## Remove Scientific Notation
 
 ```{r}
+#| code-fold: true
 
 options(scipen = 999) # high 'penalty' for scientific notation
 
