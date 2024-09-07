@@ -1,9 +1,11 @@
-# Possible Course Outline for a 5 Week MiniCourse
+# Possible Course Outline
+
+## 5 Week MiniCourse {#sec-fiveweek}
 
 1. Introduction
     + Introduction to the Course
     + Introduction to Shapefiles (and Possibly `sf` Objects) As GIS Data
-    + Introduction to Appropriate Software: R / RStudio / `sf` / `ggplot`; or ArcGIS; or QGIS
+    + Introduction to Appropriate Software: R / RStudio / `sf` / `ggplot`; or ArcGIS; or QGIS; or Tableau
     + Quick Mapping Exercise
 2. Better Maps
     + Symbology
@@ -17,3 +19,14 @@
     + Geocoding
     + Geoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)
 5. Lab Day for Final Projects
+
+## Full Semester Course
+
+* Begin with a coding (R) approach to the topics listed in @sec-fiveweek.
+* Revisit these topics, and discuss each topic in more depth, with drag and drop software: ArcGIS; QGIS; Tableau.
+* Finish up with a *Mapping Showcase* constructing useful maps with strong design elements.
+
+
+
+
+

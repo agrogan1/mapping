@@ -18,7 +18,7 @@ book:
     - part: "Introduction"
       chapters:
         - index.qmd
-        - courseoutline-5weeks.qmd
+        - courseoutline.qmd
         - R.qmd
     - part: "Geographical and GIS Concepts"
       chapters: 
