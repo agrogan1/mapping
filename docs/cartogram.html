@@ -370,13 +370,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#call-libraries" id="toc-call-libraries" class="nav-link active" data-scroll-target="#call-libraries"><span class="header-section-number">17.1</span> Call Libraries</a></li>
-  <li><a href="#get-map-data-from-rnaturalearth" id="toc-get-map-data-from-rnaturalearth" class="nav-link" data-scroll-target="#get-map-data-from-rnaturalearth"><span class="header-section-number">17.2</span> Get Map Data From <code>rnaturalearth</code></a></li>
-  <li><a href="#make-a-basic-map" id="toc-make-a-basic-map" class="nav-link" data-scroll-target="#make-a-basic-map"><span class="header-section-number">17.3</span> Make A Basic Map</a></li>
-  <li><a href="#make-and-plot-the-cartogram" id="toc-make-and-plot-the-cartogram" class="nav-link" data-scroll-target="#make-and-plot-the-cartogram"><span class="header-section-number">17.4</span> Make And Plot The Cartogram</a>
+  <li><a href="#remove-scientific-notation" id="toc-remove-scientific-notation" class="nav-link" data-scroll-target="#remove-scientific-notation"><span class="header-section-number">17.2</span> Remove Scientific Notation</a></li>
+  <li><a href="#get-map-data-from-rnaturalearth" id="toc-get-map-data-from-rnaturalearth" class="nav-link" data-scroll-target="#get-map-data-from-rnaturalearth"><span class="header-section-number">17.3</span> Get Map Data From <code>rnaturalearth</code></a></li>
+  <li><a href="#make-a-basic-map" id="toc-make-a-basic-map" class="nav-link" data-scroll-target="#make-a-basic-map"><span class="header-section-number">17.4</span> Make A Basic Map</a></li>
+  <li><a href="#make-and-plot-the-cartogram" id="toc-make-and-plot-the-cartogram" class="nav-link" data-scroll-target="#make-and-plot-the-cartogram"><span class="header-section-number">17.5</span> Make And Plot The Cartogram</a>
   <ul class="collapse">
-  <li><a href="#make-the-cartogram-data" id="toc-make-the-cartogram-data" class="nav-link" data-scroll-target="#make-the-cartogram-data"><span class="header-section-number">17.4.1</span> Make The Cartogram Data</a></li>
-  <li><a href="#basic-cartogram" id="toc-basic-cartogram" class="nav-link" data-scroll-target="#basic-cartogram"><span class="header-section-number">17.4.2</span> Basic Cartogram</a></li>
-  <li><a href="#more-advanced-cartogram" id="toc-more-advanced-cartogram" class="nav-link" data-scroll-target="#more-advanced-cartogram"><span class="header-section-number">17.4.3</span> More Advanced Cartogram</a></li>
+  <li><a href="#make-the-cartogram-data" id="toc-make-the-cartogram-data" class="nav-link" data-scroll-target="#make-the-cartogram-data"><span class="header-section-number">17.5.1</span> Make The Cartogram Data</a></li>
+  <li><a href="#basic-cartogram" id="toc-basic-cartogram" class="nav-link" data-scroll-target="#basic-cartogram"><span class="header-section-number">17.5.2</span> Basic Cartogram</a></li>
+  <li><a href="#more-advanced-cartogram" id="toc-more-advanced-cartogram" class="nav-link" data-scroll-target="#more-advanced-cartogram"><span class="header-section-number">17.5.3</span> More Advanced Cartogram</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -425,71 +426,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="get-map-data-from-rnaturalearth" class="level2" data-number="17.2">
-<h2 data-number="17.2" class="anchored" data-anchor-id="get-map-data-from-rnaturalearth"><span class="header-section-number">17.2</span> Get Map Data From <code>rnaturalearth</code></h2>
+<section id="remove-scientific-notation" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="remove-scientific-notation"><span class="header-section-number">17.2</span> Remove Scientific Notation</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) <span class="co"># high 'penalty' for scientific notation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="get-map-data-from-rnaturalearth" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="get-map-data-from-rnaturalearth"><span class="header-section-number">17.3</span> Get Map Data From <code>rnaturalearth</code></h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mapdata <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"medium"</span>, <span class="co"># medium scale</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">returnclass =</span> <span class="st">"sf"</span>)  <span class="co"># as sf object</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mapdata <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"medium"</span>, <span class="co"># medium scale</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">returnclass =</span> <span class="st">"sf"</span>)  <span class="co"># as sf object</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="make-a-basic-map" class="level2" data-number="17.3">
-<h2 data-number="17.3" class="anchored" data-anchor-id="make-a-basic-map"><span class="header-section-number">17.3</span> Make A Basic Map</h2>
+<section id="make-a-basic-map" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="make-a-basic-map"><span class="header-section-number">17.4</span> Make A Basic Map</h2>
 <p>We make a basic map, reading it into an object called <code>mymap.</code> We then <em>replay</em> <code>mymap.</code></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mymap <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mapdata) <span class="sc">+</span> <span class="co"># the data I am mapping</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="co"># the geometry I am using</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>mymap <span class="co"># replay my map</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mymap <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mapdata) <span class="sc">+</span> <span class="co"># the data I am mapping</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="co"># the geometry I am using</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>mymap <span class="co"># replay my map</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="cartogram_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="cartogram_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="cartogram_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="cartogram_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="make-and-plot-the-cartogram" class="level2" data-number="17.4">
-<h2 data-number="17.4" class="anchored" data-anchor-id="make-and-plot-the-cartogram"><span class="header-section-number">17.4</span> Make And Plot The Cartogram</h2>
-<section id="make-the-cartogram-data" class="level3" data-number="17.4.1">
-<h3 data-number="17.4.1" class="anchored" data-anchor-id="make-the-cartogram-data"><span class="header-section-number">17.4.1</span> Make The Cartogram Data</h3>
+<section id="make-and-plot-the-cartogram" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="make-and-plot-the-cartogram"><span class="header-section-number">17.5</span> Make And Plot The Cartogram</h2>
+<section id="make-the-cartogram-data" class="level3" data-number="17.5.1">
+<h3 data-number="17.5.1" class="anchored" data-anchor-id="make-the-cartogram-data"><span class="header-section-number">17.5.1</span> Make The Cartogram Data</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mapdata_merc <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(mapdata, </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                             <span class="dv">3857</span>) <span class="co"># transform to Mercator</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># make a cartogram</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># each iteration takes a LONG time; fewer iterations help</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>mapdata_cartogram <span class="ot">&lt;-</span> <span class="fu">cartogram_cont</span>(mapdata_merc, </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"pop_est"</span>, </span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">itermax =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mapdata_merc <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(mapdata, </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                             <span class="dv">3857</span>) <span class="co"># transform to Mercator</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># make a cartogram</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># each iteration takes a LONG time; fewer iterations help</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>mapdata_cartogram <span class="ot">&lt;-</span> <span class="fu">cartogram_cont</span>(mapdata_merc, </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"pop_est"</span>, </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">itermax =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning in cartogram_cont.sf(mapdata_merc, "pop_est", itermax = 2): NA not
+<pre><code>Warning in cartogram_cont.sf(mapdata_merc, "pop_est", itermax = 5): NA not
 allowed in weight vector. Features will be removed from Shape.</code></pre>
 </div>
 </div>
 </section>
-<section id="basic-cartogram" class="level3" data-number="17.4.2">
-<h3 data-number="17.4.2" class="anchored" data-anchor-id="basic-cartogram"><span class="header-section-number">17.4.2</span> Basic Cartogram</h3>
+<section id="basic-cartogram" class="level3" data-number="17.5.2">
+<h3 data-number="17.5.2" class="anchored" data-anchor-id="basic-cartogram"><span class="header-section-number">17.5.2</span> Basic Cartogram</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mapdata_cartogram) <span class="sc">+</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mapdata_cartogram) <span class="sc">+</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="cartogram_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="cartogram_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="cartogram_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="cartogram_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -504,30 +511,30 @@ Why Does Antarctica Look So Strange? How To Fix This?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The key is to run this code to remove Antarctica.</p>
+<p>The key is to run this <code>dplyr</code> code to remove Antarctica.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mapdata_cartogram <span class="ot">&lt;-</span> mapdata_cartogram <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span> continent <span class="sc">==</span> <span class="st">"Antarctica"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mapdata_cartogram <span class="ot">&lt;-</span> mapdata_cartogram <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span> continent <span class="sc">==</span> <span class="st">"Antarctica"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
 </div>
 </section>
-<section id="more-advanced-cartogram" class="level3" data-number="17.4.3">
-<h3 data-number="17.4.3" class="anchored" data-anchor-id="more-advanced-cartogram"><span class="header-section-number">17.4.3</span> More Advanced Cartogram</h3>
+<section id="more-advanced-cartogram" class="level3" data-number="17.5.3">
+<h3 data-number="17.5.3" class="anchored" data-anchor-id="more-advanced-cartogram"><span class="header-section-number">17.5.3</span> More Advanced Cartogram</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mapdata_cartogram) <span class="sc">+</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> pop_est)) <span class="sc">+</span> <span class="co"># fill is population estimate</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">"population"</span>) <span class="co"># beautiful colors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mapdata_cartogram) <span class="sc">+</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> pop_est)) <span class="sc">+</span> <span class="co"># fill is population estimate</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">"population"</span>) <span class="co"># beautiful colors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="cartogram_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="cartogram_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="cartogram_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="cartogram_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
@@ -1082,7 +1089,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","loop":false,"descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
