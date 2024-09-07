@@ -620,7 +620,7 @@
     "href": "cartogram.html#remove-scientific-notation",
     "title": "17  Cartogram",
     "section": "17.2 Remove Scientific Notation",
-    "text": "17.2 Remove Scientific Notation\n\noptions(scipen = 999) # high 'penalty' for scientific notation",
+    "text": "17.2 Remove Scientific Notation\n\n\nShow the code\noptions(scipen = 999) # high 'penalty' for scientific notation",
     "crumbs": [
       "More Advanced GIS Concepts",
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Cartogram</span>"
@@ -653,7 +653,7 @@
     "href": "cartogram.html#make-and-plot-the-cartogram",
     "title": "17  Cartogram",
     "section": "17.5 Make And Plot The Cartogram",
-    "text": "17.5 Make And Plot The Cartogram\n\n17.5.1 Make The Cartogram Data\n\n\nShow the code\nmapdata_merc &lt;- st_transform(mapdata, \n                             3857) # transform to Mercator\n\n# make a cartogram\n# each iteration takes a LONG time; fewer iterations help\n\nmapdata_cartogram &lt;- cartogram_cont(mapdata_merc, \n                                  \"pop_est\", \n                                  itermax = 5)\n\n\nWarning in cartogram_cont.sf(mapdata_merc, \"pop_est\", itermax = 5): NA not\nallowed in weight vector. Features will be removed from Shape.\n\n\n\n\n17.5.2 Basic Cartogram\n\n\nShow the code\nggplot(mapdata_cartogram) + \n  geom_sf()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Does Antarctica Look So Strange? How To Fix This?\n\n\n\nThe key is to run this dplyr code to remove Antarctica.\n\n\nShow the code\nmapdata_cartogram &lt;- mapdata_cartogram %&gt;% \n  dplyr::filter(! continent == \"Antarctica\")\n\n\n\n\n\n\n17.5.3 More Advanced Cartogram\n\n\nShow the code\nggplot(mapdata_cartogram) + \n  geom_sf(aes(fill = pop_est)) + # fill is population estimate\n  scale_fill_viridis_c(name = \"population\") # beautiful colors",
+    "text": "17.5 Make And Plot The Cartogram\n\n17.5.1 Make The Cartogram Data\n\n\nShow the code\nmapdata_merc &lt;- st_transform(mapdata, \n                             3857) # transform to Mercator\n\n# make a cartogram\n# each iteration takes a LONG time; fewer iterations help\n\nmapdata_cartogram &lt;- cartogram_cont(mapdata_merc, \n                                  \"pop_est\", \n                                  itermax = 5)\n\n\nWarning in cartogram_cont.sf(mapdata_merc, \"pop_est\", itermax = 5): NA not\nallowed in weight vector. Features will be removed from Shape.\n\n\n\n\n17.5.2 Basic Cartogram\n\n\nShow the code\nggplot(mapdata_cartogram) + \n  geom_sf()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Does Antarctica Look So Strange? How To Fix This?\n\n\n\nThe key is to run this dplyr code to remove Antarctica.\n\n\nShow the code\nmapdata_cartogram &lt;- mapdata_cartogram %&gt;% \n  dplyr::filter(! continent == \"Antarctica\")\n\n\n\n\n\n\n17.5.3 More Advanced Cartogram\n\n\nShow the code\nggplot(mapdata_cartogram) + \n  geom_sf(aes(fill = pop_est)) + # fill is population estimate\n  scale_fill_viridis_c(name = \"population\") + # beautiful colors\n  theme_void()",
     "crumbs": [
       "More Advanced GIS Concepts",
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Cartogram</span>"
@@ -756,6 +756,39 @@
     "crumbs": [
       "Other R Libraries for Mapping",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Mapping With `plotly`</span>"
+    ]
+  },
+  {
+    "objectID": "courseoutline.html",
+    "href": "courseoutline.html",
+    "title": "2  Possible Course Outline",
+    "section": "",
+    "text": "2.1 5 Week MiniCourse",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Possible Course Outline</span>"
+    ]
+  },
+  {
+    "objectID": "courseoutline.html#sec-fiveweek",
+    "href": "courseoutline.html#sec-fiveweek",
+    "title": "2  Possible Course Outline",
+    "section": "",
+    "text": "Introduction\n\nIntroduction to the Course\nIntroduction to Shapefiles (and Possibly sf Objects) As GIS Data\nIntroduction to Appropriate Software: R / RStudio / sf / ggplot; or ArcGIS; or QGIS; or Tableau\nQuick Mapping Exercise\n\nBetter Maps\n\nSymbology\nJoining by Attribute\nBasemaps e.g. leaflet\n\nData With Geographic Coordinates & Geographic Concepts\n\nData With Latitude and Longitude\nProjections\nCoordinate Reference Systems\n\nGeocoding and Geoprocessing\n\nGeocoding\nGeoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)\n\nLab Day for Final Projects",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Possible Course Outline</span>"
+    ]
+  },
+  {
+    "objectID": "courseoutline.html#full-semester-course",
+    "href": "courseoutline.html#full-semester-course",
+    "title": "2  Possible Course Outline",
+    "section": "2.2 Full Semester Course",
+    "text": "2.2 Full Semester Course\n\nBegin with a coding (R) approach to the topics listed in Section 2.1.\nFollow up with discussion of carrying out these tasks with drag and drop software: ArcGIS; QGIS; Tableau.\nFinish up with a Mapping Showcase constructing useful maps with strong design elements.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Possible Course Outline</span>"
     ]
   }
 ]
