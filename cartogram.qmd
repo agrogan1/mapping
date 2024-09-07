@@ -104,7 +104,8 @@ mapdata_cartogram <- mapdata_cartogram %>%
 
 ggplot(mapdata_cartogram) + 
   geom_sf(aes(fill = pop_est)) + # fill is population estimate
-  scale_fill_viridis_c(name = "population") # beautiful colors
+  scale_fill_viridis_c(name = "population") + # beautiful colors
+  theme_void()
 
 ```
 
