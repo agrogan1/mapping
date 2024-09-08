@@ -22,6 +22,7 @@ library(sf) # simple (spatial) features
 library(cartogram) # cartograms!
 
 ```
+
 ## Remove Scientific Notation
 
 ```{r}
@@ -63,14 +64,24 @@ mymap # replay my map
 #| code-fold: true
 
 mapdata_merc <- st_transform(mapdata, 
-                             3857) # transform to Mercator
+                             3857) # transform to Mercator (why?)
 
 # make a cartogram
-# each iteration takes a LONG time; fewer iterations help
+# each iteration takes a LONG time
+# fewer iterations help the time
+# but each iteration contributes to the 'distortion'
+# and makes a more 'cartogram'-like cartogram
+
+start_time <- Sys.time() # time this step
 
 mapdata_cartogram <- cartogram_cont(mapdata_merc, 
                                   "pop_est", 
-                                  itermax = 5)
+                                  itermax = 7)
+
+end_time <- Sys.time()
+
+end_time - start_time
+
 ```
 
 ### Basic Cartogram
@@ -105,7 +116,8 @@ mapdata_cartogram <- mapdata_cartogram %>%
 
 ggplot(mapdata_cartogram) + 
   geom_sf(aes(fill = pop_est)) + # fill is population estimate
-  scale_fill_viridis_c(name = "population") + # beautiful colors
+  scale_fill_viridis_c(name = "population",
+                       option = "turbo") + # beautiful colors
   theme_void()
 
 ```
