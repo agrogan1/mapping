@@ -1,9 +1,6 @@
 # Cartogram
 
-Following:
-
-* [https://r-graph-gallery.com/331-basic-cartogram.html](https://r-graph-gallery.com/331-basic-cartogram.html) 
-* [https://cran.r-project.org/web/packages/cartogram/readme/README.html](https://cran.r-project.org/web/packages/cartogram/readme/README.html)
+A *cartogram* is a map where the areas of different regions are distorted (increased in size; decreased in size) by the value of some quantitative variable.
 
 ## Call Libraries
 
@@ -60,21 +57,41 @@ mymap # replay my map
 
 ### Make The Cartogram Data
 
+::: {.callout-tip}
+`cartogram` requires *projected* data (@sec-projections), so we need to project the data with `st_transform`. A number of projections, including the *Mercator* and *Mollweide* projections are possibilities. You may need to experiment with a number of projections to see which ones work best in any particular cartogram.
+:::
+
 ```{r}
 #| code-fold: true
 
-mapdata_merc <- st_transform(mapdata, 
-                             3857) # transform to Mercator (why?)
+# mapdata_proj <- st_transform(mapdata, 
+#                              3857) # Mercator
 
-# make a cartogram
-# each iteration takes a LONG time
-# fewer iterations help the time
-# but each iteration contributes to the 'distortion'
-# and makes a more 'cartogram'-like cartogram
+mapdata_proj <- st_transform(mapdata, 
+                             crs = "+proj=moll") # Mollweide
+```
+
+```{r}
+#| code-fold: true
+
+ggplot(mapdata_proj) + 
+  geom_sf() # plot projected data
+
+```
+
+::: {.callout-tip}
+### Make A Cartogram
+
+Each iteration takes a **LONG** time. Fewer iterations help the time, but each iteration contributes to the *distortion*, and makes a more `cartogram`-like *cartogram*. Because this is the most time intensive step, I time the creation of the cartogram with `Sys.time`.
+:::
+
+```{r}
+#| code-fold: true
+#| label: makecartogram
 
 start_time <- Sys.time() # time this step
 
-mapdata_cartogram <- cartogram_cont(mapdata_merc, 
+mapdata_cartogram <- cartogram_cont(mapdata_proj, 
                                   "pop_est", 
                                   itermax = 7)
 
@@ -97,6 +114,8 @@ ggplot(mapdata_cartogram) +
 ::: {.callout-tip}
 ### Why Does Antarctica Look So Strange? How To Fix This?
 
+In some projections, especially the Mercator projection, Antartica looks strange in the cartogram.
+
 The key is to run this `dplyr` code to remove Antarctica.
 
 ```{r}
@@ -109,7 +128,18 @@ mapdata_cartogram <- mapdata_cartogram %>%
 ```
 :::
 
-### More Advanced Cartogram
+### Basic Cartogram
+
+```{r}
+#| code-fold: true
+
+ggplot(mapdata_cartogram) + 
+  geom_sf(aes(fill = pop_est)) + # fill is population estimate
+  theme_void()
+
+```
+
+### Cartogram With Better (`viridis`) Colors
 
 ```{r}
 #| code-fold: true
