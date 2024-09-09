@@ -1,4 +1,4 @@
-# Map Projections
+# Map Projections {#sec-projections}
 
 ## Set Up The Map
 
