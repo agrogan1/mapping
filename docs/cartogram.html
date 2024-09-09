@@ -375,10 +375,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#make-a-basic-map" id="toc-make-a-basic-map" class="nav-link" data-scroll-target="#make-a-basic-map"><span class="header-section-number">17.4</span> Make A Basic Map</a></li>
   <li><a href="#make-and-plot-the-cartogram" id="toc-make-and-plot-the-cartogram" class="nav-link" data-scroll-target="#make-and-plot-the-cartogram"><span class="header-section-number">17.5</span> Make And Plot The Cartogram</a>
   <ul class="collapse">
-  <li><a href="#make-the-cartogram-data" id="toc-make-the-cartogram-data" class="nav-link" data-scroll-target="#make-the-cartogram-data"><span class="header-section-number">17.5.1</span> Make The Cartogram Data</a></li>
-  <li><a href="#basic-cartogram" id="toc-basic-cartogram" class="nav-link" data-scroll-target="#basic-cartogram"><span class="header-section-number">17.5.2</span> Basic Cartogram</a></li>
-  <li><a href="#basic-cartogram-1" id="toc-basic-cartogram-1" class="nav-link" data-scroll-target="#basic-cartogram-1"><span class="header-section-number">17.5.3</span> Basic Cartogram</a></li>
-  <li><a href="#cartogram-with-better-viridis-colors" id="toc-cartogram-with-better-viridis-colors" class="nav-link" data-scroll-target="#cartogram-with-better-viridis-colors"><span class="header-section-number">17.5.4</span> Cartogram With Better (<code>viridis</code>) Colors</a></li>
+  <li><a href="#project-the-cartogram-data" id="toc-project-the-cartogram-data" class="nav-link" data-scroll-target="#project-the-cartogram-data"><span class="header-section-number">17.5.1</span> Project The Cartogram Data</a></li>
+  <li><a href="#plot-the-projected-data" id="toc-plot-the-projected-data" class="nav-link" data-scroll-target="#plot-the-projected-data"><span class="header-section-number">17.5.2</span> Plot The Projected Data</a></li>
+  <li><a href="#make-the-cartogram-data" id="toc-make-the-cartogram-data" class="nav-link" data-scroll-target="#make-the-cartogram-data"><span class="header-section-number">17.5.3</span> Make The Cartogram Data</a></li>
+  <li><a href="#basic-cartogram" id="toc-basic-cartogram" class="nav-link" data-scroll-target="#basic-cartogram"><span class="header-section-number">17.5.4</span> Basic Cartogram</a></li>
+  <li><a href="#basic-cartogram-1" id="toc-basic-cartogram-1" class="nav-link" data-scroll-target="#basic-cartogram-1"><span class="header-section-number">17.5.5</span> Basic Cartogram</a></li>
+  <li><a href="#cartogram-with-better-viridis-colors" id="toc-cartogram-with-better-viridis-colors" class="nav-link" data-scroll-target="#cartogram-with-better-viridis-colors"><span class="header-section-number">17.5.6</span> Cartogram With Better (<code>viridis</code>) Colors</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -464,8 +466,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="make-and-plot-the-cartogram" class="level2" data-number="17.5">
 <h2 data-number="17.5" class="anchored" data-anchor-id="make-and-plot-the-cartogram"><span class="header-section-number">17.5</span> Make And Plot The Cartogram</h2>
-<section id="make-the-cartogram-data" class="level3" data-number="17.5.1">
-<h3 data-number="17.5.1" class="anchored" data-anchor-id="make-the-cartogram-data"><span class="header-section-number">17.5.1</span> Make The Cartogram Data</h3>
+<section id="project-the-cartogram-data" class="level3" data-number="17.5.1">
+<h3 data-number="17.5.1" class="anchored" data-anchor-id="project-the-cartogram-data"><span class="header-section-number">17.5.1</span> Project The Cartogram Data</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -489,6 +491,9 @@ Tip
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                             <span class="at">crs =</span> <span class="st">"+proj=moll"</span>) <span class="co"># Mollweide</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+</section>
+<section id="plot-the-projected-data" class="level3" data-number="17.5.2">
+<h3 data-number="17.5.2" class="anchored" data-anchor-id="plot-the-projected-data"><span class="header-section-number">17.5.2</span> Plot The Projected Data</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -503,13 +508,16 @@ Tip
 </div>
 </div>
 </div>
+</section>
+<section id="make-the-cartogram-data" class="level3" data-number="17.5.3">
+<h3 data-number="17.5.3" class="anchored" data-anchor-id="make-the-cartogram-data"><span class="header-section-number">17.5.3</span> Make The Cartogram Data</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Make A Cartogram
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -536,12 +544,12 @@ allowed in weight vector. Features will be removed from Shape.</code></pre>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>end_time <span class="sc">-</span> start_time</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 2.173924 mins</code></pre>
+<pre><code>Time difference of 2.01649 mins</code></pre>
 </div>
 </div>
 </section>
-<section id="basic-cartogram" class="level3" data-number="17.5.2">
-<h3 data-number="17.5.2" class="anchored" data-anchor-id="basic-cartogram"><span class="header-section-number">17.5.2</span> Basic Cartogram</h3>
+<section id="basic-cartogram" class="level3" data-number="17.5.4">
+<h3 data-number="17.5.4" class="anchored" data-anchor-id="basic-cartogram"><span class="header-section-number">17.5.4</span> Basic Cartogram</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -578,8 +586,8 @@ Why Does Antarctica Look So Strange? How To Fix This?
 </div>
 </div>
 </section>
-<section id="basic-cartogram-1" class="level3" data-number="17.5.3">
-<h3 data-number="17.5.3" class="anchored" data-anchor-id="basic-cartogram-1"><span class="header-section-number">17.5.3</span> Basic Cartogram</h3>
+<section id="basic-cartogram-1" class="level3" data-number="17.5.5">
+<h3 data-number="17.5.5" class="anchored" data-anchor-id="basic-cartogram-1"><span class="header-section-number">17.5.5</span> Basic Cartogram</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -596,8 +604,8 @@ Why Does Antarctica Look So Strange? How To Fix This?
 </div>
 </div>
 </section>
-<section id="cartogram-with-better-viridis-colors" class="level3" data-number="17.5.4">
-<h3 data-number="17.5.4" class="anchored" data-anchor-id="cartogram-with-better-viridis-colors"><span class="header-section-number">17.5.4</span> Cartogram With Better (<code>viridis</code>) Colors</h3>
+<section id="cartogram-with-better-viridis-colors" class="level3" data-number="17.5.6">
+<h3 data-number="17.5.6" class="anchored" data-anchor-id="cartogram-with-better-viridis-colors"><span class="header-section-number">17.5.6</span> Cartogram With Better (<code>viridis</code>) Colors</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -1165,7 +1173,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

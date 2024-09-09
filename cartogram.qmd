@@ -55,7 +55,7 @@ mymap # replay my map
 
 ## Make And Plot The Cartogram
 
-### Make The Cartogram Data
+### Project The Cartogram Data
 
 ::: {.callout-tip}
 `cartogram` requires *projected* data (@sec-projections), so we need to project the data with `st_transform`. A number of projections, including the *Mercator* and *Mollweide* projections are possibilities. You may need to experiment with a number of projections to see which ones work best in any particular cartogram.
@@ -71,6 +71,8 @@ mapdata_proj <- st_transform(mapdata,
                              crs = "+proj=moll") # Mollweide
 ```
 
+### Plot The Projected Data
+
 ```{r}
 #| code-fold: true
 
@@ -78,10 +80,9 @@ ggplot(mapdata_proj) +
   geom_sf() # plot projected data
 
 ```
+### Make The Cartogram Data
 
 ::: {.callout-tip}
-### Make A Cartogram
-
 Each iteration takes a **LONG** time. Fewer iterations help the time, but each iteration contributes to the *distortion*, and makes a more `cartogram`-like *cartogram*. Because this is the most time intensive step, I time the creation of the cartogram with `Sys.time`.
 :::
 
