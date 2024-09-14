@@ -64,11 +64,11 @@ mymap # replay my map
 ```{r}
 #| code-fold: true
 
-# mapdata_proj <- st_transform(mapdata, 
-#                              3857) # Mercator
+mapdata_proj <- st_transform(mapdata,
+                             3857) # Mercator
 
-mapdata_proj <- st_transform(mapdata, 
-                             crs = "+proj=moll") # Mollweide
+# mapdata_proj <- st_transform(mapdata, 
+#                              crs = "+proj=moll") # Mollweide
 ```
 
 ### Plot The Projected Data
@@ -80,6 +80,27 @@ ggplot(mapdata_proj) +
   geom_sf() # plot projected data
 
 ```
+
+::: {.callout-tip}
+### Why Does Antarctica Look So Strange? How To Fix This?
+
+In some projections, especially the *Mercator* projection, Antartica looks strange.
+
+The key is to run this `dplyr` code to remove Antarctica.
+
+```{r}
+#| eval: true
+#| code-fold: true
+
+mapdata_proj <- mapdata_proj %>% 
+  dplyr::filter(! continent == "Antarctica")
+
+ggplot(mapdata_proj) + 
+  geom_sf() # plot projected data
+
+```
+:::
+
 ### Make The Cartogram Data
 
 ::: {.callout-tip}
@@ -112,24 +133,8 @@ ggplot(mapdata_cartogram) +
 
 ```
 
-::: {.callout-tip}
-### Why Does Antarctica Look So Strange? How To Fix This?
 
-In some projections, especially the Mercator projection, Antartica looks strange in the cartogram.
-
-The key is to run this `dplyr` code to remove Antarctica.
-
-```{r}
-#| eval: true
-#| code-fold: true
-
-mapdata_cartogram <- mapdata_cartogram %>% 
-  dplyr::filter(! continent == "Antarctica")
-
-```
-:::
-
-### Basic Cartogram
+### Basic Cartogram With `fill` Color
 
 ```{r}
 #| code-fold: true
