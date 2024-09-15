@@ -26,7 +26,18 @@
     "href": "courseoutline.html#sec-fiveweek",
     "title": "2  Possible Course Outline",
     "section": "",
-    "text": "Introduction\n\nIntroduction to the Course\nIntroduction to Shapefiles (and Possibly sf Objects) As GIS Data\nIntroduction to Appropriate Software: R / RStudio / sf / ggplot; or ArcGIS; or QGIS; or Tableau\nQuick Mapping Exercise\n\nBetter Maps\n\nSymbology\nJoining by Attribute\nBasemaps e.g. leaflet\n\nData With Geographic Coordinates & Geographic Concepts\n\nData With Latitude and Longitude\nProjections\nCoordinate Reference Systems\n\nGeocoding and Geoprocessing\n\nGeocoding\nGeoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)\n\nLab Day for Final Projects",
+    "text": "Introduction\n\nIntroduction to the Course\nIntroduction to Shapefiles (and Possibly sf Objects) As GIS Data\nIntroduction to Appropriate Software: R / RStudio / sf / ggplot; or ArcGIS; or QGIS; or Tableau\nQuick Mapping Exercise\n\nBasic GIS Skills\n\nSymbology\nJoining by Attribute\n\nData With Geographic Coordinates & Geographic Concepts\n\nData With Latitude and Longitude\nProjections\nCoordinate Reference Systems\n\nGeocoding\nLab Day for Final Projects",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Possible Course Outline</span>"
+    ]
+  },
+  {
+    "objectID": "courseoutline.html#sec-moreadvanced",
+    "href": "courseoutline.html#sec-moreadvanced",
+    "title": "2  Possible Course Outline",
+    "section": "2.2 More Advanced Topics",
+    "text": "2.2 More Advanced Topics\n\nBasemaps e.g. leaflet\nProjecting and re-projecting geographic data.\nGeoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)",
     "crumbs": [
       "Introduction",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Possible Course Outline</span>"
@@ -36,8 +47,8 @@
     "objectID": "courseoutline.html#full-semester-course",
     "href": "courseoutline.html#full-semester-course",
     "title": "2  Possible Course Outline",
-    "section": "2.2 Full Semester Course",
-    "text": "2.2 Full Semester Course\n\nBegin with a coding (R) approach to the topics listed in Section 2.1.\nRevisit these topics, and discuss each topic in more depth, with drag and drop software: ArcGIS; QGIS; Tableau.\nFinish up with a Mapping Showcase constructing useful maps with strong design elements.",
+    "section": "2.3 Full Semester Course",
+    "text": "2.3 Full Semester Course\n\nBegin with a coding (R) approach to the topics listed in Section 2.1.\nRevisit these topics, and discuss each topic in more depth, with drag and drop software: ArcGIS; QGIS; Tableau. Build in more advanced topics (Section 2.2).\nFinish up with a Mapping Showcase constructing useful maps with aesthetically pleasing and clearly understandable design elements.",
     "crumbs": [
       "Introduction",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Possible Course Outline</span>"
@@ -629,56 +640,56 @@
   {
     "objectID": "cartogram.html",
     "href": "cartogram.html",
-    "title": "17  Cartogram",
+    "title": "17  cartogram",
     "section": "",
     "text": "17.1 Call Libraries\nShow the code\nlibrary(rnaturalearth) # natural earth data\n\nlibrary(ggplot2) # beautiful maps\n\nlibrary(dplyr) # data wrangling\n\nlibrary(sf) # simple (spatial) features\n\nlibrary(cartogram) # cartograms!",
     "crumbs": [
       "More Advanced GIS Concepts",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Cartogram</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>`cartogram`</span>"
     ]
   },
   {
     "objectID": "cartogram.html#remove-scientific-notation",
     "href": "cartogram.html#remove-scientific-notation",
-    "title": "17  Cartogram",
+    "title": "17  cartogram",
     "section": "17.2 Remove Scientific Notation",
     "text": "17.2 Remove Scientific Notation\n\n\nShow the code\noptions(scipen = 999) # high 'penalty' for scientific notation",
     "crumbs": [
       "More Advanced GIS Concepts",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Cartogram</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>`cartogram`</span>"
     ]
   },
   {
     "objectID": "cartogram.html#get-map-data-from-rnaturalearth",
     "href": "cartogram.html#get-map-data-from-rnaturalearth",
-    "title": "17  Cartogram",
+    "title": "17  cartogram",
     "section": "17.3 Get Map Data From rnaturalearth",
     "text": "17.3 Get Map Data From rnaturalearth\n\n\nShow the code\nmapdata &lt;- ne_countries(scale = \"medium\", # medium scale\n                        returnclass = \"sf\")  # as sf object",
     "crumbs": [
       "More Advanced GIS Concepts",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Cartogram</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>`cartogram`</span>"
     ]
   },
   {
     "objectID": "cartogram.html#make-a-basic-map",
     "href": "cartogram.html#make-a-basic-map",
-    "title": "17  Cartogram",
+    "title": "17  cartogram",
     "section": "17.4 Make A Basic Map",
     "text": "17.4 Make A Basic Map\nWe make a basic map, reading it into an object called mymap. We then replay mymap.\n\n\nShow the code\nmymap &lt;- ggplot(mapdata) + # the data I am mapping\n  geom_sf() # the geometry I am using\n\nmymap # replay my map",
     "crumbs": [
       "More Advanced GIS Concepts",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Cartogram</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>`cartogram`</span>"
     ]
   },
   {
     "objectID": "cartogram.html#make-and-plot-the-cartogram",
     "href": "cartogram.html#make-and-plot-the-cartogram",
-    "title": "17  Cartogram",
+    "title": "17  cartogram",
     "section": "17.5 Make And Plot The Cartogram",
-    "text": "17.5 Make And Plot The Cartogram\n\n17.5.1 Project The Cartogram Data\n\n\n\n\n\n\nTip\n\n\n\ncartogram requires projected data (Chapter 5), so we need to project the data with st_transform. A number of projections, including the Mercator and Mollweide projections are possibilities. You may need to experiment with a number of projections to see which ones work best in any particular cartogram.\n\n\n\n\nShow the code\nmapdata_proj &lt;- st_transform(mapdata,\n                             3857) # Mercator\n\n# mapdata_proj &lt;- st_transform(mapdata, \n#                              crs = \"+proj=moll\") # Mollweide\n\n\n\n\n17.5.2 Plot The Projected Data\n\n\nShow the code\nggplot(mapdata_proj) + \n  geom_sf() # plot projected data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Does Antarctica Look So Strange? How To Fix This?\n\n\n\nIn some projections, especially the Mercator projection, Antartica looks strange.\nThe key is to run this dplyr code to remove Antarctica.\n\n\nShow the code\nmapdata_proj &lt;- mapdata_proj %&gt;% \n  dplyr::filter(! continent == \"Antarctica\")\n\nggplot(mapdata_proj) + \n  geom_sf() # plot projected data\n\n\n\n\n\n\n\n\n\n\n\n\n\n17.5.3 Make The Cartogram Data\n\n\n\n\n\n\nTip\n\n\n\nEach iteration takes a LONG time. Fewer iterations help the time, but each iteration contributes to the distortion, and makes a more cartogram-like cartogram. Because this is the most time intensive step, I time the creation of the cartogram with Sys.time.\n\n\n\n\nShow the code\nstart_time &lt;- Sys.time() # time this step\n\nmapdata_cartogram &lt;- cartogram_cont(mapdata_proj, \n                                  \"pop_est\", \n                                  itermax = 7)\n\n\nWarning in cartogram_cont.sf(mapdata_proj, \"pop_est\", itermax = 7): NA not\nallowed in weight vector. Features will be removed from Shape.\n\n\nShow the code\nend_time &lt;- Sys.time()\n\nend_time - start_time\n\n\nTime difference of 2.128004 mins\n\n\n\n\n17.5.4 Basic Cartogram\n\n\nShow the code\nggplot(mapdata_cartogram) + \n  geom_sf()\n\n\n\n\n\n\n\n\n\n\n\n17.5.5 Basic Cartogram With fill Color\n\n\nShow the code\nggplot(mapdata_cartogram) + \n  geom_sf(aes(fill = pop_est)) + # fill is population estimate\n  theme_void()\n\n\n\n\n\n\n\n\n\n\n\n17.5.6 Cartogram With Better (viridis) Colors\n\n\nShow the code\nggplot(mapdata_cartogram) + \n  geom_sf(aes(fill = pop_est)) + # fill is population estimate\n  scale_fill_viridis_c(name = \"population\",\n                       option = \"turbo\") + # beautiful colors\n  theme_void()",
+    "text": "17.5 Make And Plot The Cartogram\n\n17.5.1 Project The Cartogram Data\n\n\n\n\n\n\nTip\n\n\n\ncartogram requires projected data (Chapter 5), so we need to project the data with st_transform. A number of projections, including the Mercator and Mollweide projections are possibilities. You may need to experiment with a number of projections to see which ones work best in any particular cartogram.\n\n\n\n\nShow the code\nmapdata_proj &lt;- st_transform(mapdata,\n                             3857) # Mercator\n\n# mapdata_proj &lt;- st_transform(mapdata, \n#                              crs = \"+proj=moll\") # Mollweide\n\n\n\n\n17.5.2 Plot The Projected Data\n\n\nShow the code\nggplot(mapdata_proj) + \n  geom_sf() # plot projected data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Does Antarctica Look So Strange? How To Fix This?\n\n\n\nIn some projections, especially the Mercator projection, Antartica looks strange.\nThe key is to run this dplyr code to remove Antarctica.\n\n\nShow the code\nmapdata_proj &lt;- mapdata_proj %&gt;% \n  dplyr::filter(! continent == \"Antarctica\")\n\nggplot(mapdata_proj) + \n  geom_sf() # plot projected data\n\n\n\n\n\n\n\n\n\n\n\n\n\n17.5.3 Make The Cartogram Data\n\n\n\n\n\n\nTip\n\n\n\nEach iteration takes a LONG time. Fewer iterations help the time, but each iteration contributes to the distortion, and makes a more cartogram-like cartogram. Because this is the most time intensive step, I time the creation of the cartogram with Sys.time.\n\n\n\n\nShow the code\nstart_time &lt;- Sys.time() # time this step\n\nmapdata_cartogram &lt;- cartogram_cont(mapdata_proj, \n                                  \"pop_est\", \n                                  itermax = 7)\n\nend_time &lt;- Sys.time()\n\nend_time - start_time\n\n\nTime difference of 39.25681 secs\n\n\n\n\n17.5.4 Basic Cartogram\n\n\nShow the code\nggplot(mapdata_cartogram) + \n  geom_sf()\n\n\n\n\n\n\n\n\n\n\n\n17.5.5 Basic Cartogram With fill Color\n\n\nShow the code\nggplot(mapdata_cartogram) + \n  geom_sf(aes(fill = pop_est)) + # fill is population estimate\n  theme_void()\n\n\n\n\n\n\n\n\n\n\n\n17.5.6 Cartogram With Better (viridis) Colors\n\n\nShow the code\nggplot(mapdata_cartogram) + \n  geom_sf(aes(fill = pop_est)) + # fill is population estimate\n  scale_fill_viridis_c(name = \"population\",\n                       option = \"turbo\") + # beautiful colors\n  theme_void()",
     "crumbs": [
       "More Advanced GIS Concepts",
-      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Cartogram</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>`cartogram`</span>"
     ]
   },
   {

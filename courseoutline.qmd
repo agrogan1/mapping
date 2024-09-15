@@ -1,5 +1,11 @@
 # Possible Course Outline
 
+::: {.callout-important}
+## Mapping is FUN **and** CHALLENGING
+
+Mapping is fun. Many people enjoy looking at maps, and find them informative and helpful. Many people find it very fun to learn how to make maps. At the same time, making even basic maps with geographic data can be challenging. Making an aesthetically pleasing and useful map can be very challenging. We will work hard in this course to learn these important skills. At the same time, we will have fun doing so!
+:::
+
 ## 5 Week MiniCourse {#sec-fiveweek}
 
 1. Introduction
@@ -7,24 +13,27 @@
     + Introduction to Shapefiles (and Possibly `sf` Objects) As GIS Data
     + Introduction to Appropriate Software: R / RStudio / `sf` / `ggplot`; or ArcGIS; or QGIS; or Tableau
     + Quick Mapping Exercise
-2. Better Maps
+2. Basic GIS Skills
     + Symbology
     + Joining by Attribute
-    + Basemaps e.g. `leaflet`
 3. Data With Geographic Coordinates & Geographic Concepts
     + Data With Latitude and Longitude
     + Projections
     + Coordinate Reference Systems
-4. Geocoding and Geoprocessing
-    + Geocoding
-    + Geoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)
+4. Geocoding
 5. Lab Day for Final Projects
+
+## More Advanced Topics {#sec-moreadvanced}
+
+1. Basemaps e.g. `leaflet`
+2. Projecting and re-projecting geographic data.
+3. Geoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)
 
 ## Full Semester Course
 
 * Begin with a coding (R) approach to the topics listed in @sec-fiveweek.
-* Revisit these topics, and discuss each topic in more depth, with drag and drop software: ArcGIS; QGIS; Tableau.
-* Finish up with a *Mapping Showcase* constructing useful maps with strong design elements.
+* Revisit these topics, and discuss each topic in more depth, with drag and drop software: ArcGIS; QGIS; Tableau. Build in more advanced topics (@sec-moreadvanced).
+* Finish up with a *Mapping Showcase* constructing useful maps with aesthetically pleasing and clearly understandable  design elements.
 
 
 

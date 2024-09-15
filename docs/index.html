@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Grogan-Kaylor">
-<meta name="dcterms.date" content="2024-09-08">
+<meta name="dcterms.date" content="2024-09-15">
 
 <title>Mapping</title>
 <style>
@@ -72,16 +72,27 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
 <link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+
 <script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+
 <link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+
 <script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+
 <script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+
 <link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+
 <script src="site_libs/leaflet-binding-2.2.1/leaflet.js"></script>
+
 <script src="site_libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+
 <script src="site_libs/leaflet-providers-plugin-2.2.1/leaflet-providers-plugin.js"></script>
+
 
 
 <link rel="stylesheet" href="mapping.css">
@@ -93,10 +104,10 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary">
 <meta name="citation_title" content="Mapping">
 <meta name="citation_author" content="Andrew Grogan-Kaylor">
-<meta name="citation_publication_date" content="2024-09-08">
-<meta name="citation_cover_date" content="2024-09-08">
+<meta name="citation_publication_date" content="2024-09-15">
+<meta name="citation_cover_date" content="2024-09-15">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-09-08">
+<meta name="citation_online_date" content="2024-09-15">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/">
 <meta name="citation_language" content="en">
 </head>
@@ -112,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Mapping</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools tools-wide">
+        <div class="quarto-navbar-tools tools-wide tools-end">
     <a href="https://github.com/agrogan1/mapping" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
@@ -311,7 +322,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cartogram.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Cartogram</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title"><code>cartogram</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -376,7 +387,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 8, 2024</p>
+      <p class="date">September 15, 2024</p>
     </div>
   </div>
   
@@ -633,6 +644,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/agrogan1\.github\.io\/mapping");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -667,7 +696,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -945,7 +978,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./courseoutline.html" class="pagination-link" aria-label="<span class='chapter-number'>2</span>&nbsp; <span class='chapter-title'>Possible Course Outline</span>">
+      <a href="./courseoutline.html" class="pagination-link" aria-label="Possible Course Outline">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Possible Course Outline</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
