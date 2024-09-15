@@ -1,4 +1,4 @@
-# Cartogram
+# `cartogram`
 
 A *cartogram* is a map where the areas of different regions are distorted (increased in size; decreased in size) by the value of some quantitative variable.
 
