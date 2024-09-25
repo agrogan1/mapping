@@ -26,7 +26,7 @@
     "href": "courseoutline.html#sec-fiveweek",
     "title": "2  Possible Course Outline",
     "section": "",
-    "text": "Introduction\n\nIntroduction to the Course\nIntroduction to Shapefiles (and Possibly sf Objects) As GIS Data\nIntroduction to Appropriate Software: R / RStudio / sf / ggplot; or ArcGIS; or QGIS; or Tableau\nQuick Mapping Exercise\n\nBasic GIS Skills\n\nSymbology\nJoining by Attribute\n\nData With Geographic Coordinates & Geographic Concepts\n\nData With Latitude and Longitude\nProjections\nCoordinate Reference Systems\n\nGeocoding\nLab Day for Final Projects",
+    "text": "Introduction\n\nIntroduction to the Course\nIntroduction to Shapefiles (and Possibly sf Objects) As GIS Data\nIntroduction to Appropriate Software: R / RStudio / sf / ggplot; or ArcGIS; or QGIS; or Tableau\nQuick Mapping Exercise\n\nBasic GIS Skills\n\nSymbology\nJoining by Attribute\n\nData With Geographic Coordinates & Geographic Concepts\n\nData With Latitude and Longitude\nCoordinate Reference Systems\n\nGeocoding\nLab Day for Final Projects",
     "crumbs": [
       "Introduction",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Possible Course Outline</span>"
@@ -37,7 +37,7 @@
     "href": "courseoutline.html#sec-moreadvanced",
     "title": "2  Possible Course Outline",
     "section": "2.2 More Advanced Topics",
-    "text": "2.2 More Advanced Topics\n\nBasemaps e.g. leaflet (Section 18.1)\nProjecting and re-projecting geographic data (Chapter 5)\nGeoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)",
+    "text": "2.2 More Advanced Topics\n\nBasemaps e.g. leaflet (Section 18.1)\nProjections, projecting and re-projecting geographic data (Chapter 5)\nGeoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)",
     "crumbs": [
       "Introduction",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Possible Course Outline</span>"
