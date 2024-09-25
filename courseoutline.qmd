@@ -25,8 +25,8 @@ Mapping is fun. Many people enjoy looking at maps, and find them informative and
 
 ## More Advanced Topics {#sec-moreadvanced}
 
-1. Basemaps e.g. `leaflet`
-2. Projecting and re-projecting geographic data.
+1. Basemaps e.g. `leaflet` (@sec-leaflet)
+2. Projecting and re-projecting geographic data (@sec-projections)
 3. Geoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)
 
 ## Full Semester Course
