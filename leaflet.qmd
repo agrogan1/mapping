@@ -1,6 +1,6 @@
-# Mapping With `leaflet`
+# Mapping With `leaflet` {#sec-leaflet}
 
-## Call Libraries {#sec-leaflet}
+## Call Libraries 
 
 ```{r}
 #| code-fold: true
