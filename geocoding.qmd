@@ -57,11 +57,13 @@ DT::datatable(simulated_address_data,
 
 ## Geocode
 
-> ArcGIS geocoding has LOW success rate with this data
+::: {.callout-caution}
+ArcGIS geocoding has LOW success rate with this data. You will want to find a process with HIGH success rate.
+:::
 
-> You will want to find a process with HIGH success rate
-
-> You could also try batchgeo -> KML -> Latitude/Longitude
+::: {.callout-tip}
+You could also try batchgeo -> KML -> Latitude/Longitude
+:::
 
 ```{r}
 #| code-fold: true
@@ -83,7 +85,7 @@ DT::datatable(geocoded_data,
 ```
 
 ::: {.callout-important title="Geocoding Can Make Errors!"}
-NB that for whatever reason, the geocoder has made a mistake: Agency Z has been placed in the Southern Hemisphere. Geocoding can be an error prone process and requires careful inspection of your tabular and mapped data.
+NB that for whatever reason--perhaps because there is no address information--the geocoder has made a mistake: Agency Z has been placed in the Southern Hemisphere. Geocoding can be an error prone process and requires careful inspection of your tabular and mapped data.
 
 A geocoder may also be unable to geocode some of your data. Low success rates are not uncommon, and you may have to work hard to ensure that the majority, or all, of your data are geocoded.
 :::

@@ -1,6 +1,6 @@
-# Making Maps With `ggplot` Using Location Data
+# Making Maps With `ggplot` Using Location Data {#sec-location-data}
 
-## Call Libraries {#sec-location-data}
+## Call Libraries 
 
 ```{r}
 #| code-fold: true
@@ -77,7 +77,7 @@ AnnArborRoads <- st_crop(WashtenawRoads,
 
 ```{r}
 #| code-fold: true
-#| output: false
+#| output: true
 
 ggplot(city_boundary) +
   geom_sf(alpha = .5) +
