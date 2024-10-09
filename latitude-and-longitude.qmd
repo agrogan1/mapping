@@ -4,8 +4,13 @@
 
 Latitude and longitude are coordinates for locating objects on earth.
 
-* Latitude represents distance from the *equator*. 0 latitude is at the equator. +90 latitude, or 90N, is at the North Pole. -90 latitude, or 90S, is at the South Pole.
-* Longitude represents distance from the *prime meridian*. 0 longitude is at the prime meridian. +180 and -180, or 180E and 180W, meet at the other side of the world.
+* Latitude represents distance from the *equator*. 
+    + 0 latitude is at the equator. 
+    + +90 latitude, or 90N, is at the North Pole. 
+    + -90 latitude, or 90S, is at the South Pole.
+* Longitude represents distance from the *prime meridian*. 
+    + 0 longitude is at the prime meridian. 
+    + +180 and -180, or 180E and 180W, meet at the other side of the world.
 
 ## Call the Libraries
 

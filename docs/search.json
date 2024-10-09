@@ -81,7 +81,7 @@
     "href": "latitude-and-longitude.html#introduction",
     "title": "4  Latitude and Longitude",
     "section": "",
-    "text": "Latitude represents distance from the equator. 0 latitude is at the equator. +90 latitude, or 90N, is at the North Pole. -90 latitude, or 90S, is at the South Pole.\nLongitude represents distance from the prime meridian. 0 longitude is at the prime meridian. +180 and -180, or 180E and 180W, meet at the other side of the world.",
+    "text": "Latitude represents distance from the equator.\n\n0 latitude is at the equator.\n+90 latitude, or 90N, is at the North Pole.\n-90 latitude, or 90S, is at the South Pole.\n\nLongitude represents distance from the prime meridian.\n\n0 longitude is at the prime meridian.\n+180 and -180, or 180E and 180W, meet at the other side of the world.",
     "crumbs": [
       "Geographical and GIS Concepts",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Latitude and Longitude</span>"
