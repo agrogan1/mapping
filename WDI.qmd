@@ -1,0 +1,80 @@
+# Using Data From `WDI` {#sec-WDI}
+
+## Background
+
+The [World Bank](http://www.worldbank.org/) collects statistical information from countries around the world.  A particularly useful data set is the **W**orld **D**evelopment **I**ndicators [(WDI)](http://data.worldbank.org/data-catalog/world-development-indicators) which are country level statistical information from around the world.
+
+Using `library(WDI)` you can download indicator data directly from the World Bank and read it into a data set.
+
+## Call Libraries
+
+```{r}
+#| message: false
+#| warning: false
+#| code-fold: true
+
+library(WDI) # for accessing World Bank data
+
+library(dplyr) # data wrangling
+
+```
+
+## Get Some Data From the World Development Indicators (WDI)
+
+```{r}
+#| eval: false
+#| code-fold: true
+
+# get names of specific indicators from WDI Data Catalog
+
+WorldBankData <- WDI(country="all", 
+                     indicator=c("SI.POV.GINI", # Gini
+                                 "NY.GDP.PCAP.CD", # GDP
+                                 "SE.ADT.LITR.ZS", # adult literacy
+                                 "SP.DYN.LE00.IN", # life expectancy
+                                 "SP.POP.TOTL", # population
+                                 "SN.ITK.DEFC.ZS"), # undernourishment
+                     start = 2023, 
+                     end = 2023, 
+                     extra = TRUE) 
+
+
+save(WorldBankData, file="WorldBankData.RData")
+
+```
+
+# Rename Some Variables
+
+```{r}
+#| eval: false
+#| code-fold: true
+
+# think about renaming some variables with more intuitive names
+# e.g....
+
+# rename some variables with dplyr (just copy and paste your indicators)
+
+WorldBankData <- dplyr::rename(WorldBankData, 
+                        GDP = NY.GDP.PCAP.CD,
+                        adult_literacy = SE.ADT.LITR.ZS,
+                        life_expectancy = SP.DYN.LE00.IN, 
+                        population = SP.POP.TOTL,
+                        Gini = SI.POV.GINI,
+                        undernourishment = SN.ITK.DEFC.ZS)
+
+save(WorldBankData, file="WorldBankData.RData")
+
+```
+
+## Look At The Data
+
+```{r}
+#| code-fold: true
+
+load("WorldBankData.RData") # load the data
+
+head(WorldBankData)
+
+```
+
+
