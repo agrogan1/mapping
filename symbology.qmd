@@ -8,28 +8,32 @@ Shapefiles generally come in three types: points <span style="color:red">●</sp
 
 # Symbology
 
-*Symbology* is the idea of using shapefile attributes to encode *quantitative* or *qualitative* information, such as income or program participation.
+*Symbology* is the idea of using shapefile attributes to encode *quantitative (continuous)* or *qualitative (discrete; categorical)* information, such as income or program participation.
 
 ::: {.panel-tabset}
 
 ## Symbology
 
 | Shapefile Type | Symbology|
-|----------------|----------|
-| Points         | Size: ● <span style="font-size:2em">●</span> <span style="font-size:3em">●</span>|  
-|                | Color: <span style="color:red">●</span> <span style="color:blue">●</span> <span style="color:green">●</span>|
-| Lines          | Width: ━ <span style="font-size:2em">━</span> <span style="font-size:5em">━</span>|
-|                | Color: <span style="color:red;font-size:3em">━</span> <span style="color:blue;font-size:3em">━</span> <span style="color:green;font-size:3em">━</span> |
-|                | Pattern: <span style="font-size:3em">━ ┅</span> | 
-| Polygons       | Color: <span style="color:red;font-size:3em">■</span> <span style="color:blue;font-size:3em">■</span> <span style="color:green;font-size:3em">■</span> |
-|                | Pattern: <span style="font-size:3em">■ ▤ ▦</span>
+|-----------|--------------------|
+| Points    | Size: ● <span style="font-size:2em">●</span> <span style="font-size:3em">●</span>|  
+|           | Discrete Color: <span style="color:red">●</span> <span style="color:blue">●</span> <span style="color:green">●</span>|
+|           | Continuous Color: <span style="color:#deebf7">●</span> <span style="color:#9ecae1
+">●</span> <span style="color:#3182bd">●</span>|
+| Lines     | Width: ━ <span style="font-size:2em">━</span> <span style="font-size:5em">━</span>|
+|           | Discrete Color: <span style="color:red;font-size:3em">━</span> <span style="color:blue;font-size:3em">━</span> <span style="color:green;font-size:3em">━</span> |
+|           | Continuous Color: <span style="color:#deebf7;font-size:3em">━</span> <span style="color:#9ecae1;font-size:3em">━</span> <span style="color:#3182bd;font-size:3em">━</span> |
+|           | Pattern: <span style="font-size:3em">━ ┅</span> | 
+| Polygons  | Discrete Color: <span style="color:red;font-size:3em">■</span> <span style="color:blue;font-size:3em">■</span> <span style="color:green;font-size:3em">■</span> |
+|           | Continuous Color: <span style="color:#deebf7;font-size:3em">■</span> <span style="color:#9ecae1;font-size:3em">■</span> <span style="color:#3182bd;font-size:3em">■</span>|
+|           | Pattern: <span style="font-size:3em">■ ▤ ▦</span>
 
 : Symbology
 
 
 ## A Note About the Use of Color
 
-Color palettes can be either qualitative or quantitative in nature. 
+Color palettes can be either qualitative (discrete; categorical) or quantitative (continuous) in nature. 
 
 ::: {.callout-note}
 The code used to generate these color palettes is shown for reference, but may not be the exact code needed when these colors are used in maps.
@@ -122,6 +126,7 @@ library(scales)
 ```
 
 ```{r}
+#| fig.cap: "Viridis Palette"
 #| code-fold: true 
 #| code-summary: "Show the code"
 
