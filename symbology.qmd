@@ -1,4 +1,4 @@
-# Symbology
+# Symbology {#sec-symbology}
 
 ## Introduction
 
