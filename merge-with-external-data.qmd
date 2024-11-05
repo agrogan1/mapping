@@ -2,9 +2,11 @@
 
 ## Introduction
 
-A common task in mapping is that we have a shapefile of map data, but we want to merge in some external data from another source so that we can map that external data. Usually we want to use different colors to map that external data.
+A common task in mapping is that we have a *shapefile* (@sec-shapefiles) of map data, but we want to merge in some *external data* from another source so that we can map that *external data*.
 
-Here, I use a shapefile of countries of the world, and map it with some *made up data* of *arbitrary and made up x values* for certain countries.
+Often we want to use different colors to map that external data (@sec-symbology).
+
+Here, I use a shapefile of countries of the world (@sec-shapefiles2), and merge that data with data from the World Bank World Development Indicators (@sec-WDI).
 
 This tutorial builds upon another tutorial on Mapping with `ggplot`(@sec-ggplot-map)
 
@@ -21,17 +23,11 @@ library(ggplot2) # beautiful plots
 
 library(dplyr) # data wrangling and joins
 
-library(tibble) # library for updated dataframes
-
-library(readr) # read CSV files
-
-library(countrycode) # work with country data
-
 ```
 
 ## Get Shapefile
 
-Here I am using the `wrld_simpl` dataset of country outlines that is available in several R packages (@sec-shapefiles2). I read this data into an object called `world`.
+I am using the `wrld_simpl` dataset of country outlines that is available in several R packages (@sec-shapefiles2). I read this data into an object called `world`.
 
 ```{r}
 #| code-fold: true
@@ -57,41 +53,16 @@ ggplot(world) +
 
 ## Get External Data
 
-Here I read in a completely made up data set of arbitrary values. The file that I am reading in is a `csv` file, but could be [a file in any number of formats](https://agrogan1.github.io/myposts/you-have-to-get-your-data-from-somewhere.html).
-
-```{r}
-#| echo: false
-
-# create CSV file of external data
-
-externaldata <- tribble(
-  ~ISO3, ~arbitrary_x,
-  "COL", 10,
-  "CHL", 9,
-  "ARG", 8,
-  "GHA", 7,
-  "MLI", 6,
-  "AUS", 5
-)
-
-externaldata$name <- countrycode(externaldata$ISO3, 
-                                 origin = "iso3c", 
-                                 destination = "country.name")
-
-write.csv(externaldata, 
-          file = "./external-data/externaldata.csv",
-          row.names = FALSE)
-
-```
+Here I load the World Bank Data (@sec-WDI).
 
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
 #| message: false
 
-externaldata <- read_csv("./external-data/externaldata.csv")
+load("WorldBankData.Rdata")
 
-externaldata # replay data set
+WorldBankData # replay data set
 
 ```
 
@@ -102,12 +73,26 @@ I use `left_join` from the `dplyr` package to merge the spatial data in `world` 
 `left_join` is a function that keeps all observations in the data on the left (the shapefile), and only those matching observations in the data on the right (the external data), which is usually what I want in mapping.
 
 I need a unique identifier for my rows of data, so here I use `ISO3`, a unique 3 letter identifier for countries of the world.
+
+First I need to rename a variable in `WorldBankData`, so that the identifiers will match exactly.
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+WorldBankData$ISO3 <- WorldBankData$iso3c
+
+```
+
+Then I merge the data using `left_join`.
  
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
 
-newdata <- left_join(world, externaldata, by = "ISO3")
+
+newdata <- left_join(world, 
+                     WorldBankData, by = "ISO3")
 
 ```
 
@@ -122,9 +107,9 @@ Once I have the merged data, it is easy to map it with `ggplot` and `geom_sf`. N
 #| code-summary: "Show the code"
 
 ggplot(newdata) +
-  geom_sf(aes(fill = arbitrary_x)) + # adding a fill aesthetic
+  geom_sf(aes(fill = GDP)) + # adding a fill aesthetic
   scale_fill_viridis_c(na.value = "grey97", # value for NA
-                       option = "turbo") + # viridis colors
+                       option = "viridis") + # viridis colors
   labs(title = "Demonstration Map With Merged Data") +
   theme_minimal() # better theme
 
