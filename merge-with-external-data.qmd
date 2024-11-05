@@ -62,7 +62,7 @@ Here I load the World Bank Data (@sec-WDI).
 
 load("WorldBankData.Rdata")
 
-WorldBankData # replay data set
+head(WorldBankData) # replay data set
 
 ```
 

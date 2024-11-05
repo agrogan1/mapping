@@ -488,7 +488,7 @@
     "href": "merge-with-external-data.html",
     "title": "15  Merge Shapefiles With External Data",
     "section": "",
-    "text": "15.1 Introduction\nA common task in mapping is that we have a shapefile of map data, but we want to merge in some external data from another source so that we can map that external data. Usually we want to use different colors to map that external data.\nHere, I use a shapefile of countries of the world, and map it with some made up data of arbitrary and made up x values for certain countries.\nThis tutorial builds upon another tutorial on Mapping with ggplot(Chapter 14)",
+    "text": "15.1 Introduction\nA common task in mapping is that we have a shapefile (Chapter 8) of map data, but we want to merge in some external data from another source so that we can map that external data.\nOften we want to use different colors to map that external data (Chapter 11).\nHere, I use a shapefile of countries of the world (Chapter 9), and merge that data with data from the World Bank World Development Indicators (Chapter 13).\nThis tutorial builds upon another tutorial on Mapping with ggplot(Chapter 14)",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
@@ -499,7 +499,7 @@
     "href": "merge-with-external-data.html#call-libraries",
     "title": "15  Merge Shapefiles With External Data",
     "section": "15.2 Call Libraries",
-    "text": "15.2 Call Libraries\n\n\nShow the code\nlibrary(sf) # simple (spatial) features\n\nlibrary(ggplot2) # beautiful plots\n\nlibrary(dplyr) # data wrangling and joins\n\nlibrary(tibble) # library for updated dataframes\n\nlibrary(readr) # read CSV files\n\nlibrary(countrycode) # work with country data",
+    "text": "15.2 Call Libraries\n\n\nShow the code\nlibrary(sf) # simple (spatial) features\n\nlibrary(ggplot2) # beautiful plots\n\nlibrary(dplyr) # data wrangling and joins",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
@@ -510,7 +510,7 @@
     "href": "merge-with-external-data.html#get-shapefile",
     "title": "15  Merge Shapefiles With External Data",
     "section": "15.3 Get Shapefile",
-    "text": "15.3 Get Shapefile\nHere I am using the wrld_simpl dataset of country outlines that is available in several R packages (Chapter 9). I read this data into an object called world.\n\n\nShow the code\nworld &lt;- read_sf(\"./shapefiles/wrld_simpl/wrld_simpl.shp\")",
+    "text": "15.3 Get Shapefile\nI am using the wrld_simpl dataset of country outlines that is available in several R packages (Chapter 9). I read this data into an object called world.\n\n\nShow the code\nworld &lt;- read_sf(\"./shapefiles/wrld_simpl/wrld_simpl.shp\")",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
@@ -532,7 +532,7 @@
     "href": "merge-with-external-data.html#get-external-data",
     "title": "15  Merge Shapefiles With External Data",
     "section": "15.5 Get External Data",
-    "text": "15.5 Get External Data\nHere I read in a completely made up data set of arbitrary values. The file that I am reading in is a csv file, but could be a file in any number of formats.\n\n\nShow the code\nexternaldata &lt;- read_csv(\"./external-data/externaldata.csv\")\n\nexternaldata # replay data set\n\n\n# A tibble: 6 × 3\n  ISO3  arbitrary_x name     \n  &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;    \n1 COL            10 Colombia \n2 CHL             9 Chile    \n3 ARG             8 Argentina\n4 GHA             7 Ghana    \n5 MLI             6 Mali     \n6 AUS             5 Australia",
+    "text": "15.5 Get External Data\nHere I load the World Bank Data (Chapter 13).\n\n\nShow the code\nload(\"WorldBankData.Rdata\")\n\nhead(WorldBankData) # replay data set\n\n\n                      country iso2c iso3c year status lastupdated Gini      GDP\n1                 Afghanistan    AF   AFG 2023         2024-10-24   NA       NA\n2 Africa Eastern and Southern    ZH   AFE 2023         2024-10-24   NA 1672.506\n3  Africa Western and Central    ZI   AFW 2023         2024-10-24   NA 1584.333\n4                     Albania    AL   ALB 2023         2024-10-24   NA 8367.776\n5                     Algeria    DZ   DZA 2023         2024-10-24   NA 5260.206\n6              American Samoa    AS   ASM 2023         2024-10-24   NA       NA\n  adult_literacy life_expectancy population undernourishment\n1             NA              NA   42239854               NA\n2       73.27511              NA  739108306               NA\n3       60.50555              NA  502789511               NA\n4             NA              NA    2745972               NA\n5             NA              NA   45606480               NA\n6             NA              NA      43914               NA\n                      region   capital longitude latitude              income\n1                 South Asia     Kabul   69.1761  34.5228          Low income\n2                 Aggregates                                       Aggregates\n3                 Aggregates                                       Aggregates\n4      Europe & Central Asia    Tirane   19.8172  41.3317 Upper middle income\n5 Middle East & North Africa   Algiers   3.05097  36.7397 Lower middle income\n6        East Asia & Pacific Pago Pago  -170.691 -14.2846 Upper middle income\n         lending\n1            IDA\n2     Aggregates\n3     Aggregates\n4           IBRD\n5           IBRD\n6 Not classified",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
@@ -543,7 +543,7 @@
     "href": "merge-with-external-data.html#join-data-to-shapefile",
     "title": "15  Merge Shapefiles With External Data",
     "section": "15.6 Join Data to Shapefile",
-    "text": "15.6 Join Data to Shapefile\nI use left_join from the dplyr package to merge the spatial data in world with externaldata.\nleft_join is a function that keeps all observations in the data on the left (the shapefile), and only those matching observations in the data on the right (the external data), which is usually what I want in mapping.\nI need a unique identifier for my rows of data, so here I use ISO3, a unique 3 letter identifier for countries of the world.\n\n\nShow the code\nnewdata &lt;- left_join(world, externaldata, by = \"ISO3\")",
+    "text": "15.6 Join Data to Shapefile\nI use left_join from the dplyr package to merge the spatial data in world with externaldata.\nleft_join is a function that keeps all observations in the data on the left (the shapefile), and only those matching observations in the data on the right (the external data), which is usually what I want in mapping.\nI need a unique identifier for my rows of data, so here I use ISO3, a unique 3 letter identifier for countries of the world.\nFirst I need to rename a variable in WorldBankData, so that the identifiers will match exactly.\n\n\nShow the code\nWorldBankData$ISO3 &lt;- WorldBankData$iso3c\n\n\nThen I merge the data using left_join.\n\n\nShow the code\nnewdata &lt;- left_join(world, \n                     WorldBankData, by = \"ISO3\")",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
@@ -554,7 +554,7 @@
     "href": "merge-with-external-data.html#make-a-map-with-the-data",
     "title": "15  Merge Shapefiles With External Data",
     "section": "15.7 Make a Map With The Data",
-    "text": "15.7 Make a Map With The Data\nOnce I have the merged data, it is easy to map it with ggplot and geom_sf. Note that I need to specify an aesthetic for geom_sf. Here arbitrary_x is the fill color for countries on the map.\n\nData could also be mapped with another package like leaflet (Section 19.1).\n\n\n\nShow the code\nggplot(newdata) +\n  geom_sf(aes(fill = arbitrary_x)) + # adding a fill aesthetic\n  scale_fill_viridis_c(na.value = \"grey97\", # value for NA\n                       option = \"turbo\") + # viridis colors\n  labs(title = \"Demonstration Map With Merged Data\") +\n  theme_minimal() # better theme",
+    "text": "15.7 Make a Map With The Data\nOnce I have the merged data, it is easy to map it with ggplot and geom_sf. Note that I need to specify an aesthetic for geom_sf. Here arbitrary_x is the fill color for countries on the map.\n\nData could also be mapped with another package like leaflet (Section 19.1).\n\n\n\nShow the code\nggplot(newdata) +\n  geom_sf(aes(fill = GDP)) + # adding a fill aesthetic\n  scale_fill_viridis_c(na.value = \"grey97\", # value for NA\n                       option = \"viridis\") + # viridis colors\n  labs(title = \"Demonstration Map With Merged Data\") +\n  theme_minimal() # better theme",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
