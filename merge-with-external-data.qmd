@@ -2,11 +2,11 @@
 
 ## Introduction
 
-A common task in mapping is that we have a *shapefile* (@sec-shapefiles) of map data, but we want to merge in some *external data* from another source so that we can map that *external data*.
+A common task in mapping is that we have a *shapefile* (@sec-shapefiles) or `sf` object (@sec-sf) of map data, but we want to merge in some *external data* from another source so that we can map that *external data*.
 
 Often we want to use different colors to map that external data (@sec-symbology).
 
-Here, I use a shapefile of countries of the world (@sec-shapefiles2), and merge that data with data from the World Bank World Development Indicators (@sec-WDI).
+Here, I use an `sf` object (@sec-sf) of countries of the world (@sec-rnaturalearth), and merge that data with data from the World Bank World Development Indicators (@sec-WDI).
 
 This tutorial builds upon another tutorial on Mapping with `ggplot`(@sec-ggplot-map)
 
@@ -17,6 +17,8 @@ This tutorial builds upon another tutorial on Mapping with `ggplot`(@sec-ggplot-
 #| code-summary: "Show the code"
 #| message: false
 
+library(rnaturalearth) # natural earth data
+
 library(sf) # simple (spatial) features
 
 library(ggplot2) # beautiful plots
@@ -25,15 +27,16 @@ library(dplyr) # data wrangling and joins
 
 ```
 
-## Get Shapefile
+## Get Map Data on Countries of the World
 
-I am using the `wrld_simpl` dataset of country outlines that is available in several R packages (@sec-shapefiles2). I read this data into an object called `world`.
+I am using the `rnaturalearth` package to get map data on countries of the world. I read this data into an object called `world`.
 
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
 
-world <- read_sf("./shapefiles/wrld_simpl/wrld_simpl.shp")
+mapdata <- ne_countries(scale = "medium", # medium scale
+                        returnclass = "sf") # as sf object
 
 ```
 
@@ -45,7 +48,7 @@ I map the data with `ggplot`, and the special `geom`, `geom_sf`.
 #| code-fold: true
 #| code-summary: "Show the code"
 
-ggplot(world) + 
+ggplot(mapdata) + 
   geom_sf() +
   labs(title = "Demonstration Map With No Data")
 
@@ -72,15 +75,15 @@ I use `left_join` from the `dplyr` package to merge the spatial data in `world` 
 
 `left_join` is a function that keeps all observations in the data on the left (the shapefile), and only those matching observations in the data on the right (the external data), which is usually what I want in mapping.
 
-I need a unique identifier for my rows of data, so here I use `ISO3`, a unique 3 letter identifier for countries of the world.
+I need a unique identifier for my rows of data, so here I use `iso_a3`, a unique 3 letter identifier for countries of the world.
 
-First I need to rename a variable in `WorldBankData`, so that the identifiers will match exactly.
+First I need to make a copy of a variable in `WorldBankData` with a new name so that the identifiers will match exactly.
 
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
 
-WorldBankData$ISO3 <- WorldBankData$iso3c
+WorldBankData$iso_a3 <- WorldBankData$iso3c 
 
 ```
 
@@ -90,15 +93,15 @@ Then I merge the data using `left_join`.
 #| code-fold: true
 #| code-summary: "Show the code"
 
-
-newdata <- left_join(world, 
-                     WorldBankData, by = "ISO3")
+newdata <- left_join(mapdata, # map data
+                     WorldBankData, # table of indicators
+                     by = "iso_a3") # join by
 
 ```
 
 ## Make a Map With The Data
 
-Once I have the merged data, it is easy to map it with `ggplot` and `geom_sf`. Note that I need to specify an `aes`thetic for `geom_sf`. Here `arbitrary_x` is the *fill* color for countries on the map.
+Once I have the merged data, it is easy to map it with `ggplot` and `geom_sf`. Note that I need to specify an `aes`thetic for `geom_sf`. Here `GDP` is the *fill* color for countries on the map.
 
 > Data could also be mapped with another package like `leaflet` (@sec-leaflet).
 

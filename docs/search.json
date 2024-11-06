@@ -488,7 +488,7 @@
     "href": "merge-with-external-data.html",
     "title": "15  Merge Shapefiles With External Data",
     "section": "",
-    "text": "15.1 Introduction\nA common task in mapping is that we have a shapefile (Chapter 8) of map data, but we want to merge in some external data from another source so that we can map that external data.\nOften we want to use different colors to map that external data (Chapter 11).\nHere, I use a shapefile of countries of the world (Chapter 9), and merge that data with data from the World Bank World Development Indicators (Chapter 13).\nThis tutorial builds upon another tutorial on Mapping with ggplot(Chapter 14)",
+    "text": "15.1 Introduction\nA common task in mapping is that we have a shapefile (Chapter 8) or sf object (Chapter 7) of map data, but we want to merge in some external data from another source so that we can map that external data.\nOften we want to use different colors to map that external data (Chapter 11).\nHere, I use an sf object (Chapter 7) of countries of the world (Chapter 12), and merge that data with data from the World Bank World Development Indicators (Chapter 13).\nThis tutorial builds upon another tutorial on Mapping with ggplot(Chapter 14)",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
@@ -499,18 +499,18 @@
     "href": "merge-with-external-data.html#call-libraries",
     "title": "15  Merge Shapefiles With External Data",
     "section": "15.2 Call Libraries",
-    "text": "15.2 Call Libraries\n\n\nShow the code\nlibrary(sf) # simple (spatial) features\n\nlibrary(ggplot2) # beautiful plots\n\nlibrary(dplyr) # data wrangling and joins",
+    "text": "15.2 Call Libraries\n\n\nShow the code\nlibrary(rnaturalearth) # natural earth data\n\nlibrary(sf) # simple (spatial) features\n\nlibrary(ggplot2) # beautiful plots\n\nlibrary(dplyr) # data wrangling and joins",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
     ]
   },
   {
-    "objectID": "merge-with-external-data.html#get-shapefile",
-    "href": "merge-with-external-data.html#get-shapefile",
+    "objectID": "merge-with-external-data.html#get-map-data-on-countries-of-the-world",
+    "href": "merge-with-external-data.html#get-map-data-on-countries-of-the-world",
     "title": "15  Merge Shapefiles With External Data",
-    "section": "15.3 Get Shapefile",
-    "text": "15.3 Get Shapefile\nI am using the wrld_simpl dataset of country outlines that is available in several R packages (Chapter 9). I read this data into an object called world.\n\n\nShow the code\nworld &lt;- read_sf(\"./shapefiles/wrld_simpl/wrld_simpl.shp\")",
+    "section": "15.3 Get Map Data on Countries of the World",
+    "text": "15.3 Get Map Data on Countries of the World\nI am using the rnaturalearth package to get map data on countries of the world. I read this data into an object called world.\n\n\nShow the code\nmapdata &lt;- ne_countries(scale = \"medium\", # medium scale\n                        returnclass = \"sf\") # as sf object",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
@@ -521,7 +521,7 @@
     "href": "merge-with-external-data.html#make-a-map-without-data",
     "title": "15  Merge Shapefiles With External Data",
     "section": "15.4 Make a Map Without Data",
-    "text": "15.4 Make a Map Without Data\nI map the data with ggplot, and the special geom, geom_sf.\n\n\nShow the code\nggplot(world) + \n  geom_sf() +\n  labs(title = \"Demonstration Map With No Data\")",
+    "text": "15.4 Make a Map Without Data\nI map the data with ggplot, and the special geom, geom_sf.\n\n\nShow the code\nggplot(mapdata) + \n  geom_sf() +\n  labs(title = \"Demonstration Map With No Data\")",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
@@ -543,7 +543,7 @@
     "href": "merge-with-external-data.html#join-data-to-shapefile",
     "title": "15  Merge Shapefiles With External Data",
     "section": "15.6 Join Data to Shapefile",
-    "text": "15.6 Join Data to Shapefile\nI use left_join from the dplyr package to merge the spatial data in world with externaldata.\nleft_join is a function that keeps all observations in the data on the left (the shapefile), and only those matching observations in the data on the right (the external data), which is usually what I want in mapping.\nI need a unique identifier for my rows of data, so here I use ISO3, a unique 3 letter identifier for countries of the world.\nFirst I need to rename a variable in WorldBankData, so that the identifiers will match exactly.\n\n\nShow the code\nWorldBankData$ISO3 &lt;- WorldBankData$iso3c\n\n\nThen I merge the data using left_join.\n\n\nShow the code\nnewdata &lt;- left_join(world, \n                     WorldBankData, by = \"ISO3\")",
+    "text": "15.6 Join Data to Shapefile\nI use left_join from the dplyr package to merge the spatial data in world with externaldata.\nleft_join is a function that keeps all observations in the data on the left (the shapefile), and only those matching observations in the data on the right (the external data), which is usually what I want in mapping.\nI need a unique identifier for my rows of data, so here I use iso_a3, a unique 3 letter identifier for countries of the world.\nFirst I need to make a copy of a variable in WorldBankData with a new name so that the identifiers will match exactly.\n\n\nShow the code\nWorldBankData$iso_a3 &lt;- WorldBankData$iso3c \n\n\nThen I merge the data using left_join.\n\n\nShow the code\nnewdata &lt;- left_join(mapdata, # map data\n                     WorldBankData, # table of indicators\n                     by = \"iso_a3\") # join by",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
@@ -554,7 +554,7 @@
     "href": "merge-with-external-data.html#make-a-map-with-the-data",
     "title": "15  Merge Shapefiles With External Data",
     "section": "15.7 Make a Map With The Data",
-    "text": "15.7 Make a Map With The Data\nOnce I have the merged data, it is easy to map it with ggplot and geom_sf. Note that I need to specify an aesthetic for geom_sf. Here arbitrary_x is the fill color for countries on the map.\n\nData could also be mapped with another package like leaflet (Section 19.1).\n\n\n\nShow the code\nggplot(newdata) +\n  geom_sf(aes(fill = GDP)) + # adding a fill aesthetic\n  scale_fill_viridis_c(na.value = \"grey97\", # value for NA\n                       option = \"viridis\") + # viridis colors\n  labs(title = \"Demonstration Map With Merged Data\") +\n  theme_minimal() # better theme",
+    "text": "15.7 Make a Map With The Data\nOnce I have the merged data, it is easy to map it with ggplot and geom_sf. Note that I need to specify an aesthetic for geom_sf. Here GDP is the fill color for countries on the map.\n\nData could also be mapped with another package like leaflet (Section 19.1).\n\n\n\nShow the code\nggplot(newdata) +\n  geom_sf(aes(fill = GDP)) + # adding a fill aesthetic\n  scale_fill_viridis_c(na.value = \"grey97\", # value for NA\n                       option = \"viridis\") + # viridis colors\n  labs(title = \"Demonstration Map With Merged Data\") +\n  theme_minimal() # better theme",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
