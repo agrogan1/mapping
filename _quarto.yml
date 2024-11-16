@@ -9,6 +9,7 @@ book:
   date: "today"
   twitter-card: true
   open-graph: true
+  favicon: logo-compass.png
   site-url: https://agrogan1.github.io/mapping
   search: true
   repo-url: https://github.com/agrogan1/mapping
