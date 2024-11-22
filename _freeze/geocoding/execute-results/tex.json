@@ -1,0 +1,21 @@
+{
+  "hash": "98477482cdcb563f16e982c5bb8466f8",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Geocoding {#sec-geocoding}\n\n## Call Libraries\n\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\nlibrary(tidygeocoder) # geocoding\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nWarning: package 'tidygeocoder' was built under R version 4.4.2\n```\n\n\n:::\n\n```{.r .cell-code  code-fold=\"true\"}\nlibrary(dplyr) # for %>% operator\n\nlibrary(readr) # import CSV\n\nlibrary(DT) # nice tables\n```\n:::\n\n\n\n## Get Data To Be Geocoded\n\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\nsimulated_address_data <- read_csv(\"simulated-address-data/simulated-address-data.csv\")\n\nDT::datatable(simulated_address_data,\n              extensions = 'Buttons', \n              options = list(\n                dom = 'Bfrtip',\n                buttons = c('copy', \n                            'csv', \n                            'print'))) # nice table\n```\n\n::: {.cell-output-display}\n![](geocoding_files/figure-pdf/unnamed-chunk-2-1.pdf){fig-pos='H'}\n:::\n:::\n\n\n\n## Concatenate Addresses\n\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\nsimulated_address_data$address <- paste(simulated_address_data$street,\n                                        \", \",\n                                        simulated_address_data$city,\n                                        \", \",\n                                        simulated_address_data$state)\n\nDT::datatable(simulated_address_data,\n              extensions = 'Buttons', \n              options = list(\n                dom = 'Bfrtip',\n                buttons = c('copy', \n                            'csv', \n                            'print'))) # nice table\n```\n\n::: {.cell-output-display}\n![](geocoding_files/figure-pdf/unnamed-chunk-3-1.pdf){fig-pos='H'}\n:::\n:::\n\n\n\n## Geocode\n\n::: {.callout-caution}\nArcGIS geocoding has LOW success rate with this data. You will want to find a process with HIGH success rate.\n:::\n\n::: {.callout-tip}\nYou could also try batchgeo -> KML -> Latitude/Longitude\n:::\n\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\ngeocoded_data <- simulated_address_data %>% \n  tidygeocoder::geocode(address, \n                        method = 'arcgis', \n                        lat = latitude, \n                        long = longitude)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nPassing 3 addresses to the ArcGIS single address geocoder\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nQuery completed in: 2.2 seconds\n```\n\n\n:::\n\n```{.r .cell-code  code-fold=\"true\"}\nDT::datatable(geocoded_data,\n              extensions = 'Buttons', \n              options = list(\n                dom = 'Bfrtip',\n                buttons = c('copy', \n                            'csv', \n                            'print'))) # nice table\n```\n\n::: {.cell-output-display}\n![](geocoding_files/figure-pdf/unnamed-chunk-4-1.pdf){fig-pos='H'}\n:::\n:::\n\n\n\n::: {.callout-important title=\"Geocoding Can Make Errors!\"}\nNB that for whatever reason--perhaps because there is no address information--the geocoder has made a mistake: Agency Z has been placed in the Southern Hemisphere. Geocoding can be an error prone process and requires careful inspection of your tabular and mapped data.\n\nA geocoder may also be unable to geocode some of your data. Low success rates are not uncommon, and you may have to work hard to ensure that the majority, or all, of your data are geocoded.\n:::\n\n> Geocoded data can then be mapped using procedures outlined in @sec-location-data.\n\n\n\n",
+    "supporting": [
+      "geocoding_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "hash": "db49844d7a7bdb9b6278e67930c12acb",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Mapping With `plotly`\n\n## Call Libraries\n\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\" code-summary=\"Show the code\"}\nlibrary(plotly)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nWarning: package 'plotly' was built under R version 4.4.2\n```\n\n\n:::\n:::\n\n\n\n## Set Geographic Parameters\n\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\" code-summary=\"Show the code\"}\ng <- list(showland = TRUE, \n          showcountries = TRUE,\n          landcolor = toRGB(\"forestgreen\"), # land color\n          showocean = TRUE, # show ocean\n          oceancolor = \"lightblue\", # ocean color\n          # projection = list(type = 'robinson'),\n          projection = list(type = 'orthographic',\n                    rotation = list(lon = 0,\n                                    lat = 0,\n                                    roll = 0)))\n```\n:::\n\n\n\n## Make a Map\n\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\" code-summary=\"Show the code\"}\nplot_geo() %>% \n  layout(title = \"Demonstration Map\", \n         geo = g)\n```\n\n::: {.cell-output-display}\n![](plotly_files/figure-pdf/unnamed-chunk-3-1.pdf){fig-pos='H'}\n:::\n:::\n\n\n\n## `scattermapbox`\n\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\" code-summary=\"Show the code\"}\nplot_ly(type = \"scattermapbox\") %>%\n  layout(\n    mapbox = list(\n      style = 'open-street-map',\n      zoom = 6.0, # zoom\n      center = list(lon = -83, lat = 42))) # centered on SE Michigan\n```\n\n::: {.cell-output-display}\n![](plotly_files/figure-pdf/unnamed-chunk-4-1.pdf){fig-pos='H'}\n:::\n:::\n",
+    "supporting": [
+      "plotly_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

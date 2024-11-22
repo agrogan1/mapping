@@ -1,0 +1,21 @@
+{
+  "hash": "88dbd4a03afa47900892c05c2f7c2279",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Latitude and Longitude\n\n## Introduction\n\nLatitude and longitude are coordinates for locating objects on earth.\n\n* Latitude represents distance from the *equator*. \n    + 0 latitude is at the equator. \n    + +90 latitude, or 90N, is at the North Pole. \n    + -90 latitude, or 90S, is at the South Pole.\n* Longitude represents distance from the *prime meridian*. \n    + 0 longitude is at the prime meridian. \n    + +180 and -180, or 180E and 180W, meet at the other side of the world.\n\n## Call the Libraries\n\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\nlibrary(plotly)\n```\n:::\n\n\n\n## Generate Some Random Coordinates\n\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\nset.seed(3846) # random seed\n\nN <- 10 # number of points\n\n# latitude from -90 to +90\n\nlatitude <- runif(N, min = -90, max = 90) \n\n# longitude from + -180 to + 180\n\nlongitude <- runif(N, min = -180, max = 180) \n\n# 1st point reset to 0, 0\n\nlatitude[1] <- 0 # equator\n\nlongitude[1] <- 0 # prime meridian\n\nlatitude[2] <- 42 # Ann Arbor-ish\n\nlongitude[2] <- -83.5 # Ann Arbor-ish\n\n# label\n\nlabel <- LETTERS[1:N] # label with letters of alphabet\n\n# dataframe\n\nmydata <- data.frame(latitude, longitude, label)\n\nmydata # replay\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n     latitude  longitude label\n1    0.000000    0.00000     A\n2   42.000000  -83.50000     B\n3    7.023357   73.49444     C\n4  -38.775631  159.53317     D\n5  -80.547165 -129.12572     E\n6  -17.472905   25.95547     F\n7  -69.826706  -54.36372     G\n8   10.498416   14.20623     H\n9  -72.440487  -27.65036     I\n10 -46.753424  130.83572     J\n```\n\n\n:::\n:::\n\n\n\n## Map The Coordinates\n\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\ng <- list(lonaxis = list(showgrid = T, # geographic parameters\n                         gridcolor = \"lightblue\"), \n          lataxis = list(showgrid = T, \n                         gridcolor = \"lightblue\"),\n          showland = TRUE,\n          landcolor = toRGB(\"lightgrey\"))\n\nmymap <- plot_geo(mydata) %>%\n  add_markers(x = ~longitude,\n              y = ~latitude,\n              color = ~label,\n              colors = \"Spectral\",\n              marker = list(size = 15)) %>%\n  layout(title = \"Randomly Generated Coordinates\",\n         geo = g)\n\nmymap # replay\n```\n\n::: {.cell-output-display}\n![](latitude-and-longitude_files/figure-pdf/unnamed-chunk-3-1.pdf){fig-pos='H'}\n:::\n:::\n",
+    "supporting": [
+      "latitude-and-longitude_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}
