@@ -45,14 +45,28 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
+\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\makeatother
 
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -72,7 +86,7 @@
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
 \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
@@ -82,7 +96,7 @@
 \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
 \newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
 \newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
 \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
@@ -182,6 +196,7 @@
 \@ifpackageloaded{sidenotes}{}{\usepackage{sidenotes}}
 \@ifpackageloaded{marginnote}{}{\usepackage{marginnote}}
 \makeatother
+
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -199,6 +214,7 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
+
 \title{Mapping}
 \usepackage{etoolbox}
 \makeatletter
@@ -209,7 +225,7 @@
 \subtitle{Materials for an \emph{In Development} Course on GIS \&
 Mapping}
 \author{Andrew Grogan-Kaylor}
-\date{2024-11-22}
+\date{2024-11-23}
 
 \begin{document}
 \maketitle
@@ -222,6 +238,7 @@ Mapping}
 }
 \listoffigures
 \listoftables
+
 \chapter{Introduction to Mapping and
 GIS}\label{introduction-to-mapping-and-gis}
 
@@ -250,7 +267,7 @@ such as R, Stata, ArcGIS and QGIS.
 
 \chapter{Possible Course Outline}\label{possible-course-outline}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, leftrule=.75mm, opacityback=0, colback=white, bottomtitle=1mm, left=2mm, toptitle=1mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, colframe=quarto-callout-important-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Mapping is FUN \textbf{and} CHALLENGING}, colbacktitle=quarto-callout-important-color!10!white, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colback=white, toprule=.15mm, colframe=quarto-callout-important-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Mapping is FUN \textbf{and} CHALLENGING}, coltitle=black, toptitle=1mm, bottomtitle=1mm, arc=.35mm, breakable, colbacktitle=quarto-callout-important-color!10!white, left=2mm, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 Mapping is fun. Many people enjoy looking at maps, and find them
 informative and helpful. Many people find it very fun to learn how to
@@ -492,9 +509,9 @@ about the kind of distortion involved.
 
 \end{figure}%
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, leftrule=.75mm, opacityback=0, colback=white, bottomtitle=1mm, left=2mm, toptitle=1mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colback=white, toprule=.15mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, toptitle=1mm, bottomtitle=1mm, arc=.35mm, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, opacitybacktitle=0.6]
 
-This page is mostly a conceptual overview, and not code-focused.
+This chapter is mostly a conceptual overview, and not code-focused.
 However, the code is provided for the sake of transparency and teaching.
 It is not necessary to understand the code here. But I learned a lot
 from: \url{https://plotly.com/r/\#maps}.
@@ -530,11 +547,11 @@ Library}{Call plotly Library}}\label{call-plotly-library}
 
 \section{A More Advanced Map}\label{a-more-advanced-map}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, leftrule=.75mm, opacityback=0, colback=white, bottomtitle=1mm, left=2mm, toptitle=1mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colback=white, toprule=.15mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, toptitle=1mm, bottomtitle=1mm, arc=.35mm, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 Again, it is not necessary to understand the code to understand the
-conceptual ideas of this page. The code below--especially the first code
-chunk--is admittedly a little complicated, mostly because I added
+conceptual ideas of this chapter. The code below--especially the first
+code chunk--is admittedly a little complicated, mostly because I added
 options to get the map to look exactly the way that I wanted.
 
 \end{tcolorbox}
@@ -1201,7 +1218,7 @@ Polygons & Discrete Color: {■} {■} {■} \\
 Color palettes can be either qualitative (discrete; categorical) or
 quantitative (continuous) in nature.
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, leftrule=.75mm, opacityback=0, colback=white, bottomtitle=1mm, left=2mm, toptitle=1mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colbacktitle=quarto-callout-note-color!10!white, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colback=white, toprule=.15mm, colframe=quarto-callout-note-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, coltitle=black, toptitle=1mm, bottomtitle=1mm, arc=.35mm, breakable, colbacktitle=quarto-callout-note-color!10!white, left=2mm, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 The code used to generate these color palettes is shown for reference,
 but may not be the exact code needed when these colors are used in maps.
@@ -1983,14 +2000,14 @@ Warning: package 'tidygeocoder' was built under R version 4.4.2
 
 \section{Geocode}\label{geocode}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, leftrule=.75mm, opacityback=0, colback=white, bottomtitle=1mm, left=2mm, toptitle=1mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, colframe=quarto-callout-caution-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, colbacktitle=quarto-callout-caution-color!10!white, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colback=white, toprule=.15mm, colframe=quarto-callout-caution-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Caution}, coltitle=black, toptitle=1mm, bottomtitle=1mm, arc=.35mm, breakable, colbacktitle=quarto-callout-caution-color!10!white, left=2mm, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 ArcGIS geocoding has LOW success rate with this data. You will want to
 find a process with HIGH success rate.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, leftrule=.75mm, opacityback=0, colback=white, bottomtitle=1mm, left=2mm, toptitle=1mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colback=white, toprule=.15mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, coltitle=black, toptitle=1mm, bottomtitle=1mm, arc=.35mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, left=2mm, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 You could also try batchgeo -\textgreater{} KML -\textgreater{}
 Latitude/Longitude
@@ -2029,7 +2046,7 @@ Query completed in: 2.2 seconds
 
 \includegraphics{geocoding_files/figure-pdf/unnamed-chunk-4-1.pdf}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, leftrule=.75mm, opacityback=0, colback=white, bottomtitle=1mm, left=2mm, toptitle=1mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, colframe=quarto-callout-important-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Geocoding Can Make Errors!}, colbacktitle=quarto-callout-important-color!10!white, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colback=white, toprule=.15mm, colframe=quarto-callout-important-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Geocoding Can Make Errors!}, coltitle=black, toptitle=1mm, bottomtitle=1mm, arc=.35mm, breakable, colbacktitle=quarto-callout-important-color!10!white, left=2mm, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 NB that for whatever reason--perhaps because there is no address
 information--the geocoder has made a mistake: Agency Z has been placed
@@ -2108,7 +2125,7 @@ then \emph{replay} \texttt{mymap.}
 \subsection{Project The Cartogram
 Data}\label{project-the-cartogram-data}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, leftrule=.75mm, opacityback=0, colback=white, bottomtitle=1mm, left=2mm, toptitle=1mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colback=white, toprule=.15mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, coltitle=black, toptitle=1mm, bottomtitle=1mm, arc=.35mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, left=2mm, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 \texttt{cartogram} requires \emph{projected} data
 (Chapter~\ref{sec-projections}), so we need to project the data with
@@ -2140,7 +2157,7 @@ work best in any particular cartogram.
 
 \includegraphics{cartogram_files/figure-pdf/unnamed-chunk-6-1.pdf}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, leftrule=.75mm, opacityback=0, colback=white, bottomtitle=1mm, left=2mm, toptitle=1mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Why Does Antarctica Look So Strange? How To Fix This?}, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colback=white, toprule=.15mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Why Does Antarctica Look So Strange? How To Fix This?}, coltitle=black, toptitle=1mm, bottomtitle=1mm, arc=.35mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, left=2mm, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 In some projections, especially the \emph{Mercator} projection,
 Antartica looks strange.
@@ -2163,7 +2180,7 @@ The key is to run this \texttt{dplyr} code to remove Antarctica.
 
 \subsection{Make The Cartogram Data}\label{make-the-cartogram-data}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, breakable, leftrule=.75mm, opacityback=0, colback=white, bottomtitle=1mm, left=2mm, toptitle=1mm, toprule=.15mm, opacitybacktitle=0.6, rightrule=.15mm, titlerule=0mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, colbacktitle=quarto-callout-tip-color!10!white, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colback=white, toprule=.15mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, coltitle=black, toptitle=1mm, bottomtitle=1mm, arc=.35mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, left=2mm, rightrule=.15mm, titlerule=0mm, leftrule=.75mm, opacitybacktitle=0.6]
 
 Each iteration takes a \textbf{LONG} time. Fewer iterations help the
 time, but each iteration contributes to the \emph{distortion}, and makes
@@ -2511,6 +2528,7 @@ Warning: package 'plotly' was built under R version 4.4.2
 \end{Shaded}
 
 \includegraphics{plotly_files/figure-pdf/unnamed-chunk-4-1.pdf}
+
 
 
 

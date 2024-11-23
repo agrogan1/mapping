@@ -63,10 +63,4 @@ format:
    code-summary: "Show the code"
    execute:
       freeze: auto
-  pdf:
-    lot: true
-    lof: true
-    keep-tex: true
-    execute:
-      freeze: auto
 

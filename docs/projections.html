@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mapping - 5&nbsp; Map Projections</title>
+<title>5&nbsp; Map Projections – Mapping</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -106,28 +106,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
-
 <script src="site_libs/plotly-binding-4.10.3/plotly.js"></script>
-
 <script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
-
 <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
-
 <link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
-
 <script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-
 <link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
-
 <script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
-
 <link rel="stylesheet" href="mapping.css">
-<meta property="og:title" content="Mapping - 5&nbsp; Map Projections">
+<meta property="og:title" content="5&nbsp; Map Projections – Mapping">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Mapping">
-<meta name="twitter:title" content="Mapping - 5&nbsp; Map Projections">
+<meta name="twitter:title" content="5&nbsp; Map Projections – Mapping">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 <meta name="citation_title" content="[[5]{.chapter-number}&nbsp; [Map Projections]{.chapter-title}]{#sec-projections .quarto-section-identifier}">
@@ -149,23 +141,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <div class="quarto-navbar-tools tools-wide tools-end">
     <a href="https://github.com/agrogan1/mapping" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item quarto-navbar-tools-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
+              <i class="bi bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
             <a class="dropdown-item quarto-navbar-tools-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-bi-facebook pe-1"></i>
+              <i class="bi bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
             <a class="dropdown-item quarto-navbar-tools-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-bi-linkedin pe-1"></i>
+              <i class="bi bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -178,11 +170,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./latitude-and-longitude.html">Geographical and GIS Concepts</a></li><li class="breadcrumb-item"><a href="./projections.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Map Projections</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -195,9 +187,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -224,9 +216,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Geographical and GIS Concepts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -253,9 +245,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">GIS Data</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -306,9 +298,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Mapping With <code>ggplot</code></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -335,9 +327,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">More Advanced GIS Concepts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -358,9 +350,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Other R Libraries for Mapping</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -428,8 +420,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Map projections exist because we are trying to take the round globe of the earth, and project it onto a 2 dimensional surface. Because a spherical globe can not be projected onto a flat surface without <em>some</em> distortion, different projections make different choices about the kind of distortion involved.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-94d033aaf485b0c9cd1b" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-94d033aaf485b0c9cd1b">{"x":{"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"geo":"geo","frame":null},{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"line":{"color":"rgba(255,127,14,1)"},"geo":"geo2","frame":null}],"layout":{"geo":{"domain":{"x":[0,0.27999999999999997],"y":[0,1]},"showland":true,"landcolor":"rgba(169,169,169,1)","showcountries":true,"showocean":false,"oceancolor":"lightblue","lataxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"lonaxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"projection":{"type":"orthographic"}},"geo2":{"domain":{"x":[0.32000000000000001,1],"y":[0,1]},"showland":true,"landcolor":"rgba(169,169,169,1)","showcountries":true,"showocean":false,"oceancolor":"lightblue","lataxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"lonaxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"}},"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","hovermode":"closest","showlegend":true,"title":"A Globe And A Flat Map"},"attrs":{"1b7915bb4de6":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-77d7912bb74abc1179ef" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-77d7912bb74abc1179ef">{"x":{"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"geo":"geo","frame":null},{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"line":{"color":"rgba(255,127,14,1)"},"geo":"geo2","frame":null}],"layout":{"geo":{"domain":{"x":[0,0.27999999999999997],"y":[0,1]},"showland":true,"landcolor":"rgba(169,169,169,1)","showcountries":true,"showocean":false,"oceancolor":"lightblue","lataxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"lonaxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"projection":{"type":"orthographic"}},"geo2":{"domain":{"x":[0.32000000000000001,1],"y":[0,1]},"showland":true,"landcolor":"rgba(169,169,169,1)","showcountries":true,"showocean":false,"oceancolor":"lightblue","lataxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"lonaxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"}},"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","hovermode":"closest","showlegend":true,"title":"A Globe And A Flat Map"},"attrs":{"6d55a264fa7":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 <p>A Globe And A Flat Map</p>
 </div>
 </div>
@@ -443,7 +435,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This page is mostly a conceptual overview, and not code-focused. However, the code is provided for the sake of transparency and teaching. It is not necessary to understand the code here. But I learned a lot from: <a href="https://plotly.com/r/#maps">https://plotly.com/r/#maps</a>.</p>
+<p>This chapter is mostly a conceptual overview, and not code-focused. However, the code is provided for the sake of transparency and teaching. It is not necessary to understand the code here. But I learned a lot from: <a href="https://plotly.com/r/#maps">https://plotly.com/r/#maps</a>.</p>
 </div>
 </div>
 <section id="set-up-the-map" class="level2" data-number="5.1">
@@ -472,8 +464,8 @@ Note
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>mymap0 <span class="co"># replay</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b4f658d4fcc85a2bb8a5" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-b4f658d4fcc85a2bb8a5">{"x":{"visdat":{"1b7943f13984":["function () ","plotlyVisDat"]},"cur_data":"1b7943f13984","attrs":{"1b7943f13984":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","geo":{"domain":{"x":[0,1],"y":[0,1]}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a65904051b3fca81f0c7" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-a65904051b3fca81f0c7">{"x":{"visdat":{"6d57c7cd0ce":["function () ","plotlyVisDat"]},"cur_data":"6d57c7cd0ce","attrs":{"6d57c7cd0ce":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","geo":{"domain":{"x":[0,1],"y":[0,1]}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -491,7 +483,7 @@ Note
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>Again, it is not necessary to understand the code to understand the conceptual ideas of this page. The code below–especially the first code chunk–is admittedly a little complicated, mostly because I added options to get the map to look exactly the way that I wanted.</p>
+<p>Again, it is not necessary to understand the code to understand the conceptual ideas of this chapter. The code below–especially the first code chunk–is admittedly a little complicated, mostly because I added options to get the map to look exactly the way that I wanted.</p>
 </div>
 </div>
 </div>
@@ -513,8 +505,8 @@ Note
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>mymap <span class="co"># replay</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1ce44055bd58212164ec" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-1ce44055bd58212164ec">{"x":{"visdat":{"1b797a66eb09":["function () ","plotlyVisDat"]},"cur_data":"1b797a66eb09","attrs":{"1b797a66eb09":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","title":"Demonstration Map","geo":{"domain":{"x":[0,1],"y":[0,1]},"showland":true,"landcolor":"rgba(169,169,169,1)","showcountries":true,"showocean":false,"oceancolor":"lightblue","lataxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"lonaxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f72a8795e82775886831" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-f72a8795e82775886831">{"x":{"visdat":{"6d575633207":["function () ","plotlyVisDat"]},"cur_data":"6d575633207","attrs":{"6d575633207":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","title":"Demonstration Map","geo":{"domain":{"x":[0,1],"y":[0,1]},"showland":true,"landcolor":"rgba(169,169,169,1)","showcountries":true,"showocean":false,"oceancolor":"lightblue","lataxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"lonaxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -532,8 +524,8 @@ Note
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">geo =</span> <span class="fu">list</span>(<span class="at">projection =</span> <span class="fu">list</span>(<span class="at">type =</span> <span class="st">'orthographic'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ea4c3f4576cbfbaa8035" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-ea4c3f4576cbfbaa8035">{"x":{"visdat":{"1b797a66eb09":["function () ","plotlyVisDat"]},"cur_data":"1b797a66eb09","attrs":{"1b797a66eb09":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","title":"Demonstration Map","geo":{"domain":{"x":[0,1],"y":[0,1]},"showland":true,"landcolor":"rgba(169,169,169,1)","showcountries":true,"showocean":false,"oceancolor":"lightblue","lataxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"lonaxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"projection":{"type":"orthographic"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-25678dcef3a2227e18e5" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-25678dcef3a2227e18e5">{"x":{"visdat":{"6d575633207":["function () ","plotlyVisDat"]},"cur_data":"6d575633207","attrs":{"6d575633207":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","title":"Demonstration Map","geo":{"domain":{"x":[0,1],"y":[0,1]},"showland":true,"landcolor":"rgba(169,169,169,1)","showcountries":true,"showocean":false,"oceancolor":"lightblue","lataxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"lonaxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"projection":{"type":"orthographic"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -549,8 +541,8 @@ Note
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">geo=</span><span class="fu">list</span>(<span class="at">projection =</span> <span class="fu">list</span>(<span class="at">type =</span> <span class="st">'mercator'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6b200a328b4ebbe13a88" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-6b200a328b4ebbe13a88">{"x":{"visdat":{"1b797a66eb09":["function () ","plotlyVisDat"]},"cur_data":"1b797a66eb09","attrs":{"1b797a66eb09":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","title":"Demonstration Map","geo":{"domain":{"x":[0,1],"y":[0,1]},"showland":true,"landcolor":"rgba(169,169,169,1)","showcountries":true,"showocean":false,"oceancolor":"lightblue","lataxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"lonaxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"projection":{"type":"mercator"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-62258ece5d68ef86320c" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-62258ece5d68ef86320c">{"x":{"visdat":{"6d575633207":["function () ","plotlyVisDat"]},"cur_data":"6d575633207","attrs":{"6d575633207":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","title":"Demonstration Map","geo":{"domain":{"x":[0,1],"y":[0,1]},"showland":true,"landcolor":"rgba(169,169,169,1)","showcountries":true,"showocean":false,"oceancolor":"lightblue","lataxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"lonaxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"projection":{"type":"mercator"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -566,8 +558,8 @@ Note
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">geo=</span><span class="fu">list</span>(<span class="at">projection =</span> <span class="fu">list</span>(<span class="at">type =</span> <span class="st">'mollweide'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-abc4b35194b54ad8d41f" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-abc4b35194b54ad8d41f">{"x":{"visdat":{"1b797a66eb09":["function () ","plotlyVisDat"]},"cur_data":"1b797a66eb09","attrs":{"1b797a66eb09":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","title":"Demonstration Map","geo":{"domain":{"x":[0,1],"y":[0,1]},"showland":true,"landcolor":"rgba(169,169,169,1)","showcountries":true,"showocean":false,"oceancolor":"lightblue","lataxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"lonaxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"projection":{"type":"mollweide"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-27e5a9819061586b51ce" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-27e5a9819061586b51ce">{"x":{"visdat":{"6d575633207":["function () ","plotlyVisDat"]},"cur_data":"6d575633207","attrs":{"6d575633207":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","title":"Demonstration Map","geo":{"domain":{"x":[0,1],"y":[0,1]},"showland":true,"landcolor":"rgba(169,169,169,1)","showcountries":true,"showocean":false,"oceancolor":"lightblue","lataxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"lonaxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"projection":{"type":"mollweide"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -583,8 +575,8 @@ Note
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(<span class="at">geo=</span><span class="fu">list</span>(<span class="at">projection =</span> <span class="fu">list</span>(<span class="at">type =</span> <span class="st">'robinson'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b0b66446b83cc73ff6b7" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-b0b66446b83cc73ff6b7">{"x":{"visdat":{"1b797a66eb09":["function () ","plotlyVisDat"]},"cur_data":"1b797a66eb09","attrs":{"1b797a66eb09":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","title":"Demonstration Map","geo":{"domain":{"x":[0,1],"y":[0,1]},"showland":true,"landcolor":"rgba(169,169,169,1)","showcountries":true,"showocean":false,"oceancolor":"lightblue","lataxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"lonaxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"projection":{"type":"robinson"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1b48b9b9d2a0cf0ea30f" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-1b48b9b9d2a0cf0ea30f">{"x":{"visdat":{"6d575633207":["function () ","plotlyVisDat"]},"cur_data":"6d575633207","attrs":{"6d575633207":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20]}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","title":"Demonstration Map","geo":{"domain":{"x":[0,1],"y":[0,1]},"showland":true,"landcolor":"rgba(169,169,169,1)","showcountries":true,"showocean":false,"oceancolor":"lightblue","lataxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"lonaxis":{"showgrid":true,"gridcolor":"rgba(190,190,190,1)"},"projection":{"type":"robinson"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"scattergeo","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
@@ -772,18 +764,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -815,7 +796,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/agrogan1\.github\.io\/mapping");
@@ -823,7 +826,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
