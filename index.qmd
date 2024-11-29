@@ -4,7 +4,11 @@
 #| output: false
 #| echo: false
 
+library(rnaturalearth) # natural earth data
+
 library(sf) # simple (spatial) features
+
+library(sp) # spatial data
 
 library(leaflet) # beautiful maps
 
@@ -19,19 +23,23 @@ library(plotly) # interactive graphics
 #| echo: false
 #| column: body
 
-global_data <- read_sf("./shapefiles/wrld_simpl/wrld_simpl.shp")
+mapdata <- ne_countries(scale = "medium", # medium scale
+                        returnclass = "sf") # as sf object
 
-  leaflet() %>%
-    setView(0, 0, zoom = 1.5) %>%
-    addProviderTiles(providers$Esri.WorldImagery) %>%
-    addPolygons(data = global_data, 
-                fillOpacity = .0, 
-                weight = 2,
-                color = "#009edb", 
-                label = global_data$NAME,
-                highlightOptions = highlightOptions(color = "red", 
-                                                    weight = 2,
-                                                    bringToFront = TRUE)) 
+mapdata <- mapdata %>% 
+  sf::st_transform('+proj=longlat +datum=WGS84') # re-project
+
+leaflet() %>%
+  setView(0, 0, zoom = 1.5) %>%
+  addProviderTiles(providers$Esri.WorldImagery) %>%
+  addPolygons(data = mapdata, 
+              fillOpacity = .0, 
+              weight = 2,
+              color = "#009edb", 
+              label = mapdata$name,
+              highlightOptions = highlightOptions(color = "red", 
+                                                  weight = 2,
+                                                  bringToFront = TRUE)) 
 
 ```
 
