@@ -84,7 +84,7 @@ ggplot(mapdata_proj) +
 ::: {.callout-tip}
 ### Why Does Antarctica Look So Strange? How To Fix This?
 
-In some projections, especially the *Mercator* projection, Antartica looks strange.
+In some projections, especially the *Mercator* projection, Antarctica looks strange.
 
 The key is to run this `dplyr` code to remove Antarctica.
 
