@@ -14,7 +14,7 @@ book:
   search: true
   repo-url: https://github.com/agrogan1/mapping
   repo-actions: [issue]
-  sharing: [twitter, facebook, linkedin]
+  sharing: [facebook, linkedin]
   chapters:
     - part: "Introduction"
       chapters:
