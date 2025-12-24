@@ -37,6 +37,23 @@ mymap + coord_sf(crs="+proj=ortho")
   
 ```
 
+## Call The Libraries
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+
+library(rnaturalearth) # natural earth data
+
+library(ggplot2) # beautiful maps
+
+library(dplyr) # data wrangling
+
+library(sf) # simple (spatial) features
+
+```
+
 ## Get The Data
 
 ```{r}

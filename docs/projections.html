@@ -548,14 +548,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">5.1</span> Introduction</a></li>
-  <li><a href="#get-the-data" id="toc-get-the-data" class="nav-link" data-scroll-target="#get-the-data"><span class="header-section-number">5.2</span> Get The Data</a></li>
-  <li><a href="#a-basic-map" id="toc-a-basic-map" class="nav-link" data-scroll-target="#a-basic-map"><span class="header-section-number">5.3</span> A Basic Map</a></li>
-  <li><a href="#map-projections" id="toc-map-projections" class="nav-link" data-scroll-target="#map-projections"><span class="header-section-number">5.4</span> Map Projections</a>
+  <li><a href="#call-the-libraries" id="toc-call-the-libraries" class="nav-link" data-scroll-target="#call-the-libraries"><span class="header-section-number">5.2</span> Call The Libraries</a></li>
+  <li><a href="#get-the-data" id="toc-get-the-data" class="nav-link" data-scroll-target="#get-the-data"><span class="header-section-number">5.3</span> Get The Data</a></li>
+  <li><a href="#a-basic-map" id="toc-a-basic-map" class="nav-link" data-scroll-target="#a-basic-map"><span class="header-section-number">5.4</span> A Basic Map</a></li>
+  <li><a href="#map-projections" id="toc-map-projections" class="nav-link" data-scroll-target="#map-projections"><span class="header-section-number">5.5</span> Map Projections</a>
   <ul class="collapse">
-  <li><a href="#globe-orthographic" id="toc-globe-orthographic" class="nav-link" data-scroll-target="#globe-orthographic"><span class="header-section-number">5.4.1</span> Globe (Orthographic)</a></li>
-  <li><a href="#mercator" id="toc-mercator" class="nav-link" data-scroll-target="#mercator"><span class="header-section-number">5.4.2</span> Mercator</a></li>
-  <li><a href="#mollweide" id="toc-mollweide" class="nav-link" data-scroll-target="#mollweide"><span class="header-section-number">5.4.3</span> Mollweide</a></li>
-  <li><a href="#robinson" id="toc-robinson" class="nav-link" data-scroll-target="#robinson"><span class="header-section-number">5.4.4</span> Robinson</a></li>
+  <li><a href="#globe-orthographic" id="toc-globe-orthographic" class="nav-link" data-scroll-target="#globe-orthographic"><span class="header-section-number">5.5.1</span> Globe (Orthographic)</a></li>
+  <li><a href="#mercator" id="toc-mercator" class="nav-link" data-scroll-target="#mercator"><span class="header-section-number">5.5.2</span> Mercator</a></li>
+  <li><a href="#mollweide" id="toc-mollweide" class="nav-link" data-scroll-target="#mollweide"><span class="header-section-number">5.5.3</span> Mollweide</a></li>
+  <li><a href="#robinson" id="toc-robinson" class="nav-link" data-scroll-target="#robinson"><span class="header-section-number">5.5.4</span> Robinson</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -607,41 +608,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="get-the-data" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">5.2</span> Get The Data</h2>
+<section id="call-the-libraries" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="call-the-libraries"><span class="header-section-number">5.2</span> Call The Libraries</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mapdata <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"medium"</span>, <span class="co"># medium scale</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">returnclass =</span> <span class="st">"sf"</span>) <span class="co"># as sf object</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth) <span class="co"># natural earth data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># beautiful maps</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># data wrangling</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co"># simple (spatial) features</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="a-basic-map" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="a-basic-map"><span class="header-section-number">5.3</span> A Basic Map</h2>
+<section id="get-the-data" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="get-the-data"><span class="header-section-number">5.3</span> Get The Data</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mymap <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mapdata) <span class="sc">+</span> <span class="co"># the data I am mapping</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> <span class="co"># the geometry I am using</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="co"># minimal theme</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="co"># no longitude labels</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>mymap <span class="co"># replay</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mapdata <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"medium"</span>, <span class="co"># medium scale</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">returnclass =</span> <span class="st">"sf"</span>) <span class="co"># as sf object</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="a-basic-map" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="a-basic-map"><span class="header-section-number">5.4</span> A Basic Map</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mymap <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mapdata) <span class="sc">+</span> <span class="co"># the data I am mapping</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> <span class="co"># the geometry I am using</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="co"># minimal theme</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="co"># no longitude labels</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>mymap <span class="co"># replay</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="projections_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="projections_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="projections_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="projections_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="map-projections" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="map-projections"><span class="header-section-number">5.4</span> Map Projections</h2>
-<section id="globe-orthographic" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="globe-orthographic"><span class="header-section-number">5.4.1</span> Globe (Orthographic)</h3>
+<section id="map-projections" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="map-projections"><span class="header-section-number">5.5</span> Map Projections</h2>
+<section id="globe-orthographic" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="globe-orthographic"><span class="header-section-number">5.5.1</span> Globe (Orthographic)</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -658,19 +674,19 @@ Key Idea
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mymap <span class="sc">+</span> <span class="fu">coord_sf</span>(<span class="at">crs=</span><span class="st">"+proj=ortho"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mymap <span class="sc">+</span> <span class="fu">coord_sf</span>(<span class="at">crs=</span><span class="st">"+proj=ortho"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="projections_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="projections_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="projections_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="projections_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="mercator" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="mercator"><span class="header-section-number">5.4.2</span> Mercator</h3>
+<section id="mercator" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="mercator"><span class="header-section-number">5.5.2</span> Mercator</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -688,26 +704,26 @@ Key Idea
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mercator_data <span class="ot">&lt;-</span> mapdata <span class="sc">%&gt;%</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(name <span class="sc">!=</span> <span class="st">"Antarctica"</span>) <span class="co"># remove Antarctica</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mercator_data) <span class="sc">+</span> <span class="co"># the data I am mapping</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> <span class="co"># the geometry I am using</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="dv">3857</span>) <span class="sc">+</span> <span class="co"># Mercator</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="co"># minimal theme</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="co"># no longitude labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mercator_data <span class="ot">&lt;-</span> mapdata <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(name <span class="sc">!=</span> <span class="st">"Antarctica"</span>) <span class="co"># remove Antarctica</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mercator_data) <span class="sc">+</span> <span class="co"># the data I am mapping</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> <span class="co"># the geometry I am using</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="dv">3857</span>) <span class="sc">+</span> <span class="co"># Mercator</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="co"># minimal theme</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="co"># no longitude labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="projections_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="projections_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="projections_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="projections_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="mollweide" class="level3" data-number="5.4.3">
-<h3 data-number="5.4.3" class="anchored" data-anchor-id="mollweide"><span class="header-section-number">5.4.3</span> Mollweide</h3>
+<section id="mollweide" class="level3" data-number="5.5.3">
+<h3 data-number="5.5.3" class="anchored" data-anchor-id="mollweide"><span class="header-section-number">5.5.3</span> Mollweide</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -724,19 +740,19 @@ Key Idea
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mymap <span class="sc">+</span> <span class="fu">coord_sf</span>(<span class="at">crs=</span><span class="st">"+proj=moll"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mymap <span class="sc">+</span> <span class="fu">coord_sf</span>(<span class="at">crs=</span><span class="st">"+proj=moll"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="projections_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="projections_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="projections_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="projections_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="robinson" class="level3" data-number="5.4.4">
-<h3 data-number="5.4.4" class="anchored" data-anchor-id="robinson"><span class="header-section-number">5.4.4</span> Robinson</h3>
+<section id="robinson" class="level3" data-number="5.5.4">
+<h3 data-number="5.5.4" class="anchored" data-anchor-id="robinson"><span class="header-section-number">5.5.4</span> Robinson</h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -753,12 +769,12 @@ Key Idea
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mymap <span class="sc">+</span> <span class="fu">coord_sf</span>(<span class="at">crs=</span><span class="st">"+proj=robin"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mymap <span class="sc">+</span> <span class="fu">coord_sf</span>(<span class="at">crs=</span><span class="st">"+proj=robin"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><a href="projections_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="projections_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></a></p>
+<p><a href="projections_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="projections_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></a></p>
 </figure>
 </div>
 </div>
