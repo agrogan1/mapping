@@ -125,18 +125,18 @@
     "href": "projections.html",
     "title": "5  Map Projections",
     "section": "",
-    "text": "5.1 Set Up The Map\nMap projections exist because we are trying to take the round globe of the earth, and project it onto a 2 dimensional surface. Because a spherical globe can not be projected onto a flat surface without some distortion, different projections make different choices about the kind of distortion involved.",
+    "text": "5.1 Introduction\nMap projections exist because we are trying to take the round globe of the earth, and project it onto a 2 dimensional surface. Because a spherical globe can not be projected onto a flat surface without some distortion, different projections make different choices about the kind of distortion involved.\nA Flat Map\n\n\n\n\n\n\n\nA Globe",
     "crumbs": [
       "Geographical and GIS Concepts",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Map Projections</span>"
     ]
   },
   {
-    "objectID": "projections.html#call-plotly-library",
-    "href": "projections.html#call-plotly-library",
+    "objectID": "projections.html#get-the-data",
+    "href": "projections.html#get-the-data",
     "title": "5  Map Projections",
-    "section": "5.2 Call plotly Library",
-    "text": "5.2 Call plotly Library\n\n\nShow the code\nlibrary(plotly)",
+    "section": "5.2 Get The Data",
+    "text": "5.2 Get The Data\n\n\nShow the code\nmapdata &lt;- ne_countries(scale = \"medium\", # medium scale\n                        returnclass = \"sf\") # as sf object",
     "crumbs": [
       "Geographical and GIS Concepts",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Map Projections</span>"
@@ -147,18 +147,7 @@
     "href": "projections.html#a-basic-map",
     "title": "5  Map Projections",
     "section": "5.3 A Basic Map",
-    "text": "5.3 A Basic Map\n\n\nShow the code\n# a very basic map could be created with: \n\nlibrary(plotly)\n\nmymap0 &lt;- plot_geo() # create basic map; read into mymap0\n\nmymap0 # replay",
-    "crumbs": [
-      "Geographical and GIS Concepts",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Map Projections</span>"
-    ]
-  },
-  {
-    "objectID": "projections.html#a-more-advanced-map",
-    "href": "projections.html#a-more-advanced-map",
-    "title": "5  Map Projections",
-    "section": "5.4 A More Advanced Map",
-    "text": "5.4 A More Advanced Map\n\n\n\n\n\n\nNote\n\n\n\n\n\nAgain, it is not necessary to understand the code to understand the conceptual ideas of this chapter. The code below–especially the first code chunk–is admittedly a little complicated, mostly because I added options to get the map to look exactly the way that I wanted.\n\n\n\n\n\nShow the code\nmymap &lt;- plot_geo() %&gt;%\n  layout(title = \"Demonstration Map\", \n         geo = list(showland = TRUE, # show land\n                    landcolor = toRGB(\"darkgrey\"), # land color\n                    showcountries = TRUE, # show countries\n                    showocean = FALSE, # show ocean\n                    oceancolor = \"lightblue\", # ocean color\n                    lataxis = list(showgrid = TRUE, # latitude options\n                                   gridcolor = toRGB(\"grey\")),\n                    lonaxis = list(showgrid = TRUE, # longitude options\n                                   gridcolor = toRGB(\"grey\")))) \n\nmymap # replay",
+    "text": "5.3 A Basic Map\n\n\nShow the code\nmymap &lt;- ggplot(mapdata) + # the data I am mapping\n  geom_sf() + # the geometry I am using\n  theme_minimal() + # minimal theme\n  theme(axis.text.x = element_blank()) # no longitude labels\n\nmymap # replay",
     "crumbs": [
       "Geographical and GIS Concepts",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Map Projections</span>"
@@ -168,8 +157,8 @@
     "objectID": "projections.html#map-projections",
     "href": "projections.html#map-projections",
     "title": "5  Map Projections",
-    "section": "5.5 Map Projections",
-    "text": "5.5 Map Projections\n\n5.5.1 Globe (Orthographic)\n\nAn orthographic projection reprsents the globe with 3 dimensional accuracy.\n\n\n\nShow the code\nmymap %&gt;% \n  layout(geo = list(projection = list(type = 'orthographic')))\n\n\n\n\n\n\n\n\n5.5.2 Mercator\n\nA Mercator projection reprsents the earth with perpendicular latitude and longitude. This projection can be helpful in some kinds of navigation, but areas of landmasses are distorted, especially as one approaches the poles.\n\n\n\nShow the code\nmymap %&gt;% \n  layout(geo=list(projection = list(type = 'mercator')))\n\n\n\n\n\n\n\n\n5.5.3 Mollweide\n\nThe Mollweide projection is an equal area projection. As a consequence, latitude and longitude lines are not perpendicular, and the shapes of some landmasses may appear to be distorted.\n\n\n\nShow the code\nmymap %&gt;% \n  layout(geo=list(projection = list(type = 'mollweide')))\n\n\n\n\n\n\n\n\n5.5.4 Robinson\n\nThe Robinson projection is an attempt to compromise between equal areas and a natural looking map.\n\n\n\nShow the code\nmymap %&gt;% \n  layout(geo=list(projection = list(type = 'robinson')))",
+    "section": "5.4 Map Projections",
+    "text": "5.4 Map Projections\n\n5.4.1 Globe (Orthographic)\n\n\n\n\n\n\nKey Idea\n\n\n\nAn orthographic projection represents the globe as a 3 dimensional view.\n\n\n\n\nShow the code\nmymap + coord_sf(crs=\"+proj=ortho\")\n\n\n\n\n\n\n\n\n\n\n\n5.4.2 Mercator\n\n\n\n\n\n\nKey Idea\n\n\n\nA Mercator projection represents the earth with perpendicular latitude and longitude. This projection can be helpful in some kinds of navigation, but areas of landmasses are distorted. As one approaches the poles, landmasses are over-sized, while landmasses closer to the equator are under-emphasized. Thus, this projection is often seen as one that does not properly acknowledge the size of countries in the Global South.\nAntarctica cannot be correctly mapped with the Mercator projection. Thus, we need to employ a slightly more complicated procedure, removing Antarctica from the data before plotting.\n\n\n\n\nShow the code\nmercator_data &lt;- mapdata %&gt;% \n  filter(name != \"Antarctica\") # remove Antarctica\n\nggplot(mercator_data) + # the data I am mapping\n  geom_sf() + # the geometry I am using\n  coord_sf(crs = 3857) + # Mercator\n  theme_minimal() + # minimal theme\n  theme(axis.text.x = element_blank()) # no longitude labels\n\n\n\n\n\n\n\n\n\n\n\n5.4.3 Mollweide\n\n\n\n\n\n\nKey Idea\n\n\n\nThe Mollweide projection is an equal area projection. As a consequence, latitude and longitude lines are not perpendicular, and the shapes of some landmasses may appear to be distorted.\n\n\n\n\nShow the code\nmymap + coord_sf(crs=\"+proj=moll\")\n\n\n\n\n\n\n\n\n\n\n\n5.4.4 Robinson\n\n\n\n\n\n\nKey Idea\n\n\n\nThe Robinson projection is an attempt to compromise between equal areas and a natural looking map.\n\n\n\n\nShow the code\nmymap + coord_sf(crs=\"+proj=robin\")",
     "crumbs": [
       "Geographical and GIS Concepts",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Map Projections</span>"
