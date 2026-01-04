@@ -108,7 +108,7 @@ mymap + coord_sf(crs="+proj=ortho")
 
 A *Mercator* projection represents the earth with perpendicular latitude and longitude. This projection can be helpful in some kinds of navigation, but areas of landmasses are distorted. As one approaches the poles, landmasses are over-sized, while landmasses closer to the equator are under-emphasized. Thus, this projection is often seen as one that does not properly acknowledge the size of countries in the Global South.
 
-Antarctica cannot be correctly mapped with the Mercator projection. Thus, we need to employ a slightly more complicated procedure, removing Antarctica from the data before plotting.
+Antarctica can often not be correctly mapped with the Mercator projection. One way to avoid this difficulty is to employ a slightly more complicated procedure, removing Antarctica from the data before plotting.
 :::
 
 ```{r}
