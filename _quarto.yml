@@ -5,7 +5,9 @@ project:
 book:
   title: "Mapping"
   subtitle: "Materials for an *In Development* Course on GIS & Mapping"
-  author: "Andrew Grogan-Kaylor"
+  author: 
+    - name: "Andrew Grogan-Kaylor"
+      url: https://agrogan1.github.io/
   date: "today"
   twitter-card: true
   open-graph: true
