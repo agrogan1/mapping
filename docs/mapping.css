@@ -11,3 +11,15 @@ code {
 summary::marker, details>summary {
 color: #e95420;
 }
+
+.sidebar-title a:hover {
+  color: #e95420;
+}
+
+div.sidebar-item-container .active {
+  color: #e95420;
+}
+
+div.sidebar-item-container a:hover {
+  color: #e95420;
+}

@@ -22,7 +22,7 @@ mapdata <- ne_countries(scale = "medium",
 
 ```
 
-## names
+## `names`
 
 `names` gives us the names of all of the fields of the data.
 
@@ -32,7 +32,7 @@ names(mapdata)
 
 ```
 
-## head
+## `head`
 
 `head` shows us the first several rows of data.
 

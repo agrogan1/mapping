@@ -74,14 +74,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d36a7ee5124569eb73bf79d7278ce6fd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-3bb4d8a2ca0dd6563f761ee68688fe69.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-d36a7ee5124569eb73bf79d7278ce6fd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d36a7ee5124569eb73bf79d7278ce6fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -123,169 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="citation_language" content="en">
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -310,7 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Mapping</a> 
-        <div class="sidebar-tools-main tools-wide">
+        <div class="sidebar-tools-main">
     <a href="https://github.com/agrogan1/mapping" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
@@ -329,7 +163,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </li>
       </ul>
     </div>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
@@ -537,14 +370,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#data" id="toc-data" class="nav-link active" data-scroll-target="#data"><span class="header-section-number">10.1</span> Data</a></li>
-  <li><a href="#names" id="toc-names" class="nav-link" data-scroll-target="#names"><span class="header-section-number">10.2</span> names</a></li>
-  <li><a href="#head" id="toc-head" class="nav-link" data-scroll-target="#head"><span class="header-section-number">10.3</span> head</a></li>
+  <li><a href="#names" id="toc-names" class="nav-link" data-scroll-target="#names"><span class="header-section-number">10.2</span> <code>names</code></a></li>
+  <li><a href="#head" id="toc-head" class="nav-link" data-scroll-target="#head"><span class="header-section-number">10.3</span> <code>head</code></a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/agrogan1/mapping/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sf.html">GIS Data</a></li><li class="breadcrumb-item"><a href="./inspecting.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Inspecting Geographic Data Files</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -580,108 +412,248 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="names" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="names"><span class="header-section-number">10.2</span> names</h2>
+<h2 data-number="10.2" class="anchored" data-anchor-id="names"><span class="header-section-number">10.2</span> <code>names</code></h2>
 <p><code>names</code> gives us the names of all of the fields of the data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(mapdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "scalerank"  "featurecla" "labelrank"  "sovereignt" "sov_a3"    
- [6] "adm0_dif"   "level"      "type"       "admin"      "adm0_a3"   
-[11] "geou_dif"   "geounit"    "gu_a3"      "su_dif"     "subunit"   
-[16] "su_a3"      "brk_diff"   "name"       "name_long"  "brk_a3"    
-[21] "brk_name"   "brk_group"  "abbrev"     "postal"     "formal_en" 
-[26] "formal_fr"  "note_adm0"  "note_brk"   "name_sort"  "name_alt"  
-[31] "mapcolor7"  "mapcolor8"  "mapcolor9"  "mapcolor13" "pop_est"   
-[36] "gdp_md_est" "pop_year"   "lastcensus" "gdp_year"   "economy"   
-[41] "income_grp" "wikipedia"  "fips_10"    "iso_a2"     "iso_a3"    
-[46] "iso_n3"     "un_a3"      "wb_a2"      "wb_a3"      "woe_id"    
-[51] "adm0_a3_is" "adm0_a3_us" "adm0_a3_un" "adm0_a3_wb" "continent" 
-[56] "region_un"  "subregion"  "region_wb"  "name_len"   "long_len"  
-[61] "abbrev_len" "tiny"       "homepart"   "geometry"  </code></pre>
+<pre><code>  [1] "featurecla" "scalerank"  "labelrank"  "sovereignt" "sov_a3"    
+  [6] "adm0_dif"   "level"      "type"       "tlc"        "admin"     
+ [11] "adm0_a3"    "geou_dif"   "geounit"    "gu_a3"      "su_dif"    
+ [16] "subunit"    "su_a3"      "brk_diff"   "name"       "name_long" 
+ [21] "brk_a3"     "brk_name"   "brk_group"  "abbrev"     "postal"    
+ [26] "formal_en"  "formal_fr"  "name_ciawf" "note_adm0"  "note_brk"  
+ [31] "name_sort"  "name_alt"   "mapcolor7"  "mapcolor8"  "mapcolor9" 
+ [36] "mapcolor13" "pop_est"    "pop_rank"   "pop_year"   "gdp_md"    
+ [41] "gdp_year"   "economy"    "income_grp" "fips_10"    "iso_a2"    
+ [46] "iso_a2_eh"  "iso_a3"     "iso_a3_eh"  "iso_n3"     "iso_n3_eh" 
+ [51] "un_a3"      "wb_a2"      "wb_a3"      "woe_id"     "woe_id_eh" 
+ [56] "woe_note"   "adm0_iso"   "adm0_diff"  "adm0_tlc"   "adm0_a3_us"
+ [61] "adm0_a3_fr" "adm0_a3_ru" "adm0_a3_es" "adm0_a3_cn" "adm0_a3_tw"
+ [66] "adm0_a3_in" "adm0_a3_np" "adm0_a3_pk" "adm0_a3_de" "adm0_a3_gb"
+ [71] "adm0_a3_br" "adm0_a3_il" "adm0_a3_ps" "adm0_a3_sa" "adm0_a3_eg"
+ [76] "adm0_a3_ma" "adm0_a3_pt" "adm0_a3_ar" "adm0_a3_jp" "adm0_a3_ko"
+ [81] "adm0_a3_vn" "adm0_a3_tr" "adm0_a3_id" "adm0_a3_pl" "adm0_a3_gr"
+ [86] "adm0_a3_it" "adm0_a3_nl" "adm0_a3_se" "adm0_a3_bd" "adm0_a3_ua"
+ [91] "adm0_a3_un" "adm0_a3_wb" "continent"  "region_un"  "subregion" 
+ [96] "region_wb"  "name_len"   "long_len"   "abbrev_len" "tiny"      
+[101] "homepart"   "min_zoom"   "min_label"  "max_label"  "label_x"   
+[106] "label_y"    "ne_id"      "wikidataid" "name_ar"    "name_bn"   
+[111] "name_de"    "name_en"    "name_es"    "name_fa"    "name_fr"   
+[116] "name_el"    "name_he"    "name_hi"    "name_hu"    "name_id"   
+[121] "name_it"    "name_ja"    "name_ko"    "name_nl"    "name_pl"   
+[126] "name_pt"    "name_ru"    "name_sv"    "name_tr"    "name_uk"   
+[131] "name_ur"    "name_vi"    "name_zh"    "name_zht"   "fclass_iso"
+[136] "tlc_diff"   "fclass_tlc" "fclass_us"  "fclass_fr"  "fclass_ru" 
+[141] "fclass_es"  "fclass_cn"  "fclass_tw"  "fclass_in"  "fclass_np" 
+[146] "fclass_pk"  "fclass_de"  "fclass_gb"  "fclass_br"  "fclass_il" 
+[151] "fclass_ps"  "fclass_sa"  "fclass_eg"  "fclass_ma"  "fclass_pt" 
+[156] "fclass_ar"  "fclass_jp"  "fclass_ko"  "fclass_vn"  "fclass_tr" 
+[161] "fclass_id"  "fclass_pl"  "fclass_gr"  "fclass_it"  "fclass_nl" 
+[166] "fclass_se"  "fclass_bd"  "fclass_ua"  "geometry"  </code></pre>
 </div>
 </div>
 </section>
 <section id="head" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="head"><span class="header-section-number">10.3</span> head</h2>
+<h2 data-number="10.3" class="anchored" data-anchor-id="head"><span class="header-section-number">10.3</span> <code>head</code></h2>
 <p><code>head</code> shows us the first several rows of data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mapdata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Simple feature collection with 6 features and 63 fields
+<pre><code>Simple feature collection with 6 features and 168 fields
 Geometry type: MULTIPOLYGON
 Dimension:     XY
-Bounding box:  xmin: -70.06611 ymin: -18.01973 xmax: 74.89131 ymax: 60.40581
-Geodetic CRS:  +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0
-  scalerank      featurecla labelrank     sovereignt sov_a3 adm0_dif level
-0         3 Admin-0 country         5    Netherlands    NL1        1     2
-1         1 Admin-0 country         3    Afghanistan    AFG        0     2
-2         1 Admin-0 country         3         Angola    AGO        0     2
-3         1 Admin-0 country         6 United Kingdom    GB1        1     2
-4         1 Admin-0 country         6        Albania    ALB        0     2
-5         3 Admin-0 country         6        Finland    FI1        1     2
-               type       admin adm0_a3 geou_dif     geounit gu_a3 su_dif
-0           Country       Aruba     ABW        0       Aruba   ABW      0
-1 Sovereign country Afghanistan     AFG        0 Afghanistan   AFG      0
-2 Sovereign country      Angola     AGO        0      Angola   AGO      0
-3        Dependency    Anguilla     AIA        0    Anguilla   AIA      0
-4 Sovereign country     Albania     ALB        0     Albania   ALB      0
-5           Country       Aland     ALD        0       Aland   ALD      0
-      subunit su_a3 brk_diff        name     name_long brk_a3    brk_name
-0       Aruba   ABW        0       Aruba         Aruba    ABW       Aruba
-1 Afghanistan   AFG        0 Afghanistan   Afghanistan    AFG Afghanistan
-2      Angola   AGO        0      Angola        Angola    AGO      Angola
-3    Anguilla   AIA        0    Anguilla      Anguilla    AIA    Anguilla
-4     Albania   ALB        0     Albania       Albania    ALB     Albania
-5       Aland   ALD        0       Aland Aland Islands    ALD       Aland
-  brk_group abbrev postal                    formal_en formal_fr note_adm0
-0      &lt;NA&gt;  Aruba     AW                        Aruba      &lt;NA&gt;     Neth.
-1      &lt;NA&gt;   Afg.     AF Islamic State of Afghanistan      &lt;NA&gt;      &lt;NA&gt;
-2      &lt;NA&gt;   Ang.     AO  People's Republic of Angola      &lt;NA&gt;      &lt;NA&gt;
-3      &lt;NA&gt;   Ang.     AI                         &lt;NA&gt;      &lt;NA&gt;      U.K.
-4      &lt;NA&gt;   Alb.     AL          Republic of Albania      &lt;NA&gt;      &lt;NA&gt;
-5      &lt;NA&gt;  Aland     AI                Åland Islands      &lt;NA&gt;      Fin.
-  note_brk   name_sort name_alt mapcolor7 mapcolor8 mapcolor9 mapcolor13
-0     &lt;NA&gt;       Aruba     &lt;NA&gt;         4         2         2          9
-1     &lt;NA&gt; Afghanistan     &lt;NA&gt;         5         6         8          7
-2     &lt;NA&gt;      Angola     &lt;NA&gt;         3         2         6          1
-3     &lt;NA&gt;    Anguilla     &lt;NA&gt;         6         6         6          3
-4     &lt;NA&gt;     Albania     &lt;NA&gt;         1         4         1          6
-5     &lt;NA&gt;       Aland     &lt;NA&gt;         4         1         4          6
-   pop_est gdp_md_est pop_year lastcensus gdp_year                    economy
-0   103065     2258.0       NA       2010       NA       6. Developing region
-1 28400000    22270.0       NA       1979       NA  7. Least developed region
-2 12799293   110300.0       NA       1970       NA  7. Least developed region
-3    14436      108.9       NA         NA       NA       6. Developing region
-4  3639453    21810.0       NA       2001       NA       6. Developing region
-5    27153     1563.0       NA         NA       NA 2. Developed region: nonG7
-               income_grp wikipedia fips_10 iso_a2 iso_a3 iso_n3 un_a3 wb_a2
-0 2. High income: nonOECD        NA    &lt;NA&gt;     AW    ABW    533   533    AW
-1           5. Low income        NA    &lt;NA&gt;     AF    AFG    004   004    AF
-2  3. Upper middle income        NA    &lt;NA&gt;     AO    AGO    024   024    AO
-3  3. Upper middle income        NA    &lt;NA&gt;     AI    AIA    660   660  &lt;NA&gt;
-4  4. Lower middle income        NA    &lt;NA&gt;     AL    ALB    008   008    AL
-5    1. High income: OECD        NA    &lt;NA&gt;     AX    ALA    248   248  &lt;NA&gt;
-  wb_a3 woe_id adm0_a3_is adm0_a3_us adm0_a3_un adm0_a3_wb     continent
-0   ABW     NA        ABW        ABW         NA         NA North America
-1   AFG     NA        AFG        AFG         NA         NA          Asia
-2   AGO     NA        AGO        AGO         NA         NA        Africa
-3  &lt;NA&gt;     NA        AIA        AIA         NA         NA North America
-4   ALB     NA        ALB        ALB         NA         NA        Europe
-5  &lt;NA&gt;     NA        ALA        ALD         NA         NA        Europe
-  region_un       subregion                 region_wb name_len long_len
-0  Americas       Caribbean Latin America &amp; Caribbean        5        5
-1      Asia   Southern Asia                South Asia       11       11
-2    Africa   Middle Africa        Sub-Saharan Africa        6        6
-3  Americas       Caribbean Latin America &amp; Caribbean        8        8
-4    Europe Southern Europe     Europe &amp; Central Asia        7        7
-5    Europe Northern Europe     Europe &amp; Central Asia        5       13
-  abbrev_len tiny homepart                       geometry
-0          5    4       NA MULTIPOLYGON (((-69.89912 1...
-1          4   NA        1 MULTIPOLYGON (((74.89131 37...
-2          4   NA        1 MULTIPOLYGON (((14.19082 -5...
-3          4   NA       NA MULTIPOLYGON (((-63.00122 1...
-4          4   NA        1 MULTIPOLYGON (((20.06396 42...
-5          5    5       NA MULTIPOLYGON (((20.61133 60...</code></pre>
+Bounding box:  xmin: -73.36621 ymin: -22.40205 xmax: 109.4449 ymax: 41.9062
+Geodetic CRS:  WGS 84
+       featurecla scalerank labelrank sovereignt sov_a3 adm0_dif level
+1 Admin-0 country         1         3   Zimbabwe    ZWE        0     2
+2 Admin-0 country         1         3     Zambia    ZMB        0     2
+3 Admin-0 country         1         3      Yemen    YEM        0     2
+4 Admin-0 country         3         2    Vietnam    VNM        0     2
+5 Admin-0 country         5         3  Venezuela    VEN        0     2
+6 Admin-0 country         6         6    Vatican    VAT        0     2
+               type tlc     admin adm0_a3 geou_dif   geounit gu_a3 su_dif
+1 Sovereign country   1  Zimbabwe     ZWE        0  Zimbabwe   ZWE      0
+2 Sovereign country   1    Zambia     ZMB        0    Zambia   ZMB      0
+3 Sovereign country   1     Yemen     YEM        0     Yemen   YEM      0
+4 Sovereign country   1   Vietnam     VNM        0   Vietnam   VNM      0
+5 Sovereign country   1 Venezuela     VEN        0 Venezuela   VEN      0
+6 Sovereign country   1   Vatican     VAT        0   Vatican   VAT      0
+    subunit su_a3 brk_diff      name name_long brk_a3  brk_name brk_group
+1  Zimbabwe   ZWE        0  Zimbabwe  Zimbabwe    ZWE  Zimbabwe      &lt;NA&gt;
+2    Zambia   ZMB        0    Zambia    Zambia    ZMB    Zambia      &lt;NA&gt;
+3     Yemen   YEM        0     Yemen     Yemen    YEM     Yemen      &lt;NA&gt;
+4   Vietnam   VNM        0   Vietnam   Vietnam    VNM   Vietnam      &lt;NA&gt;
+5 Venezuela   VEN        0 Venezuela Venezuela    VEN Venezuela      &lt;NA&gt;
+6   Vatican   VAT        0   Vatican   Vatican    VAT   Vatican      &lt;NA&gt;
+  abbrev postal                        formal_en
+1  Zimb.     ZW             Republic of Zimbabwe
+2 Zambia     ZM               Republic of Zambia
+3   Yem.     YE                Republic of Yemen
+4  Viet.     VN    Socialist Republic of Vietnam
+5   Ven.     VE Bolivarian Republic of Venezuela
+6   Vat.      V        State of the Vatican City
+                           formal_fr              name_ciawf note_adm0 note_brk
+1                               &lt;NA&gt;                Zimbabwe      &lt;NA&gt;     &lt;NA&gt;
+2                               &lt;NA&gt;                  Zambia      &lt;NA&gt;     &lt;NA&gt;
+3                               &lt;NA&gt;                   Yemen      &lt;NA&gt;     &lt;NA&gt;
+4                               &lt;NA&gt;                 Vietnam      &lt;NA&gt;     &lt;NA&gt;
+5 República Bolivariana de Venezuela               Venezuela      &lt;NA&gt;     &lt;NA&gt;
+6                               &lt;NA&gt; Holy See (Vatican City)      &lt;NA&gt;     &lt;NA&gt;
+           name_sort name_alt mapcolor7 mapcolor8 mapcolor9 mapcolor13  pop_est
+1           Zimbabwe     &lt;NA&gt;         1         5         3          9 14645468
+2             Zambia     &lt;NA&gt;         5         8         5         13 17861030
+3        Yemen, Rep.     &lt;NA&gt;         5         3         3         11 29161922
+4            Vietnam     &lt;NA&gt;         5         6         5          4 96462106
+5      Venezuela, RB     &lt;NA&gt;         1         3         1          4 28515829
+6 Vatican (Holy See) Holy See         1         3         4          2      825
+  pop_rank pop_year gdp_md gdp_year                    economy
+1       14     2019  21440     2019    5. Emerging region: G20
+2       14     2019  23309     2019  7. Least developed region
+3       15     2019  22581     2019  7. Least developed region
+4       16     2019 261921     2019    5. Emerging region: G20
+5       15     2019 482359     2014    5. Emerging region: G20
+6        2     2019    -99     2019 2. Developed region: nonG7
+               income_grp fips_10 iso_a2 iso_a2_eh iso_a3 iso_a3_eh iso_n3
+1           5. Low income      ZI     ZW        ZW    ZWE       ZWE    716
+2  4. Lower middle income      ZA     ZM        ZM    ZMB       ZMB    894
+3  4. Lower middle income      YM     YE        YE    YEM       YEM    887
+4  4. Lower middle income      VM     VN        VN    VNM       VNM    704
+5  3. Upper middle income      VE     VE        VE    VEN       VEN    862
+6 2. High income: nonOECD      VT     VA        VA    VAT       VAT    336
+  iso_n3_eh un_a3 wb_a2 wb_a3   woe_id woe_id_eh                   woe_note
+1       716   716    ZW   ZWE 23425004  23425004 Exact WOE match as country
+2       894   894    ZM   ZMB 23425003  23425003 Exact WOE match as country
+3       887   887    RY   YEM 23425002  23425002 Exact WOE match as country
+4       704   704    VN   VNM 23424984  23424984 Exact WOE match as country
+5       862   862    VE   VEN 23424982  23424982 Exact WOE match as country
+6       336   336   -99   -99 23424986  23424986 Exact WOE match as country
+  adm0_iso adm0_diff adm0_tlc adm0_a3_us adm0_a3_fr adm0_a3_ru adm0_a3_es
+1      ZWE      &lt;NA&gt;      ZWE        ZWE        ZWE        ZWE        ZWE
+2      ZMB      &lt;NA&gt;      ZMB        ZMB        ZMB        ZMB        ZMB
+3      YEM      &lt;NA&gt;      YEM        YEM        YEM        YEM        YEM
+4      VNM      &lt;NA&gt;      VNM        VNM        VNM        VNM        VNM
+5      VEN      &lt;NA&gt;      VEN        VEN        VEN        VEN        VEN
+6      VAT      &lt;NA&gt;      VAT        VAT        VAT        VAT        VAT
+  adm0_a3_cn adm0_a3_tw adm0_a3_in adm0_a3_np adm0_a3_pk adm0_a3_de adm0_a3_gb
+1        ZWE        ZWE        ZWE        ZWE        ZWE        ZWE        ZWE
+2        ZMB        ZMB        ZMB        ZMB        ZMB        ZMB        ZMB
+3        YEM        YEM        YEM        YEM        YEM        YEM        YEM
+4        VNM        VNM        VNM        VNM        VNM        VNM        VNM
+5        VEN        VEN        VEN        VEN        VEN        VEN        VEN
+6        VAT        VAT        VAT        VAT        VAT        VAT        VAT
+  adm0_a3_br adm0_a3_il adm0_a3_ps adm0_a3_sa adm0_a3_eg adm0_a3_ma adm0_a3_pt
+1        ZWE        ZWE        ZWE        ZWE        ZWE        ZWE        ZWE
+2        ZMB        ZMB        ZMB        ZMB        ZMB        ZMB        ZMB
+3        YEM        YEM        YEM        YEM        YEM        YEM        YEM
+4        VNM        VNM        VNM        VNM        VNM        VNM        VNM
+5        VEN        VEN        VEN        VEN        VEN        VEN        VEN
+6        VAT        VAT        VAT        VAT        VAT        VAT        VAT
+  adm0_a3_ar adm0_a3_jp adm0_a3_ko adm0_a3_vn adm0_a3_tr adm0_a3_id adm0_a3_pl
+1        ZWE        ZWE        ZWE        ZWE        ZWE        ZWE        ZWE
+2        ZMB        ZMB        ZMB        ZMB        ZMB        ZMB        ZMB
+3        YEM        YEM        YEM        YEM        YEM        YEM        YEM
+4        VNM        VNM        VNM        VNM        VNM        VNM        VNM
+5        VEN        VEN        VEN        VEN        VEN        VEN        VEN
+6        VAT        VAT        VAT        VAT        VAT        VAT        VAT
+  adm0_a3_gr adm0_a3_it adm0_a3_nl adm0_a3_se adm0_a3_bd adm0_a3_ua adm0_a3_un
+1        ZWE        ZWE        ZWE        ZWE        ZWE        ZWE        -99
+2        ZMB        ZMB        ZMB        ZMB        ZMB        ZMB        -99
+3        YEM        YEM        YEM        YEM        YEM        YEM        -99
+4        VNM        VNM        VNM        VNM        VNM        VNM        -99
+5        VEN        VEN        VEN        VEN        VEN        VEN        -99
+6        VAT        VAT        VAT        VAT        VAT        VAT        -99
+  adm0_a3_wb     continent region_un          subregion
+1        -99        Africa    Africa     Eastern Africa
+2        -99        Africa    Africa     Eastern Africa
+3        -99          Asia      Asia       Western Asia
+4        -99          Asia      Asia South-Eastern Asia
+5        -99 South America  Americas      South America
+6        -99        Europe    Europe    Southern Europe
+                   region_wb name_len long_len abbrev_len tiny homepart
+1         Sub-Saharan Africa        8        8          5  -99        1
+2         Sub-Saharan Africa        6        6          6  -99        1
+3 Middle East &amp; North Africa        5        5          4  -99        1
+4        East Asia &amp; Pacific        7        7          5    2        1
+5  Latin America &amp; Caribbean        9        9          4  -99        1
+6      Europe &amp; Central Asia        7        7          4    4        1
+  min_zoom min_label max_label   label_x    label_y      ne_id wikidataid
+1        0       2.5       8.0  29.92544 -18.911640 1159321441       Q954
+2        0       3.0       8.0  26.39530 -14.660804 1159321439       Q953
+3        0       3.0       8.0  45.87438  15.328226 1159321425       Q805
+4        0       2.0       7.0 105.38729  21.715416 1159321417       Q881
+5        0       2.5       7.5 -64.59938   7.182476 1159321411       Q717
+6        0       5.0      10.0  12.45342  41.903323 1159321407       Q237
+    name_ar       name_bn      name_de      name_en             name_es
+1  زيمبابوي      জিম্বাবুয়ে     Simbabwe     Zimbabwe            Zimbabue
+2    زامبيا       জাম্বিয়া       Sambia       Zambia              Zambia
+3     اليمن        ইয়েমেন        Jemen        Yemen               Yemen
+4    فيتنام      ভিয়েতনাম      Vietnam      Vietnam             Vietnam
+5   فنزويلا     ভেনেজুয়েলা    Venezuela    Venezuela           Venezuela
+6 الفاتيكان ভ্যাটিকান সিটি Vatikanstadt Vatican City Ciudad del Vaticano
+   name_fa         name_fr    name_el       name_he   name_hi   name_hu
+1 زیمبابوه        Zimbabwe Ζιμπάμπουε      זימבבואה   ज़िम्बाब्वे  Zimbabwe
+2   زامبیا          Zambie     Ζάμπια         זמביה   ज़ाम्बिया    Zambia
+3      یمن           Yémen     Υεμένη          תימן       यमन     Jemen
+4   ویتنام        Viêt Nam    Βιετνάμ       וייטנאם   वियतनाम   Vietnám
+5  ونزوئلا       Venezuela Βενεζουέλα       ונצואלה    वेनेज़ुएला Venezuela
+6  واتیکان Cité du Vatican   Βατικανό קריית הוותיקן वैटिकन नगर   Vatikán
+    name_id            name_it    name_ja     name_ko      name_nl   name_pl
+1  Zimbabwe           Zimbabwe ジンバブエ    짐바브웨     Zimbabwe  Zimbabwe
+2    Zambia             Zambia   ザンビア      잠비아       Zambia    Zambia
+3     Yaman              Yemen   イエメン        예멘        Jemen     Jemen
+4   Vietnam            Vietnam   ベトナム      베트남      Vietnam   Wietnam
+5 Venezuela          Venezuela ベネズエラ  베네수엘라    Venezuela Wenezuela
+6   Vatikan Città del Vaticano   バチカン 바티칸 시국 Vaticaanstad   Watykan
+    name_pt   name_ru       name_sv   name_tr   name_uk    name_ur
+1  Zimbábue  Зимбабве      Zimbabwe  Zimbabve  Зімбабве    زمبابوے
+2    Zâmbia    Замбия        Zambia   Zambiya    Замбія     زیمبیا
+3     Iémen     Йемен         Jemen     Yemen      Ємен        یمن
+4  Vietname   Вьетнам       Vietnam   Vietnam   В'єтнам     ویتنام
+5 Venezuela Венесуэла     Venezuela Venezuela Венесуела  وینیزویلا
+6  Vaticano   Ватикан Vatikanstaten   Vatikan   Ватикан ویٹیکن سٹی
+        name_vi  name_zh name_zht      fclass_iso tlc_diff      fclass_tlc
+1      Zimbabwe 津巴布韦   辛巴威 Admin-0 country     &lt;NA&gt; Admin-0 country
+2        Zambia   赞比亚   尚比亞 Admin-0 country     &lt;NA&gt; Admin-0 country
+3         Yemen     也门     葉門 Admin-0 country     &lt;NA&gt; Admin-0 country
+4      Việt Nam     越南     越南 Admin-0 country     &lt;NA&gt; Admin-0 country
+5     Venezuela 委内瑞拉 委內瑞拉 Admin-0 country     &lt;NA&gt; Admin-0 country
+6 Thành Vatican   梵蒂冈   梵蒂岡 Admin-0 country     &lt;NA&gt; Admin-0 country
+  fclass_us fclass_fr fclass_ru fclass_es fclass_cn fclass_tw fclass_in
+1      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+2      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+3      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+4      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+5      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+6      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+  fclass_np fclass_pk fclass_de fclass_gb fclass_br fclass_il fclass_ps
+1      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+2      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+3      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+4      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+5      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+6      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+  fclass_sa fclass_eg fclass_ma fclass_pt fclass_ar fclass_jp fclass_ko
+1      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+2      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+3      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+4      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+5      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+6      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+  fclass_vn fclass_tr fclass_id fclass_pl fclass_gr fclass_it fclass_nl
+1      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+2      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+3      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+4      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+5      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+6      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+  fclass_se fclass_bd fclass_ua                       geometry
+1      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt; MULTIPOLYGON (((31.28789 -2...
+2      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt; MULTIPOLYGON (((30.39609 -1...
+3      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt; MULTIPOLYGON (((53.08564 16...
+4      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt; MULTIPOLYGON (((104.064 10....
+5      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt; MULTIPOLYGON (((-60.82119 9...
+6      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt; MULTIPOLYGON (((12.43916 41...</code></pre>
 </div>
 </div>
 
@@ -691,19 +663,6 @@ Geodetic CRS:  +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {

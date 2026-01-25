@@ -55,9 +55,7 @@ google-scholar: true
 
 format:
   html:
-   theme: 
-      light: united
-      dark: vapor
+   theme: united
    css: mapping.css
    lightbox: true
    code-summary: "Show the code"
