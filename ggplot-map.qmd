@@ -1,5 +1,7 @@
 # Making Maps with `ggplot` {#sec-ggplot-map}
 
+`ggplot` is one of the foundational libraries for making maps in R. Below I detail the process of using `ggplot` to make maps when your data are in *shapefile* (@sec-shapefiles) format.
+
 ## Call the libraries 
 
 ```{r, message=FALSE}
@@ -18,8 +20,9 @@ library(readr) # import csv
 
 ## Use `read_sf` To Open Shapefiles
 
-> Getting the directory and filename right is important.
-
+::: {.callout-important}
+Getting the directory and filename right is important.
+:::
 
 ```{r}
 #| code-fold: true
@@ -87,7 +90,7 @@ ggplot(city_boundary) +
   #         color = "darkgreen") +
   labs(title = "Ann Arbor") +
   scale_color_viridis_d() +
-  scale_fill_manual(name="",
+  scale_fill_manual(name="Legend",
                     values = c("darkgreen", "navy")) +
   theme_minimal() +
   theme(plot.title = element_text(size = rel(2)), 

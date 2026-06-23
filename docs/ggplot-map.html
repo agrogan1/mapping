@@ -115,11 +115,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="mapping.css">
 <meta property="og:title" content="14&nbsp; Making Maps with ggplot – Mapping">
+<meta property="og:description" content="">
 <meta property="og:image" content="https://agrogan1.github.io/mapping/ggplot-map_files/figure-html/unnamed-chunk-4-1.png">
 <meta property="og:site_name" content="Mapping">
 <meta property="og:image:height" content="1152">
 <meta property="og:image:width" content="1344">
 <meta name="twitter:title" content="14&nbsp; Making Maps with ggplot – Mapping">
+<meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://agrogan1.github.io/mapping/ggplot-map_files/figure-html/unnamed-chunk-4-1.png">
 <meta name="twitter:image-height" content="1152">
 <meta name="twitter:image-width" content="1344">
@@ -407,6 +409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><code>ggplot</code> is one of the foundational libraries for making maps in R. Below I detail the process of using <code>ggplot</code> to make maps when your data are in <em>shapefile</em> (<a href="shapefiles.html" class="quarto-xref"><span>Chapter 8</span></a>) format.</p>
 <section id="call-the-libraries" class="level2" data-number="14.1">
 <h2 data-number="14.1" class="anchored" data-anchor-id="call-the-libraries"><span class="header-section-number">14.1</span> Call the libraries</h2>
 <div class="cell">
@@ -424,9 +427,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="use-read_sf-to-open-shapefiles" class="level2" data-number="14.2">
 <h2 data-number="14.2" class="anchored" data-anchor-id="use-read_sf-to-open-shapefiles"><span class="header-section-number">14.2</span> Use <code>read_sf</code> To Open Shapefiles</h2>
-<blockquote class="blockquote">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Getting the directory and filename right is important.</p>
-</blockquote>
+</div>
+</div>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -494,7 +507,7 @@ all geometries</code></pre>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">#         color = "darkgreen") +</span></span>
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Ann Arbor"</span>) <span class="sc">+</span></span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">""</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">name=</span><span class="st">"Legend"</span>,</span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>                    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkgreen"</span>, <span class="st">"navy"</span>)) <span class="sc">+</span></span>
 <span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="dv">2</span>)), </span>

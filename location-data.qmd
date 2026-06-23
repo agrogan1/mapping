@@ -1,5 +1,9 @@
 # Making Maps With `ggplot` Using Location Data {#sec-location-data}
 
+Sometimes we have map data that come in the form of location data where the *latitude* and *longitude* (@sec-latitude-longitude) of each participant or location is listed in the data set.
+
+Below I describe the process of working with such location data. Location data can easily be combined with *shapefiles*  (@sec-shapefiles) in `ggplot`.
+
 ## Call Libraries 
 
 ```{r}
@@ -78,6 +82,7 @@ AnnArborRoads <- st_crop(WashtenawRoads,
 ```{r}
 #| code-fold: true
 #| output: true
+#| fig-height: 6
 
 ggplot(city_boundary) +
   geom_sf(alpha = .5) +

@@ -1,4 +1,4 @@
-# Latitude and Longitude
+# Latitude and Longitude {#sec-latitude-longitude}
 
 ## Introduction
 
