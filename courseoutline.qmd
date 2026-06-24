@@ -3,23 +3,23 @@
 ::: {.callout-important}
 ## Mapping is FUN **and** CHALLENGING
 
-Mapping is fun. Many people enjoy looking at maps, and find them informative and helpful. Many people find it very fun to learn how to make maps. At the same time, making even basic maps with geographic data can be challenging. Making an aesthetically pleasing and useful map can be very challenging. We will work hard in this course to learn these important skills. At the same time, we will have fun doing so!
+Mapping is fun. Many people enjoy looking at maps, and find them informative and helpful. Many people find it very fun to learn how to make maps. At the same time, making even basic maps with geographic data can be challenging. Making an aesthetically pleasing and useful map can also be very challenging. We will work hard in this course to learn these important skills. At the same time, we will have fun doing so!
 :::
 
 ## 5 Week MiniCourse {#sec-fiveweek}
 
 1. Introduction
     + Introduction to the Course
-    + Introduction to Shapefiles (and Possibly `sf` Objects) As GIS Data
+    + Introduction to Shapefiles (@sec-shapefiles) (and Possibly `sf` Objects) (@sec-sf) as GIS Data
     + Introduction to Appropriate Software: R / RStudio / `sf` / `ggplot`; or ArcGIS; or QGIS; or Tableau
     + Quick Mapping Exercise
 2. Basic GIS Skills
-    + Symbology
-    + Joining by Attribute
+    + Symbology (@sec-symbology)
+    + Joining by Attribute (@sec-merging)
 3. Data With Geographic Coordinates & Geographic Concepts
-    + Data With Latitude and Longitude
-    + Coordinate Reference Systems
-4. Geocoding
+    + Data With Latitude and Longitude (@sec-location-data)
+    + Coordinate Reference Systems (@sec-CRS)
+4. Geocoding (@sec-geocoding)
 5. Lab Day for Final Projects
 
 ## More Advanced Topics {#sec-moreadvanced}

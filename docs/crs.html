@@ -126,7 +126,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="twitter:image-height" content="960">
 <meta name="twitter:image-width" content="1344">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="citation_title" content="[6]{.chapter-number}&nbsp; [Coordinate Reference Systems (CRS)]{.chapter-title}">
+<meta name="citation_title" content="[[6]{.chapter-number}&nbsp; [Coordinate Reference Systems (CRS)]{.chapter-title}]{#sec-CRS .quarto-section-identifier}">
 <meta name="citation_fulltext_html_url" content="https://agrogan1.github.io/mapping/crs.html">
 <meta name="citation_language" content="en">
 </head>
@@ -394,7 +394,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./latitude-and-longitude.html">Geographical and GIS Concepts</a></li><li class="breadcrumb-item"><a href="./crs.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Coordinate Reference Systems (CRS)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Coordinate Reference Systems (CRS)</span></h1>
+<h1 class="title"><span id="sec-CRS" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Coordinate Reference Systems (CRS)</span></span></h1>
 </div>
 
 
@@ -446,7 +446,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Geometry type: MULTIPOLYGON
 Dimension:     XY
 Bounding box:  xmin: -61.88722 ymin: -18.01639 xmax: 50.37499 ymax: 42.61805
-Geodetic CRS:  GCS_unknown
+Geodetic CRS:  +proj=longlat +datum=WGS84 +no_defs
 # A tibble: 6 × 11
   FIPS  ISO2  ISO3     UN NAME                AREA REGION SUBREGION    LON   LAT
   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;chr&gt;              &lt;int&gt;  &lt;int&gt;     &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt;
@@ -470,9 +470,9 @@ Geodetic CRS:  GCS_unknown
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Coordinate Reference System:
-  User input: GCS_unknown 
+  User input: unknown 
   wkt:
-GEOGCRS["GCS_unknown",
+GEOGCRS["unknown",
     DATUM["World Geodetic System 1984",
         ELLIPSOID["WGS 84",6378137,298.257223563,
             LENGTHUNIT["metre",1]],
