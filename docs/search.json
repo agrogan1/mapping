@@ -37,7 +37,7 @@
     "href": "courseoutline.html#sec-moreadvanced",
     "title": "2  Possible Course Outline",
     "section": "2.2 More Advanced Topics",
-    "text": "2.2 More Advanced Topics\n\nBasemaps e.g. leaflet (Section 19.1)\nProjections, projecting and re-projecting geographic data (Chapter 5)\nGeoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)",
+    "text": "2.2 More Advanced Topics\n\nBasemaps e.g. leaflet (Chapter 19)\nProjections, projecting and re-projecting geographic data (Chapter 5)\nGeoprocessing (Spatial joins; Spatial Selection; Selection by Attribute)",
     "crumbs": [
       "Introduction",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Possible Course Outline</span>"
@@ -554,7 +554,7 @@
     "href": "merge-with-external-data.html#make-a-map-with-the-data",
     "title": "15  Merge Shapefiles With External Data",
     "section": "15.7 Make a Map With The Data",
-    "text": "15.7 Make a Map With The Data\nOnce I have the merged data, it is easy to map it with ggplot and geom_sf. Note that I need to specify an aesthetic for geom_sf. Here GDP is the fill color for countries on the map.\n\nData could also be mapped with another package like leaflet (Section 19.1).\n\n\n\nShow the code\nggplot(newdata) +\n  geom_sf(aes(fill = GDP)) + # adding a fill aesthetic\n  scale_fill_viridis_c(na.value = \"grey97\", # value for NA\n                       option = \"viridis\") + # viridis colors\n  labs(title = \"Demonstration Map With Merged Data\") +\n  theme_minimal() # better theme",
+    "text": "15.7 Make a Map With The Data\nOnce I have the merged data, it is easy to map it with ggplot and geom_sf. Note that I need to specify an aesthetic for geom_sf. Here GDP is the fill color for countries on the map.\n\nData could also be mapped with another package like leaflet (Chapter 19).\n\n\n\nShow the code\nggplot(newdata) +\n  geom_sf(aes(fill = GDP)) + # adding a fill aesthetic\n  scale_fill_viridis_c(na.value = \"grey97\", # value for NA\n                       option = \"viridis\") + # viridis colors\n  labs(title = \"Demonstration Map With Merged Data\") +\n  theme_minimal() # better theme",
     "crumbs": [
       "Mapping With `ggplot`",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Merge Shapefiles With External Data</span>"
@@ -774,7 +774,7 @@
     "href": "leaflet.html#leaflet-map",
     "title": "19  Mapping With leaflet",
     "section": "20.1 Leaflet Map",
-    "text": "20.1 Leaflet Map\n\n20.1.1 Color Palette\n\n\nShow the code\npal &lt;- colorFactor(c(\"red\", \"blue\", \"orange\", \"green\"), \n                   domain = levels(as.factor(clients$program)))\n\n\n\n\n20.1.2 Map\n\n\nShow the code\nleaflet(clients) %&gt;%\n  setView(lng = mean(clients$longitude), \n          lat = mean(clients$latitude), \n          zoom = 12) %&gt;% \n  # addTiles() %&gt;% # Open StreetMap\n  addProviderTiles(providers$CartoDB.Positron) %&gt;%\n  addCircleMarkers(~longitude, \n             ~latitude, \n             popup = ~paste(\"Client ID:\", as.character(ID)), \n             label = ~paste(\"Client ID:\", as.character(ID)),\n             color = ~pal(program),\n             clusterOptions = markerClusterOptions()) %&gt;%\n  addLegend(\"bottomright\", \n            pal = pal, \n            values = ~program,\n            title = \"Program\") %&gt;%\n  # addPolygons(data = parks, color = \"green\") %&gt;%\n  # addPolygons(data = university, color = \"blue\") %&gt;%\n  addPolygons(data = city_boundary, \n              color = \"red\",\n              fillOpacity = 0.0)",
+    "text": "20.1 Leaflet Map\n\n20.1.1 Color Palette\n\n\nShow the code\npal &lt;- colorFactor(c(\"red\", \"blue\", \"orange\", \"green\"), \n                   domain = levels(as.factor(clients$program)))\n\n\n\n\n20.1.2 Map\n\n\nShow the code\nleaflet(clients) %&gt;%\n  setView(lng = mean(clients$longitude), \n          lat = mean(clients$latitude), \n          zoom = 12) %&gt;% \n  # addTiles() %&gt;% # Open StreetMap\n  # addProviderTiles(providers$CartoDB.Positron) %&gt;%\n  addProviderTiles(providers$Esri.WorldImagery) %&gt;%\n  addCircleMarkers(~longitude, \n             ~latitude, \n             popup = ~paste(\"Client ID:\", as.character(ID)), \n             label = ~paste(\"Client ID:\", as.character(ID)),\n             color = ~pal(program),\n             clusterOptions = markerClusterOptions()) %&gt;%\n  addLegend(\"bottomright\", \n            pal = pal, \n            values = ~program,\n            title = \"Program\") %&gt;%\n  # addPolygons(data = parks, color = \"green\") %&gt;%\n  # addPolygons(data = university, color = \"blue\") %&gt;%\n  addPolygons(data = city_boundary, \n              color = \"red\",\n              fillOpacity = 0.0)",
     "crumbs": [
       "Other R Libraries for Mapping",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Mapping With `leaflet`</span>"
