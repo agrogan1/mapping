@@ -101,6 +101,7 @@ mymap + coord_sf(crs="+proj=ortho")
 
 ```
 
+
 ### Mercator 
 
 ::: {.callout-tip}
@@ -141,6 +142,22 @@ The *Mollweide* projection is an *equal area* projection. As a consequence, lati
 #| message: false
 
 mymap + coord_sf(crs="+proj=moll")
+
+```
+
+### Equal Earth
+
+::: {.callout-tip}
+## Key Idea
+The *Equal Earth* projection is another approach to an *equal area* projection.
+:::
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| message: false
+
+mymap + coord_sf(crs="+proj=eqearth")
 
 ```
 
